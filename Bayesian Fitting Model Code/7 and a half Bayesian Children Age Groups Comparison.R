@@ -17,12 +17,12 @@ data_frame$Age_Group_2 <- as.factor(data_frame$Age_Group_2)
 
 # Create individual datasets for each global region
 young_children <- data_frame[data_frame$Age_Group_2 == "0-5", ]
-old_children <- data_frame[data_frame$Age_Group_2 == "5-15", ]
+old_children <- data_frame[data_frame$Age_Group_2 ==  "May-15", ]#"5-15", ]
 adults <- data_frame[data_frame$Age_Group == "15+",]
 
 # Without the zeroes
 young_children <- data_frame[data_frame$Age_Group_2 == "0-5" & data_frame$Was_Initially_Zero. == "N", ]
-old_children <- data_frame[data_frame$Age_Group_2 == "5-15" & data_frame$Was_Initially_Zero. == "N", ]
+old_children <- data_frame[data_frame$Age_Group_2 == "May-15" & data_frame$Was_Initially_Zero. == "N", ]
 adults <- data_frame[data_frame$Age_Group == "15+" & data_frame$Was_Initially_Zero. == "N",]
 
 ## Specifying the data in the format required for input into RJAGS
@@ -102,14 +102,20 @@ adult_beta_mean <- mean(as.array(adult_micr_PCR_comp_model[, 1]))
 adult_delt_mean <- mean(as.array(adult_micr_PCR_comp_model[, 2]))
 
 # Specifying PCR prevalence to plot against
-PCR_prevalence <- seq(0.001,1,0.001)
-logit_PCR_prevalence <- logit(PCR_prevalence)
+PCR_prevalence_young <- seq(0.001,0.7,0.001)
+logit_PCR_prevalence_young <- logit(PCR_prevalence_young)
+
+PCR_prevalence_old <- seq(0.001, 0.85, 0.001)
+logit_PCR_prevalence_old <- logit(PCR_prevalence_old)
+
+PCR_prevalence_adults <- seq(0.001, 0.6, 0.001)
+logit_PCR_prevalence_adults <- logit(PCR_prevalence_adults)
 
 # Calculating the fitted values specifying the best fit line on the logit scale
 # DON'T FORGET IT'S delta' + (1 + BETA) * logit_PCR_prevalence
-young_child_fitted_logit_microscopy <- young_child_delt_mean + (1 + young_child_beta_mean)  * logit_PCR_prevalence
-old_child_fitted_logit_microscopy <- old_child_delt_mean + (1 + old_child_beta_mean)  * logit_PCR_prevalence
-adult_fitted_logit_microscopy <- adult_delt_mean + (1 + adult_beta_mean) * logit_PCR_prevalence
+young_child_fitted_logit_microscopy <- young_child_delt_mean + (1 + young_child_beta_mean)  * logit_PCR_prevalence_young
+old_child_fitted_logit_microscopy <- old_child_delt_mean + (1 + old_child_beta_mean)  * logit_PCR_prevalence_old
+adult_fitted_logit_microscopy <- adult_delt_mean + (1 + adult_beta_mean) * logit_PCR_prevalence_adults
 
 # Converting them to the natural scale
 young_child_fitted_microscopy <- expit(young_child_fitted_logit_microscopy)
@@ -122,9 +128,9 @@ plot(young_children$PCR_Prev, young_children$Micro_Prev, xlim = c(0, 1), ylim = 
 points(old_children$PCR_Prev, old_children$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "orange")
 points(adults$PCR_Prev, adults$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "red")
 lines(seq(0,1,0.01), seq(0,1,0.01))
-lines(PCR_prevalence, young_child_fitted_microscopy, col = "#EAE600", lwd = 3)
-lines(PCR_prevalence, old_child_fitted_microscopy, col = "orange", lwd = 3)
-lines(PCR_prevalence, adult_fitted_microscopy, col = "red", lwd = 3)
+lines(PCR_prevalence_young, young_child_fitted_microscopy, col = "#EAE600", lwd = 3)
+lines(PCR_prevalence_old, old_child_fitted_microscopy, col = "orange", lwd = 3)
+lines(PCR_prevalence_adults, adult_fitted_microscopy, col = "red", lwd = 3)
 
 legend("topleft", 
        legend = c("Young Children", "Older Children", "Adults"), 
@@ -134,15 +140,71 @@ legend("topleft",
        pt.cex = 2, 
        cex = 0.8)
 
+# 95% credible interval plotting
+
+# Young Children
+young_children_values <- seq(0, 0.7, 0.001)
+young_children_chains <- young_children_micr_PCR_comp_model[[1]]
+young_children_pred_mean_dist <- matrix(NA, nrow = nrow(young_children_chains), ncol = length(young_children_values))
+for (i in 1:nrow(young_children_pred_mean_dist)){
+  young_children_value_logit_scale <- young_children_chains[i, "delt"] + 
+                                      (1 + young_children_chains[i, "beta"]) * logit(young_children_values)
+  young_children_pred_mean_dist[i, ] <- expit(young_children_value_logit_scale)
+}
+young_children_credible_lower <- apply(young_children_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+young_children_credible_upper <- apply(young_children_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+
+# Old Children
+old_children_values <- seq(0, 0.85, 0.001)
+old_children_chains <- old_children_micr_PCR_comp_model[[1]]
+old_children_pred_mean_dist <- matrix(NA, nrow = nrow(old_children_chains), ncol = length(old_children_values))
+for (i in 1:nrow(old_children_pred_mean_dist)){
+  old_children_value_logit_scale <- old_children_chains[i, "delt"] + 
+    (1 + old_children_chains[i, "beta"]) * logit(old_children_values)
+  old_children_pred_mean_dist[i, ] <- expit(old_children_value_logit_scale)
+}
+old_children_credible_lower <- apply(old_children_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+old_children_credible_upper <- apply(old_children_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+# Adults
+adults_values <- seq(0, 0.6, 0.001)
+adults_chains <- adult_micr_PCR_comp_model[[1]]
+adults_pred_mean_dist <- matrix(NA, nrow = nrow(adults_chains), ncol = length(adults_values))
+for (i in 1:nrow(adults_pred_mean_dist)){
+  adults_value_logit_scale <- adults_chains[i, "delt"] + 
+    (1 + adults_chains[i, "beta"]) * logit(adults_values)
+  adults_pred_mean_dist[i, ] <- expit(adults_value_logit_scale)
+}
+adults_credible_lower <- apply(adults_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+adults_credible_upper <- apply(adults_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
 ##plotting using other colours
 plot(young_children$PCR_Prev, young_children$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#F75C03",
      xlab = "PCR Prevalence", ylab = "LM Prevalence")
 points(old_children$PCR_Prev, old_children$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#D80230")
 points(adults$PCR_Prev, adults$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#820263")
-lines(seq(0,1,0.01), seq(0,1,0.01))
-lines(PCR_prevalence, young_child_fitted_microscopy, col = "#F75C03", lwd = 3)
-lines(PCR_prevalence, old_child_fitted_microscopy, col = "#D80230", lwd = 3)
-lines(PCR_prevalence, adult_fitted_microscopy, col = "#820263", lwd = 3)
+lines(seq(0,1,0.01), seq(0,1,0.01), lwd = 1.5)
+lines(PCR_prevalence_young, young_child_fitted_microscopy, col = "#F75C03", lwd = 3)
+lines(PCR_prevalence_old, old_child_fitted_microscopy, col = "#D80230", lwd = 3)
+lines(PCR_prevalence_adults, adult_fitted_microscopy, col = "#820263", lwd = 3)
+polygon(x = c(young_children_values, rev(young_children_values)), 
+        y = c(young_children_credible_upper, rev(young_children_credible_lower)), 
+        col = adjustcolor("#F75C03", alpha.f = 0.5), border = NA)
+# optional lines: lines(young_children_values, young_children_credible_lower, col = "#F75C03", lwd = 1)
+# optional lines: lines(young_children_values, young_children_credible_upper, col = "#F75C03", lwd = 1)
+
+polygon(x = c(old_children_values, rev(old_children_values)), 
+        y = c(old_children_credible_upper, rev(old_children_credible_lower)), 
+        col = adjustcolor("#D80230", alpha.f = 0.5), border = NA)
+# optional lines: lines(old_children_values, old_children_credible_lower, col = "#D80230", lwd = 1)
+# optional lines: lines(old_children_values, old_children_credible_upper, col = "#D80230", lwd = 1)
+
+polygon(x = c(adults_values, rev(adults_values)), 
+        y = c(adults_credible_upper, rev(adults_credible_lower)), 
+        col = adjustcolor("#820263", alpha.f = 0.5), border = NA)
+# optional lines: lines(adults_values, adults_credible_lower, col = "#820263", lwd = 1)
+# optional lines: lines(adults_values, adults_credible_upper, col = "#820263", lwd = 1)
 
 legend("topleft", 
        legend = c("Young Children", "Older Children", "Adults"), 

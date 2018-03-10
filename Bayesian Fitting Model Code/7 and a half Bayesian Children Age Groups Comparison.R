@@ -213,4 +213,3 @@ legend("topleft",
        lwd = 2,
        pt.cex = 2, 
        cex = 0.8)
-

@@ -8,10 +8,10 @@ library(LMest)
 library(ssa)
 library(binom)
 
-
 # Load in the dataset
 data_frame <- Data.4th.February
 data_frame <- Data.4th.February.Dec.Rounded
+data_frame <- Zero.Tester.Data.4th.February.Dec.Rounded
 
 #Manipulate data_frame in prep for analysis
 data_frame$Old_or_New <- as.factor(data_frame$Old_or_New)
@@ -39,33 +39,37 @@ Asia_microscopy_PCR_comparison <- list(prev_pcr = Asia$PCR_N_Positive, ## number
                                       prev_microscopy = Asia$Microscopy_N_Positive, ## number positive by microscopy,
                                       total_pcr = Asia$PCR_N_Tested, ## number tested by PCR,
                                       total_microscopy = Asia$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 34) #39) zeroes included                # Total sample data overall
+                                      N = 39)               # Total sample data overall
+                                      # 34 zeroes not included, 39 zeroes included  
 
 # East African data
 East_Africa_microscopy_PCR_comparison <- list(prev_pcr = East_Africa$PCR_N_Positive, ## number positive by PCR,
                                       prev_microscopy = East_Africa$Microscopy_N_Positive,## number positive by microscopy,
                                       total_pcr = East_Africa$PCR_N_Tested, ## number tested by PCR,
                                       total_microscopy = East_Africa$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 156) #162) zeroes included
+                                      N = 162)            # Total sample data overall
+                                      # 156 zeroes not included, 162 zeroes included  
 
 # South American data
 South_America_microscopy_PCR_comparison <- list(prev_pcr = South_America$PCR_N_Positive, ## number positive by PCR,
                                        prev_microscopy = South_America$Microscopy_N_Positive, ## number positive by microscopy,
                                        total_pcr = South_America$PCR_N_Tested, ## number tested by PCR,
                                        total_microscopy = South_America$Microscopy_N_Tested, ## number tested by microscopy,
-                                       N = 18) #30) zeroes included
+                                       N = 30) 
+                                       # 18 zeroes not included, 30 zeroes included  
 
 # West African data
 West_Africa_microscopy_PCR_comparison <- list(prev_pcr = West_Africa$PCR_N_Positive, ## number positive by PCR,
                                                 prev_microscopy = West_Africa$Microscopy_N_Positive, ## number positive by microscopy,
                                                 total_pcr = West_Africa$PCR_N_Tested, ## number tested by PCR,
                                                 total_microscopy = West_Africa$Microscopy_N_Tested, ## number tested by microscopy,
-                                                N = 77) #79) zeroes included
+                                                N = 79) 
+                                                # 77 zeroes not included, 79 zeroes included  
 
 # Specifying the parameters of interest that RJAGS will track and output, and the 
 # initial values to start the chain with
 params <- c("delt", "beta", "taud")
-inits <- list(beta=0.0001,delt=0.0001,taud=0.0001)
+inits <- list(beta = 0.0001, delt = 0.0001, taud= 0.0001)
 
 # Specifying and initialising the RJAGS model- creates a JAGS model object
 Asia_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # OLD DATA
@@ -79,7 +83,6 @@ South_America_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',
 
 West_Africa_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL DATA
                                                 data = West_Africa_microscopy_PCR_comparison, n.chains = 1, inits = inits)
-
 
 # Running, updating and iterating the RJAGS model
 
@@ -128,21 +131,80 @@ West_Africa_beta_mean <- mean(as.array(West_Africa_micr_PCR_comp_model[, 1]))
 West_Africa_delt_mean <- mean(as.array(West_Africa_micr_PCR_comp_model[, 2]))
 
 # Specifying PCR prevalence to plot against
-PCR_prevalence <- seq(0.001,1,0.001)
-logit_PCR_prevalence <- logit(PCR_prevalence)
+PCR_prevalence_Asia <- seq(0,0.75,0.001)
+Asia_logit_PCR_prevalence <- logit(PCR_prevalence_Asia)
+
+PCR_prevalence_East_Africa <- seq(0,0.95,0.001)
+East_Africa_logit_PCR_prevalence <- logit(PCR_prevalence_East_Africa)
+
+PCR_prevalence_West_Africa <- seq(0,1,0.001)
+West_Africa_logit_PCR_prevalence <- logit(PCR_prevalence_West_Africa)
+
+PCR_prevalence_South_America <- seq(0,0.5,0.001)
+South_America_logit_PCR_prevalence <- logit(PCR_prevalence_South_America)
 
 # Calculating the fitted values specifying the best fit line on the logit scale
 # DON'T FORGET IT'S delta' + (1 + BETA) * logit_PCR_prevalence
-Asia_fitted_logit_microscopy <- Asia_delt_mean + (1 + Asia_beta_mean)  * logit_PCR_prevalence
-East_Africa_fitted_logit_microscopy <- East_Africa_delt_mean + (1 + East_Africa_beta_mean) * logit_PCR_prevalence
-South_America_fitted_logit_microscopy <- South_America_delt_mean + (1 + South_America_beta_mean)  * logit_PCR_prevalence
-West_Africa_fitted_logit_microscopy <- West_Africa_delt_mean + (1 + West_Africa_beta_mean) * logit_PCR_prevalence
+Asia_fitted_logit_microscopy <- Asia_delt_mean + (1 + Asia_beta_mean)  * Asia_logit_PCR_prevalence
+East_Africa_fitted_logit_microscopy <- East_Africa_delt_mean + (1 + East_Africa_beta_mean) * East_Africa_logit_PCR_prevalence
+South_America_fitted_logit_microscopy <- South_America_delt_mean + (1 + South_America_beta_mean)  * South_America_logit_PCR_prevalence
+West_Africa_fitted_logit_microscopy <- West_Africa_delt_mean + (1 + West_Africa_beta_mean) * West_Africa_logit_PCR_prevalence
 
 # Converting them to the natural scale
 Asia_fitted_microscopy <- expit(Asia_fitted_logit_microscopy)
 East_Africa_fitted_microscopy <- expit(East_Africa_fitted_logit_microscopy)
-South_America_fitted_microscopy <- expit(South_America_fitted_logit_microscopy)
 West_Africa_fitted_microscopy <- expit(West_Africa_fitted_logit_microscopy)
+South_America_fitted_microscopy <- expit(South_America_fitted_logit_microscopy)
+
+# 95% credible interval plotting
+
+# Asia
+Asia_values <- seq(0, 0.75, 0.001)
+Asia_chains <- Asia_micr_PCR_comp_model[[1]]
+Asia_pred_mean_dist <- matrix(NA, nrow = nrow(Asia_chains), ncol = length(Asia_values))
+for (i in 1:nrow(Asia_pred_mean_dist)){
+  Asia_value_logit_scale <- Asia_chains[i, "delt"] + 
+    (1 + Asia_chains[i, "beta"]) * logit(Asia_values)
+  Asia_pred_mean_dist[i, ] <- expit(Asia_value_logit_scale)
+}
+Asia_credible_lower <- apply(Asia_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+Asia_credible_upper <- apply(Asia_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+# East Africa
+East_Africa_values <- seq(0, 0.95, 0.001)
+East_Africa_chains <- East_Africa_micr_PCR_comp_model[[1]]
+East_Africa_pred_mean_dist <- matrix(NA, nrow = nrow(East_Africa_chains), ncol = length(East_Africa_values))
+for (i in 1:nrow(East_Africa_pred_mean_dist)){
+  East_Africa_value_logit_scale <- East_Africa_chains[i, "delt"] + 
+    (1 + East_Africa_chains[i, "beta"]) * logit(East_Africa_values)
+  East_Africa_pred_mean_dist[i, ] <- expit(East_Africa_value_logit_scale)
+}
+East_Africa_credible_lower <- apply(East_Africa_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+East_Africa_credible_upper <- apply(East_Africa_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+# South America
+South_America_values <- seq(0, 0.5, 0.001)
+South_America_chains <- South_America_micr_PCR_comp_model[[1]]
+South_America_pred_mean_dist <- matrix(NA, nrow = nrow(South_America_chains), ncol = length(South_America_values))
+for (i in 1:nrow(South_America_pred_mean_dist)){
+  South_America_value_logit_scale <- South_America_chains[i, "delt"] + 
+    (1 + South_America_chains[i, "beta"]) * logit(South_America_values)
+  South_America_pred_mean_dist[i, ] <- expit(South_America_value_logit_scale)
+}
+South_America_credible_lower <- apply(South_America_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+South_America_credible_upper <- apply(South_America_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+# West Africa
+West_Africa_values <- seq(0, 1, 0.001)
+West_Africa_chains <- West_Africa_micr_PCR_comp_model[[1]]
+West_Africa_pred_mean_dist <- matrix(NA, nrow = nrow(West_Africa_chains), ncol = length(West_Africa_values))
+for (i in 1:nrow(West_Africa_pred_mean_dist)){
+  West_Africa_value_logit_scale <- West_Africa_chains[i, "delt"] + 
+    (1 + West_Africa_chains[i, "beta"]) * logit(West_Africa_values)
+  West_Africa_pred_mean_dist[i, ] <- expit(West_Africa_value_logit_scale)
+}
+West_Africa_credible_lower <- apply(West_Africa_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+West_Africa_credible_upper <- apply(West_Africa_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
 
 # Plotting the results altoether
 plot(Asia$PCR_Prev, Asia$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
@@ -150,12 +212,35 @@ plot(Asia$PCR_Prev, Asia$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, c
 points(East_Africa$PCR_Prev, East_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "green")
 points(South_America$PCR_Prev, South_America$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue")
 points(West_Africa$PCR_Prev, West_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "red")
-
 lines(seq(0,1,0.01), seq(0,1,0.01))
-lines(PCR_prevalence, Asia_fitted_microscopy, col = "black", lwd = 3)
-lines(PCR_prevalence, East_Africa_fitted_microscopy, col = "green", lwd = 3)
-lines(PCR_prevalence, South_America_fitted_microscopy, col = "blue", lwd = 3)
-lines(PCR_prevalence, West_Africa_fitted_microscopy, col = "red", lwd = 3)
+
+lines(Asia_values, Asia_fitted_microscopy, col = "black", lwd = 3)
+polygon(x = c(Asia_values, rev(Asia_values)), 
+        y = c(Asia_credible_upper, rev(Asia_credible_lower)), 
+        col = adjustcolor("black", alpha.f = 0.5), border = NA)
+# optional lines: lines(Asia_values, Asia_credible_lower, col = "black", lwd = 1)
+# optional lines: lines(Asia_values, Asia_credible_upper, col = "black", lwd = 1)
+
+lines(East_Africa_values, East_Africa_fitted_microscopy, col = "green", lwd = 3)
+polygon(x = c(East_Africa_values, rev(East_Africa_values)), 
+        y = c(East_Africa_credible_upper, rev(East_Africa_credible_lower)), 
+        col = adjustcolor("green", alpha.f = 0.5), border = NA)
+# optional lines: lines(East_Africa_values, East_Africa_credible_lower, col = "green", lwd = 1)
+# optional lines: lines(East_Africa_values, East_Africa_credible_upper, col = "green", lwd = 1)
+
+lines(South_America_values, South_America_fitted_microscopy, col = "blue", lwd = 3)
+polygon(x = c(South_America_values, rev(South_America_values)), 
+        y = c(South_America_credible_upper, rev(South_America_credible_lower)), 
+        col = adjustcolor("blue", alpha.f = 0.5), border = NA)
+# optional lines: lines(South_America_values, South_America_credible_lower, col = "blue", lwd = 1)
+# optional lines: lines(South_America_values, South_America_credible_upper, col = "blue", lwd = 1)
+
+lines(West_Africa_values, West_Africa_fitted_microscopy, col = "red", lwd = 3)
+polygon(x = c(West_Africa_values, rev(West_Africa_values)), 
+        y = c(West_Africa_credible_upper, rev(West_Africa_credible_lower)), 
+        col = adjustcolor("red", alpha.f = 0.5), border = NA)
+# optional lines: lines(West_Africa_values, old_data_credible_lower, col = "red", lwd = 1)
+# optional lines: lines(West_Africa_values, old_data_credible_upper, col = "red", lwd = 1)
 
 legend("topleft", 
        legend = c("Asia", "East Africa", "South America", "West Africa"), 

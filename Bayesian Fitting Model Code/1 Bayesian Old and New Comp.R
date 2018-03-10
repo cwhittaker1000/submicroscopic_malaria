@@ -11,6 +11,7 @@ library(binom)
 # Load in the dataset
 data_frame <- Data.4th.February
 data_frame <- Data.4th.February.Dec.Rounded
+data_frame <- Zero.Tester.Data.4th.February.Dec.Rounded
 
 # Subset the data into old and new
 old_data <- data_frame[data_frame$Old_or_New == "Old",]
@@ -31,22 +32,25 @@ full_data <- data_frame[data_frame$Was_Initially_Zero. == "N", ]
 old_microscopy_PCR_comparison <- list(prev_pcr = old_data$PCR_N_Positive, ## number positive by PCR,
                                   prev_microscopy = old_data$Microscopy_N_Positive, ## number positive by microscopy,
                                   total_pcr = old_data$PCR_N_Tested, ## number tested by PCR,
-                                  total_microscopy = old_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                  N = 98) #106) zeroes included                # Total sample data overall
+                                  total_microscopy = old_data$Microscopy_N_Tested,
+                                  N = 106) ## number tested by microscopy,
+                                  # N = 98 zeroes not included, 106) zeroes included                # Total sample data overall
 
 # Data and results from the new systematic review
 new_microscopy_PCR_comparison <- list(prev_pcr = new_data$PCR_N_Positive, ## number positive by PCR,
                                         prev_microscopy = new_data$Microscopy_N_Positive,## number positive by microscopy,
                                         total_pcr = new_data$PCR_N_Tested, ## number tested by PCR,
-                                        total_microscopy = new_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 217) #235) zeroes included
+                                        total_microscopy = new_data$Microscopy_N_Tested,
+                                      N = 235) ## number tested by microscopy,
+                                      # N = 217 zeroes not included, 235 zeroes included
 
 # Combined old and new data together
 full_microscopy_PCR_comparison <- list(prev_pcr = full_data$PCR_N_Positive, ## number positive by PCR,
                                         prev_microscopy = full_data$Microscopy_N_Positive, ## number positive by microscopy,
                                         total_pcr = full_data$PCR_N_Tested, ## number tested by PCR,
-                                        total_microscopy = full_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                        N = 315) #344) zeroes included    
+                                        total_microscopy = full_data$Microscopy_N_Tested,
+                                        N = 341) ## number tested by microscopy,
+                                        # N = 315 zeroes not included, 341 zeroes included    
 
 # Specifying the parameters of interest that RJAGS will track and output, and the 
 # initial values to start the chain with
@@ -99,28 +103,91 @@ full_beta_mean <- mean(as.array(full_micr_PCR_comp_model[, 1]))
 full_delt_mean <- mean(as.array(full_micr_PCR_comp_model[, 2]))
 
 # Specifying PCR prevalence to plot against
-PCR_prevalence <- seq(0.001,1,0.001)
-logit_PCR_prevalence <- logit(PCR_prevalence)
+PCR_prevalence_old <- seq(0.001,1,0.001)
+old_logit_PCR_prevalence <- logit(PCR_prevalence_old)
+
+PCR_prevalence_new <- seq(0.001,1,0.001)
+new_logit_PCR_prevalence <- logit(PCR_prevalence_new)
+
+PCR_prevalence_full <- seq(0.001,1,0.001)
+full_logit_PCR_prevalence <- logit(PCR_prevalence_full)
 
 # Calculating the fitted values specifying the best fit line on the logit scale
 # DON'T FORGET IT'S delta' + (1 + BETA) * logit_PCR_prevalence
-old_fitted_logit_microscopy <- old_delt_mean + (1 + old_beta_mean)  * logit_PCR_prevalence
-new_fitted_logit_microscopy <- new_delt_mean + (1 + new_beta_mean) * logit_PCR_prevalence
-full_fitted_logit_microscopy <- full_delt_mean + (1 + full_beta_mean)  * logit_PCR_prevalence
+old_fitted_logit_microscopy <- old_delt_mean + (1 + old_beta_mean)  * old_logit_PCR_prevalence
+new_fitted_logit_microscopy <- new_delt_mean + (1 + new_beta_mean) * new_logit_PCR_prevalence
+full_fitted_logit_microscopy <- full_delt_mean + (1 + full_beta_mean)  * full_logit_PCR_prevalence
 
 # Converting them to the natural scale
 old_fitted_microscopy <- expit(old_fitted_logit_microscopy)
 new_fitted_microscopy <- expit(new_fitted_logit_microscopy)
 full_fitted_microscopy <- expit(full_fitted_logit_microscopy)
 
+# 95% credible interval plotting
+
+# Old Data
+old_data_values <- seq(0, 1, 0.001)
+old_data_chains <- old_micr_PCR_comp_model[[1]]
+old_data_pred_mean_dist <- matrix(NA, nrow = nrow(old_data_chains), ncol = length(old_data_values))
+for (i in 1:nrow(old_data_pred_mean_dist)){
+  old_data_value_logit_scale <- old_data_chains[i, "delt"] + 
+    (1 + old_data_chains[i, "beta"]) * logit(old_data_values)
+  old_data_pred_mean_dist[i, ] <- expit(old_data_value_logit_scale)
+}
+old_data_credible_lower <- apply(old_data_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+old_data_credible_upper <- apply(old_data_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+
+# New Data
+new_data_values <- seq(0, 1, 0.001)
+new_data_chains <- new_micr_PCR_comp_model[[1]]
+new_data_pred_mean_dist <- matrix(NA, nrow = nrow(new_data_chains), ncol = length(new_data_values))
+for (i in 1:nrow(new_data_pred_mean_dist)){
+  new_data_value_logit_scale <- new_data_chains[i, "delt"] + 
+    (1 + new_data_chains[i, "beta"]) * logit(new_data_values)
+  new_data_pred_mean_dist[i, ] <- expit(new_data_value_logit_scale)
+}
+new_data_credible_lower <- apply(new_data_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+new_data_credible_upper <- apply(new_data_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+# Full Data
+full_data_values <- seq(0, 1, 0.001)
+full_data_chains <- full_micr_PCR_comp_model[[1]]
+full_data_pred_mean_dist <- matrix(NA, nrow = nrow(full_data_chains), ncol = length(full_data_values))
+for (i in 1:nrow(full_data_pred_mean_dist)){
+  full_data_value_logit_scale <- full_data_chains[i, "delt"] + 
+    (1 + full_data_chains[i, "beta"]) * logit(full_data_values)
+  full_data_pred_mean_dist[i, ] <- expit(full_data_value_logit_scale)
+}
+full_data_credible_lower <- apply(full_data_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+full_data_credible_upper <- apply(full_data_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
 # Plotting the results
 plot(new_data$PCR_Prev, new_data$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "orange",
      xlab = "PCR Prevalence", ylab = "LM Prevalence")
 points(old_data$PCR_Prev, old_data$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue")
 lines(seq(0,1,0.01), seq(0,1,0.01))
-lines(PCR_prevalence, new_fitted_microscopy, col = "orange", lwd = 3)
-lines(PCR_prevalence, old_fitted_microscopy, col = "blue", lwd = 3)
-lines(PCR_prevalence, full_fitted_microscopy, col = "black", lwd = 3)
+lines(PCR_prevalence_new, new_fitted_microscopy, col = "orange", lwd = 3)
+lines(PCR_prevalence_old, old_fitted_microscopy, col = "blue", lwd = 3)
+lines(PCR_prevalence_full, full_fitted_microscopy, col = "black", lwd = 3)
+
+polygon(x = c(old_data_values, rev(old_data_values)), 
+        y = c(old_data_credible_upper, rev(old_data_credible_lower)), 
+        col = adjustcolor("blue", alpha.f = 0.5), border = NA)
+# optional lines: lines(old_data_values, old_data_credible_lower, col = "blue", lwd = 1)
+# optional lines: lines(old_data_values, old_data_credible_upper, col = "blue", lwd = 1)
+
+polygon(x = c(new_data_values, rev(new_data_values)), 
+        y = c(new_data_credible_upper, rev(new_data_credible_lower)), 
+        col = adjustcolor("orange", alpha.f = 0.5), border = NA)
+# optional lines: lines(new_data_values, new_data_credible_lower, col = "orange", lwd = 1)
+# optional lines: lines(new_data_values, new_data_credible_upper, col = "orange", lwd = 1)
+
+polygon(x = c(full_data_values, rev(full_data_values)), 
+        y = c(full_data_credible_upper, rev(full_data_credible_lower)), 
+        col = adjustcolor("black", alpha.f = 0.5), border = NA)
+# optional lines: lines(full_data_values, full_data_credible_lower, col = "black", lwd = 1)
+# optional lines: lines(full_data_values, full_data_credible_upper, col = "black", lwd = 1)
 
 legend("topleft", 
        legend = c("Old Data", "New Data",  "Old and New Data"), 

@@ -9,8 +9,8 @@ library(ssa)
 library(binom)
 
 # Load in the dataset
-data_frame <- Data.4th.February
-data_frame <- Data.4th.February.Dec.Rounded
+#data_frame <- Data.4th.February
+#data_frame <- Data.4th.February.Dec.Rounded
 data_frame <- Zero.Tester.Data.4th.February.Dec.Rounded
 
 #Manipulate data_frame in prep for analysis
@@ -18,16 +18,17 @@ data_frame$Old_or_New <- as.factor(data_frame$Old_or_New)
 data_frame$Global_Region <- as.factor(data_frame$Global_Region)
 
 #Create individual datasets for each global region
-Asia <- data_frame[data_frame$Global_Region == "Asia",]
-East_Africa <- data_frame[data_frame$Global_Region == "East Africa",]
-South_America <- data_frame[data_frame$Global_Region == "South America",]
-West_Africa <- data_frame[data_frame$Global_Region == "West Africa",]
+Asia <- data_frame[data_frame$Global_Region == "Asia", ]
+East_Africa <- data_frame[data_frame$Global_Region == "East Africa", ]
+South_America <- data_frame[data_frame$Global_Region == "South America", ]
+West_Africa <- data_frame[data_frame$Global_Region == "West Africa", ]
+Oceania <- data_frame[data_frame$Global_Region == "Oceania", ]
 
-# When removing the studies with zero values
-Asia <- data_frame[data_frame$Global_Region == "Asia" & data_frame$Was_Initially_Zero. == "N", ]
-East_Africa <- data_frame[data_frame$Global_Region == "East Africa" & data_frame$Was_Initially_Zero. == "N", ]
-South_America <- data_frame[data_frame$Global_Region == "South America" & data_frame$Was_Initially_Zero. == "N", ]
-West_Africa <- data_frame[data_frame$Global_Region == "West Africa" & data_frame$Was_Initially_Zero. == "N", ]
+# When removing the studies with zero values NO LONGER NECESSARY
+# Asia <- data_frame[data_frame$Global_Region == "Asia" & data_frame$Was_Initially_Zero. == "N", ]
+# East_Africa <- data_frame[data_frame$Global_Region == "East Africa" & data_frame$Was_Initially_Zero. == "N", ]
+# South_America <- data_frame[data_frame$Global_Region == "South America" & data_frame$Was_Initially_Zero. == "N", ]
+# West_Africa <- data_frame[data_frame$Global_Region == "West Africa" & data_frame$Was_Initially_Zero. == "N", ]
 
 ## Specifying the data in the format required for input into RJAGS
 
@@ -39,8 +40,8 @@ Asia_microscopy_PCR_comparison <- list(prev_pcr = Asia$PCR_N_Positive, ## number
                                       prev_microscopy = Asia$Microscopy_N_Positive, ## number positive by microscopy,
                                       total_pcr = Asia$PCR_N_Tested, ## number tested by PCR,
                                       total_microscopy = Asia$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 39)               # Total sample data overall
-                                      # 34 zeroes not included, 39 zeroes included  
+                                      N = 42)               # Total sample data overall
+                                      # 37 zeroes not included, 42 zeroes included  
 
 # East African data
 East_Africa_microscopy_PCR_comparison <- list(prev_pcr = East_Africa$PCR_N_Positive, ## number positive by PCR,
@@ -66,6 +67,13 @@ West_Africa_microscopy_PCR_comparison <- list(prev_pcr = West_Africa$PCR_N_Posit
                                                 N = 79) 
                                                 # 77 zeroes not included, 79 zeroes included  
 
+# Oceania data
+Oceania_microscopy_PCR_comparison <- list(prev_pcr = Oceania$PCR_N_Positive, ## number positive by PCR,
+                                              prev_microscopy = Oceania$Microscopy_N_Positive, ## number positive by microscopy,
+                                              total_pcr = Oceania$PCR_N_Tested, ## number tested by PCR,
+                                              total_microscopy = Oceania$Microscopy_N_Tested, ## number tested by microscopy,
+                                              N = 31) 
+
 # Specifying the parameters of interest that RJAGS will track and output, and the 
 # initial values to start the chain with
 params <- c("delt", "beta", "taud")
@@ -83,6 +91,9 @@ South_America_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',
 
 West_Africa_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL DATA
                                                 data = West_Africa_microscopy_PCR_comparison, n.chains = 1, inits = inits)
+
+Oceania_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL DATA
+                                              data = Oceania_microscopy_PCR_comparison, n.chains = 1, inits = inits)
 
 # Running, updating and iterating the RJAGS model
 
@@ -130,6 +141,18 @@ autocorr.plot(West_Africa_micr_PCR_comp_model)
 West_Africa_beta_mean <- mean(as.array(West_Africa_micr_PCR_comp_model[, 1]))
 West_Africa_delt_mean <- mean(as.array(West_Africa_micr_PCR_comp_model[, 2]))
 
+# Oceania DATA
+update(Oceania_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
+Oceania_micr_PCR_comp_model <- coda.samples(Oceania_micr_PCR_comp_model, params, 
+                                                n.iter = 35000, thin = 70) # Model updating
+summary(Oceania_micr_PCR_comp_model)
+plot(Oceania_micr_PCR_comp_model)
+autocorr.plot(Oceania_micr_PCR_comp_model)
+
+Oceania_beta_mean <- mean(as.array(Oceania_micr_PCR_comp_model[, 1]))
+Oceania_delt_mean <- mean(as.array(Oceania_micr_PCR_comp_model[, 2]))
+
+
 # Specifying PCR prevalence to plot against
 PCR_prevalence_Asia <- seq(0,0.75,0.001)
 Asia_logit_PCR_prevalence <- logit(PCR_prevalence_Asia)
@@ -143,18 +166,23 @@ West_Africa_logit_PCR_prevalence <- logit(PCR_prevalence_West_Africa)
 PCR_prevalence_South_America <- seq(0,0.5,0.001)
 South_America_logit_PCR_prevalence <- logit(PCR_prevalence_South_America)
 
+PCR_prevalence_Oceania <- seq(0,0.8,0.001)
+Oceania_logit_PCR_prevalence <- logit(PCR_prevalence_Oceania)
+
 # Calculating the fitted values specifying the best fit line on the logit scale
 # DON'T FORGET IT'S delta' + (1 + BETA) * logit_PCR_prevalence
 Asia_fitted_logit_microscopy <- Asia_delt_mean + (1 + Asia_beta_mean)  * Asia_logit_PCR_prevalence
 East_Africa_fitted_logit_microscopy <- East_Africa_delt_mean + (1 + East_Africa_beta_mean) * East_Africa_logit_PCR_prevalence
 South_America_fitted_logit_microscopy <- South_America_delt_mean + (1 + South_America_beta_mean)  * South_America_logit_PCR_prevalence
 West_Africa_fitted_logit_microscopy <- West_Africa_delt_mean + (1 + West_Africa_beta_mean) * West_Africa_logit_PCR_prevalence
+Oceania_fitted_logit_microscopy <- Oceania_delt_mean + (1 + Oceania_beta_mean) * Oceania_logit_PCR_prevalence
 
 # Converting them to the natural scale
 Asia_fitted_microscopy <- expit(Asia_fitted_logit_microscopy)
 East_Africa_fitted_microscopy <- expit(East_Africa_fitted_logit_microscopy)
 West_Africa_fitted_microscopy <- expit(West_Africa_fitted_logit_microscopy)
 South_America_fitted_microscopy <- expit(South_America_fitted_logit_microscopy)
+Oceania_fitted_microscopy <- expit(Oceania_fitted_logit_microscopy)
 
 # 95% credible interval plotting
 
@@ -206,12 +234,25 @@ for (i in 1:nrow(West_Africa_pred_mean_dist)){
 West_Africa_credible_lower <- apply(West_Africa_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
 West_Africa_credible_upper <- apply(West_Africa_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
 
+# Oceania
+Oceania_values <- seq(0, 0.8, 0.001)
+Oceania_chains <- Oceania_micr_PCR_comp_model[[1]]
+Oceania_pred_mean_dist <- matrix(NA, nrow = nrow(Oceania_chains), ncol = length(Oceania_values))
+for (i in 1:nrow(Oceania_pred_mean_dist)){
+  Oceania_value_logit_scale <- Oceania_chains[i, "delt"] + 
+    (1 + Oceania_chains[i, "beta"]) * logit(Oceania_values)
+  Oceania_pred_mean_dist[i, ] <- expit(Oceania_value_logit_scale)
+}
+Oceania_credible_lower <- apply(Oceania_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+Oceania_credible_upper <- apply(Oceania_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
 # Plotting the results altoether
 plot(Asia$PCR_Prev, Asia$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
 points(East_Africa$PCR_Prev, East_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "green")
 points(South_America$PCR_Prev, South_America$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue")
 points(West_Africa$PCR_Prev, West_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "red")
+points(Oceania$PCR_Prev, Oceania$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "turquoise")
 lines(seq(0,1,0.01), seq(0,1,0.01))
 
 lines(Asia_values, Asia_fitted_microscopy, col = "black", lwd = 3)
@@ -241,6 +282,13 @@ polygon(x = c(West_Africa_values, rev(West_Africa_values)),
         col = adjustcolor("red", alpha.f = 0.5), border = NA)
 # optional lines: lines(West_Africa_values, old_data_credible_lower, col = "red", lwd = 1)
 # optional lines: lines(West_Africa_values, old_data_credible_upper, col = "red", lwd = 1)
+
+lines(Oceania_values, Oceania_fitted_microscopy, col = "turquoise", lwd = 3)
+polygon(x = c(Oceania_values, rev(Oceania_values)), 
+        y = c(Oceania_credible_upper, rev(Oceania_credible_lower)), 
+        col = adjustcolor("turquoise", alpha.f = 0.5), border = NA)
+# optional lines: lines(Oceania_values, old_data_credible_lower, col = "turquoise", lwd = 1)
+# optional lines: lines(Oceania_values, old_data_credible_upper, col = "turquoise", lwd = 1)
 
 legend("topleft", 
        legend = c("Asia", "East Africa", "South America", "West Africa"), 

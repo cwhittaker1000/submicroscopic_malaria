@@ -305,8 +305,18 @@ legend("topleft",
 # Plotting the data for microscopy and PCR prevalence and the fitted line
 plot(Asia$PCR_Prev, Asia$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
-lines(PCR_prevalence, Asia_fitted_microscopy, col = "black", lwd = 3)
+lines(PCR_prevalence_Asia, Asia_fitted_microscopy, col = "black", lwd = 3)
 lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 1)
+polygon(x = c(Asia_values, rev(Asia_values)), 
+        y = c(Asia_credible_upper, rev(Asia_credible_lower)), 
+        col = adjustcolor("black", alpha.f = 0.5), border = NA)
+
+#Plotting lines from other continents, but more transparent so as not to distract. Not sure whether this is useful or not.
+lines(PCR_prevalence_East_Africa, East_Africa_fitted_microscopy, lwd = 3, col = adjustcolor("green", alpha.f = 0.5))
+lines(PCR_prevalence_West_Africa, West_Africa_fitted_microscopy, lwd = 3, col = adjustcolor("red", alpha.f = 0.5))
+lines(PCR_prevalence_South_America, South_America_fitted_microscopy, lwd = 3, col = adjustcolor("blue", alpha.f = 0.5))
+lines(PCR_prevalence_Oceania, Oceania_fitted_microscopy, lwd = 3, col = adjustcolor("turquoise", alpha.f = 0.5))
+
 
 # Plotting the confidence intervals for the data
 Asia_Lower_Micro_Confint <- binom.confint(Asia$Microscopy_N_Positive, Asia$Microscopy_N_Tested, 
@@ -327,7 +337,8 @@ arrows(Asia$PCR_Prev, Asia_Lower_Micro_Confint, Asia$PCR_Prev,
 # Plotting the sensitivity
 plot(Asia$PCR_Prev, Asia$Micro_Prev/Asia$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
-lines(PCR_prevalence, Asia_fitted_microscopy/PCR_prevalence, col = "black", lwd = 3)
+lines(PCR_prevalence_Asia, Asia_fitted_microscopy/PCR_prevalence_Asia, col = "black", lwd = 3)
+
 
 ### East Africa
 

@@ -303,10 +303,10 @@ legend("topleft",
 ### ASIA
 
 # Plotting the data for microscopy and PCR prevalence and the fitted line
-plot(Asia$PCR_Prev, Asia$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
+plot(Asia$PCR_Prev, Asia$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "grey",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
 lines(PCR_prevalence_Asia, Asia_fitted_microscopy, col = "black", lwd = 3)
-lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 1)
+lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 3)
 polygon(x = c(Asia_values, rev(Asia_values)), 
         y = c(Asia_credible_upper, rev(Asia_credible_lower)), 
         col = adjustcolor("black", alpha.f = 0.5), border = NA)
@@ -330,9 +330,9 @@ Asia_Upper_PCR_Confint <- binom.confint(Asia$PCR_N_Positive, Asia$PCR_N_Tested,
 
 # Plotting the confidence intervals
 arrows(Asia_Lower_PCR_Confint, Asia$Micro_Prev, Asia_Upper_PCR_Confint, 
-       Asia$Micro_Prev, length=0, angle=90, code=1)
+       Asia$Micro_Prev, length=0, angle=90, code=1, col = "grey")
 arrows(Asia$PCR_Prev, Asia_Lower_Micro_Confint, Asia$PCR_Prev, 
-       Asia_Upper_Micro_Confint, length=0, angle=90, code=1)
+       Asia_Upper_Micro_Confint, length=0, angle=90, code=1, col = "grey")
 
 # Plotting the sensitivity
 plot(Asia$PCR_Prev, Asia$Micro_Prev/Asia$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
@@ -343,10 +343,13 @@ lines(PCR_prevalence_Asia, Asia_fitted_microscopy/PCR_prevalence_Asia, col = "bl
 ### East Africa
 
 # Plotting the data for microscopy and PCR prevalence and the fitted line
-plot(East_Africa$PCR_Prev, East_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "green",
+plot(East_Africa$PCR_Prev, East_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "grey",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
-lines(PCR_prevalence, East_Africa_fitted_microscopy, col = "green", lwd = 3)
-lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 1)
+lines(PCR_prevalence_East_Africa, East_Africa_fitted_microscopy, col = "green", lwd = 3)
+lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 3)
+polygon(x = c(East_Africa_values, rev(East_Africa_values)), 
+        y = c(East_Africa_credible_upper, rev(East_Africa_credible_lower)), 
+        col = adjustcolor("green", alpha.f = 0.5), border = NA)
 
 # Plotting the confidence intervals for the data
 East_Africa_Lower_Micro_Confint <- binom.confint(East_Africa$Microscopy_N_Positive, East_Africa$Microscopy_N_Tested, 
@@ -360,9 +363,9 @@ East_Africa_Upper_PCR_Confint <- binom.confint(East_Africa$PCR_N_Positive, East_
 
 # Plotting the confidence intervals
 arrows(East_Africa_Lower_PCR_Confint, East_Africa$Micro_Prev, East_Africa_Upper_PCR_Confint, 
-       East_Africa$Micro_Prev, length=0, angle=90, code=1)
+       East_Africa$Micro_Prev, length=0, angle=90, code=1, col = "grey")
 arrows(East_Africa$PCR_Prev, East_Africa_Lower_Micro_Confint, East_Africa$PCR_Prev, 
-       East_Africa_Upper_Micro_Confint, length=0, angle=90, code=1)
+       East_Africa_Upper_Micro_Confint, length=0, angle=90, code=1, col = "grey")
 
 # Plotting the sensitivity
 plot(East_Africa$PCR_Prev, East_Africa$Micro_Prev/East_Africa$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "green",
@@ -373,10 +376,13 @@ lines(PCR_prevalence, East_Africa_fitted_microscopy/PCR_prevalence, col = "green
 ### South America
 
 # Plotting the data for microscopy and PCR prevalence and the fitted line
-plot(South_America$PCR_Prev, South_America$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue",
+plot(South_America$PCR_Prev, South_America$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "grey",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
-lines(PCR_prevalence, South_America_fitted_microscopy, col = "blue", lwd = 3)
-lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 1)
+lines(PCR_prevalence_South_America, South_America_fitted_microscopy, col = "blue", lwd = 3)
+lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 3)
+polygon(x = c(South_America_values, rev(South_America_values)), 
+        y = c(South_America_credible_upper, rev(South_America_credible_lower)), 
+        col = adjustcolor("blue", alpha.f = 0.5), border = NA)
 
 # Plotting the confidence intervals for the data
 South_America_Lower_Micro_Confint <- binom.confint(South_America$Microscopy_N_Positive, South_America$Microscopy_N_Tested, 
@@ -390,22 +396,26 @@ South_America_Upper_PCR_Confint <- binom.confint(South_America$PCR_N_Positive, S
 
 # Plotting the confidence intervals
 arrows(South_America_Lower_PCR_Confint, South_America$Micro_Prev, South_America_Upper_PCR_Confint, 
-       South_America$Micro_Prev, length=0, angle=90, code=1)
+       South_America$Micro_Prev, length=0, angle=90, code=1, col = "grey")
 arrows(South_America$PCR_Prev, South_America_Lower_Micro_Confint, South_America$PCR_Prev, 
-       South_America_Upper_Micro_Confint, length=0, angle=90, code=1)
+       South_America_Upper_Micro_Confint, length=0, angle=90, code=1, col = "grey")
 
 # Plotting the sensitivity
 plot(South_America$PCR_Prev, South_America$Micro_Prev/South_America$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
-lines(PCR_prevalence, South_America_fitted_microscopy/PCR_prevalence, col = "blue", lwd = 3)
+lines(PCR_prevalence_South_America, South_America_fitted_microscopy/PCR_prevalence_South_America, col = "blue", lwd = 3)
 
 ### West Africa
 
 # Plotting the data for microscopy and PCR prevalence and the fitted line
-plot(West_Africa$PCR_Prev, West_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "red",
+plot(West_Africa$PCR_Prev, West_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "grey",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
-lines(PCR_prevalence, West_Africa_fitted_microscopy, col = "red", lwd = 3)
-lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 1)
+lines(PCR_prevalence_West_Africa, West_Africa_fitted_microscopy, col = "red", lwd = 3)
+lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 3)
+polygon(x = c(West_Africa_values, rev(West_Africa_values)), 
+        y = c(West_Africa_credible_upper, rev(West_Africa_credible_lower)), 
+        col = adjustcolor("red", alpha.f = 0.5), border = NA)
+
 
 # Plotting the confidence intervals for the data
 West_Africa_Lower_Micro_Confint <- binom.confint(West_Africa$Microscopy_N_Positive, West_Africa$Microscopy_N_Tested, 
@@ -419,11 +429,45 @@ West_Africa_Upper_PCR_Confint <- binom.confint(West_Africa$PCR_N_Positive, West_
 
 # Plotting the confidence intervals
 arrows(West_Africa_Lower_PCR_Confint, West_Africa$Micro_Prev, West_Africa_Upper_PCR_Confint, 
-       West_Africa$Micro_Prev, length=0, angle=90, code=1)
+       West_Africa$Micro_Prev, length=0, angle=90, code=1, col = "grey")
 arrows(West_Africa$PCR_Prev, West_Africa_Lower_Micro_Confint, West_Africa$PCR_Prev, 
-       West_Africa_Upper_Micro_Confint, length=0, angle=90, code=1)
+       West_Africa_Upper_Micro_Confint, length=0, angle=90, code=1, col = "grey")
 
 # Plotting the sensitivity
 plot(West_Africa$PCR_Prev, West_Africa$Micro_Prev/West_Africa$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "red",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
-lines(PCR_prevalence, West_Africa_fitted_microscopy/PCR_prevalence, col = "red", lwd = 3)
+lines(PCR_prevalence_West_Africa, West_Africa_fitted_microscopy/PCR_prevalence_West_Africa, col = "red", lwd = 3)
+
+### Oceania
+
+# Plotting the data for microscopy and PCR prevalence and the fitted line
+plot(Oceania$PCR_Prev, Oceania$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "grey",
+     xlab = "PCR Prevalence", ylab = "Slide Prevalence")
+lines(PCR_prevalence_Oceania, Oceania_fitted_microscopy, col = "turquoise", lwd = 3)
+lines(seq(0,1,0.01), seq(0,1,0.01), col = "black", lwd = 3)
+polygon(x = c(Oceania_values, rev(Oceania_values)), 
+        y = c(Oceania_credible_upper, rev(Oceania_credible_lower)), 
+        col = adjustcolor("turquoise", alpha.f = 0.5), border = NA)
+
+
+# Plotting the confidence intervals for the data
+Oceania_Lower_Micro_Confint <- binom.confint(Oceania$Microscopy_N_Positive, Oceania$Microscopy_N_Tested, 
+                                                 conf.level = 0.95, methods = "exact")[, 5]
+Oceania_Upper_Micro_Confint <- binom.confint(Oceania$Microscopy_N_Positive, Oceania$Microscopy_N_Tested,
+                                                 conf.level = 0.95, methods = "exact")[, 6]
+Oceania_Lower_PCR_Confint <- binom.confint(Oceania$PCR_N_Positive, Oceania$PCR_N_Tested, 
+                                               conf.level = 0.95, methods = "exact")[, 5]
+Oceania_Upper_PCR_Confint <- binom.confint(Oceania$PCR_N_Positive, Oceania$PCR_N_Tested, 
+                                               conf.level = 0.95, methods = "exact")[, 6]
+
+# Plotting the confidence intervals
+arrows(Oceania_Lower_PCR_Confint, Oceania$Micro_Prev, Oceania_Upper_PCR_Confint, 
+       Oceania$Micro_Prev, length=0, angle=90, code=1, col = "grey")
+arrows(Oceania$PCR_Prev, Oceania_Lower_Micro_Confint, Oceania$PCR_Prev, 
+       Oceania_Upper_Micro_Confint, length=0, angle=90, code=1, col = "grey")
+
+# Plotting the sensitivity
+plot(Oceania$PCR_Prev, Oceania$Micro_Prev/Oceania$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "red",
+     xlab = "PCR Prevalence", ylab = "Slide Prevalence")
+lines(PCR_prevalence_Oceania, Oceania_fitted_microscopy/PCR_prevalence_Oceania, col = "red", lwd = 3)
+

@@ -9,8 +9,8 @@ library(ssa)
 library(binom)
 
 # Load in the dataset
-data_frame <- Data.4th.February
-data_frame <- Data.4th.February.Dec.Rounded
+# data_frame <- Data.4th.February
+# data_frame <- Data.4th.February.Dec.Rounded
 data_frame <- Zero.Tester.Data.4th.February.Dec.Rounded
 
 # Subset the data into old and new

@@ -8,8 +8,9 @@ library(LMest)
 library(ssa)
 
 # Load in the dataset
-data_frame <- Data.4th.February
-data_frame <- Data.4th.February.Dec.Rounded
+# data_frame <- Data.4th.February
+# data_frame <- Data.4th.February.Dec.Rounded
+data_frame <- Zero.Tester.Data.4th.February.Dec.Rounded
 
 # Manipulate data_frame in prep for analysis
 data_frame$Old_or_New <- as.factor(data_frame$Old_or_New)
@@ -18,16 +19,13 @@ data_frame$Trans_Hist <- as.factor(data_frame$Trans_Hist)
 data_frame$Trans_Now <- data_frame$Transmission_Setting_Current
 data_frame$Trans_Now <- as.factor(data_frame$Trans_Now)
 
-# OPTIONAL- REMOVE THOSE WHICH WERE INITIALLY ZERO
-data_frame <- data_frame[data_frame$Was_Initially_Zero. == "N", ]
+# OPTIONAL- REMOVE THOSE WHICH WERE INITIALLY ZERO NOT NECESSARY ANYMORE
+# data_frame <- data_frame[data_frame$Was_Initially_Zero. == "N", ]
 
 # Subsetting data_frame, do if 0s NOT removed
 data_frame <- data_frame[order(data_frame$Trans_Hist),]
-data_frame <- data_frame[1:234,]
+data_frame <- data_frame[1:212,]
 
-# Subsetting data_frame, do if 0s removed
-data_frame <- data_frame[order(data_frame$Trans_Hist),]
-data_frame <- data_frame[1:229,]
 
 # Subsettin the data_frame, only new data, checking whether including Lucy's data changes the conclusions
 # NEED TO GO BACK AND CHANGE AS THE OLD DATA IS THE WRONG WAY AROUND, SO DEFINITELY PROCEED WITH THIS FOR NOW
@@ -72,21 +70,21 @@ high_high_microscopy_PCR_comparison <- list(prev_pcr = high_high_subset$PCR_N_Po
                                        prev_microscopy = high_high_subset$Microscopy_N_Positive, ## number positive by microscopy,
                                        total_pcr = high_high_subset$PCR_N_Tested, ## number tested by PCR,
                                        total_microscopy = high_high_subset$Microscopy_N_Tested, ## number tested by microscopy,
-                                       N = 64) #49) #64) zeroes included  #first is all data, no zeroes, second 2  are new data without and with 0s.
+                                       N = 67) #49) #64) zeroes included  #first is all data, no zeroes, second 2  are new data without and with 0s.
 
 # High low data
 high_low_microscopy_PCR_comparison <- list(prev_pcr = high_low_subset$PCR_N_Positive, ## number positive by PCR,
                                               prev_microscopy = high_low_subset$Microscopy_N_Positive,## number positive by microscopy,
                                               total_pcr = high_low_subset$PCR_N_Tested, ## number tested by PCR,
                                               total_microscopy = high_low_subset$Microscopy_N_Tested, ## number tested by microscopy,
-                                              N = 141) #119) #120) zeroes included  #first is all data, no zeroes, second 2  are new data without and with 0s.
+                                              N = 80) #119) #120) zeroes included  #first is all data, no zeroes, second 2  are new data without and with 0s.
 
 # Low low data
 low_low_microscopy_PCR_comparison <- list(prev_pcr = low_low_subset$PCR_N_Positive, ## number positive by PCR,
                                                 prev_microscopy = low_low_subset$Microscopy_N_Positive, ## number positive by microscopy,
                                                 total_pcr = low_low_subset$PCR_N_Tested, ## number tested by PCR,
                                                 total_microscopy = low_low_subset$Microscopy_N_Tested, ## number tested by microscopy,
-                                                N = 24) #20) #28) zeroes included  #first is all data, no zeroes, second 2  are new data without and with 0s.
+                                                N = 23) #20) #28) zeroes included  #first is all data, no zeroes, second 2  are new data without and with 0s.
 
 
 # Specifying the parameters of interest that RJAGS will track and output, and the 
@@ -140,7 +138,7 @@ Low_low_beta_mean <- mean(as.array(Low_low_micr_PCR_comp_model[, 1]))
 Low_low_delt_mean <- mean(as.array(Low_low_micr_PCR_comp_model[, 2]))
 
 # Specifying PCR prevalence to plot against
-PCR_prevalence <- seq(0.001,1,0.001)
+PCR_prevalence <- seq(0,1,0.001)
 logit_PCR_prevalence <- logit(PCR_prevalence)
 
 # Calculating the fitted values specifying the best fit line on the logit scale
@@ -154,16 +152,66 @@ High_high_fitted_microscopy <- expit(High_high_fitted_logit_microscopy)
 High_low_fitted_microscopy <- expit(High_low_fitted_logit_microscopy)
 Low_low_fitted_microscopy <- expit(Low_low_fitted_logit_microscopy)
 
+# 95% Credible Intervals
+
+# High_high
+High_high_values <- seq(0, 1, 0.001)
+High_high_chains <- High_high_micr_PCR_comp_model[[1]]
+High_high_pred_mean_dist <- matrix(NA, nrow = nrow(High_high_chains), ncol = length(High_high_values))
+for (i in 1:nrow(High_high_pred_mean_dist)){
+  High_high_value_logit_scale <- High_high_chains[i, "delt"] + 
+    (1 + High_high_chains[i, "beta"]) * logit(High_high_values)
+  High_high_pred_mean_dist[i, ] <- expit(High_high_value_logit_scale)
+}
+High_high_credible_lower <- apply(High_high_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+High_high_credible_upper <- apply(High_high_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+# High_low
+High_low_values <- seq(0, 1, 0.001)
+High_low_chains <- High_low_micr_PCR_comp_model[[1]]
+High_low_pred_mean_dist <- matrix(NA, nrow = nrow(High_low_chains), ncol = length(High_low_values))
+for (i in 1:nrow(High_low_pred_mean_dist)){
+  High_low_value_logit_scale <- High_low_chains[i, "delt"] + 
+    (1 + High_low_chains[i, "beta"]) * logit(High_low_values)
+  High_low_pred_mean_dist[i, ] <- expit(High_low_value_logit_scale)
+}
+High_low_credible_lower <- apply(High_low_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+High_low_credible_upper <- apply(High_low_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
+# Low_low
+Low_low_values <- seq(0, 1, 0.001)
+Low_low_chains <- Low_low_micr_PCR_comp_model[[1]]
+Low_low_pred_mean_dist <- matrix(NA, nrow = nrow(Low_low_chains), ncol = length(Low_low_values))
+for (i in 1:nrow(Low_low_pred_mean_dist)){
+  Low_low_value_logit_scale <- Low_low_chains[i, "delt"] + 
+    (1 + Low_low_chains[i, "beta"]) * logit(Low_low_values)
+  Low_low_pred_mean_dist[i, ] <- expit(Low_low_value_logit_scale)
+}
+Low_low_credible_lower <- apply(Low_low_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
+Low_low_credible_upper <- apply(Low_low_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
+
 # Plotting the results
 plot(high_high_subset$PCR_Prev, high_high_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "slateblue4",
      xlab = "PCR Prevalence", ylab = "LM Prevalence")
 points(high_low_subset$PCR_Prev, high_low_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "tan1")
 points(low_low_subset$PCR_Prev, low_low_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "green3")
 
-lines(seq(0,1,0.01), seq(0,1,0.01))
+lines(seq(0,1,0.01), seq(0,1,0.01), lwd = 3)
 lines(PCR_prevalence, High_high_fitted_microscopy, col = "slateblue4", lwd = 3)
 lines(PCR_prevalence, High_low_fitted_microscopy, col = "tan1", lwd = 3)
 lines(PCR_prevalence, Low_low_fitted_microscopy, col = "green3", lwd = 3)
+
+polygon(x = c(PCR_prevalence, rev(PCR_prevalence)), 
+        y = c(High_high_credible_upper, rev(High_high_credible_lower)), 
+        col = adjustcolor("slateblue", alpha.f = 0.5), border = NA)
+
+polygon(x = c(PCR_prevalence, rev(PCR_prevalence)), 
+        y = c(High_low_credible_upper, rev(High_low_credible_lower)), 
+        col = adjustcolor("tan1", alpha.f = 0.5), border = NA)
+
+polygon(x = c(PCR_prevalence, rev(PCR_prevalence)), 
+        y = c(Low_low_credible_upper, rev(Low_low_credible_lower)), 
+        col = adjustcolor("green3", alpha.f = 0.5), border = NA)
 
 legend("topleft", 
        legend = c("High High", "High Low", "Low low"), 

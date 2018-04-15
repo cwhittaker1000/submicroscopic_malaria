@@ -9,18 +9,17 @@ library(ssa)
 library(binom)
 
 # Load in the dataset
-data_frame <- Data.4th.February
-data_frame <- Data.4th.February.Dec.Rounded
+data_frame <- Zero.Tester.Data.4th.February.Dec.Rounded
 
 # Subset the data into old and new
-old_data <- data_frame[data_frame$Old_or_New == "Old",]
-new_data <- data_frame[data_frame$Old_or_New == "New",]
-full_data <- data_frame
+old_data <- data_frame[data_frame$Old_or_New == "Old" & (data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2), ]
+new_data <- data_frame[data_frame$Old_or_New == "New" & (data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2), ]
+full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2, ]
 
 # When removing the studies with zero values
-old_data <- data_frame[data_frame$Old_or_New == "Old" & data_frame$Was_Initially_Zero. == "N", ]
-new_data <- data_frame[data_frame$Old_or_New == "New" & data_frame$Was_Initially_Zero. == "N", ]
-full_data <- data_frame[data_frame$Was_Initially_Zero. == "N", ]
+old_data <- data_frame[data_frame$Old_or_New == "Old" & data_frame$Was_Initially_Zero. == "N" & (data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2), ]
+new_data <- data_frame[data_frame$Old_or_New == "New" & data_frame$Was_Initially_Zero. == "N" & (data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2), ]
+full_data <- data_frame[data_frame$Was_Initially_Zero. == "N" & (data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2), ]
 
 ## Specifying the data in the format required for input into RJAGS
 
@@ -32,21 +31,25 @@ old_microscopy_PCR_comparison <- list(prev_pcr = old_data$PCR_N_Positive, ## num
                                       prev_microscopy = old_data$Microscopy_N_Positive, ## number positive by microscopy,
                                       total_pcr = old_data$PCR_N_Tested, ## number tested by PCR,
                                       total_microscopy = old_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 98) #106) zeroes included                # Total sample data overall
+                                      N = 97) # Total sample data overall
+                                      #106 zeroes included, 97 zeroes excluded                
 
 # Data and results from the new systematic review
 new_microscopy_PCR_comparison <- list(prev_pcr = new_data$PCR_N_Positive, ## number positive by PCR,
                                       prev_microscopy = new_data$Microscopy_N_Positive,## number positive by microscopy,
                                       total_pcr = new_data$PCR_N_Tested, ## number tested by PCR,
                                       total_microscopy = new_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 217) #235) zeroes included
+                                      N = 216) # Total sample data overall
+                                      #234 zeroes included, 216 zeroes excluded                
 
 # Combined old and new data together
 full_microscopy_PCR_comparison <- list(prev_pcr = full_data$PCR_N_Positive, ## number positive by PCR,
                                        prev_microscopy = full_data$Microscopy_N_Positive, ## number positive by microscopy,
                                        total_pcr = full_data$PCR_N_Tested, ## number tested by PCR,
                                        total_microscopy = full_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                       N = 315) #344) zeroes included    
+                                       N = 313) # Total sample data overall
+                                      #340 zeroes included, 313 zeroes excluded                
+
 
 # Specifying the parameters of interest that RJAGS will track and output, and the 
 # initial values to start the chain with
@@ -99,7 +102,7 @@ full_beta_mean <- mean(as.array(full_micr_PCR_comp_model[, 1]))
 full_delt_mean <- mean(as.array(full_micr_PCR_comp_model[, 2]))
 
 # Specifying PCR prevalence to plot against
-Micro_prevalence <- seq(0.001,1,0.001)
+Micro_prevalence <- seq(0,1,0.001)
 logit_Micro_prevalence <- logit(Micro_prevalence)
 
 # Calculating the fitted values specifying the best fit line on the logit scale
@@ -107,6 +110,15 @@ logit_Micro_prevalence <- logit(Micro_prevalence)
 old_fitted_logit_PCR <- old_delt_mean + (1 + old_beta_mean)  * logit_Micro_prevalence
 new_fitted_logit_PCR <- new_delt_mean + (1 + new_beta_mean) * logit_Micro_prevalence
 full_fitted_logit_PCR <- full_delt_mean + (1 + full_beta_mean)  * logit_Micro_prevalence
+
+plot(logit(old_data$PCR_Prev), logit(old_data$Micro_Prev))
+lines(old_fitted_logit_PCR, logit_Micro_prevalence)
+
+plot(logit(new_data$PCR_Prev), logit(new_data$Micro_Prev))
+lines(new_fitted_logit_PCR, logit_Micro_prevalence)
+
+plot(logit(full_data$PCR_Prev), logit(full_data$Micro_Prev))
+lines(full_fitted_logit_PCR, logit_Micro_prevalence)
 
 # Converting them to the natural scale
 old_fitted_PCR <- expit(old_fitted_logit_PCR)
@@ -129,6 +141,27 @@ legend("topleft",
        lwd = 2,
        pt.cex = 2, 
        cex = 0.8)
+
+# Plotting the sensitivities
+plot(old_data$PCR_Prev, old_data$Micro_Prev/old_data$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue",
+     xlab = "PCR Prevalence", ylab = "Slide Prevalence")
+points(new_data$PCR_Prev, new_data$Micro_Prev/new_data$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "orange",
+     xlab = "PCR Prevalence", ylab = "Slide Prevalence")
+lines(old_fitted_PCR, Micro_prevalence/old_fitted_PCR, col = "blue", lwd = 3)
+lines(new_fitted_PCR, Micro_prevalence/new_fitted_PCR, col = "orange", lwd = 3)
+lines(full_fitted_PCR, Micro_prevalence/full_fitted_PCR, col = "black", lwd = 3)
+
+plot(old_data$PCR_Prev, old_data$Micro_Prev/old_data$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue",
+     xlab = "PCR Prevalence", ylab = "Slide Prevalence")
+lines(old_fitted_PCR, Micro_prevalence/old_fitted_PCR, col = "blue", lwd = 3)
+
+plot(new_data$PCR_Prev, new_data$Micro_Prev/new_data$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
+     xlab = "PCR Prevalence", ylab = "Slide Prevalence")
+lines(new_fitted_PCR, Micro_prevalence/new_fitted_PCR, col = "black", lwd = 3)
+
+plot(full_data$PCR_Prev, full_data$Micro_Prev/full_data$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
+     xlab = "PCR Prevalence", ylab = "Slide Prevalence")
+lines(full_fitted_PCR, Micro_prevalence/full_fitted_PCR, col = "black", lwd = 3)
 
 # Plotting the results separately
 

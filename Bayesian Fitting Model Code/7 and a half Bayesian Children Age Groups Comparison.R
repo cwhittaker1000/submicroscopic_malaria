@@ -8,7 +8,7 @@ library(LMest)
 library(ssa)
 
 # Load in the dataset
-data_frame <- Zero.Tester.Data.4th.February.Dec.Rounded
+data_frame <- Final_R_Import_Data
 
 # Manipulate data_frame in prep for analysis
 data_frame$Age_Group <- as.factor(data_frame$Age_Group)
@@ -77,7 +77,7 @@ adult_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # NEW
 # YOUNG CHILD DATA
 update(young_children_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
 young_children_micr_PCR_comp_model <- coda.samples(young_children_micr_PCR_comp_model, params, 
-                                             n.iter = 35000, thin = 70) # Model updating
+                                             n.iter = 100000, thin = 70) # Model updating
 summary(young_children_micr_PCR_comp_model)
 plot(young_children_micr_PCR_comp_model)
 autocorr.plot(young_children_micr_PCR_comp_model)
@@ -88,7 +88,7 @@ young_child_delt_mean <- mean(as.array(young_children_micr_PCR_comp_model[, 2]))
 # OLD CHILD DATA
 update(old_children_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
 old_children_micr_PCR_comp_model <- coda.samples(old_children_micr_PCR_comp_model, params, 
-                                                   n.iter = 35000, thin = 70) # Model updating
+                                                   n.iter = 100000, thin = 70) # Model updating
 summary(old_children_micr_PCR_comp_model)
 plot(old_children_micr_PCR_comp_model)
 autocorr.plot(old_children_micr_PCR_comp_model)
@@ -99,7 +99,7 @@ old_child_delt_mean <- mean(as.array(old_children_micr_PCR_comp_model[, 2]))
 # ADULT DATA
 update(adult_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
 adult_micr_PCR_comp_model <- coda.samples(adult_micr_PCR_comp_model, params, 
-                                          n.iter = 35000, thin = 70) # Model updating
+                                          n.iter = 100000, thin = 70) # Model updating
 summary(adult_micr_PCR_comp_model)
 plot(adult_micr_PCR_comp_model)
 autocorr.plot(adult_micr_PCR_comp_model)
@@ -107,14 +107,24 @@ autocorr.plot(adult_micr_PCR_comp_model)
 adult_beta_mean <- mean(as.array(adult_micr_PCR_comp_model[, 1]))
 adult_delt_mean <- mean(as.array(adult_micr_PCR_comp_model[, 2]))
 
+# Checking the minimum and maximum
+max(young_children$PCR_Prev)
+min(young_children$PCR_Prev)
+
+max(old_children$PCR_Prev)
+min(old_children$PCR_Prev)
+
+max(adults$PCR_Prev)
+min(adults$PCR_Prev)
+
 # Specifying PCR prevalence to plot against
 PCR_prevalence_young <- seq(0.001,0.9,0.001)
 logit_PCR_prevalence_young <- logit(PCR_prevalence_young)
 
-PCR_prevalence_old <- seq(0.001, 0.97, 0.001)
+PCR_prevalence_old <- seq(0.04, 0.97, 0.001)
 logit_PCR_prevalence_old <- logit(PCR_prevalence_old)
 
-PCR_prevalence_adults <- seq(0.001, 0.8, 0.001)
+PCR_prevalence_adults <- seq(0.02, 0.8, 0.001)
 logit_PCR_prevalence_adults <- logit(PCR_prevalence_adults)
 
 # Calculating the fitted values specifying the best fit line on the logit scale
@@ -149,12 +159,11 @@ legend("topleft",
 # 95% credible interval plotting
 
 # Young Children
-young_children_values <- seq(0, 0.9, 0.001)
 young_children_chains <- young_children_micr_PCR_comp_model[[1]]
-young_children_pred_mean_dist <- matrix(NA, nrow = nrow(young_children_chains), ncol = length(young_children_values))
+young_children_pred_mean_dist <- matrix(NA, nrow = nrow(young_children_chains), ncol = length(PCR_prevalence_young))
 for (i in 1:nrow(young_children_pred_mean_dist)){
   young_children_value_logit_scale <- young_children_chains[i, "delt"] + 
-                                      (1 + young_children_chains[i, "beta"]) * logit(young_children_values)
+                                      (1 + young_children_chains[i, "beta"]) * logit(PCR_prevalence_young)
   young_children_pred_mean_dist[i, ] <- expit(young_children_value_logit_scale)
 }
 young_children_credible_lower <- apply(young_children_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
@@ -162,38 +171,36 @@ young_children_credible_upper <- apply(young_children_pred_mean_dist, MARGIN = 2
 
 
 # Old Children
-old_children_values <- seq(0, 0.97, 0.001)
 old_children_chains <- old_children_micr_PCR_comp_model[[1]]
-old_children_pred_mean_dist <- matrix(NA, nrow = nrow(old_children_chains), ncol = length(old_children_values))
+old_children_pred_mean_dist <- matrix(NA, nrow = nrow(old_children_chains), ncol = length(PCR_prevalence_old))
 for (i in 1:nrow(old_children_pred_mean_dist)){
   old_children_value_logit_scale <- old_children_chains[i, "delt"] + 
-    (1 + old_children_chains[i, "beta"]) * logit(old_children_values)
+    (1 + old_children_chains[i, "beta"]) * logit(PCR_prevalence_old)
   old_children_pred_mean_dist[i, ] <- expit(old_children_value_logit_scale)
 }
 old_children_credible_lower <- apply(old_children_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
 old_children_credible_upper <- apply(old_children_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
 
 # Adults
-adults_values <- seq(0, 0.8, 0.001)
 adults_chains <- adult_micr_PCR_comp_model[[1]]
-adults_pred_mean_dist <- matrix(NA, nrow = nrow(adults_chains), ncol = length(adults_values))
+adults_pred_mean_dist <- matrix(NA, nrow = nrow(adults_chains), ncol = length(PCR_prevalence_adults))
 for (i in 1:nrow(adults_pred_mean_dist)){
   adults_value_logit_scale <- adults_chains[i, "delt"] + 
-    (1 + adults_chains[i, "beta"]) * logit(adults_values)
+    (1 + adults_chains[i, "beta"]) * logit(PCR_prevalence_adults)
   adults_pred_mean_dist[i, ] <- expit(adults_value_logit_scale)
 }
 adults_credible_lower <- apply(adults_pred_mean_dist, MARGIN = 2, quantile, prob = 0.025)
 adults_credible_upper <- apply(adults_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
 
-polygon(x = c(young_children_values, rev(young_children_values)), 
+polygon(x = c(PCR_prevalence_young, rev(PCR_prevalence_young)), 
         y = c(young_children_credible_upper, rev(young_children_credible_lower)), 
         col = adjustcolor("#EAE600", alpha.f = 0.5), border = NA)
 
-polygon(x = c(old_children_values, rev(old_children_values)), 
+polygon(x = c(PCR_prevalence_old, rev(PCR_prevalence_old)), 
         y = c(old_children_credible_upper, rev(old_children_credible_lower)), 
         col = adjustcolor("orange", alpha.f = 0.5), border = NA)
 
-polygon(x = c(adults_values, rev(adults_values)), 
+polygon(x = c(PCR_prevalence_adults, rev(PCR_prevalence_adults)), 
         y = c(adults_credible_upper, rev(adults_credible_lower)), 
         col = adjustcolor("red", alpha.f = 0.5), border = NA)
 
@@ -204,24 +211,23 @@ plot(young_children$PCR_Prev, young_children$Micro_Prev/young_children$PCR_Prev,
      xlab = "PCR Prevalence (%)", ylab = "Sensitivity of Microscopy (%)")
 lines(PCR_prevalence_young, young_child_fitted_microscopy/PCR_prevalence_young, col = "#EAE600", lwd = 3)
 
-young_data_values <- seq(0.001,0.9,0.001)
 young_data_chains_sens <- young_children_micr_PCR_comp_model[[1]]
-young_data_pred_mean_dist_sens <- matrix(NA, nrow = nrow(young_data_chains_sens), ncol = length(young_data_values))
+young_data_pred_mean_dist_sens <- matrix(NA, nrow = nrow(young_data_chains_sens), ncol = length(PCR_prevalence_young))
 for (i in 1:nrow(young_data_pred_mean_dist_sens)){
   young_data_value_logit_scale <- young_data_chains_sens[i, "delt"] + 
-    (1 + young_data_chains_sens[i, "beta"]) * logit(young_data_values)
+    (1 + young_data_chains_sens[i, "beta"]) * logit(PCR_prevalence_young)
   young_data_pred_mean_dist_sens[i, ] <- expit(young_data_value_logit_scale)
 }
 young_data_credible_lower_sens <- apply(young_data_pred_mean_dist_sens, MARGIN = 2, quantile, prob = 0.025)
 young_data_credible_upper_sens <- apply(young_data_pred_mean_dist_sens, MARGIN = 2, quantile, prob = 0.975)
 
 # Actually = lower because doing the 1 -
-young_data_sensitivity_upper <- young_data_credible_upper_sens / young_data_values
+young_data_sensitivity_upper <- young_data_credible_upper_sens / PCR_prevalence_young
 
 # Actually = upper because doing the 1 -
-young_data_sensitivity_lower <- young_data_credible_lower_sens / young_data_values
+young_data_sensitivity_lower <- young_data_credible_lower_sens / PCR_prevalence_young
 
-polygon(x = c(young_data_values, rev(young_data_values)), 
+polygon(x = c(PCR_prevalence_young, rev(PCR_prevalence_young)), 
         y = c(young_data_sensitivity_upper, rev(young_data_sensitivity_lower)), 
         col = adjustcolor("#EAE600", alpha.f = 0.5), border = NA)
 
@@ -230,24 +236,23 @@ plot(old_children$PCR_Prev, old_children$Micro_Prev/old_children$PCR_Prev, xlim 
      xlab = "PCR Prevalence (%)", ylab = "Sensitivity of Microscopy (%)")
 lines(PCR_prevalence_old, old_child_fitted_microscopy/PCR_prevalence_old, col = "orange", lwd = 3)
 
-old_data_values <- seq(0.001,1,0.001)
 old_data_chains_sens <- old_children_micr_PCR_comp_model[[1]]
-old_data_pred_mean_dist_sens <- matrix(NA, nrow = nrow(old_data_chains_sens), ncol = length(old_data_values))
+old_data_pred_mean_dist_sens <- matrix(NA, nrow = nrow(old_data_chains_sens), ncol = length(PCR_prevalence_old))
 for (i in 1:nrow(old_data_pred_mean_dist_sens)){
   old_data_value_logit_scale <- old_data_chains_sens[i, "delt"] + 
-    (1 + old_data_chains_sens[i, "beta"]) * logit(old_data_values)
+    (1 + old_data_chains_sens[i, "beta"]) * logit(PCR_prevalence_old)
   old_data_pred_mean_dist_sens[i, ] <- expit(old_data_value_logit_scale)
 }
 old_data_credible_lower_sens <- apply(old_data_pred_mean_dist_sens, MARGIN = 2, quantile, prob = 0.025)
 old_data_credible_upper_sens <- apply(old_data_pred_mean_dist_sens, MARGIN = 2, quantile, prob = 0.975)
 
 # Actually = lower because doing the 1 -
-old_data_sensitivity_upper <- old_data_credible_upper_sens / old_data_values
+old_data_sensitivity_upper <- old_data_credible_upper_sens / PCR_prevalence_old
 
 # Actually = upper because doing the 1 -
-old_data_sensitivity_lower <- old_data_credible_lower_sens / old_data_values
+old_data_sensitivity_lower <- old_data_credible_lower_sens / PCR_prevalence_old
 
-polygon(x = c(old_data_values, rev(old_data_values)), 
+polygon(x = c(PCR_prevalence_old, rev(PCR_prevalence_old)), 
         y = c(old_data_sensitivity_upper, rev(old_data_sensitivity_lower)), 
         col = adjustcolor("orange", alpha.f = 0.5), border = NA)
 
@@ -256,24 +261,23 @@ plot(adults$PCR_Prev, adults$Micro_Prev/adults$PCR_Prev, xlim = c(0, 1), ylim = 
      xlab = "PCR Prevalence (%)", ylab = "Sensitivity of Microscopy (%)")
 lines(PCR_prevalence_adults, adult_fitted_microscopy/PCR_prevalence_adults, col = "red", lwd = 3)
 
-adult_data_values <- seq(0.001,0.8,0.001)
 adult_data_chains_sens <- adult_micr_PCR_comp_model[[1]]
-adult_data_pred_mean_dist_sens <- matrix(NA, nrow = nrow(adult_data_chains_sens), ncol = length(adult_data_values))
+adult_data_pred_mean_dist_sens <- matrix(NA, nrow = nrow(adult_data_chains_sens), ncol = length(PCR_prevalence_adults))
 for (i in 1:nrow(adult_data_pred_mean_dist_sens)){
   adult_data_value_logit_scale <- adult_data_chains_sens[i, "delt"] + 
-    (1 + adult_data_chains_sens[i, "beta"]) * logit(adult_data_values)
+    (1 + adult_data_chains_sens[i, "beta"]) * logit(PCR_prevalence_adults)
   adult_data_pred_mean_dist_sens[i, ] <- expit(adult_data_value_logit_scale)
 }
 adult_data_credible_lower_sens <- apply(adult_data_pred_mean_dist_sens, MARGIN = 2, quantile, prob = 0.025)
 adult_data_credible_upper_sens <- apply(adult_data_pred_mean_dist_sens, MARGIN = 2, quantile, prob = 0.975)
 
 # Actually = lower because doing the 1 -
-adult_data_sensitivity_upper <- adult_data_credible_upper_sens / adult_data_values
+adult_data_sensitivity_upper <- adult_data_credible_upper_sens / PCR_prevalence_adults
 
 # Actually = upper because doing the 1 -
-adult_data_sensitivity_lower <- adult_data_credible_lower_sens / adult_data_values
+adult_data_sensitivity_lower <- adult_data_credible_lower_sens / PCR_prevalence_adults
 
-polygon(x = c(adult_data_values, rev(adult_data_values)), 
+polygon(x = c(PCR_prevalence_adults, rev(PCR_prevalence_adults)), 
         y = c(adult_data_sensitivity_upper, rev(adult_data_sensitivity_lower)), 
         col = adjustcolor("red", alpha.f = 0.5), border = NA)
 

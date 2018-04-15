@@ -11,7 +11,11 @@ library(binom)
 # Load in the dataset
 # data_frame <- Data.4th.February
 # data_frame <- Data.4th.February.Dec.Rounded
-data_frame <- Zero.Tester.Data.4th.February.Dec.Rounded
+data_frame <- Final_R_Import_Data
+
+# Checking that the dataframe lacks instances where sensitivity >1 
+sens_greater_than_one <- (data_frame$Micro_Prev/data_frame$PCR_Prev) > 1
+bloop <- data_frame[sens_greater_than_one, ]
 
 # Subset the data into old and new
 old_data <- data_frame[data_frame$Old_or_New == "Old" & (data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2), ]
@@ -40,14 +44,14 @@ new_microscopy_PCR_comparison <- list(prev_pcr = new_data$PCR_N_Positive, ## num
                                         prev_microscopy = new_data$Microscopy_N_Positive,## number positive by microscopy,
                                         total_pcr = new_data$PCR_N_Tested, ## number tested by PCR,
                                         total_microscopy = new_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 234) # Total sample data overall
+                                      N = 232) # Total sample data overall
 
 # Combined old and new data together
 full_microscopy_PCR_comparison <- list(prev_pcr = full_data$PCR_N_Positive, ## number positive by PCR,
                                         prev_microscopy = full_data$Microscopy_N_Positive, ## number positive by microscopy,
                                         total_pcr = full_data$PCR_N_Tested, ## number tested by PCR,
                                         total_microscopy = full_data$Microscopy_N_Tested, ## number tested by microscopy
-                                        N = 340) # Total sample data overall
+                                        N = 338) # Total sample data overall
 
 # Specifying the parameters of interest that RJAGS will track and output, and the 
 # initial values to start the chain with
@@ -69,7 +73,7 @@ full_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL 
 # OLD DATA
 update(old_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
 old_micr_PCR_comp_model <- coda.samples(old_micr_PCR_comp_model, params, 
-                                    n.iter = 35000, thin = 70) # Model updating
+                                    n.iter = 100000, thin = 70) # Model updating
 summary(old_micr_PCR_comp_model)
 plot(old_micr_PCR_comp_model)
 autocorr.plot(old_micr_PCR_comp_model)
@@ -80,7 +84,7 @@ old_delt_mean <- mean(as.array(old_micr_PCR_comp_model[, 2]))
 # NEW DATA
 update(new_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
 new_micr_PCR_comp_model <- coda.samples(new_micr_PCR_comp_model, params, 
-                                        n.iter = 35000, thin = 70) # Model updating
+                                        n.iter = 100000, thin = 70) # Model updating
 summary(new_micr_PCR_comp_model)
 plot(new_micr_PCR_comp_model)
 autocorr.plot(new_micr_PCR_comp_model)
@@ -91,7 +95,7 @@ new_delt_mean <- mean(as.array(new_micr_PCR_comp_model[, 2]))
 # FULL DATA
 update(full_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
 full_micr_PCR_comp_model <- coda.samples(full_micr_PCR_comp_model, params, 
-                                        n.iter = 35000, thin = 70) # Model updating
+                                        n.iter = 100000, thin = 70) # Model updating
 summary(full_micr_PCR_comp_model)
 plot(full_micr_PCR_comp_model)
 autocorr.plot(full_micr_PCR_comp_model)
@@ -160,13 +164,13 @@ full_data_credible_lower <- apply(full_data_pred_mean_dist, MARGIN = 2, quantile
 full_data_credible_upper <- apply(full_data_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
 
 # Plotting the results
-plot(new_data$PCR_Prev, new_data$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#04E824",
+plot(new_data$PCR_Prev, new_data$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#FF5900",
      xlab = "PCR Prevalence", ylab = "LM Prevalence")
-points(old_data$PCR_Prev, old_data$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#FF5900")
+points(old_data$PCR_Prev, old_data$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#019CD9")
 lines(seq(0,1,0.01), seq(0,1,0.01), lwd = 2, lty = 2)
-lines(PCR_prevalence_new, new_fitted_microscopy, col = "#04E824", lwd = 3)
+lines(PCR_prevalence_new, new_fitted_microscopy, col = "#019CD9", lwd = 3)
 lines(PCR_prevalence_old, old_fitted_microscopy, col = "#FF5900", lwd = 3)
-lines(PCR_prevalence_full, full_fitted_microscopy, col = "#383838", lwd = 3)
+lines(PCR_prevalence_full, full_fitted_microscopy, col = "#FEC93C", lwd = 3)
 
 polygon(x = c(old_data_values, rev(old_data_values)), 
         y = c(old_data_credible_upper, rev(old_data_credible_lower)), 
@@ -182,13 +186,13 @@ polygon(x = c(new_data_values, rev(new_data_values)),
 
 polygon(x = c(full_data_values, rev(full_data_values)), 
         y = c(full_data_credible_upper, rev(full_data_credible_lower)), 
-        col = adjustcolor("#383838", alpha.f = 0.5), border = NA)
+        col = adjustcolor("#FEC93C", alpha.f = 0.5), border = NA)
 # optional lines: lines(full_data_values, full_data_credible_lower, col = "black", lwd = 1)
 # optional lines: lines(full_data_values, full_data_credible_upper, col = "black", lwd = 1)
 
 legend("topleft", 
        legend = c("Old Data", "New Data",  "Old and New Data"), 
-       col = c("#04E824", "#FF5900", "#383838"),
+       col = c("#019CD9", "#FF5900", "#FEC93C"),
        pch = 20,
        pt.cex = 2, 
        cex = 0.8)

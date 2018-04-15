@@ -26,7 +26,8 @@ HH_Subpatent_Percentage <- (100 - HH_Patent_Percentage)
 # Calculating subpatent contribution to transmission
 HH_Subpatent_Contribution <- (HH_Subpatent_Percentage) / ((2.65 * HH_Patent_Percentage) + HH_Subpatent_Percentage)
 # Plotting
-HH_plot <- plot(HH_PCR_Prevalence, HH_Subpatent_Contribution, xlim = c(0, 1), ylim = c(0, 1))
+plot(0,0, xlim = c(0,1), ylim = c(0,1))
+HH_plot <- lines(HH_PCR_Prevalence, HH_Subpatent_Contribution, xlim = c(0, 1), ylim = c(0, 1))
 
 mean(HH_Subpatent_Contribution)
 
@@ -41,7 +42,8 @@ HL_Subpatent_Percentage <- (100 - HL_Patent_Percentage)
 # Calculating subpatent contribution to transmission
 HL_Subpatent_Contribution <- (HL_Subpatent_Percentage) / ((2.65 * HL_Patent_Percentage) + HL_Subpatent_Percentage)
 # Plotting
-HL_plot <- plot(HL_PCR_Prevalence, HL_Subpatent_Contribution, xlim = c(0, 1), ylim = c(0, 1))
+plot(0,0, xlim = c(0,1), ylim = c(0,1))
+HL_plot <- lines(HL_PCR_Prevalence, HL_Subpatent_Contribution, xlim = c(0, 1), ylim = c(0, 1))
 
 mean(HL_Subpatent_Contribution)
 
@@ -56,7 +58,8 @@ LL_Subpatent_Percentage <- (100 - LL_Patent_Percentage)
 # Calculating subpatent contribution to transmission
 LL_Subpatent_Contribution <- (LL_Subpatent_Percentage) / ((2.65 * LL_Patent_Percentage) + LL_Subpatent_Percentage)
 # Plotting
-LL_plot <- plot(LL_PCR_Prevalence, LL_Subpatent_Contribution, xlim = c(0, 1), ylim = c(0, 1))
+plot(0,0, xlim = c(0,1), ylim = c(0,1))
+LL_plot <- lines(LL_PCR_Prevalence, LL_Subpatent_Contribution, xlim = c(0, 1), ylim = c(0, 1))
 
 mean(LL_Subpatent_Contribution)
 

@@ -11,7 +11,8 @@ library(binom)
 # Load in the dataset
 #data_frame <- Data.4th.February
 #data_frame <- Data.4th.February.Dec.Rounded
-data_frame <- Final_R_Import_Data
+#data_frame <- Final_R_Import_Data
+data_frame <- Updated_R_Import_Data_Age_Disagg_Sorted
 
 #Manipulate data_frame in prep for analysis
 data_frame$Old_or_New <- as.factor(data_frame$Old_or_New)
@@ -47,7 +48,7 @@ East_Africa_microscopy_PCR_comparison <- list(prev_pcr = East_Africa$PCR_N_Posit
                                       prev_microscopy = East_Africa$Microscopy_N_Positive,## number positive by microscopy,
                                       total_pcr = East_Africa$PCR_N_Tested, ## number tested by PCR,
                                       total_microscopy = East_Africa$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 161)            # Total sample data overall
+                                      N = 122)            # Total sample data overall
                                       # __ zeroes not included, 161 zeroes included  
 
 # South American data
@@ -63,7 +64,7 @@ West_Africa_microscopy_PCR_comparison <- list(prev_pcr = West_Africa$PCR_N_Posit
                                                 prev_microscopy = West_Africa$Microscopy_N_Positive, ## number positive by microscopy,
                                                 total_pcr = West_Africa$PCR_N_Tested, ## number tested by PCR,
                                                 total_microscopy = West_Africa$Microscopy_N_Tested, ## number tested by microscopy,
-                                                N = 77) 
+                                                N = 67) 
                                                 # __ zeroes not included, 77 zeroes included  
 
 # Oceania data
@@ -140,6 +141,32 @@ autocorr.plot(West_Africa_micr_PCR_comp_model)
 West_Africa_beta_mean <- mean(as.array(West_Africa_micr_PCR_comp_model[, 1]))
 West_Africa_delt_mean <- mean(as.array(West_Africa_micr_PCR_comp_model[, 2]))
 
+# Calculating posterior densities for each Global Region's parameter estimates and comparing them graphically
+Asia_beta <- density(as.array(Asia_micr_PCR_comp_model[, 1]))
+East_Africa_beta <- density(as.array(East_Africa_micr_PCR_comp_model[, 1]))
+South_America_beta <- density(as.array(South_America_micr_PCR_comp_model[, 1]))
+West_Africa_beta <- density(as.array(West_Africa_micr_PCR_comp_model[, 1]))
+
+plot(South_America_beta, col = "blue", ylim = c(0, 10), xlim = c(-0.5, 0.9), main = "Beta")
+polygon(Asia_beta, col = adjustcolor("black", 0.4), border = "black", lwd = 2)
+polygon(East_Africa_beta, col = adjustcolor("green", 0.4), border = "green", lwd = 2)
+polygon(West_Africa_beta, col = adjustcolor("red", 0.4), border = "red", lwd = 2)
+polygon(South_America_beta, col = adjustcolor("blue", 0.4), border = "blue", lwd = 2)
+legend(0.4, 9, legend=c("Asia", "East Africa", "South America", "West Africa"), col=c("black", "green", "blue", "red"), lty=1, cex=0.8, lwd = 2)
+
+Asia_delt <- density(as.array(Asia_micr_PCR_comp_model[, 2]))
+East_Africa_delt <- density(as.array(East_Africa_micr_PCR_comp_model[, 2]))
+South_America_delt <- density(as.array(South_America_micr_PCR_comp_model[, 2]))
+West_Africa_delt <- density(as.array(West_Africa_micr_PCR_comp_model[, 2]))
+
+plot(South_America_delt, col = "blue", ylim = c(0, 6), xlim = c(-4, 0), main = "Delta")
+polygon(Asia_delt, col = adjustcolor("black", 0.4), border = "black", lwd = 2)
+polygon(East_Africa_delt, col = adjustcolor("green", 0.4), border = "green", lwd = 2)
+polygon(West_Africa_delt, col = adjustcolor("red", 0.4), border = "red", lwd = 2)
+polygon(South_America_delt, col = adjustcolor("blue", 0.4), border = "blue", lwd = 2)
+legend(-4, 5.5, legend=c("Asia", "East Africa", "South America", "West Africa"), col=c("black", "green", "blue", "red"), lty=1, cex=0.8, lwd = 2)
+
+
 # Oceania DATA
 update(Oceania_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
 Oceania_micr_PCR_comp_model <- coda.samples(Oceania_micr_PCR_comp_model, params, 
@@ -183,6 +210,9 @@ Oceania_logit_PCR_prevalence <- logit(PCR_prevalence_Oceania)
 # Calculating the fitted values specifying the best fit line on the logit scale
 # DON'T FORGET IT'S delta' + (1 + BETA) * logit_PCR_prevalence
 Asia_fitted_logit_microscopy <- Asia_delt_mean + (1 + Asia_beta_mean)  * Asia_logit_PCR_prevalence
+
+exp(Asia_fitted_logit_microscopy)
+
 East_Africa_fitted_logit_microscopy <- East_Africa_delt_mean + (1 + East_Africa_beta_mean) * East_Africa_logit_PCR_prevalence
 South_America_fitted_logit_microscopy <- South_America_delt_mean + (1 + South_America_beta_mean)  * South_America_logit_PCR_prevalence
 West_Africa_fitted_logit_microscopy <- West_Africa_delt_mean + (1 + West_Africa_beta_mean) * West_Africa_logit_PCR_prevalence
@@ -260,11 +290,11 @@ Oceania_credible_upper <- apply(Oceania_pred_mean_dist, MARGIN = 2, quantile, pr
 # Plotting the results altoether
 plot(Asia$PCR_Prev, Asia$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
-points(East_Africa$PCR_Prev, East_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "green3")
-points(South_America$PCR_Prev, South_America$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue")
-points(West_Africa$PCR_Prev, West_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "red")
+plot(East_Africa$PCR_Prev, East_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "green3")
+plot(South_America$PCR_Prev, South_America$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue")
+plot(West_Africa$PCR_Prev, West_Africa$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "red")
 #points(Oceania$PCR_Prev, Oceania$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "turquoise")
-lines(seq(0,1,0.01), seq(0,1,0.01))
+lines(seq(0,1,0.01), seq(0,1,0.01), lwd = 2, lty = 2)
 
 lines(Asia_values, Asia_fitted_microscopy, col = "black", lwd = 3)
 polygon(x = c(Asia_values, rev(Asia_values)), 
@@ -347,7 +377,7 @@ arrows(Asia$PCR_Prev, Asia_Lower_Micro_Confint, Asia$PCR_Prev,
 
 # Plotting the sensitivity
 plot(Asia$PCR_Prev, Asia$Micro_Prev/Asia$PCR_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "black",
-     xlab = "PCR Prevalence", ylab = "Slide Prevalence")
+     xlab = "PCR Prevalence", ylab = "Sensitivity")
 lines(PCR_prevalence_Asia, Asia_fitted_microscopy/PCR_prevalence_Asia, col = "black", lwd = 3)
 
 Asia_data_values <- seq(0,0.8,0.001)

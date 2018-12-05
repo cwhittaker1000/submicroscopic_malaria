@@ -8,7 +8,8 @@ library(LMest)
 library(ssa)
 
 # Load in the dataset
-data_frame <- Final_R_Import_Data
+#data_frame <- Final_R_Import_Data
+data_frame <- Updated_R_Import_Data_Age_Disagg_Sorted
 
 # Manipulate data_frame in prep for analysis
 data_frame$Age_Group <- as.factor(data_frame$Age_Group)
@@ -17,16 +18,20 @@ data_frame$Age_Group_2 <- as.factor(data_frame$Age_Group_2)
 levels(data_frame$Age_Group)
 levels(data_frame$Age_Group_2)
 
+# for removing Walldorf et al data
+#data_frame <- data_frame[c(-180:-232), ]
+
 # Create individual datasets for each global region
-young_children <- data_frame[data_frame$Age_Group_2 == "0-5", ]
+young_children <- data_frame[data_frame$Age_Group_2 == "0-5" , ]
 old_children <- data_frame[data_frame$Age_Group_2 ==  "5-15years", ]
+#old_children <- data_frame[data_frame$Age_Group_2 ==  "5-15years" | data_frame$Age_Group_2 == "0-5" , ]
 adults <- data_frame[data_frame$Age_Group == "15+",]
 
-young_children <- data_frame[data_frame$Age_Group_2 == "0-5" & data_frame$Old_or_New == "New", ]
-old_children <- data_frame[data_frame$Age_Group_2 ==  "5-15years" & data_frame$Old_or_New == "New", ]
-adults <- data_frame[data_frame$Age_Group == "15+" & data_frame$Old_or_New == "New", ]
-
-# Without the zeroes
+# young_children <- data_frame[data_frame$Age_Group_2 == "0-5" & data_frame$Old_or_New == "New", ]
+# old_children <- data_frame[data_frame$Age_Group_2 ==  "5-15years" & data_frame$Old_or_New == "New", ]
+# adults <- data_frame[data_frame$Age_Group == "15+" & data_frame$Old_or_New == "New", ]
+# 
+# # Without the zeroes
 # young_children <- data_frame[data_frame$Age_Group_2 == "0-5" & data_frame$Was_Initially_Zero. == "N", ]
 # old_children <- data_frame[data_frame$Age_Group_2 == "5-15years" & data_frame$Was_Initially_Zero. == "N", ]
 # adults <- data_frame[data_frame$Age_Group == "15+" & data_frame$Was_Initially_Zero. == "N",]
@@ -46,13 +51,13 @@ old_child_microscopy_PCR_comparison <- list(prev_pcr = old_children$PCR_N_Positi
                                               prev_microscopy = old_children$Microscopy_N_Positive, ## number positive by microscopy,
                                               total_pcr = old_children$PCR_N_Tested, ## number tested by PCR,
                                               total_microscopy = old_children$Microscopy_N_Tested, ## number tested by microscopy,
-                                              N = 36)  #36 overall data           # Total sample data overall
+                                              N = 35)  #36 overall data           # Total sample data overall
 
 adult_microscopy_PCR_comparison <- list(prev_pcr = adults$PCR_N_Positive, ## number positive by PCR,
                                         prev_microscopy = adults$Microscopy_N_Positive,## number positive by microscopy,
                                         total_pcr = adults$PCR_N_Tested, ## number tested by PCR,
                                         total_microscopy = adults$Microscopy_N_Tested, ## number tested by microscopy,
-                                        N = 28) #28 overall data
+                                        N = 42) #28 overall data
 
 
 

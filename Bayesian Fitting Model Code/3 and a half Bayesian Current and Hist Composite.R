@@ -10,7 +10,9 @@ library(ssa)
 # Load in the dataset
 # data_frame <- Data.4th.February
 # data_frame <- Data.4th.February.Dec.Rounded
-data_frame <- Final_R_Import_Data
+# data_frame <- Final_R_Import_Data
+data_frame <- Updated_R_Import_Data_Age_Disagg_Sorted
+
 
 # Manipulate data_frame in prep for analysis
 data_frame$Old_or_New <- as.factor(data_frame$Old_or_New)
@@ -23,16 +25,8 @@ data_frame$Trans_Now <- as.factor(data_frame$Trans_Now)
 data_frame <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2, ]
 # Subsetting data_frame, do if 0s NOT removed
 data_frame <- data_frame[order(data_frame$Trans_Hist), ]
-data_frame <- data_frame[1:213, ]
+data_frame <- data_frame[1:166, ]
 
-# OPTIONAL- REMOVE THOSE WHICH WERE INITIALLY ZERO NOT NECESSARY ANYMORE
-# data_frame <- data_frame[data_frame$Was_Initially_Zero. == "N", ]
-
-#For when subsetting data with < 40% PCR Prevalence
-data_frame <- data_frame[(data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2)
-                         & data_frame$PCR_Prev < 0.4, ]
-data_frame <- data_frame[order(data_frame$Trans_Hist), ]
-data_frame <- data_frame[1:139, ]
 
 # Add columns for composite components
 for (i in 1:length(data_frame[,1])) {
@@ -97,7 +91,7 @@ high_high_microscopy_PCR_comparison <- list(prev_pcr = high_high_subset$PCR_N_Po
                                        prev_microscopy = high_high_subset$Microscopy_N_Positive, ## number positive by microscopy,
                                        total_pcr = high_high_subset$PCR_N_Tested, ## number tested by PCR,
                                        total_microscopy = high_high_subset$Microscopy_N_Tested, ## number tested by microscopy,
-                                       N = 96) 
+                                       N = 66) 
 # 96 if including all data, 93 if without sensitivities < 1                                        
 #44 if not including > 0.4) 
 
@@ -106,7 +100,7 @@ high_low_microscopy_PCR_comparison <- list(prev_pcr = high_low_subset$PCR_N_Posi
                                               prev_microscopy = high_low_subset$Microscopy_N_Positive,## number positive by microscopy,
                                               total_pcr = high_low_subset$PCR_N_Tested, ## number tested by PCR,
                                               total_microscopy = high_low_subset$Microscopy_N_Tested, ## number tested by microscopy,
-                                              N = 89) 
+                                              N = 71) 
 # 89 if full data, 83 if without sensitivities < 1                                                
 #69 if not including > 0.4) 
 
@@ -115,7 +109,7 @@ low_low_microscopy_PCR_comparison <- list(prev_pcr = low_low_subset$PCR_N_Positi
                                                 prev_microscopy = low_low_subset$Microscopy_N_Positive, ## number positive by microscopy,
                                                 total_pcr = low_low_subset$PCR_N_Tested, ## number tested by PCR,
                                                 total_microscopy = low_low_subset$Microscopy_N_Tested, ## number tested by microscopy,
-                                                N = 28) 
+                                                N = 29) 
 # 28 if full data, same if without sensitivites <1                                                    
 #28 if not including > 0.4 
 
@@ -236,7 +230,7 @@ Low_low_credible_lower <- apply(Low_low_pred_mean_dist, MARGIN = 2, quantile, pr
 Low_low_credible_upper <- apply(Low_low_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
 
 # Plotting the results
-plot(high_high_subset$PCR_Prev, high_high_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#00A600FF",
+plot(high_high_subset$PCR_Prev, high_high_subset$Micro_Prev, xlim = c(0, 0.2), ylim = c(0, 0.2), pch = 20, col = "#00A600FF",
      xlab = "PCR Prevalence", ylab = "LM Prevalence")
 points(high_low_subset$PCR_Prev, high_low_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#ECB176FF")
 points(low_low_subset$PCR_Prev, low_low_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "darkgrey")
@@ -381,3 +375,4 @@ low_low_data_sensitivity_lower <- low_low_data_credible_lower_sens / PCR_prevale
 polygon(x = c(PCR_prevalence_low_low, rev(PCR_prevalence_low_low)), 
         y = c(low_low_data_sensitivity_upper, rev(low_low_data_sensitivity_lower)), 
         col = adjustcolor("darkgrey", alpha.f = 0.5), border = NA)
+

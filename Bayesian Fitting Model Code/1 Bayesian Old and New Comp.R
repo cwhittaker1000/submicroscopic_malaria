@@ -1,4 +1,7 @@
-# Access relevant packages
+# Whittaker et al., 2019 Submicroscopic Malaria Systematic Review
+# Analyses Responsible for Producing Figure 1 In the Paper
+
+# Access and load various required packages for the analyses
 library(rjags)
 library(moments)
 library(gtools)
@@ -8,55 +11,43 @@ library(LMest)
 library(ssa)
 library(binom)
 
-# Load in the dataset
-# data_frame <- Data.4th.February
-# data_frame <- Data.4th.February.Dec.Rounded
-data_frame <- Final_R_Import_Data
+# Load in the dataset and subset the data into:
+#        1) Data from the previous review, Okell et al., 2012 --> old_data
+#        2) Data from this review, Whittaker et al., 2019 --> new_data
+#        3) A combination of the data from both reviews --> full_data
+data_frame <- Whittaker.et.al.R.Import
+old_data <- data_frame[data_frame$Old_or_New == "Old" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
+new_data <- data_frame[data_frame$Old_or_New == "New" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
+full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
 
-# Checking that the dataframe lacks instances where sensitivity >1 
-sens_greater_than_one <- (data_frame$Micro_Prev/data_frame$PCR_Prev) > 1
-bloop <- data_frame[sens_greater_than_one, ]
+# Specifying the Data in the Format Required for Input into RJAGS
 
-# Subset the data into old and new
-old_data <- data_frame[data_frame$Old_or_New == "Old" & (data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2), ]
-new_data <- data_frame[data_frame$Old_or_New == "New" & (data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2), ]
-full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 1 | data_frame$Full_Or_Age_Disagg_Data == 2, ]
-
-# When removing the studies with zero values
-old_data <- data_frame[data_frame$Old_or_New == "Old" & data_frame$Was_Initially_Zero. == "N", ]
-new_data <- data_frame[data_frame$Old_or_New == "New" & data_frame$Was_Initially_Zero. == "N", ]
-full_data <- data_frame[data_frame$Was_Initially_Zero. == "N", ]
-
-## Specifying the data in the format required for input into RJAGS
-
-#### NOTE THAT THERE ARE CURRENTLY DECIMALS IN THE DATA WHERE I USED LUCY'S TRICK- UNSURE HOW TO INCORPORATE
-#### THESE CURRENTLY, MUST CHECK WITH HER. 
-
-# Data Lucy provided me with
+# Data from the old systematic review
 old_microscopy_PCR_comparison <- list(prev_pcr = old_data$PCR_N_Positive, ## number positive by PCR,
                                   prev_microscopy = old_data$Microscopy_N_Positive, ## number positive by microscopy,
                                   total_pcr = old_data$PCR_N_Tested, ## number tested by PCR,
                                   total_microscopy = old_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                  N = 106) # Total sample data overall
+                                  N = 105) # Total sample data overall
   
-# Data and results from the new systematic review
+# Data from the new systematic review
 new_microscopy_PCR_comparison <- list(prev_pcr = new_data$PCR_N_Positive, ## number positive by PCR,
                                         prev_microscopy = new_data$Microscopy_N_Positive,## number positive by microscopy,
                                         total_pcr = new_data$PCR_N_Tested, ## number tested by PCR,
                                         total_microscopy = new_data$Microscopy_N_Tested, ## number tested by microscopy,
-                                      N = 232) # Total sample data overall
+                                      N = 177) # Total sample data overall
 
-# Combined old and new data together
+# Combining old and new data together
 full_microscopy_PCR_comparison <- list(prev_pcr = full_data$PCR_N_Positive, ## number positive by PCR,
                                         prev_microscopy = full_data$Microscopy_N_Positive, ## number positive by microscopy,
                                         total_pcr = full_data$PCR_N_Tested, ## number tested by PCR,
                                         total_microscopy = full_data$Microscopy_N_Tested, ## number tested by microscopy
-                                        N = 338) # Total sample data overall
+                                        N = 282) # Total sample data overall
 
 # Specifying the parameters of interest that RJAGS will track and output, and the 
 # initial values to start the chain with
-params <- c("delt", "beta", "taud")
+params <- c("delt", "beta", "taud", "gamma")
 inits <- list(beta=0.0001,delt=0.0001,taud=0.0001)
+
 
 # Specifying and initialising the RJAGS model- creates a JAGS model object
 old_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # OLD DATA
@@ -72,8 +63,8 @@ full_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL 
 
 # OLD DATA
 update(old_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
-old_micr_PCR_comp_model <- coda.samples(old_micr_PCR_comp_model, params, 
-                                    n.iter = 100000, thin = 70) # Model updating
+old_micr_PCR_comp_model <- coda.samples(old_micr_PCR_comp_model, params, n.iter = 100000, thin = 70) # Model updating
+
 summary(old_micr_PCR_comp_model)
 plot(old_micr_PCR_comp_model)
 autocorr.plot(old_micr_PCR_comp_model)
@@ -83,8 +74,7 @@ old_delt_mean <- mean(as.array(old_micr_PCR_comp_model[, 2]))
 
 # NEW DATA
 update(new_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
-new_micr_PCR_comp_model <- coda.samples(new_micr_PCR_comp_model, params, 
-                                        n.iter = 100000, thin = 70) # Model updating
+new_micr_PCR_comp_model <- coda.samples(new_micr_PCR_comp_model, params, n.iter = 100000, thin = 70) # Model updating
 summary(new_micr_PCR_comp_model)
 plot(new_micr_PCR_comp_model)
 autocorr.plot(new_micr_PCR_comp_model)
@@ -94,14 +84,14 @@ new_delt_mean <- mean(as.array(new_micr_PCR_comp_model[, 2]))
 
 # FULL DATA
 update(full_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, basically the burn in
-full_micr_PCR_comp_model <- coda.samples(full_micr_PCR_comp_model, params, 
-                                        n.iter = 100000, thin = 70) # Model updating
+full_micr_PCR_comp_model <- coda.samples(full_micr_PCR_comp_model, params, n.iter = 100000, thin = 70) # Model updating
 summary(full_micr_PCR_comp_model)
 plot(full_micr_PCR_comp_model)
 autocorr.plot(full_micr_PCR_comp_model)
 
 full_beta_mean <- mean(as.array(full_micr_PCR_comp_model[, 1]))
 full_delt_mean <- mean(as.array(full_micr_PCR_comp_model[, 2]))
+
 
 # Specifying PCR prevalence to plot against
 PCR_prevalence_old <- seq(0,1,0.001)
@@ -118,6 +108,9 @@ full_logit_PCR_prevalence <- logit(PCR_prevalence_full)
 old_fitted_logit_microscopy <- old_delt_mean + (1 + old_beta_mean)  * old_logit_PCR_prevalence
 new_fitted_logit_microscopy <- new_delt_mean + (1 + new_beta_mean) * new_logit_PCR_prevalence
 full_fitted_logit_microscopy <- full_delt_mean + (1 + full_beta_mean)  * full_logit_PCR_prevalence
+
+plot(full_logit_PCR_prevalence, (1/(1 + full_beta_mean)) * full_fitted_logit_microscopy - (1/(1 + full_beta_mean)) * full_delt_mean)
+
 
 # Converting them to the natural scale
 old_fitted_microscopy <- expit(old_fitted_logit_microscopy)
@@ -171,6 +164,13 @@ lines(seq(0,1,0.01), seq(0,1,0.01), lwd = 2, lty = 2)
 lines(PCR_prevalence_new, new_fitted_microscopy, col = "#019CD9", lwd = 3)
 lines(PCR_prevalence_old, old_fitted_microscopy, col = "#FF5900", lwd = 3)
 lines(PCR_prevalence_full, full_fitted_microscopy, col = "#FEC93C", lwd = 3)
+
+# Testing that backcalculation of what the PCR predicting equation would look like
+LM_prevalence_tester <- seq(0,0.96,0.001)
+PCR_Predicted_logit <- (1.075 + 0.973 * logit(LM_prevalence_tester))
+PCR_Predicted_normal <- expit(PCR_Predicted_logit)
+
+lines(PCR_Predicted_normal, LM_prevalence_tester, col = "black", lwd = 3)
 
 polygon(x = c(old_data_values, rev(old_data_values)), 
         y = c(old_data_credible_upper, rev(old_data_credible_lower)), 
@@ -357,3 +357,75 @@ full_data_proportion_subpatent_lower <- 1 - full_data_sensitivity_lower
 # Plotting the confidence intervals
 arrows(bloop, full_data_proportion_subpatent_upper, bloop, 
        full_data_proportion_subpatent_lower, length=0.1, angle=90, code=3, col = "black")
+
+
+
+sens <- full_data$Micro_Prev/full_data$PCR_Prev
+mean(sens)
+
+sd <- sd(sens)
+stderr <- sd/sqrt(length(sens))
+
+mean(sens) - 1.96 * stderr
+mean(sens) + 1.96 * stderr
+
+
+hist(full_data$PCR_Prev, breaks = 20)
+
+zero_five <- full_data[full_data$PCR_Prev < 0.05, ]
+five_ten <- full_data[full_data$PCR_Prev >= 0.05 & full_data$PCR_Prev < 0.1, ]
+ten_fifteen <- full_data[full_data$PCR_Prev >= 0.1 & full_data$PCR_Prev < 0.15, ]
+fifteen_twenty <- full_data[full_data$PCR_Prev >= 0.15 & full_data$PCR_Prev < 0.2, ]
+twnty_thirty <- full_data[full_data$PCR_Prev >= 0.2 & full_data$PCR_Prev < 0.30, ]
+thirty_fourty <- full_data[full_data$PCR_Prev >= 0.3 & full_data$PCR_Prev < 0.40, ] 
+fourty_sixty <- full_data[full_data$PCR_Prev >= 0.4 & full_data$PCR_Prev < 0.6, ]
+sixty_hundred <- full_data[full_data$PCR_Prev >= 0.6 & full_data$PCR_Prev < 1, ]
+
+eins <- mean(zero_five$Micro_Prev/zero_five$PCR_Prev)
+zwei <- mean(five_ten$Micro_Prev/five_ten$PCR_Prev)
+drei <- mean(ten_fifteen$Micro_Prev/ten_fifteen$PCR_Prev)
+vier <- mean(fifteen_twenty$Micro_Prev/fifteen_twenty$PCR_Prev)
+funf <- mean(twnty_thirty$Micro_Prev/twnty_thirty$PCR_Prev)
+sechs <- mean(thirty_fourty$Micro_Prev/thirty_fourty$PCR_Prev)
+sieben <- mean(fourty_sixty$Micro_Prev/fourty_sixty$PCR_Prev)
+acht <- mean(sixty_hundred$Micro_Prev/sixty_hundred$PCR_Prev)
+
+barplot(c(eins, zwei, drei, vier, funf, sechs, sieben, acht))
+
+
+sens <- (full_data$Microscopy_N_Positive/full_data$Microscopy_N_Tested)/(full_data$PCR_N_Positive/full_data$PCR_N_Tested)
+
+mean(sens) - 1.96 * sd(sens)/sqrt(length(sens))
+mean(sens)
+mean(sens) + 1.96 * sd(sens)/sqrt(length(sens))
+
+
+# Calculating posterior densities for Old and New data parameter estimates and comparing them graphically
+old_beta <- density(as.array(old_micr_PCR_comp_model[, 1]))
+plot(old_beta, col = "blue", ylim = c(0, 13), xlim = c(-0.13, 0.24), main = "Beta")
+polygon(old_beta, col = adjustcolor("blue", 0.4), border = "blue", lwd = 2)
+new_beta <- density(as.array(new_micr_PCR_comp_model[, 1]))
+polygon(new_beta, col = adjustcolor("orange", 0.4), border = "orange", lwd = 2)
+full_beta <- density(as.array(full_micr_PCR_comp_model[, 1]))
+polygon(full_beta, col =  adjustcolor("green", 0.4), border = "green", lwd = 2)
+legend(-0.10, 10, legend=c("Old", "New", "Full"), col=c("blue", "orange", "green"), lty=1, cex=1, lwd = 2)
+
+old_delt <- density(as.array(old_micr_PCR_comp_model[, 2]))
+plot(old_delt, col = "blue", ylim = c(0, 8), xlim = c(-1.6, -0.8), main = "Delta")
+polygon(old_delt, col = adjustcolor("blue", 0.4), border = "blue", lwd = 2)
+new_delt <- density(as.array(new_micr_PCR_comp_model[, 2]))
+polygon(new_delt, col = adjustcolor("orange", 0.4), border = "orange", lwd = 2)
+full_delt <- density(as.array(full_micr_PCR_comp_model[, 2]))
+polygon(full_delt, col =  adjustcolor("green", 0.4), border = "green", lwd = 2)
+legend(-1.3, 10, legend=c("Old", "New", "Full"), col=c("blue", "orange", "green"), lty=1, cex=1, lwd = 2)
+
+old_taud <- density(as.array(old_micr_PCR_comp_model[, 3]))
+plot(old_taud, col = "blue", ylim = c(0, 2.5), xlim = c(0, 10), main = "tauda")
+polygon(old_taud, col = adjustcolor("blue", 0.4), border = "blue", lwd = 2)
+new_taud <- density(as.array(new_micr_PCR_comp_model[, 3]))
+polygon(new_taud, col = adjustcolor("orange", 0.4), border = "orange", lwd = 2)
+full_taud <- density(as.array(full_micr_PCR_comp_model[, 3]))
+polygon(full_taud, col =  adjustcolor("green", 0.4), border = "green", lwd = 2)
+legend(-1.3, 10, legend=c("Old", "New", "Full"), col=c("blue", "orange", "green"), lty=1, cex=1, lwd = 2)
+
+

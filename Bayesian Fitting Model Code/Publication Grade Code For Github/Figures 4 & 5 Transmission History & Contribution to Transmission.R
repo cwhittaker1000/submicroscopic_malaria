@@ -189,6 +189,8 @@ Low_low_credible_upper <- apply(Low_low_pred_mean_dist, MARGIN = 2, quantile, pr
 low_low_sensitivity_upper <- Low_low_credible_upper / PCR_prevalence_low_low
 low_low_sensitivity_lower <- Low_low_credible_lower / PCR_prevalence_low_low
 
+# NOTE FIGURE 4A WAS MADE IN ADOBE ILLUSTRATOR AND SO NO CODE FO IT IS FEATURED HERE. 
+
 # Figure 4B Plotting - Sensitivity Against PCR Prevalence for All 3 Transmission Settings - Data & Modelled Relationship
 plot(high_high_subset$PCR_Prev, high_high_subset$Micro_Prev/high_high_subset$PCR_Prev, 
      xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#00A600FF", xlab = "PCR Prevalence", ylab = "Sensitivity")
@@ -229,10 +231,51 @@ polygon(x = c(PCR_prevalence_low_low, rev(PCR_prevalence_low_low)), y = c(Low_lo
 legend("topleft", legend = c("High High", "High Low", "Low low"), col = c("#00A600FF", "#ECB176FF", "darkgrey"),
        lty = 1, lwd = 2, pt.cex = 2, cex = 0.8)
 
-# Plotting the results separately
+# Figure 5A Plotting - Contribution to Transmission in High High Transmission Settings
+# Range of High High Survey PCR Prevalences
+HH_PCR_Prevalence <- seq(0.03,0.95,0.001) 
+# Proportion of individuals with patent infections (equivalent to the sensitivity)
+HH_Patent_Percentage <- (High_high_fitted_microscopy/PCR_prevalence_high_high) * 100 
+# Proportion of individuals with subpatent infections
+HH_Subpatent_Percentage <- (100 - HH_Patent_Percentage) 
+# Calculating subpatent contribution to transmission
+HH_Subpatent_Contribution20 <- (HH_Subpatent_Percentage) / ((20 * HH_Patent_Percentage) + HH_Subpatent_Percentage)
+HH_Subpatent_Contribution5 <- (HH_Subpatent_Percentage) / ((5 * HH_Patent_Percentage) + HH_Subpatent_Percentage)
+HH_Subpatent_Contribution2 <- (HH_Subpatent_Percentage) / ((2 * HH_Patent_Percentage) + HH_Subpatent_Percentage)
+plot(0, 0, xlim = c(0, 1), ylim = c(0, 1), cex = 0)
+lines(HH_PCR_Prevalence, HH_Subpatent_Contribution20, xlim = c(0, 1), ylim = c(0, 1))
+lines(HH_PCR_Prevalence, HH_Subpatent_Contribution5, xlim = c(0, 1), ylim = c(0, 1))
+lines(HH_PCR_Prevalence, HH_Subpatent_Contribution2, xlim = c(0, 1), ylim = c(0, 1))
 
+# Figure 5B Plotting - Contribution to Transmission in High Low Transmission Settings
+# Range of High Low Survey PCR Prevalences
+HL_PCR_Prevalence <- seq(0.004,0.9,0.001)
+# Proportion of individuals with patent infections (equivalent to the sensitivity)
+HL_Patent_Percentage <- (High_low_fitted_microscopy/PCR_prevalence_high_low) * 100 
+# Proportion of individuals with subpatent infections
+HL_Subpatent_Percentage <- (100 - HL_Patent_Percentage) 
+# Calculating subpatent contribution to transmission
+HL_Subpatent_Contribution20 <- (HL_Subpatent_Percentage) / ((20 * HL_Patent_Percentage) + HL_Subpatent_Percentage)
+HL_Subpatent_Contribution5 <- (HL_Subpatent_Percentage) / ((5 * HL_Patent_Percentage) + HL_Subpatent_Percentage)
+HL_Subpatent_Contribution2 <- (HL_Subpatent_Percentage) / ((2 * HL_Patent_Percentage) + HL_Subpatent_Percentage)
+plot(0, 0, xlim = c(0, 1), ylim = c(0, 1), cex = 0)
+lines(HL_PCR_Prevalence, HL_Subpatent_Contribution20, xlim = c(0, 1), ylim = c(0, 1))
+lines(HL_PCR_Prevalence, HL_Subpatent_Contribution5, xlim = c(0, 1), ylim = c(0, 1))
+lines(HL_PCR_Prevalence, HL_Subpatent_Contribution2, xlim = c(0, 1), ylim = c(0, 1))
 
-
-
-
+# Figure 5C Plotting - Contribution to Transmission in Low Low Transmission Settings
+# Range of Low Low Survey PCR Prevalences
+LL_PCR_Prevalence <- seq(0.01,0.55,0.001)
+# Proportion of individuals with patent infections (equivalent to the sensitivity)
+LL_Patent_Percentage <- (Low_low_fitted_microscopy/PCR_prevalence_low_low) * 100 
+# Proportion of individuals with subpatent infections
+LL_Subpatent_Percentage <- (100 - LL_Patent_Percentage) 
+# Calculating subpatent contribution to transmission
+LL_Subpatent_Contribution20 <- (LL_Subpatent_Percentage) / ((20 * LL_Patent_Percentage) + LL_Subpatent_Percentage)
+LL_Subpatent_Contribution5 <- (LL_Subpatent_Percentage) / ((5 * LL_Patent_Percentage) + LL_Subpatent_Percentage)
+LL_Subpatent_Contribution2 <- (LL_Subpatent_Percentage) / ((2 * LL_Patent_Percentage) + LL_Subpatent_Percentage)
+plot(0, 0, xlim = c(0, 1), ylim = c(0, 1), cex = 0)
+lines(LL_PCR_Prevalence, LL_Subpatent_Contribution20, xlim = c(0, 1), ylim = c(0, 1))
+lines(LL_PCR_Prevalence, LL_Subpatent_Contribution5, xlim = c(0, 1), ylim = c(0, 1))
+lines(LL_PCR_Prevalence, LL_Subpatent_Contribution2, xlim = c(0, 1), ylim = c(0, 1))
 

@@ -237,7 +237,6 @@ polygon(x = c(Asia_values, rev(Asia_values)),
         y = c(Asia_credible_upper, rev(Asia_credible_lower)), 
         col = adjustcolor("black", alpha.f = 0.5), border = NA)
 
-
 # Figure 3E Plotting - Microscopy Sensitivity Against PCR Prevalence for Asia & Oceania - Modelled Relationship
 plot(0, 0, xlim = c(0, 1), ylim = c(0, 1), pch = 1, xlab = "PCR Prevalence", ylab = "Sensitivity", cex = 0)
 lines(PCR_prevalence_East_Africa, East_Africa_fitted_microscopy/PCR_prevalence_East_Africa, col = adjustcolor("green3"), lwd = 3)

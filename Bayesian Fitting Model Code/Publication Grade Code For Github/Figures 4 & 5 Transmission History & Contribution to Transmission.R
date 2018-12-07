@@ -279,3 +279,38 @@ lines(LL_PCR_Prevalence, LL_Subpatent_Contribution20, xlim = c(0, 1), ylim = c(0
 lines(LL_PCR_Prevalence, LL_Subpatent_Contribution5, xlim = c(0, 1), ylim = c(0, 1))
 lines(LL_PCR_Prevalence, LL_Subpatent_Contribution2, xlim = c(0, 1), ylim = c(0, 1))
 
+## Possible Graphs ## 
+
+# Figure 2E Plotting - Empirical Mean Microscopy Sensitivities - Raw Data & Confidence Intervals
+high_high_subset$Sensitivity <- (high_high_subset$Microscopy_N_Positive/high_high_subset$Microscopy_N_Tested)/(high_high_subset$PCR_N_Positive/high_high_subset$PCR_N_Tested)
+high_high_mean_sens <- mean(high_high_subset$Sensitivity)
+high_high_mean_se <- sd(high_high_subset$Sensitivity)/sqrt(length(high_high_subset$Sensitivity))
+
+high_low_subset$Sensitivity <- (high_low_subset$Microscopy_N_Positive/high_low_subset$Microscopy_N_Tested)/(high_low_subset$PCR_N_Positive/high_low_subset$PCR_N_Tested)
+high_low_mean_sens <- mean(high_low_subset$Sensitivity)
+high_low_mean_se <- sd(high_low_subset$Sensitivity)/sqrt(length(high_low_subset$Sensitivity))
+
+low_low_subset$Sensitivity <- (low_low_subset$Microscopy_N_Positive/low_low_subset$Microscopy_N_Tested)/(low_low_subset$PCR_N_Positive/low_low_subset$PCR_N_Tested)
+low_low_mean_sens <- mean(low_low_subset$Sensitivity)
+low_low_mean_se <- sd(low_low_subset$Sensitivity)/sqrt(length(low_low_subset$Sensitivity))
+
+
+plot(0, 0, ylim = c(0, 1), xlim = c(0, 3), cex = 0, xlab = "Transmission Setting", ylab = "Mean Sensitivity", xaxt = "n")
+rect(xleft = 0, ybottom = 0, xright = 1, ytop = high_high_mean_sens, col = "#00A600FF")
+arrows(x0 = 0.5, y0 = high_high_mean_sens - 1.96 * high_high_mean_se, 
+       x1 = 0.5, y1 = high_high_mean_sens + 1.96 * high_high_mean_se, 
+       col=1, angle=90, code=3, length = 0.05)
+rect(xleft = 1, ybottom = 0, xright = 2, ytop = high_low_mean_sens, col = "#ECB176FF")
+arrows(x0 = 1.5, y0 = high_low_mean_sens - 1.96 * high_low_mean_se, 
+       x1 = 1.5, y1 = high_low_mean_sens + 1.96 * high_low_mean_se, 
+       col=1, angle=90, code=3, length = 0.05)
+rect(xleft = 2, ybottom = 0, xright = 3, ytop = low_low_mean_sens, col = "darkgrey")
+arrows(x0 = 2.5, y0 = low_low_mean_sens - 1.96 * low_low_mean_se, 
+       x1 = 2.5, y1 = low_low_mean_sens + 1.96 * low_low_mean_se, 
+       col=1, angle=90, code=3, length = 0.05)
+axis(1, at = c(0.5, 1.5, 2.5), labels = c("High High", "High Low", "Low Low"))
+
+# t-tests
+t.test(high_high_subset$Sensitivity, high_low_subset$Sensitivity)
+t.test(high_low_subset$Sensitivity, low_low_subset$Sensitivity)
+t.test(high_high_subset$Sensitivity, low_low_subset$Sensitivity)

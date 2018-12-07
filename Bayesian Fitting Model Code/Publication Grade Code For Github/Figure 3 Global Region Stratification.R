@@ -255,3 +255,51 @@ polygon(x = c(East_Africa_values, rev(East_Africa_values)),
 polygon(x = c(Asia_values, rev(Asia_values)), 
         y = c(Asia_sensitivity_upper, rev(Asia_sensitivity_lower)), 
         col = adjustcolor("black", alpha.f = 0.5), border = NA)
+
+
+## Possible Graphs ## 
+
+# Empirical Mean Microscopy Sensitivities - Raw Data & Confidence Intervals
+Asia_Oceania$Sensitivity <- (Asia_Oceania$Microscopy_N_Positive/Asia_Oceania$Microscopy_N_Tested)/(Asia_Oceania$PCR_N_Positive/Asia_Oceania$PCR_N_Tested)
+Asia_Oceania_mean_sens <- mean(Asia_Oceania$Sensitivity)
+Asia_Oceania_mean_se <- sd(Asia_Oceania$Sensitivity)/sqrt(length(Asia_Oceania$Sensitivity))
+
+West_Africa$Sensitivity <- (West_Africa$Microscopy_N_Positive/West_Africa$Microscopy_N_Tested)/(West_Africa$PCR_N_Positive/West_Africa$PCR_N_Tested)
+West_Africa_mean_sens <- mean(West_Africa$Sensitivity)
+West_Africa_mean_se <- sd(West_Africa$Sensitivity)/sqrt(length(West_Africa$Sensitivity))
+
+East_Africa$Sensitivity <- (East_Africa$Microscopy_N_Positive/East_Africa$Microscopy_N_Tested)/(East_Africa$PCR_N_Positive/East_Africa$PCR_N_Tested)
+East_Africa_mean_sens <- mean(East_Africa$Sensitivity)
+East_Africa_mean_se <- sd(East_Africa$Sensitivity)/sqrt(length(East_Africa$Sensitivity))
+
+South_America$Sensitivity <- (South_America$Microscopy_N_Positive/South_America$Microscopy_N_Tested)/(South_America$PCR_N_Positive/South_America$PCR_N_Tested)
+South_America_mean_sens <- mean(South_America$Sensitivity)
+South_America_mean_se <- sd(South_America$Sensitivity)/sqrt(length(South_America$Sensitivity))
+
+plot(0, 0, ylim = c(0, 1), xlim = c(0, 4), cex = 0, xlab = "Global Region", ylab = "Mean Sensitivity", xaxt = "n")
+rect(xleft = 0, ybottom = 0, xright = 1, ytop = Asia_Oceania_mean_sens, col = "black")
+arrows(x0 = 0.5, y0 = Asia_Oceania_mean_sens - 1.96 * Asia_Oceania_mean_se, 
+       x1 = 0.5, y1 = Asia_Oceania_mean_sens + 1.96 * Asia_Oceania_mean_se, 
+       col=1, angle=90, code=3, length = 0.05)
+rect(xleft = 1, ybottom = 0, xright = 2, ytop = West_Africa_mean_sens, col = "red")
+arrows(x0 = 1.5, y0 = West_Africa_mean_sens - 1.96 * West_Africa_mean_se, 
+       x1 = 1.5, y1 = West_Africa_mean_sens + 1.96 * West_Africa_mean_se, 
+       col=1, angle=90, code=3, length = 0.05)
+rect(xleft = 2, ybottom = 0, xright = 3, ytop = East_Africa_mean_sens, col = "green3")
+arrows(x0 = 2.5, y0 = East_Africa_mean_sens - 1.96 * East_Africa_mean_se, 
+       x1 = 2.5, y1 = East_Africa_mean_sens + 1.96 * East_Africa_mean_se, 
+       col=1, angle=90, code=3, length = 0.05)
+rect(xleft = 3, ybottom = 0, xright = 4, ytop = South_America_mean_sens, col = "blue")
+arrows(x0 = 3.5, y0 = South_America_mean_sens - 1.96 * South_America_mean_se, 
+       x1 = 3.5, y1 = South_America_mean_sens + 1.96 * South_America_mean_se, 
+       col=1, angle=90, code=3, length = 0.05)
+axis(1, at = c(0.5, 1.5, 2.5), labels = c("Asia", "West Africa", "East Africa", "South America"))
+
+# t-tests
+t.test(Asia_Oceania$Sensitivity, West_Africa$Sensitivity)
+t.test(Asia_Oceania$Sensitivity, East_Africa$Sensitivity)
+t.test(Asia_Oceania$Sensitivity, South_America$Sensitivity)
+t.test(West_Africa$Sensitivity, East_Africa$Sensitivity)
+t.test(West_Africa$Sensitivity, South_America$Sensitivity)
+t.test(East_Africa$Sensitivity, South_America$Sensitivity)
+

@@ -12,14 +12,15 @@
 # Analyses Responsible for Producing Figure 1 In the Paper
 
 # Access and load various required packages for the analyses
-library(rjags); library(moments); library(gtools); library(nortest); library(ggplot2); library(LMest); library(ssa); library(binom)
+library(rjags); library(moments); library(gtools); library(nortest); library(ggplot2); library(LMest); library(ssa);
+library(binom); library(plotrix)
 
 # Load in the dataset and subset the data into:
 #        1) Data from the previous review, Okell et al., 2012 --> old_data
 #        2) Data from this review, Whittaker et al., 2019 --> new_data
 #        3) A combination of the data from both reviews --> full_data
 data_frame <- Whittaker.et.al.R.Import
-old_data <- data_frame[data_frame$Old_or_New == "Old" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
+old_data <- data_frame[data_frame$Old_or_New == "Old" & data_frame$Full_Or_Age_Disagg_Data == 2, ] # Full data (i.e. non-disaggregated data is assigned arbitrary coding 2)
 new_data <- data_frame[data_frame$Old_or_New == "New" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
 
@@ -40,7 +41,7 @@ full_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL 
 
 # Running, updating and iterating the RJAGS model
 update(full_micr_PCR_comp_model, 5000) # Updates the model 5000 iterations, the burn in
-full_micr_PCR_comp_model <- coda.samples(full_micr_PCR_comp_model, params, n.iter = 100000, thin = 70) # Model updating
+full_micr_PCR_comp_model <- coda.samples(full_micr_PCR_comp_model, params, n.iter = 200000, thin = 70) # Model updating
 
 # Exploring MCMC output
 summary(full_micr_PCR_comp_model)
@@ -121,3 +122,15 @@ for (i in 1:length(Sens_by_group)){
          x1 = (breaks[i] + breaks[i + 1])/2, y1 = upper_ci[i], 
          col=1, angle=90, code=3, length = 0.05)
 }
+
+# Calculating Overall Mean and Confidence Intervals
+mean_sensitivity <- mean(full_data$Micro_Prev/full_data$PCR_Prev) * 100
+stderr <- std.error((full_data$Micro_Prev)/(full_data$PCR_Prev) * 100)
+mean_sensitivity - 1.96 * stderr
+mean_sensitivity + 1.96 * stderr
+
+confints <- binom.confint(full_data$Micro_Prev/full_data$PCR_Prev, 
+                          length(full_data$Micro_Prev/full_data$PCR_Prev), 
+                          method = "exact")
+
+

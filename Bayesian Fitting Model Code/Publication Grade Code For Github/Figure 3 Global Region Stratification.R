@@ -17,7 +17,7 @@ library(tidyverse)
 
 # Load in the dataset and subset the data by global region the survey was carried out in:
 data_frame <- Whittaker.et.al.R.Import
-Asia_Oceania <- data_frame[(data_frame$Global_Region == "Asia" | data_frame$Global_Region == "Oceania") & data_frame$Full_Or_Age_Disagg_Data == 2, ]
+Asia_Oceania <- data_frame[data_frame$Global_Region == "Asia&Oceania" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
 East_Africa <- data_frame[data_frame$Global_Region == "East Africa" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
 South_America <- data_frame[data_frame$Global_Region == "South America" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
 West_Africa <- data_frame[data_frame$Global_Region == "West Africa" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
@@ -302,4 +302,13 @@ t.test(Asia_Oceania$Sensitivity, South_America$Sensitivity)
 t.test(West_Africa$Sensitivity, East_Africa$Sensitivity)
 t.test(West_Africa$Sensitivity, South_America$Sensitivity)
 t.test(East_Africa$Sensitivity, South_America$Sensitivity)
+
+# ANOVA - Testing for Differences in Means
+data_frame_ANOVA <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ] # all non age-disaggregated data
+data_frame_ANOVA$Sensitivity <- (data_frame_ANOVA$Microscopy_N_Positive/data_frame_ANOVA$Microscopy_N_Tested)/
+                                (data_frame_ANOVA$PCR_N_Positive/data_frame_ANOVA$PCR_N_Tested)
+ANOVA_object <- aov(Sensitivity ~ Global_Region, data = data_frame_ANOVA)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object)
+
 

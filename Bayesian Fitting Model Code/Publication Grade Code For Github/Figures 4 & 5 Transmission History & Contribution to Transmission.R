@@ -214,7 +214,7 @@ polygon(x = c(PCR_prevalence_low_low, rev(PCR_prevalence_low_low)),
         col = adjustcolor("darkgrey", alpha.f = 0.5), border = NA)
 
 # Figure 4C Plotting - Microscopy Prevalence Against PCR Prevalence for All 3 Transmission Settings - Data & Modelled Relationship
-plot(high_high_subset$PCR_Prev, high_high_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#00A600FF",
+plot(high_high_subset$PCR_Prev, high_high_subset$Micro_Prev, xlim = c(0, 0.2), ylim = c(0, 0.2), pch = 20, col = "#00A600FF",
      xlab = "PCR Prevalence", ylab = "LM Prevalence")
 points(high_low_subset$PCR_Prev, high_low_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#ECB176FF")
 points(low_low_subset$PCR_Prev, low_low_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "darkgrey")
@@ -314,3 +314,26 @@ axis(1, at = c(0.5, 1.5, 2.5), labels = c("High High", "High Low", "Low Low"))
 t.test(high_high_subset$Sensitivity, high_low_subset$Sensitivity)
 t.test(high_low_subset$Sensitivity, low_low_subset$Sensitivity)
 t.test(high_high_subset$Sensitivity, low_low_subset$Sensitivity)
+
+# ANOVA - Testing for Differences in Means
+data_frame_ANOVA <- data_frame[(data_frame$high_high == 1) | (data_frame$high_low == 1) | (data_frame$low_low == 1), ] 
+data_frame_ANOVA$Sensitivity <- (data_frame_ANOVA$Microscopy_N_Positive/data_frame_ANOVA$Microscopy_N_Tested)/
+                                (data_frame_ANOVA$PCR_N_Positive/data_frame_ANOVA$PCR_N_Tested)
+for (i in 1:164) {
+  if(data_frame_ANOVA$high_high[i] == 1) {
+    data_frame_ANOVA$Stratification[i] = "HighHigh"
+  }
+  else if (data_frame_ANOVA$high_low[i] == 1) {
+    data_frame_ANOVA$Stratification[i] = "HighLow"
+  }
+  else if (data_frame_ANOVA$low_low[i] == 1) {
+    data_frame_ANOVA$Stratification[i] = "LowLow"
+  }
+}
+
+data_frame_ANOVA$Stratification <- as.factor(data_frame_ANOVA$Stratification)
+ANOVA_object <- aov(Sensitivity ~ Stratification, data = data_frame_ANOVA)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object)
+
+

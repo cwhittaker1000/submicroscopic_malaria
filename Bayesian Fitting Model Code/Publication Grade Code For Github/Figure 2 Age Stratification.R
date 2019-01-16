@@ -217,7 +217,6 @@ adults$Sensitivity <- (adults$Microscopy_N_Positive/adults$Microscopy_N_Tested)/
 adult_mean_sens <- mean(adults$Sensitivity)
 adult_mean_se <- sd(adults$Sensitivity)/sqrt(length(adults$Sensitivity))
 
-
 plot(0, 0, ylim = c(0, 1), xlim = c(0, 3), cex = 0, xlab = "Age Group", ylab = "Mean Sensitivity", xaxt = "n")
 rect(xleft = 0, ybottom = 0, xright = 1, ytop = young_mean_sens, col = "#EAE600")
 arrows(x0 = 0.5, y0 = young_mean_sens - 1.96 * young_mean_se, 
@@ -232,12 +231,6 @@ arrows(x0 = 2.5, y0 = adult_mean_sens - 1.96 * adult_mean_se,
        x1 = 2.5, y1 = adult_mean_sens + 1.96 * adult_mean_se, 
        col=1, angle=90, code=3, length = 0.05)
 axis(1, at = c(0.5, 1.5, 2.5), labels = c("Young Children", "Old Children", "Adults"))
-
-# t-tests
-t.test(young_children$Sensitivity, old_children$Sensitivity)
-t.test(adults$Sensitivity, old_children$Sensitivity)
-t.test(young_children$Sensitivity, adults$Sensitivity)
-
 
 # Figure 2F Plotting - Difference in Mean Sensitivity, Pairwise Comparisons - Modelled Relationships
 Fig2E_PCR_prevalence_young <- seq(0.04, 0.8, 0.001)
@@ -279,3 +272,17 @@ ggplot(data_frame_two_cats) +
   geom_line(aes(x = Sensitivity, y = Author, group = Author)) +
   geom_point(aes(x = Sensitivity, y = Author, color = Age.Group, group = Author), size=3 ) + 
   labs(x = "Sensitivity", y = "Study", color = "Age Group")  
+
+# t-tests
+t.test(young_children$Sensitivity, old_children$Sensitivity)
+t.test(adults$Sensitivity, old_children$Sensitivity)
+t.test(young_children$Sensitivity, adults$Sensitivity)
+
+# ANOVA - Testing for Differences in Means
+data_frame_ANOVA <- data_frame[(data_frame$Age_Group == "0-5") | (data_frame$Age_Group ==  "5-15years") | (data_frame$Age_Group ==  "15+"), ] # all age-disaggregated data
+data_frame_ANOVA$Sensitivity <- (data_frame_ANOVA$Microscopy_N_Positive/data_frame_ANOVA$Microscopy_N_Tested)/
+                                (data_frame_ANOVA$PCR_N_Positive/data_frame_ANOVA$PCR_N_Tested)
+ANOVA_object <- aov(Sensitivity ~ Age_Group, data = data_frame_ANOVA)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object)
+

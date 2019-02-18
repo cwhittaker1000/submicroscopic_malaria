@@ -2,11 +2,11 @@
 
 This repository contains code used to generate the figures for the (submitted) publication "Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants. Specifically, it uses a database of collated malaria cross-sectional survey data (where populations have had infection status determined by both Light Microscopy and PCR) to:
 
-- Explore how the proportion of submicroscopically infected individuals varies across the transmission gradient (Figure 1)
-- Examine age-related patterns of infection and see how the size of the submicroscopic reservoir varies acrosss different age groups (Figure 2)
-- Assess the extent of geographical variation in the proportion of submicroscopically infected individuals (Figure 3) 
-- Explore how historical patterns of transmission influence the extent and size of the submicroscopic reservoir (Figure 4)
-- Integrate these results with previous estimates of the comparative infectivity (to mosquitoes) of microscopically detectable and submicroscopic infections to generate estimates for the contribution to onwards transmission of these two infected subgroups (Figure 5) 
+- Explore how the proportion of submicroscopically infected individuals varies across the transmission gradient **(Figure 1)**
+- Examine age-related patterns of infection and see how the size of the submicroscopic reservoir varies acrosss different age groups **(Figure 2)**
+- Assess the extent of geographical variation in the proportion of submicroscopically infected individuals **(Figure 3)** 
+- Explore how historical patterns of transmission influence the extent and size of the submicroscopic reservoir **(Figure 4)**
+- Integrate these results with previous estimates of the comparative infectivity (to mosquitoes) of microscopically detectable and submicroscopic infections to generate estimates for the contribution to onwards transmission of these two infected subgroups **(Figure 5)** 
 
 ## Description
 A systematic literature review was carried out to compile malaria prevalence data from references where both microscopy and PCR based methods had been used to determine infection status. This represents an update to the systematic review carried out by Okell et al., in 2012 (Nature Communications, 3, p1237). Searches were carried out using PubMed and WebofScience and the search terms (“PCR” OR “Polymerase Chain Reaction”) AND “falciparum”. 

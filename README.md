@@ -31,9 +31,9 @@ This collated information comprises the data from which the analyses presented i
 
 Running the code contained in this repository requires the following:
 
-- [x] The `R` Package ssa (see: https://cran.r-project.org/web/packages/ssa/index.html)
-- [x] The `R` Package binom (see: https://cran.r-project.org/web/packages/binom/index.html)
-- [x] The `R` Package rjags (see: https://cran.r-project.org/web/packages/rjags/index.html)
+- The package **ssa** (see: https://cran.r-project.org/web/packages/ssa/index.html)
+- The package **binom** (see: https://cran.r-project.org/web/packages/binom/index.html)
+- The package **rjags** (see: https://cran.r-project.org/web/packages/rjags/index.html)
 
 rjags is an `R` package offering an interface to the JAGS MCMC library. JAGS is a program for analysis of Bayesian models using Markov Chain Monte Carlo (MCMC) simulation. More information and details about package itself are available here: http://mcmc-jags.sourceforge.net/ and the software itself is available for download at https://sourceforge.net/projects/mcmc-jags/. 
 

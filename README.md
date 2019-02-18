@@ -75,5 +75,7 @@ To replicate and reproduce the analyses presented in this paper, do the followin
 3. From an `R` session, import `Submicroscopic_Review_Data_R_Import.csv` as the object Submicroscopic_Review_Data_R_Import. 
 4. Run the `R` code. The output from running this code will be a number of MCMC objects, as well as a series of plots representing the output from MCMC based fitting of the logit-linear model to the collated data. These plots form the basis of the figures presented in the publication. 
 
+Note: The exact runtime depends on the size of the dataset being analysed. It is therefore longer for the full dataset (282 datapoint pairs, on the order of 10 minutes) compared to the age-disaggregated datasets (approx. 30-40 datapoints, on the order of 1 minute). 
+
 
 

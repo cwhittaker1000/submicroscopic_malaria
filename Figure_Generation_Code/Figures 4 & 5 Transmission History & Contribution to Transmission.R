@@ -6,17 +6,16 @@
 # (https://www.nature.com/articles/ncomms2241). In it, statistical analyses of both data from these previous 
 # reviews and new data collected during the updating process are undertaken and results displayed graphically.
 
-# The code below is responsible for the analyses and plotting that produced Figure 1 of the paper. Any questions, 
+# The code below is responsible for the analyses and plotting that produced Figures 4 and 5 of the paper. Any questions, 
 # queries, comments, or mistakes, please feel free to get in touch at charles.whittaker16@imperial.ac.uk :) 
 
 # Analyses Responsible for Producing Figure 4 In the Paper
 
 # Access and load various required packages for the analyses
-library(rjags); library(moments); library(gtools); library(nortest); library(ggplot2); library(LMest); library(ssa); library(binom);
-library(tidyverse)
+library(rjags); library(ssa); library(binom);
 
 # Load in the dataset and subset the data by the survey region's transmission history (African surveys only):
-data_frame <- Whittaker.et.al.R.Import
+data_frame <- Submicroscopic_Review_Data_R_Import
 data_frame$Trans_Hist <- data_frame$Transmission_Setting_History
 data_frame$Trans_Hist <- as.factor(data_frame$Trans_Hist)
 data_frame$Trans_Now <- data_frame$Transmission_Setting_Current
@@ -24,7 +23,7 @@ data_frame$Trans_Now <- as.factor(data_frame$Trans_Now)
 data_frame <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ] #Remove age disaggregated data
 
 data_frame <- data_frame[order(data_frame$Trans_Hist), ] # orders by transmission history status (puts NAs at end)
-data_frame <- data_frame[1:164, ] # removes NAs 
+data_frame <- data_frame[1:164, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
 
 # Add columns assigning survey to High High, High Low, or Low Low
 for (i in 1:length(data_frame[,1])) {
@@ -54,7 +53,6 @@ high_high_subset <- data_frame[data_frame$high_high == 1, ]
 high_low_subset <- data_frame[data_frame$high_low == 1, ]
 low_low_subset <- data_frame[data_frame$low_low == 1, ]
 
-
 # Specifying the Data in the Format Required for Input into RJAGS
 # High High Data
 high_high_microscopy_PCR_comparison <- list(prev_pcr = high_high_subset$PCR_N_Positive, ## number positive by PCR,
@@ -82,13 +80,13 @@ params <- c("delt", "beta", "taud")
 inits <- list(beta = 0.0001, delt = 0.0001, taud= 0.0001)
 
 # Specifying and initialising the RJAGS model- creates a JAGS model object
-High_high_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # OLD DATA
+High_high_micr_PCR_comp_model <- jags.model('Bayesian_Logit_Linear_Model.txt',   # OLD DATA
                                             data = high_high_microscopy_PCR_comparison, n.chains = 1, inits = inits)
 
-High_low_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # NEW DATA
+High_low_micr_PCR_comp_model <- jags.model('Bayesian_Logit_Linear_Model.txt',   # NEW DATA
                                            data = high_low_microscopy_PCR_comparison, n.chains = 1, inits = inits)
 
-Low_low_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL DATA
+Low_low_micr_PCR_comp_model <- jags.model('Bayesian_Logit_Linear_Model.txt',   # ALL DATA
                                           data = low_low_microscopy_PCR_comparison, n.chains = 1, inits = inits)
 
 # Running, updating and iterating the RJAGS model
@@ -189,9 +187,11 @@ Low_low_credible_upper <- apply(Low_low_pred_mean_dist, MARGIN = 2, quantile, pr
 low_low_sensitivity_upper <- Low_low_credible_upper / PCR_prevalence_low_low
 low_low_sensitivity_lower <- Low_low_credible_lower / PCR_prevalence_low_low
 
-# NOTE FIGURE 4A WAS MADE IN ADOBE ILLUSTRATOR AND SO NO CODE FO IT IS FEATURED HERE. 
+# NOTE FIGURE 4A WAS MADE IN ADOBE ILLUSTRATOR AND SO NO CODE FOR IT IS FEATURED HERE. 
 
 # Figure 4B Plotting - Sensitivity Against PCR Prevalence for All 3 Transmission Settings - Data & Modelled Relationship
+
+# Panel 1 - Historically and Currently High Transmission Settings
 plot(high_high_subset$PCR_Prev, high_high_subset$Micro_Prev/high_high_subset$PCR_Prev, 
      xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#00A600FF", xlab = "PCR Prevalence", ylab = "Sensitivity")
 lines(PCR_prevalence_high_high, High_high_fitted_microscopy/PCR_prevalence_high_high, col = "#00A600FF", lwd = 3)
@@ -199,6 +199,7 @@ polygon(x = c(PCR_prevalence_high_high, rev(PCR_prevalence_high_high)),
         y = c(high_high_sensitivity_upper, rev(high_high_sensitivity_lower)), 
         col = adjustcolor("#00A600FF", alpha.f = 0.5), border = NA)
 
+# Panel 2 - Historically High But Currently Low Transmission Settings
 plot(high_low_subset$PCR_Prev, high_low_subset$Micro_Prev/high_low_subset$PCR_Prev, 
      xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#ECB176FF", xlab = "PCR Prevalence", ylab = "Sensitivity")
 lines(PCR_prevalence_high_low, High_low_fitted_microscopy/PCR_prevalence_high_low, col = "#ECB176FF", lwd = 3)
@@ -206,6 +207,7 @@ polygon(x = c(PCR_prevalence_high_low, rev(PCR_prevalence_high_low)),
         y = c(high_low_sensitivity_upper, rev(high_low_sensitivity_lower)), 
         col = adjustcolor("#ECB176FF", alpha.f = 0.5), border = NA)
 
+# Panel 3 - Historically and Currently Low Transmission Settings
 plot(low_low_subset$PCR_Prev, low_low_subset$Micro_Prev/low_low_subset$PCR_Prev, 
      xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "darkgrey", xlab = "PCR Prevalence", ylab = "Sensitivity")
 lines(PCR_prevalence_low_low, Low_low_fitted_microscopy/PCR_prevalence_low_low, col = "darkgrey", lwd = 3)
@@ -215,7 +217,7 @@ polygon(x = c(PCR_prevalence_low_low, rev(PCR_prevalence_low_low)),
 
 # Figure 4C Plotting - Microscopy Prevalence Against PCR Prevalence for All 3 Transmission Settings - Data & Modelled Relationship
 plot(high_high_subset$PCR_Prev, high_high_subset$Micro_Prev, xlim = c(0, 0.2), ylim = c(0, 0.2), pch = 20, col = "#00A600FF",
-     xlab = "PCR Prevalence", ylab = "LM Prevalence")
+     xlab = "PCR Prevalence", ylab = "LM Prevalence") # change xlim and ylim to capture the main figure panel xlim = c(0, 1), ylim = c(0, 1) and the inset (0, 0.2)
 points(high_low_subset$PCR_Prev, high_low_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "#ECB176FF")
 points(low_low_subset$PCR_Prev, low_low_subset$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "darkgrey")
 lines(seq(0,1,0.01), seq(0,1,0.01), lwd = 2, lty = 2)
@@ -279,42 +281,7 @@ lines(LL_PCR_Prevalence, LL_Subpatent_Contribution20, xlim = c(0, 1), ylim = c(0
 lines(LL_PCR_Prevalence, LL_Subpatent_Contribution5, xlim = c(0, 1), ylim = c(0, 1))
 lines(LL_PCR_Prevalence, LL_Subpatent_Contribution2, xlim = c(0, 1), ylim = c(0, 1))
 
-## Possible Graphs ## 
-
-# Figure 2E Plotting - Empirical Mean Microscopy Sensitivities - Raw Data & Confidence Intervals
-high_high_subset$Sensitivity <- (high_high_subset$Microscopy_N_Positive/high_high_subset$Microscopy_N_Tested)/(high_high_subset$PCR_N_Positive/high_high_subset$PCR_N_Tested)
-high_high_mean_sens <- mean(high_high_subset$Sensitivity)
-high_high_mean_se <- sd(high_high_subset$Sensitivity)/sqrt(length(high_high_subset$Sensitivity))
-
-high_low_subset$Sensitivity <- (high_low_subset$Microscopy_N_Positive/high_low_subset$Microscopy_N_Tested)/(high_low_subset$PCR_N_Positive/high_low_subset$PCR_N_Tested)
-high_low_mean_sens <- mean(high_low_subset$Sensitivity)
-high_low_mean_se <- sd(high_low_subset$Sensitivity)/sqrt(length(high_low_subset$Sensitivity))
-
-low_low_subset$Sensitivity <- (low_low_subset$Microscopy_N_Positive/low_low_subset$Microscopy_N_Tested)/(low_low_subset$PCR_N_Positive/low_low_subset$PCR_N_Tested)
-low_low_mean_sens <- mean(low_low_subset$Sensitivity)
-low_low_mean_se <- sd(low_low_subset$Sensitivity)/sqrt(length(low_low_subset$Sensitivity))
-
-
-plot(0, 0, ylim = c(0, 1), xlim = c(0, 3), cex = 0, xlab = "Transmission Setting", ylab = "Mean Sensitivity", xaxt = "n")
-rect(xleft = 0, ybottom = 0, xright = 1, ytop = high_high_mean_sens, col = "#00A600FF")
-arrows(x0 = 0.5, y0 = high_high_mean_sens - 1.96 * high_high_mean_se, 
-       x1 = 0.5, y1 = high_high_mean_sens + 1.96 * high_high_mean_se, 
-       col=1, angle=90, code=3, length = 0.05)
-rect(xleft = 1, ybottom = 0, xright = 2, ytop = high_low_mean_sens, col = "#ECB176FF")
-arrows(x0 = 1.5, y0 = high_low_mean_sens - 1.96 * high_low_mean_se, 
-       x1 = 1.5, y1 = high_low_mean_sens + 1.96 * high_low_mean_se, 
-       col=1, angle=90, code=3, length = 0.05)
-rect(xleft = 2, ybottom = 0, xright = 3, ytop = low_low_mean_sens, col = "darkgrey")
-arrows(x0 = 2.5, y0 = low_low_mean_sens - 1.96 * low_low_mean_se, 
-       x1 = 2.5, y1 = low_low_mean_sens + 1.96 * low_low_mean_se, 
-       col=1, angle=90, code=3, length = 0.05)
-axis(1, at = c(0.5, 1.5, 2.5), labels = c("High High", "High Low", "Low Low"))
-
-# t-tests
-t.test(high_high_subset$Sensitivity, high_low_subset$Sensitivity)
-t.test(high_low_subset$Sensitivity, low_low_subset$Sensitivity)
-t.test(high_high_subset$Sensitivity, low_low_subset$Sensitivity)
-
+# Statistical Tests Carried Out On The Data
 # ANOVA - Testing for Differences in Means
 data_frame_ANOVA <- data_frame[(data_frame$high_high == 1) | (data_frame$high_low == 1) | (data_frame$low_low == 1), ] 
 data_frame_ANOVA$Sensitivity <- (data_frame_ANOVA$Microscopy_N_Positive/data_frame_ANOVA$Microscopy_N_Tested)/

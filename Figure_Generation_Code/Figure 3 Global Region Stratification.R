@@ -12,11 +12,10 @@
 # Analyses Responsible for Producing Figure 3 In the Paper
 
 # Access and load various required packages for the analyses
-library(rjags); library(moments); library(gtools); library(nortest); library(ggplot2); library(LMest); library(ssa); library(binom);
-library(tidyverse)
+library(rjags); library(ssa); library(binom);
 
 # Load in the dataset and subset the data by global region the survey was carried out in:
-data_frame <- Whittaker.et.al.R.Import
+data_frame <- Submicroscopic_Review_Data_R_Import
 Asia_Oceania <- data_frame[data_frame$Global_Region == "Asia&Oceania" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
 East_Africa <- data_frame[data_frame$Global_Region == "East Africa" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
 South_America <- data_frame[data_frame$Global_Region == "South America" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
@@ -53,19 +52,19 @@ West_Africa_microscopy_PCR_comparison <- list(prev_pcr = West_Africa$PCR_N_Posit
 
 # Specifying the parameters of interest that RJAGS will Track and Output, and the initial values to start the chain with
 params <- c("delt", "beta", "taud")
-inits <- list(beta = 0.0001, delt = 0.0001, taud= 0.0001)
+inits <- list(beta = 0.0001, delt = 0.0001, taud = 0.0001)
 
 # Specifying and initialising the RJAGS model- creates a JAGS model object
-Asia_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # OLD DATA
+Asia_micr_PCR_comp_model <- jags.model('Bayesian_Logit_Linear_Model.txt',   # OLD DATA
                                        data = Asia_microscopy_PCR_comparison, n.chains = 1, inits = inits)
 
-East_Africa_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # NEW DATA
+East_Africa_micr_PCR_comp_model <- jags.model('Bayesian_Logit_Linear_Model.txt',   # NEW DATA
                                               data = East_Africa_microscopy_PCR_comparison, n.chains = 1, inits = inits)
 
-South_America_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL DATA
+South_America_micr_PCR_comp_model <- jags.model('Bayesian_Logit_Linear_Model.txt',   # ALL DATA
                                                 data = South_America_microscopy_PCR_comparison, n.chains = 1, inits = inits)
 
-West_Africa_micr_PCR_comp_model <- jags.model('1_Basic_Model_Old_And_New.txt',   # ALL DATA
+West_Africa_micr_PCR_comp_model <- jags.model('Bayesian_Logit_Linear_Model.txt',   # ALL DATA
                                               data = West_Africa_microscopy_PCR_comparison, n.chains = 1, inits = inits)
 
 # Running, updating and iterating the RJAGS model
@@ -219,7 +218,7 @@ polygon(x = c(East_Africa_values, rev(East_Africa_values)),
         y = c(East_Africa_credible_upper, rev(East_Africa_credible_lower)), 
         col = adjustcolor("green3", alpha.f = 0.5), border = NA)
 
-# Figure 3C Plotting - Microscopy Prevalence Against PCR Prevalence for South America - Data & Modelled Relationship
+# Figure 3D Plotting - Microscopy Prevalence Against PCR Prevalence for South America - Data & Modelled Relationship
 plot(South_America$PCR_Prev, South_America$Micro_Prev, xlim = c(0, 1), ylim = c(0, 1), pch = 20, col = "blue",
      xlab = "PCR Prevalence", ylab = "Slide Prevalence")
 lines(PCR_prevalence_South_America, South_America_fitted_microscopy, col = "blue", lwd = 3)
@@ -256,53 +255,7 @@ polygon(x = c(Asia_values, rev(Asia_values)),
         y = c(Asia_sensitivity_upper, rev(Asia_sensitivity_lower)), 
         col = adjustcolor("black", alpha.f = 0.5), border = NA)
 
-
-## Possible Graphs ## 
-
-# Empirical Mean Microscopy Sensitivities - Raw Data & Confidence Intervals
-Asia_Oceania$Sensitivity <- (Asia_Oceania$Microscopy_N_Positive/Asia_Oceania$Microscopy_N_Tested)/(Asia_Oceania$PCR_N_Positive/Asia_Oceania$PCR_N_Tested)
-Asia_Oceania_mean_sens <- mean(Asia_Oceania$Sensitivity)
-Asia_Oceania_mean_se <- sd(Asia_Oceania$Sensitivity)/sqrt(length(Asia_Oceania$Sensitivity))
-
-West_Africa$Sensitivity <- (West_Africa$Microscopy_N_Positive/West_Africa$Microscopy_N_Tested)/(West_Africa$PCR_N_Positive/West_Africa$PCR_N_Tested)
-West_Africa_mean_sens <- mean(West_Africa$Sensitivity)
-West_Africa_mean_se <- sd(West_Africa$Sensitivity)/sqrt(length(West_Africa$Sensitivity))
-
-East_Africa$Sensitivity <- (East_Africa$Microscopy_N_Positive/East_Africa$Microscopy_N_Tested)/(East_Africa$PCR_N_Positive/East_Africa$PCR_N_Tested)
-East_Africa_mean_sens <- mean(East_Africa$Sensitivity)
-East_Africa_mean_se <- sd(East_Africa$Sensitivity)/sqrt(length(East_Africa$Sensitivity))
-
-South_America$Sensitivity <- (South_America$Microscopy_N_Positive/South_America$Microscopy_N_Tested)/(South_America$PCR_N_Positive/South_America$PCR_N_Tested)
-South_America_mean_sens <- mean(South_America$Sensitivity)
-South_America_mean_se <- sd(South_America$Sensitivity)/sqrt(length(South_America$Sensitivity))
-
-plot(0, 0, ylim = c(0, 1), xlim = c(0, 4), cex = 0, xlab = "Global Region", ylab = "Mean Sensitivity", xaxt = "n")
-rect(xleft = 0, ybottom = 0, xright = 1, ytop = Asia_Oceania_mean_sens, col = "black")
-arrows(x0 = 0.5, y0 = Asia_Oceania_mean_sens - 1.96 * Asia_Oceania_mean_se, 
-       x1 = 0.5, y1 = Asia_Oceania_mean_sens + 1.96 * Asia_Oceania_mean_se, 
-       col=1, angle=90, code=3, length = 0.05)
-rect(xleft = 1, ybottom = 0, xright = 2, ytop = West_Africa_mean_sens, col = "red")
-arrows(x0 = 1.5, y0 = West_Africa_mean_sens - 1.96 * West_Africa_mean_se, 
-       x1 = 1.5, y1 = West_Africa_mean_sens + 1.96 * West_Africa_mean_se, 
-       col=1, angle=90, code=3, length = 0.05)
-rect(xleft = 2, ybottom = 0, xright = 3, ytop = East_Africa_mean_sens, col = "green3")
-arrows(x0 = 2.5, y0 = East_Africa_mean_sens - 1.96 * East_Africa_mean_se, 
-       x1 = 2.5, y1 = East_Africa_mean_sens + 1.96 * East_Africa_mean_se, 
-       col=1, angle=90, code=3, length = 0.05)
-rect(xleft = 3, ybottom = 0, xright = 4, ytop = South_America_mean_sens, col = "blue")
-arrows(x0 = 3.5, y0 = South_America_mean_sens - 1.96 * South_America_mean_se, 
-       x1 = 3.5, y1 = South_America_mean_sens + 1.96 * South_America_mean_se, 
-       col=1, angle=90, code=3, length = 0.05)
-axis(1, at = c(0.5, 1.5, 2.5), labels = c("Asia", "West Africa", "East Africa", "South America"))
-
-# t-tests
-t.test(Asia_Oceania$Sensitivity, West_Africa$Sensitivity)
-t.test(Asia_Oceania$Sensitivity, East_Africa$Sensitivity)
-t.test(Asia_Oceania$Sensitivity, South_America$Sensitivity)
-t.test(West_Africa$Sensitivity, East_Africa$Sensitivity)
-t.test(West_Africa$Sensitivity, South_America$Sensitivity)
-t.test(East_Africa$Sensitivity, South_America$Sensitivity)
-
+# Statistical Tests Carried Out On The Data
 # ANOVA - Testing for Differences in Means
 data_frame_ANOVA <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ] # all non age-disaggregated data
 data_frame_ANOVA$Sensitivity <- (data_frame_ANOVA$Microscopy_N_Positive/data_frame_ANOVA$Microscopy_N_Tested)/

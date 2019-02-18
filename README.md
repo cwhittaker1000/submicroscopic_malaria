@@ -1,6 +1,6 @@
 # Submicroscopic Malaria Infection Systematic Review
 
-## Contents
+# Contents
 
 - [Overview](#Overview)
 - [Description](#Description)

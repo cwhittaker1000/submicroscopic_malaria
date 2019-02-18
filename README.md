@@ -4,8 +4,8 @@
 
 - [Overview](##Overview)
 - [Description](##Description)
-- [Repo Contents](##Repo Contents)
-- [Software Requirements](##Software Requirements)
+- [Repo Contents](##Repo-Contents)
+- [Software Requirements](##Software-Requirements)
 
 ## Overview
 This repository contains code used to generate the figures for the (submitted) publication:

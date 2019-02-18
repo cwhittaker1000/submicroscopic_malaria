@@ -11,7 +11,7 @@ Charles Whittaker^1^, Hannah C Slater^1^, Teun Bousema^2^, Chris Drakeley^3^, Az
 
 ^3^ Department of Immunology and Infection, Faculty of Infectious and Tropical Diseases, London School of Hygiene and Tropical Medicine, London, United Kingdom 
 
-superscript^2^ 
+superscript$^2^$ 
 
 Specifically, it uses a database of collated malaria cross-sectional survey data (where populations have had infection status determined by both Light Microscopy and PCR) to:
 

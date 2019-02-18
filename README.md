@@ -2,12 +2,12 @@
 
 ## Contents
 
-- [Overview](##Overview)
-- [Description](##Description)
-- [Repo Contents](##Repo-Contents)
-- [Software Requirements](##Software-Requirements)
+- [Overview](#Overview)
+- [Description](#Description)
+- [Repo Contents](#Repo-Contents)
+- [Software Requirements](#Software-Requirements)
 
-## Overview
+# Overview
 This repository contains code used to generate the figures for the (submitted) publication:
 
 **Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants**   
@@ -24,7 +24,7 @@ Specifically, it uses a database of collated malaria cross-sectional survey data
 - Explore how historical patterns of transmission influence the extent and size of the submicroscopic reservoir **(Figure 4)**
 - Integrate these results with previous estimates of the comparative infectivity (to mosquitoes) of microscopically detectable and submicroscopic infections to generate estimates for the contribution to onwards transmission of these two infected subgroups **(Figure 5)** 
 
-## Description
+# Description
 A systematic literature review was carried out to compile malaria prevalence data from references where both microscopy and PCR based methods had been used to determine infection status. This represents an update to the systematic review carried out by Okell et al., in 2012 (Nature Communications, 3, p1237). Searches were carried out using PubMed and WebofScience and the search terms (“PCR” OR “Polymerase Chain Reaction”) AND “falciparum”. 
 
 Following the screening process, a total of 55 new references were included, with a further 2 relevant references, unpublished at the time of screening, but since published, included. Together with the results of the previous systematic review, this gave atotal of 282 prevalence survey pairs. For each prevalence survey pair, a variety of different relevant data were extracted, including (amongst others):

@@ -6,6 +6,7 @@
 - [Description](#Description)
 - [Repo Contents](#Repo-Contents)
 - [Software Requirements](#Software-Requirements)
+- [Installation Guide and Instructions for Use](#Installation-Guide-and-Instructions-for-Use)
 
 # Overview
 This repository contains code used to generate the figures for the (submitted) publication:

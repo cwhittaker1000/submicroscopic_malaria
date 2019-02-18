@@ -39,9 +39,9 @@ This collated information comprises the data from which the analyses presented i
 
 # Repo Contents
 
-- [R](./R): `R` code required to generate the figures featured in the paper.
+- [Figure_Generation_Code](./Figure_Generation_Code): `R` code required to generate the figures featured in the paper.
 - [JAGS_Model](./JAGS_Model): Code specifying the linear (on the logit scale) regression model fitted to the data using the JAGS MCMC software.   
-- [Data](./Data): Containing the raw data used in the analyses presented here. This represents the data collated as part of this systematic review, as well as data from Okell et al., 2012. Available in both the raw form, as well as the final version that was imported into `R` for analysis.    
+- [Data](./Data): Containing the raw data used in the analyses presented here. This represents the data collated as part of this systematic review, as well as data from Okell et al., 2012. Available in both the raw form, as well as the version that was imported into `R` for analysis.    
 
 
 # Software Requirements

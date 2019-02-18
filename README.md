@@ -6,6 +6,7 @@
 - [Description](#Description)
 - [Repo Contents](#Repo-Contents)
 - [Software Requirements](#Software-Requirements)
+- [System Requirements](#System-Requirements)
 - [Installation Guide and Instructions for Use](#Installation-Guide-and-Instructions-for-Use)
 
 # Overview
@@ -48,10 +49,10 @@ This collated information comprises the data from which the analyses presented i
 
 Running this code requirs only a standard computer with enough RAM to support contained within this code. The machine this code has been ran and tested on has the following proprties:
 
-Operating System: Windows 7 Entreprise 
-Processor: Intel(R) Core(TM) i7-3770 CPU @ 3.40 GHz 
-Installed Memory (RAM): 8.00 GB
-System Type: 64-bit Operating System
+Operating System: Windows 7 Entreprise   
+Processor: Intel(R) Core(TM) i7-3770 CPU @ 3.40 GHz   
+Installed Memory (RAM): 8.00 GB  
+System Type: 64-bit Operating System  
 
 This code has been tested only on Windows systems.
 

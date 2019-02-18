@@ -41,18 +41,39 @@ This collated information comprises the data from which the analyses presented i
 
 - [Figure_Generation_Code](./Figure_Generation_Code): `R` code required to generate the figures featured in the paper.
 - [JAGS_Model](./JAGS_Model): Code specifying the linear (on the logit scale) regression model fitted to the data using the JAGS MCMC software.   
-- [Data](./Data): Containing the raw data used in the analyses presented here. This represents the data collated as part of this systematic review, as well as data from Okell et al., 2012. Available in both the raw form, as well as the version that was imported into `R` for analysis.    
+- [Data](./Data): Containing the raw data used in the analyses presented here. This represents the data collated as part of this systematic review, as well as data from Okell et al., 2012. Available in both the raw form, as well as the version that was imported into `R` for analysis.   
 
+# System Requirements
+
+Running this code requirs only a standard computer with enough RAM to support contained within this code. The machine this code has been ran and tested on has the following proprties:
+
+Operating System: Windows 7 Entreprise 
+Processor: Intel(R) Core(TM) i7-3770 CPU @ 3.40 GHz 
+Installed Memory (RAM): 8.00 GB
+System Type: 64-bit Operating System
+
+This code has been tested only on Windows systems.
 
 # Software Requirements
 
-Running the code contained in this repository requires the following:
+Running the code contained in this repository requires the following
 
-- The package **ssa** (see: https://cran.r-project.org/web/packages/ssa/index.html)
-- The package **binom** (see: https://cran.r-project.org/web/packages/binom/index.html)
-- The package **rjags** (see: https://cran.r-project.org/web/packages/rjags/index.html)
-- The software **JAGS** (see: http://mcmc-jags.sourceforge.net/)
+- The R Programming Language (Version 3.5.2 "Eggshell Igloo" used here) (see: https://www.r-project.org/)
+- The package **ssa** (Version 1.3.0 used here) (see: https://cran.r-project.org/web/packages/ssa/index.html)
+- The package **binom** (Version 1.1.1 used here) (see: https://cran.r-project.org/web/packages/binom/index.html)
+- The package **rjags** (Version 4.8 used here) (see: https://cran.r-project.org/web/packages/rjags/index.html)
+- The software **JAGS** (version 4.3.0 used here) (see: http://mcmc-jags.sourceforge.net/)
 
-rjags is an `R` package offering an interface to the JAGS MCMC library. JAGS is a program for analysis of Bayesian models using Markov Chain Monte Carlo (MCMC) simulation. More information and details about package itself are available here: http://mcmc-jags.sourceforge.net/ and the software itself is available for download at https://sourceforge.net/projects/mcmc-jags/. 
+rjags is an `R` package offering an interface to the JAGS MCMC library. JAGS is a program for analysis of Bayesian models using Markov Chain Monte Carlo (MCMC) simulation. More information and details about package itself are available here: http://mcmc-jags.sourceforge.net/ and the software itself is available for download at https://sourceforge.net/projects/mcmc-jags/ and takes on the order of minutes to install. 
+
+# Installation Guide and Instructions for Use
+The following instructions require that all packages required have been installed within `R` and that additionally, the JAGS software has also been installed. For more information about how and where to download these, see above in the Software Requirements section. 
+To replicate and reproduce the analyses presented in this paper, do the following: 
+
+1. Download `Submicroscopic_Review_Data_R_Import.csv` from the [Data](./Data) folder of this repository. 
+2. Download the `R` code from  [Figure_Generation_Code](./Figure_Generation_Code) for the particular part of the analysis you are trying to reproduce. 
+3. From an `R` session, import `Submicroscopic_Review_Data_R_Import.csv` as the object Submicroscopic_Review_Data_R_Import. 
+4. Run the `R` code. The output from running this code will be a number of MCMC objects, as well as a series of plots representing the output from MCMC based fitting of the logit-linear model to the collated data. These plots form the basis of the figures presented in the publication. 
+
 
 

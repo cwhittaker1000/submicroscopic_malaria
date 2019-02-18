@@ -1,6 +1,14 @@
 # Submicroscopic Malaria Infection Systematic Review and Analysis
 
-This repository contains code used to generate the figures for the (submitted) publication *Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants*. 
+This repository contains code used to generate the figures for the (submitted) publication:
+
+*Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants*. 
+Charles Whittaker^1^, Hannah C Slater^1^, Teun Bousema^2^, Chris Drakeley^3^, Azra Ghani^1^ and Lucy C Okell^1^
+^1^MRC Centre for Global Infectious Disease Analysis, Department of Infectious Disease Epidemiology, Imperial College London, London, United Kingdom 
+^2^Department of Medical Microbiology, Radboud University Medical Center, Nijmegen, The Netherlands
+^3^Department of Immunology and Infection, Faculty of Infectious and Tropical Diseases, London School of Hygiene and Tropical Medicine, London, United Kingdom 
+
+
 
 Specifically, it uses a database of collated malaria cross-sectional survey data (where populations have had infection status determined by both Light Microscopy and PCR) to:
 

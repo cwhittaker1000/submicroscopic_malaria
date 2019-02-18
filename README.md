@@ -2,16 +2,13 @@
 
 This repository contains code used to generate the figures for the (submitted) publication:
 
-*Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants*. 
-Charles Whittaker^1^, Hannah C Slater^1^, Teun Bousema^2^, Chris Drakeley^3^, Azra Ghani^1^ and Lucy C Okell^1^
+**Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants** 
+Charles Whittaker<sup>1</sup>, Hannah C Slater<sup>1</sup>, Teun Bousema<sup>2</sup>, Chris Drakeley<sup>3</sup>, Azra Ghani<sup>1</sup> and Lucy C Okell<sup>1</sup>
+<sup>1</sup>  MRC Centre for Global Infectious Disease Analysis, Department of Infectious Disease Epidemiology, Imperial College London, London, United Kingdom 
+<sup>2</sup>  Department of Medical Microbiology, Radboud University Medical Center, Nijmegen, The Netherlands
+<sup>3</sup>  Department of Immunology and Infection, Faculty of Infectious and Tropical Diseases, London School of Hygiene and Tropical Medicine, London, United Kingdom 
 
-^1^ MRC Centre for Global Infectious Disease Analysis, Department of Infectious Disease Epidemiology, Imperial College London, London, United Kingdom 
 
-^2^ Department of Medical Microbiology, Radboud University Medical Center, Nijmegen, The Netherlands
-
-^3^ Department of Immunology and Infection, Faculty of Infectious and Tropical Diseases, London School of Hygiene and Tropical Medicine, London, United Kingdom 
-
-superscript<sup>2</sup> 
 
 Specifically, it uses a database of collated malaria cross-sectional survey data (where populations have had infection status determined by both Light Microscopy and PCR) to:
 

@@ -1,6 +1,8 @@
-# Submicroscopic Malaria Infections
+# Submicroscopic Malaria Infection Systematic Review and Analysis
 
-This repository contains code used to generate the figures for the (submitted) publication "Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants. Specifically, it uses a database of collated malaria cross-sectional survey data (where populations have had infection status determined by both Light Microscopy and PCR) to:
+This repository contains code used to generate the figures for the (submitted) publication *Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants*. 
+
+Specifically, it uses a database of collated malaria cross-sectional survey data (where populations have had infection status determined by both Light Microscopy and PCR) to:
 
 - Explore how the proportion of submicroscopically infected individuals varies across the transmission gradient **(Figure 1)**
 - Examine age-related patterns of infection and see how the size of the submicroscopic reservoir varies acrosss different age groups **(Figure 2)**
@@ -13,10 +15,11 @@ A systematic literature review was carried out to compile malaria prevalence dat
 
 Following the screening process, a total of 55 new references were included, with a further 2 relevant references, unpublished at the time of screening, but since published, included. Together with the results of the previous systematic review, this gave atotal of 282 prevalence survey pairs. For each prevalence survey pair, a variety of different relevant data were extracted, including (amongst others):
 
-- Number sampled and number positive (for both Light Microscopy and PCR)
-- Location and Year of Sampling
-- Historical and Current Patterns of Transmission (for African surveys only, using results from the Malaria Atlas Project)
-- The Age Range of the Sampled Population
+- Number sampled and number positive (for both Light Microscopy and PCR) **(from the papers themselves)**
+- Location and Year of Sampling **(from the papers themselves)**
+- Geographical Location **(from the papers themselves)**
+- Historical and Current Patterns of Transmission **(for African surveys only, using results from the Malaria Atlas Project: https://map.ox.ac.uk/)**
+- The Age Range of the Sampled Population **(from the papers themselves)**
 
 This collated information comprises the data from which the analyses presented in the paper are derived. This data is available in this github repo, filename: "For Submission Whittaker et al R Import.csv"
 

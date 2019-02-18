@@ -1,5 +1,13 @@
-# Submicroscopic Malaria Infection Systematic Review and Analysis
+# Submicroscopic Malaria Infection Systematic Review
 
+## Contents
+
+- [Overview](##Overview)
+- [Description](##Description)
+- [Repo Contents](##Repo Contents)
+- [Software Requirements](##Software Requirements)
+
+## Overview
 This repository contains code used to generate the figures for the (submitted) publication:
 
 **Variation in the Prevalence of Submicroscopic Malaria Infections: Historical Transmission Intensity and Age as Key Determinants**   
@@ -27,7 +35,7 @@ Following the screening process, a total of 55 new references were included, wit
 - Historical and Current Patterns of Transmission **(for African surveys only, using results from the Malaria Atlas Project: https://map.ox.ac.uk/)**
 - The Age Range of the Sampled Population **(from the papers themselves)**
 
-This collated information comprises the data from which the analyses presented in the paper are derived. This data is available in this github repo, filename: "For Submission Whittaker et al R Import.csv"
+This collated information comprises the data from which the analyses presented in the paper are derived.
 
 # Repo Contents
 

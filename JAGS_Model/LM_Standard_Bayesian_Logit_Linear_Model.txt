@@ -1,13 +1,12 @@
-model{
+model{ 
   for (i in 1:N) {
-  
     prev_microscopy[i] ~ dbin(p_microscopy[i],total_microscopy[i]);
     prev_pcr[i] ~ dbin(p_pcr[i],total_pcr[i]);
     
+    logit(p_microscopy[i]) <- mu[i] + delta[i];
     logit(p_pcr[i]) <- mu[i];
-    logit(p_microscopy[i]) <- mu[i]+delta[i];
     
-    delta[i] <- delta.dash[i]+beta*mu[i];
+    delta[i] <- delta.dash[i]+beta*(mu[i] - (mean(mu[])));
     delta.dash[i] ~ dnorm(delt,taud);
     
     mu[i] ~ dnorm(0,0.0001);

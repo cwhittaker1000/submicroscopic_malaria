@@ -25,7 +25,7 @@ setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub
 seed <- 193
 
 # Loading In and Processing the Dataset
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2 & !is.na(data_frame$Sampling_Season), ]
 full_data$prev_ratio <- full_data$Micro_Prev/full_data$PCR_Prev
 wet_season <- full_data[!is.na(full_data$Sampling_Season) & as.character(full_data$Sampling_Season) == "Wet", ]

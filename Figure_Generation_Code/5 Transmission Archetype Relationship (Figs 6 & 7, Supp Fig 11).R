@@ -27,12 +27,12 @@ source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
 
 # Load in the dataset and subset the data by the survey region's transmission history (African surveys only):
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
 full_data$Sensitivity <- full_data$Micro_Prev/full_data$PCR_Prev
 data_frame <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ] #Remove age disaggregated data
 data_frame <- data_frame[order(data_frame$Transmission_Setting_15), ] # orders by transmission history status (puts NAs at end)
-data_frame <- data_frame[1:167, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
+data_frame <- data_frame[1:169, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
 
 # Subsetting the Data by Transmission Archetype
 high_high_subset <- data_frame[data_frame$Transmission_Setting_15 == "High_High", ]
@@ -57,9 +57,9 @@ initial_values_function <- function(){
 model_file <- "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt"
 
 # Running the JAGS models for each dataset
-High_high_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, high_high_subset)
-High_low_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, high_low_subset)
-Low_low_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, low_low_subset)
+High_high_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, high_high_subset)
+High_low_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, high_low_subset)
+Low_low_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, low_low_subset)
 
 # Supplementary Figure 11 - MCMC Output and Parameter Tables
 high_high_param_table <- param_table(High_high_model, params)
@@ -67,7 +67,7 @@ plot(High_high_model, col = c("#00A600FF"), las = 1)
 high_low_param_table <- param_table(High_low_model, params)
 plot(High_low_model, col = c("#ECB176FF"), las = 1)
 low_low_param_table <- param_table(Low_low_model, params)
-plot(Low_low_model, col = c("#ECB176FF"), las = 1)
+plot(Low_low_model, col = c("dark grey"), las = 1)
 
 # Processing the Output from the JAGS Models
     # Equation: logit(Microscopy Prevalence) = delta' + (1 + beta) * logit(PCR_prevalence)

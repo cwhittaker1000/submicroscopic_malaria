@@ -26,10 +26,10 @@ source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
 
 # Load in the dataset and subset the data by the survey region's transmission history (African surveys only):
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 data_frame <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ] #Remove age disaggregated data
 data_frame <- data_frame[order(data_frame$Transmission_Setting_15), ] # orders by transmission history status (puts NAs at end)
-data_frame <- data_frame[1:167, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
+data_frame <- data_frame[1:169, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
 
 ##### 20% Threshold ####
 
@@ -68,21 +68,21 @@ standard_jags_inits <- function(){
 # Specifying, updating and iterating the RJAGS model
 
 # High High DATA
-High_high_micr_PCR_comp_model <- jags.parallel(data = high_high_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+High_high_micr_PCR_comp_model <- jags.parallel(data = high_high_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 High_high_micr_PCR_comp_model <- as.mcmc(High_high_micr_PCR_comp_model)
 High_high_overall_chain <- rbind(High_high_micr_PCR_comp_model[[1]], High_high_micr_PCR_comp_model[[2]], High_high_micr_PCR_comp_model[[3]], High_high_micr_PCR_comp_model[[4]])
 High_high_beta_mean <- mean(as.array(High_high_overall_chain[, 1]))
 High_high_delt_mean <- mean(as.array(High_high_overall_chain[, 2]))
 
 # High low DATA
-High_low_micr_PCR_comp_model <- jags.parallel(data = high_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+High_low_micr_PCR_comp_model <- jags.parallel(data = high_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 High_low_micr_PCR_comp_model <- as.mcmc(High_low_micr_PCR_comp_model)
 High_low_overall_chain <- rbind(High_low_micr_PCR_comp_model[[1]], High_low_micr_PCR_comp_model[[2]], High_low_micr_PCR_comp_model[[3]], High_low_micr_PCR_comp_model[[4]])
 High_low_beta_mean <- mean(as.array(High_low_overall_chain[, 1]))
 High_low_delt_mean <- mean(as.array(High_low_overall_chain[, 2]))
 
 # Low low DATA
-Low_low_micr_PCR_comp_model <- jags.parallel(data = low_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+Low_low_micr_PCR_comp_model <- jags.parallel(data = low_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 Low_low_micr_PCR_comp_model <- as.mcmc(Low_low_micr_PCR_comp_model)
 Low_low_overall_chain <- rbind(Low_low_micr_PCR_comp_model[[1]], Low_low_micr_PCR_comp_model[[2]], Low_low_micr_PCR_comp_model[[3]], Low_low_micr_PCR_comp_model[[4]])
 Low_low_beta_mean <- mean(as.array(Low_low_overall_chain[, 1]))
@@ -204,21 +204,21 @@ standard_jags_inits <- function(){
 # Specifying, updating and iterating the RJAGS model
 
 # High High DATA
-High_high_micr_PCR_comp_model <- jags.parallel(data = high_high_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+High_high_micr_PCR_comp_model <- jags.parallel(data = high_high_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 High_high_micr_PCR_comp_model <- as.mcmc(High_high_micr_PCR_comp_model)
 High_high_overall_chain <- rbind(High_high_micr_PCR_comp_model[[1]], High_high_micr_PCR_comp_model[[2]], High_high_micr_PCR_comp_model[[3]], High_high_micr_PCR_comp_model[[4]])
 High_high_beta_mean <- mean(as.array(High_high_overall_chain[, 1]))
 High_high_delt_mean <- mean(as.array(High_high_overall_chain[, 2]))
 
 # High low DATA
-High_low_micr_PCR_comp_model <- jags.parallel(data = high_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+High_low_micr_PCR_comp_model <- jags.parallel(data = high_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 High_low_micr_PCR_comp_model <- as.mcmc(High_low_micr_PCR_comp_model)
 High_low_overall_chain <- rbind(High_low_micr_PCR_comp_model[[1]], High_low_micr_PCR_comp_model[[2]], High_low_micr_PCR_comp_model[[3]], High_low_micr_PCR_comp_model[[4]])
 High_low_beta_mean <- mean(as.array(High_low_overall_chain[, 1]))
 High_low_delt_mean <- mean(as.array(High_low_overall_chain[, 2]))
 
 # Low low DATA
-Low_low_micr_PCR_comp_model <- jags.parallel(data = low_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+Low_low_micr_PCR_comp_model <- jags.parallel(data = low_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 Low_low_micr_PCR_comp_model <- as.mcmc(Low_low_micr_PCR_comp_model)
 Low_low_overall_chain <- rbind(Low_low_micr_PCR_comp_model[[1]], Low_low_micr_PCR_comp_model[[2]], Low_low_micr_PCR_comp_model[[3]], Low_low_micr_PCR_comp_model[[4]])
 Low_low_beta_mean <- mean(as.array(Low_low_overall_chain[, 1]))
@@ -277,8 +277,6 @@ Low_low_credible_lower <- apply(Low_low_pred_mean_dist, MARGIN = 2, quantile, pr
 Low_low_credible_upper <- apply(Low_low_pred_mean_dist, MARGIN = 2, quantile, prob = 0.975)
 low_low_sensitivity_upper <- Low_low_credible_upper / PCR_prevalence_low_low
 low_low_sensitivity_lower <- Low_low_credible_lower / PCR_prevalence_low_low
-
-# Figure 4B Plotting - Sensitivity Against PCR Prevalence for All 3 Transmission Settings - Data & Modelled Relationship
 
 # Panel 1 - Historically and Currently High Transmission Settings
 plot(high_high_subset$PCR_Prev * 100, high_high_subset$Micro_Prev/high_high_subset$PCR_Prev,  las = 1, cex = 2,
@@ -341,21 +339,21 @@ standard_jags_inits <- function(){
 # Specifying, updating and iterating the RJAGS model
 
 # High High DATA
-High_high_micr_PCR_comp_model <- jags.parallel(data = high_high_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+High_high_micr_PCR_comp_model <- jags.parallel(data = high_high_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 High_high_micr_PCR_comp_model <- as.mcmc(High_high_micr_PCR_comp_model)
 High_high_overall_chain <- rbind(High_high_micr_PCR_comp_model[[1]], High_high_micr_PCR_comp_model[[2]], High_high_micr_PCR_comp_model[[3]], High_high_micr_PCR_comp_model[[4]])
 High_high_beta_mean <- mean(as.array(High_high_overall_chain[, 1]))
 High_high_delt_mean <- mean(as.array(High_high_overall_chain[, 2]))
 
 # High low DATA
-High_low_micr_PCR_comp_model <- jags.parallel(data = high_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+High_low_micr_PCR_comp_model <- jags.parallel(data = high_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4,n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 High_low_micr_PCR_comp_model <- as.mcmc(High_low_micr_PCR_comp_model)
 High_low_overall_chain <- rbind(High_low_micr_PCR_comp_model[[1]], High_low_micr_PCR_comp_model[[2]], High_low_micr_PCR_comp_model[[3]], High_low_micr_PCR_comp_model[[4]])
 High_low_beta_mean <- mean(as.array(High_low_overall_chain[, 1]))
 High_low_delt_mean <- mean(as.array(High_low_overall_chain[, 2]))
 
 # Low low DATA
-Low_low_micr_PCR_comp_model <- jags.parallel(data = low_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+Low_low_micr_PCR_comp_model <- jags.parallel(data = low_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 Low_low_micr_PCR_comp_model <- as.mcmc(Low_low_micr_PCR_comp_model)
 Low_low_overall_chain <- rbind(Low_low_micr_PCR_comp_model[[1]], Low_low_micr_PCR_comp_model[[2]], Low_low_micr_PCR_comp_model[[3]], Low_low_micr_PCR_comp_model[[4]])
 Low_low_beta_mean <- mean(as.array(Low_low_overall_chain[, 1]))
@@ -476,21 +474,21 @@ standard_jags_inits <- function(){
 # Specifying, updating and iterating the RJAGS model
 
 # High High DATA
-High_high_micr_PCR_comp_model <- jags.parallel(data = high_high_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+High_high_micr_PCR_comp_model <- jags.parallel(data = high_high_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 High_high_micr_PCR_comp_model <- as.mcmc(High_high_micr_PCR_comp_model)
 High_high_overall_chain <- rbind(High_high_micr_PCR_comp_model[[1]], High_high_micr_PCR_comp_model[[2]], High_high_micr_PCR_comp_model[[3]], High_high_micr_PCR_comp_model[[4]])
 High_high_beta_mean <- mean(as.array(High_high_overall_chain[, 1]))
 High_high_delt_mean <- mean(as.array(High_high_overall_chain[, 2]))
 
 # High low DATA
-High_low_micr_PCR_comp_model <- jags.parallel(data = high_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+High_low_micr_PCR_comp_model <- jags.parallel(data = high_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 High_low_micr_PCR_comp_model <- as.mcmc(High_low_micr_PCR_comp_model)
 High_low_overall_chain <- rbind(High_low_micr_PCR_comp_model[[1]], High_low_micr_PCR_comp_model[[2]], High_low_micr_PCR_comp_model[[3]], High_low_micr_PCR_comp_model[[4]])
 High_low_beta_mean <- mean(as.array(High_low_overall_chain[, 1]))
 High_low_delt_mean <- mean(as.array(High_low_overall_chain[, 2]))
 
 # Low low DATA
-Low_low_micr_PCR_comp_model <- jags.parallel(data = low_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 45000, n.burnin = 20000, n.thin = 25, DIC = TRUE)
+Low_low_micr_PCR_comp_model <- jags.parallel(data = low_low_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = params, jags.seed = seed, model.file = "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 25, DIC = TRUE)
 Low_low_micr_PCR_comp_model <- as.mcmc(Low_low_micr_PCR_comp_model)
 Low_low_overall_chain <- rbind(Low_low_micr_PCR_comp_model[[1]], Low_low_micr_PCR_comp_model[[2]], Low_low_micr_PCR_comp_model[[3]], Low_low_micr_PCR_comp_model[[4]])
 Low_low_beta_mean <- mean(as.array(Low_low_overall_chain[, 1]))
@@ -577,10 +575,10 @@ polygon(x = c(PCR_prevalence_low_low * 100, rev(PCR_prevalence_low_low * 100)),
 
 # ANOVA and TukeyHSD
 # Load in the dataset and subset the data by the survey region's transmission history (African surveys only):
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 data_frame <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ] #Remove age disaggregated data
 data_frame <- data_frame[order(data_frame$Transmission_Setting_15), ] # orders by transmission history status (puts NAs at end)
-data_frame <- data_frame[1:167, ]
+data_frame <- data_frame[1:169, ]
 data_frame$Sensitivity <- data_frame$Micro_Prev/data_frame$PCR_Prev
 variance <- data_frame$PCR_N_Tested * data_frame$PCR_Prev * (1 - data_frame$PCR_Prev)
 

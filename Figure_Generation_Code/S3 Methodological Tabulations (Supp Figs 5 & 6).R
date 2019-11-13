@@ -26,7 +26,7 @@ setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub
 source("Functions/Submicroscopic_Analysis_Functions.R")
 
 # Loading In and Processing the Dataset
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2 & !is.na(data_frame$Sampling_Season), ]
 full_data$Sensitivity <- full_data$Micro_Prev/full_data$PCR_Prev
 

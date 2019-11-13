@@ -25,7 +25,7 @@ setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub
 source("Functions/Submicroscopic_Analysis_Functions.R")
 
 # Load in the dataset and subset the data into:
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
 
 # Specifying the Data in the Format Required for Input into RJAGS
@@ -48,7 +48,7 @@ basic_jags_inits <- function(){
 # Specifying and initialising the RJAGS model- creates a JAGS model object
 Basic_DIC_vector <- c()
 for (i in 1:50) {
-  LM_basic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = basic_jags_inits, parameters.to.save = basic_params, jags.seed = seed[i], model.file = "JAGS_Model/non_centred_LM_Basic_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 100000, n.burnin = 20000, n.thin = 20, DIC = TRUE)
+  LM_basic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = basic_jags_inits, parameters.to.save = basic_params, jags.seed = seed[i], model.file = "JAGS_Model/LM_Basic_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 20, DIC = TRUE)
   Basic_DIC_vector[i] <- LM_basic_model$BUGSoutput$DIC
   print(i)
 }
@@ -77,7 +77,7 @@ standard_jags_inits <- function(){
 
 Standard_DIC_vector <- c()
 for (i in 1:50) {
-  LM_standard_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = standard_params, jags.seed = seed[i], model.file = 'JAGS_Model/non_centred_LM_Standard_Bayesian_Logit_Linear_Model.txt', n.chains = 4, n.iter = 100000, n.burnin = 20000, n.thin = 20, DIC = TRUE)
+  LM_standard_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = standard_params, jags.seed = seed[i], model.file = 'JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt', n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 20, DIC = TRUE)
   LM_standard_model_DIC <- LM_standard_model$BUGSoutput$DIC
   Standard_DIC_vector[i] <- LM_standard_model_DIC
   print(i)
@@ -107,7 +107,7 @@ quadratic_jags_inits <- function(){
 
 Quadratic_DIC_vector <- c()
 for (i in 1:50) {
-  LM_quadratic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = quadratic_jags_inits, parameters.to.save = quadratic_params, jags.seed = seed[i], model.file = 'JAGS_Model/non_centred_LM_Quadratic_Bayesian_Logit_Linear_Model.txt', n.chains = 4, n.iter = 100000, n.burnin = 20000, n.thin = 20, DIC = TRUE)
+  LM_quadratic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = quadratic_jags_inits, parameters.to.save = quadratic_params, jags.seed = seed[i], model.file = 'JAGS_Model/LM_Quadratic_Bayesian_Logit_Linear_Model.txt', n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 20, DIC = TRUE)
   LM_quadratic_model_DIC <- LM_quadratic_model$BUGSoutput$DIC
   Quadratic_DIC_vector[i] <- LM_quadratic_model_DIC
   print(i)
@@ -138,7 +138,7 @@ cubic_jags_inits <- function(){
 
 Cubic_DIC_vector <- c()
 for (i in 1:50) {
-  LM_cubic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = cubic_jags_inits, parameters.to.save = cubic_params, model.file = 'JAGS_Model/non_centred_LM_Cubic_Bayesian_Logit_Linear_Model.txt', n.chains = 4, jags.seed = seed[i], n.iter = 100000, n.burnin = 20000, n.thin = 20, DIC = TRUE)
+  LM_cubic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = cubic_jags_inits, parameters.to.save = cubic_params, model.file = 'JAGS_Model/LM_Cubic_Bayesian_Logit_Linear_Model.txt', n.chains = 4, jags.seed = seed[i], n.iter = 10000, n.burnin = 5000, n.thin = 20, DIC = TRUE)
   LM_cubic_model_DIC <- LM_cubic_model$BUGSoutput$DIC
   Cubic_DIC_vector[i] <- LM_cubic_model_DIC
   print(i)

@@ -25,7 +25,7 @@ setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub
 source("Functions/Submicroscopic_Analysis_Functions.R")
 
 # Loading In and Processing the Dataset
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 data_frame$PCR_Method <- factor(data_frame$PCR_Method)
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
 full_data$Prev_Ratio <- full_data$Micro_Prev/full_data$PCR_Prev
@@ -47,14 +47,14 @@ TukeyHSD(aov(weighted_PCR_method_model))
 
 # Supplementary Figure 4A - PCR Methodology Prevalence Ratio Boxplots
 par(mfrow = c(1, 2))
-nested <- full_data$Sensitivity[full_data$PCR_Method == "Nested"]
-LDR <- full_data$Sensitivity[full_data$PCR_Method == "PCR-LDR"]
-qPCR <- full_data$Sensitivity[full_data$PCR_Method == "qPCR"]
-semi_nested <- full_data$Sensitivity[full_data$PCR_Method == "Semi-Nested"]
-RT_PCR <- full_data$Sensitivity[full_data$PCR_Method == "RT-PCR"]
+nested <- full_data$Prev_Ratio[full_data$PCR_Method == "Nested"]
+LDR <- full_data$Prev_Ratio[full_data$PCR_Method == "PCR-LDR"]
+qPCR <- full_data$Prev_Ratio[full_data$PCR_Method == "qPCR"]
+semi_nested <- full_data$Prev_Ratio[full_data$PCR_Method == "Semi-Nested"]
+RT_PCR <- full_data$Prev_Ratio[full_data$PCR_Method == "RT-PCR"]
 
 colours <- c("#F15025", "#F2328C", "#7ACC70", "#00A7E1", "#EDB21C")
-bp <- boxplot(Sensitivity ~ PCR_Method, data = full_data, las = 1, col = adjustcolor(colours, alpha.f = 0.4), 
+bp <- boxplot(Prev_Ratio ~ PCR_Method, data = full_data, las = 1, col = adjustcolor(colours, alpha.f = 0.4), 
               border = colours, boxlwd = 3, whisklty = 1, staplelwd = 3, whisklwd = 3, ylab = "Prevalence Ratio", xlab = "PCR Method")
 
 nested_weights <- weights[!is.na(full_data$PCR_Method) & as.character(full_data$PCR_Method) == "Nested"]
@@ -65,7 +65,7 @@ semi_weights <- weights[!is.na(full_data$PCR_Method) & as.character(full_data$PC
 mylevels <- levels(full_data$PCR_Method)
 for(i in 1:length(mylevels)){
   thislevel <- mylevels[i]
-  thisvalues <- full_data$Sensitivity[full_data$PCR_Method == thislevel]
+  thisvalues <- full_data$Prev_Ratio[full_data$PCR_Method == thislevel]
   myjitter <- jitter(rep(i, length(thisvalues)), amount = 0.3)
   if (i == 1) {
     points(myjitter, thisvalues, pch = 20, col =  "#F15025", cex = nested_weights)

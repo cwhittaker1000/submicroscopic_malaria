@@ -1,0 +1,388 @@
+Name,Year,Global_Region,Country,Admin_1,Full_Or_Age_Disagg_Data,Transmission_Setting_20,Transmission_Setting_15,Transmission_Setting_10,Transmission_Setting_5,Hist_Trans,Curr_Trans,PCR_N_Tested,PCR_N_Positive,PCR_Prev,Microscopy_N_Tested,Microscopy_N_Positive,Micro_Prev,Old_or_New,Age_Group,Raw_Age_Group,PCR_Method,PCR_Method_Raw,Microscopy_Fields,Microscopy_Leucocytes,Sampling_Season,Sampling_Season_Raw
+Proietti,2011,East Africa,Uganda,Apac,0,High_High,High_High,High_High,High_High,0.7456,0.6248,57,38,0.666667,57,31,0.54386,New,0-5,0-5,Nested,Nested,100,200,Wet,Wet
+Proietti,2011,East Africa,Uganda,Apac,0,High_High,High_High,High_High,High_High,0.7456,0.6248,62,43,0.693548,62,37,0.596774,New,5-15years,5-10years,Nested,Nested,100,200,Wet,Wet
+Proietti,2011,East Africa,Uganda,Apac,0,High_High,High_High,High_High,High_High,0.7456,0.6248,122,52,0.42623,124,25,0.201613,New,15+,15+,Nested,Nested,100,200,Wet,Wet
+Proietti,2011,East Africa,Uganda,Apac,2,High_High,High_High,High_High,High_High,0.7456,0.6248,241,133,0.551867,243,93,0.382716,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Souza,2012,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,74,1,0.013514,74,0,0,New,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA
+Souza,2012,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,74,2,0.013514,74,0,0,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,NA,NA
+Souza,2012,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,134,1,0.013514,134,0,0,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,NA,NA
+Atkinson,2012,Asia&Oceania,Solomon Islands,NA,2,NA,NA,NA,NA,NA,NA,1843,1,0.000543,8554,1,0.000117,New,All Ages,Children&Adults,Semi-Nested,Semi-Nested,100,350,Dry,Start Wet
+Pegha Moukandja,2016,West Africa,Gabon,Ogooué-Lolo,2,High_Low,High_High,High_High,High_High,0.3408,0.1889,277,161,0.581227,370,93,0.251351,New,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+Pegha Moukandja,2016,West Africa,Gabon,Ogooué-Lolo,2,High_Low,High_High,High_High,High_High,0.3408,0.1889,195,109,0.558974,267,72,0.269663,New,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+Pegha Moukandja,2016,West Africa,Gabon,Ogooué-Lolo,2,High_Low,High_High,High_High,High_High,0.3408,0.1889,161,115,0.714286,218,57,0.261468,New,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Pegha Moukandja,2016,West Africa,Gabon,Ogooué-Lolo,2,High_Low,High_High,High_High,High_High,0.3408,0.1889,219,87,0.39726,255,36,0.141176,New,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+Pegha Moukandja,2016,West Africa,Gabon,Ogooué-Lolo,2,High_Low,High_High,High_High,High_High,0.3408,0.1889,173,134,0.774566,232,59,0.25431,New,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+Pegha Moukandja,2016,West Africa,Gabon,Ogooué-Lolo,2,High_Low,High_High,High_High,High_High,0.3408,0.1889,114,67,0.587719,145,31,0.213793,New,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+Atelu,2016,West Africa,Ghana,Upper East,0,High_High,High_High,High_High,High_High,0.6532,0.4934,29,4,0.137931,29,3,0.103448,New,0-5,0-5,RT-PCR,RT-PCR,200,200,Dry,Dry
+Atelu,2016,West Africa,Ghana,Upper East,0,High_High,High_High,High_High,High_High,0.6532,0.4934,38,8,0.210526,38,2,0.052632,New,5-15years,5-14years,RT-PCR,RT-PCR,200,200,Dry,Dry
+Atelu,2016,West Africa,Ghana,Upper East,0,High_High,High_High,High_High,High_High,0.6532,0.4934,142,17,0.119718,142,5,0.035211,New,15+,15-24years,RT-PCR,RT-PCR,200,200,Dry,Dry
+Atelu,2016,West Africa,Ghana,Upper East,2,High_High,High_High,High_High,High_High,0.6532,0.4934,209,29,0.138756,209,10,0.047847,New,All Ages,All Ages,RT-PCR,RT-PCR,200,200,Dry,Dry
+Rovira-Vallbona,2017,South America,Peru,NA,2,NA,NA,NA,NA,NA,NA,7265,235,0.032347,7265,5,0.000688,New,All Ages,Children&Adults,qPCR,qRT-PCR,NA,200,NA,NA
+Kangoye,2016,East Africa,Kenya,Coast,2,High_Low,High_Low,High_Low,High_High,0.3424,0.0863,779,48,0.061617,779,16,0.020539,New,All Ages,Children&Adults,qPCR,qPCR,400,NA,NA,NA
+Kangoye,2016,East Africa,Kenya,Coast,2,High_Low,High_Low,High_High,High_High,0.3424,0.1372,797,26,0.032622,797,2,0.002509,New,All Ages,Children&Adults,qPCR,qPCR,400,NA,NA,NA
+Parr,2016,East Africa,Malawi,Central Region,2,High_High,High_High,High_High,High_High,0.3811,0.2023,792,79,0.099747,792,45,0.056818,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,NA,NA
+Zhao,2017,Asia&Oceania,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,1005,1,0.000995,1005,0,0,New,All Ages,Children&Adults,Nested,Nested,100,500,NA,NA
+Zhao,2017,Asia&Oceania,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,1005,11,0.010945,1005,0,0,New,All Ages,Children&Adults,RT-PCR,RT-PCR,100,500,NA,NA
+Tadesse,2017,East Africa,Ethiopia,Amhara,2,Low_Low,Low_Low,Low_Low,Low_Low,0.0258,0.0027,551,43,0.07804,551,3,0.005445,New,All Ages,0-15,qPCR,qRT-PCR,100,200,Dry,Start Wet
+Tadesse,2017,East Africa,Ethiopia,Amhara,2,Low_Low,Low_Low,Low_Low,Low_Low,0.0258,0.0027,294,38,0.129252,335,3,0.008955,New,All Ages,0-15,qPCR,qRT-PCR,100,200,Wet,Wet
+Chourasia,2017,Asia&Oceania,India,NA,2,NA,NA,NA,NA,NA,NA,437,80,0.183066,437,47,0.107551,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Manjurano ,2017,East Africa,Tanzania,Kilimanjaro,2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0373,85,3,0.035294,250,4,0.016,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kilimanjaro,2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0373,87,8,0.091954,251,4,0.015936,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kilimanjaro,2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0373,88,34,0.386364,250,4,0.016,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kilimanjaro,2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0373,89,13,0.146067,250,16,0.064,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kilimanjaro,2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0373,76,7,0.092105,250,7,0.028,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kilimanjaro,2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0373,87,6,0.068966,250,7,0.028,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kilimanjaro,2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0373,91,21,0.230769,249,30,0.120482,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kilimanjaro,2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0373,87,44,0.505747,249,61,0.24498,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kagera,2,High_High,High_High,High_High,High_High,0.4244,0.448,84,8,0.095238,250,14,0.056,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kagera,2,High_High,High_High,High_High,High_High,0.4244,0.448,88,49,0.556818,249,45,0.180723,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kagera,2,High_High,High_High,High_High,High_High,0.4244,0.448,81,52,0.641975,246,2,0.00813,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kagera,2,High_High,High_High,High_High,High_High,0.4244,0.448,83,61,0.73494,243,74,0.304527,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Manjurano ,2017,East Africa,Tanzania,Kagera,2,High_High,High_High,High_High,High_High,0.4244,0.448,95,83,0.873684,247,122,0.493927,New,All Ages,Children&Adults,Nested,Nested,100,200,Wet,Wet
+Rosas-Aguirre,2013,South America,Peru,NA,2,NA,NA,NA,NA,NA,NA,2667,1,0.000375,2667,0,0,New,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+Tran,2013,West Africa,Mali,Koulikoro,2,High_High,High_High,High_High,High_High,0.4703,0.2656,547,320,0.585009,547,159,0.290676,New,All Ages,All Ages,Nested,Nested,NA,300,Wet,Wet
+Tran,2013,West Africa,Mali,Koulikoro,0,High_High,High_High,High_High,High_High,0.4703,0.2656,410,261,0.636585,410,134,0.326829,New,5-15years,5-15years,Nested,Nested,NA,300,Wet,Wet
+Tran,2013,West Africa,Mali,Koulikoro,0,High_High,High_High,High_High,High_High,0.4703,0.2656,47,27,0.574468,47,7,0.148936,New,15+,15-25years,Nested,Nested,NA,300,Wet,Wet
+Koepfli,2015,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,2083,385,0.18483,2083,117,0.056169,New,All Ages,Children&Adults,qPCR,qPCR,200,350,Wet,Wet
+Morris,2015,East Africa,Zanzibar,NA,2,NA,NA,NA,NA,NA,NA,2423,80,0.033017,2423,0,0,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,NA,NA
+Kho,2016,Asia&Oceania,Indonesia,NA,0,NA,NA,NA,NA,NA,NA,153,36,0.235294,153,17,0.111111,New,15+,Adults only,Nested,Nested,NA,NA,NA,NA
+Baum,2016,Asia&Oceania,Thailand,NA,2,NA,NA,NA,NA,NA,NA,1347,20,0.014848,1347,0,0,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,NA,NA
+Laban,2015,East Africa,Zambia,Southern,2,High_Low,High_Low,High_Low,High_High,0.2878,0.0554,638,18,0.028213,676,1,0.001479,New,All Ages,Children&Adults,Nested,Nested,NA,1000,NA,NA
+Laban,2015,East Africa,Zambia,Southern,2,High_Low,High_Low,High_Low,High_High,0.2878,0.0556,871,16,0.01837,871,2,0.002296,New,All Ages,Children&Adults,Nested,Nested,NA,1000,NA,NA
+Laban,2015,East Africa,Zambia,Southern,2,High_Low,High_Low,High_Low,High_Low,0.2878,0.0461,740,12,0.016216,740,0,0,New,All Ages,Children&Adults,Nested,Nested,NA,1000,NA,NA
+Laban,2015,East Africa,Zambia,Southern,2,High_Low,High_Low,High_Low,High_Low,0.2878,0.047,688,3,0.00436,688,1,0.001453,New,All Ages,Children&Adults,Nested,Nested,NA,1000,NA,NA
+Mwingira,2014,East Africa,Tanzania,Morogoro,2,High_Low,High_Low,High_Low,High_High,0.4341,0.0912,226,86,0.380531,226,13,0.057522,New,All Ages,Children&Adults,qPCR,qPCR,NA,200,Dry,Dry
+Mwingira,2014,East Africa,Tanzania,Morogoro,2,High_Low,High_Low,High_Low,High_High,0.4341,0.0912,226,60,0.265487,226,13,0.057522,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Wang,2014,Asia&Oceania,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,1552,42,0.027062,1552,5,0.003222,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,NA,NA
+Wang,2014,Asia&Oceania,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,1552,15,0.009665,1552,5,0.003222,New,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA
+Wang,2014,Asia&Oceania,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,1552,43,0.027706,1552,5,0.003222,New,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA
+Talundzic,2014,East Africa,Tanzania,Iringa,2,Low_Low,High_Low,High_Low,High_Low,0.1518,0.0479,303,27,0.089109,303,11,0.036304,New,All Ages,Children&Adults,Nested,Nested,100,200,NA,NA
+Kaisar,2013,Asia&Oceania,Indonesia,NA,2,NA,NA,NA,NA,NA,NA,1509,219,0.145129,1509,37,0.02452,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,Dry,Dry 
+Farnert,2014,East Africa,Tanzania,Pwani,2,High_High,High_High,High_High,High_High,0.5407,0.5407,792,546,0.689393939,792,309,0.390151515,New,All Ages,Children&Adults,qPCR,qPCR,100,NA,Dry,Start Wet
+Farnert,2014,East Africa,Tanzania,Pwani,2,High_High,High_High,High_High,High_High,0.5407,0.5407,792,464,0.585858586,792,309,0.390151515,New,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Start Wet
+Farnert,2014,East Africa,Tanzania,Pwani,2,High_High,High_High,High_High,High_High,0.5407,0.5407,889,576,0.64791901,889,239,0.268841395,New,All Ages,Children&Adults,qPCR,qPCR,100,NA,Dry,Start Wet
+Farnert,2014,East Africa,Tanzania,Pwani,2,High_High,High_High,High_High,High_High,0.5407,0.5407,889,400,0.449943757,889,239,0.268841395,New,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Start Wet
+Farnert,2014,East Africa,Tanzania,Pwani,2,High_High,High_High,High_High,High_High,0.5407,0.5407,808,141,0.17450495,808,43,0.053217822,New,All Ages,Children&Adults,qPCR,qPCR,100,NA,Dry,Start Wet
+Farnert,2014,East Africa,Tanzania,Pwani,2,High_High,High_High,High_High,High_High,0.5407,0.5407,808,132,0.163366337,808,43,0.053217822,New,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Start Wet
+Thanh,2015,Asia&Oceania,Vietnam,NA,2,NA,NA,NA,NA,NA,NA,75,4,0.053333333,350,10,0.028571429,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Thanh,2015,Asia&Oceania,Vietnam,NA,2,NA,NA,NA,NA,NA,NA,55,6,0.109091,256,8,0.03125,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Thanh,2015,Asia&Oceania,Vietnam,NA,2,NA,NA,NA,NA,NA,NA,133,17,0.12782,532,51,0.095865,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Thanh,2015,Asia&Oceania,Vietnam,NA,2,NA,NA,NA,NA,NA,NA,64,15,0.234375,312,24,0.076923,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Oriero,2015,West Africa,Gambia,Upper River,2,High_Low,High_Low,High_Low,High_Low,0.364,0.0241,341,131,0.384164,341,104,0.304985,New,All Ages,Children&Adults,Nested,Nested,NA,500,NA,NA
+Takem,2013,West Africa,Gambia,Upper River,2,High_Low,High_Low,High_Low,High_Low,0.364,0.0246,3214,278,0.086497,424,31,0.073113,New,All Ages,0-15,Nested,Nested,200,200,Dry,Dry
+Geiger,2013,West Africa,Burkina Faso,Boucle du Mouhoun,2,High_High,High_High,High_High,High_High,0.7872,0.7811,1561,1436,0.919923,1561,1232,0.789238,New,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+Geiger,2013,West Africa,Burkina Faso,Boucle du Mouhoun,2,High_High,High_High,High_High,High_High,0.7872,0.7811,402,266,0.661692,402,235,0.584577,New,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+Geiger,2013,West Africa,Burkina Faso,Boucle du Mouhoun,2,High_High,High_High,High_High,High_High,0.7872,0.7843,362,143,0.395028,362,109,0.301105,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Geiger,2013,West Africa,Burkina Faso,Boucle du Mouhoun,2,High_High,High_High,High_High,High_High,0.7872,0.7843,256,176,0.6875,256,143,0.558594,New,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+Geiger,2013,West Africa,Burkina Faso,Boucle du Mouhoun,2,High_High,High_High,High_High,High_High,0.7872,0.7311,267,105,0.393258,267,79,0.29588,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Geiger,2013,West Africa,Burkina Faso,Boucle du Mouhoun,2,High_High,High_High,High_High,High_High,0.7872,0.7311,219,161,0.73516,219,108,0.493151,New,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+Geiger,2013,West Africa,Burkina Faso,Boucle du Mouhoun,2,High_High,High_High,High_High,High_High,0.7872,0.6661,261,90,0.344828,261,85,0.32567,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Elbadry,2015,South America,Haiti,NA,0,NA,NA,NA,NA,NA,NA,108,3,0.027778,108,0,0,New,15+,Adults,qPCR,qRT-PCR,NA,NA,NA,NA
+Elbadry,2015,South America,Haiti,NA,0,NA,NA,NA,NA,NA,NA,122,6,0.04918,122,0,0,New,15+,Adults,qPCR,qRT-PCR,NA,NA,NA,NA
+Elbadry,2015,South America,Haiti,NA,0,NA,NA,NA,NA,NA,NA,194,79,0.407216,194,14,0.072165,New,15+,Adults,qPCR,qRT-PCR,NA,NA,NA,NA
+Elbadry,2015,South America,Haiti,NA,0,NA,NA,NA,NA,NA,NA,39,10,0.25641,39,1,0.025641,New,15+,Adults,qPCR,qRT-PCR,NA,NA,NA,NA
+Elbadry,2015,South America,Haiti,NA,0,NA,NA,NA,NA,NA,NA,63,2,0.031746,63,0,0,New,15+,Adults,qPCR,qRT-PCR,NA,NA,NA,NA
+Elbadry,2015,South America,Haiti,NA,0,NA,NA,NA,NA,NA,NA,37,8,0.216216,37,2,0.054054,New,15+,Adults,qPCR,qRT-PCR,NA,NA,NA,NA
+Ganguly,2013,Asia&Oceania,India,NA,2,NA,NA,NA,NA,NA,NA,224,27,0.120536,224,25,0.111607,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Ganguly,2013,Asia&Oceania,India,NA,2,NA,NA,NA,NA,NA,NA,275,24,0.087273,275,16,0.058182,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Ganguly,2013,Asia&Oceania,India,NA,2,NA,NA,NA,NA,NA,NA,225,25,0.111111,225,23,0.102222,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Ganguly,2013,Asia&Oceania,India,NA,2,NA,NA,NA,NA,NA,NA,239,2,0.008368,239,2,0.008368,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Mara,2013,West Africa,Ivory Coast,Montagnes,0,High_High,High_High,High_High,High_High,NA,NA,292,241,0.825342,292,230,0.787671,New,5-15years,7-15years,Nested,Nested,NA,NA,NA,NA
+Koukouikila-Koussounda,2012,West Africa,Republic of Congo,Pool,0,High_Low,High_Low,High_High,High_High,0.3676,0.137,137,12,0.087591,137,5,0.036496,New,0-5,1-3years,Nested,Nested,NA,200,NA,NA
+Koukouikila-Koussounda,2012,West Africa,Republic of Congo,Pool,0,High_Low,High_Low,High_High,High_High,0.3676,0.137,80,21,0.2625,80,11,0.1375,New,5-15years,7-10years,Nested,Nested,NA,200,NA,NA
+Koukouikila-Koussounda,2012,West Africa,Republic of Congo,Pool,2,High_Low,High_Low,High_High,High_High,0.3676,0.137,313,51,0.162939,313,27,0.086262,New,All Ages,All Ages,Nested,Nested,NA,200,NA,NA
+Cook,2016,Asia&Oceania,Republic of Yemen,NA,2,NA,NA,NA,NA,NA,NA,2181,430,0.197157,2220,237,0.106757,New,All Ages,0-16years,Nested,Nested,NA,NA,NA,NA
+Waltmann,2015,Asia&Oceania,Solomon Islands,NA,0,NA,NA,NA,NA,NA,NA,3501,5,0.001428,3501,4,0.001143,New,0-5,1-3years,qPCR,qPCR,100,300,Wet,Wet
+Rosas-Aguirre,2015,South America,Peru,NA,2,NA,NA,NA,NA,NA,NA,651,35,0.053763,651,10,0.015361,New,All Ages,0-7 and randomly selected individuals > 7 years old,Nested,Nested,100,200,Dry,Start Wet
+Koepfli,2011,Asia&Oceania,Papua New Guinea,NA,0,NA,NA,NA,NA,NA,NA,1019,283,0.277723,1019,195,0.191364,New,0-5,1-3years,Nested,Nested,NA,NA,NA,NA
+Proietti,2013,East Africa,Uganda,Apac,0,High_High,High_High,High_High,High_High,0.7456,0.5913,240,130,0.541667,249,105,0.421687,New,0-5,0-5,Nested,Nested,100,NA,NA,NA
+Proietti,2013,East Africa,Uganda,Apac,0,High_High,High_High,High_High,High_High,0.7456,0.5913,122,103,0.844262,126,74,0.587302,New,5-15years,6-10years,Nested,Nested,100,NA,NA,NA
+Proietti,2013,East Africa,Uganda,Apac,0,High_High,High_High,High_High,High_High,0.7456,0.5913,128,48,0.375,134,15,0.11194,New,15+,20+,Nested,Nested,100,NA,NA,NA
+Proietti,2013,East Africa,Uganda,Apac,2,High_High,High_High,High_High,High_High,0.7456,0.5913,490,281,0.573469,509,194,0.381139,New,All Ages,All Ages,Nested,Nested,100,NA,NA,NA
+Ngane,2015,West Africa,Angola,Benguela,2,High_Low,High_Low,High_Low,High_High,0.285,0.0626,386,80,0.207254,386,61,0.158031,New,All Ages,0-15,Nested,Nested,NA,50,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,201,130,0.646766,201,117,0.58209,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,201,28,0.139303,201,4,0.0199,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Rift Valley,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,250,7,0.028,250,1,0.004,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,234,91,0.388889,234,34,0.145299,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,213,116,0.544601,216,84,0.388889,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,200,41,0.205,202,8,0.039604,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,189,65,0.343915,190,45,0.236842,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,209,85,0.406699,208,29,0.139423,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,322,15,0.046584,357,8,0.022409,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,300,16,0.053333,300,14,0.046667,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,222,109,0.490991,221,43,0.19457,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,161,35,0.217391,205,7,0.034146,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,181,46,0.254144,179,36,0.201117,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,401,21,0.052369,401,10,0.024938,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,217,82,0.37788,215,67,0.311628,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Rift Valley,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,369,32,0.086721,460,14,0.030435,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,244,21,0.086066,244,21,0.086066,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Rift Valley,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,197,8,0.040609,188,7,0.037234,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,250,9,0.036,250,1,0.004,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Rift Valley,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,204,4,0.019608,204,1,0.004902,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Rift Valley,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,382,16,0.041885,378,3,0.007937,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,217,45,0.207373,217,45,0.207373,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,237,27,0.113924,245,4,0.016327,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,230,78,0.33913,230,3,0.013043,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,227,28,0.123348,229,3,0.0131,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,225,39,0.173333,226,20,0.088496,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,218,73,0.334862,218,9,0.041284,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,135,60,0.444444,58,5,0.086207,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,398,142,0.356784,398,134,0.336683,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,206,45,0.218447,207,8,0.038647,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,226,100,0.442478,226,40,0.176991,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,247,2,0.008097,250,2,0.008,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,237,55,0.232068,237,51,0.21519,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,189,17,0.089947,201,2,0.00995,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,593,167,0.281619,593,163,0.274874,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,211,75,0.35545,219,71,0.324201,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Rift Valley,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,267,17,0.06367,285,8,0.02807,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,221,58,0.262443,221,58,0.262443,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,223,112,0.502242,224,8,0.035714,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,133,22,0.165414,133,16,0.120301,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,254,104,0.409449,254,83,0.326772,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,210,59,0.280952,210,59,0.280952,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Rift Valley,2,Low_Low,Low_Low,High_Low,High_Low,0.1386,0.0234,195,29,0.148718,198,1,0.005051,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Western,2,High_Low,High_Low,High_High,High_High,0.4866,0.1315,416,17,0.040865,416,1,0.002404,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Lo,2015,East Africa,Kenya,Nyanza,2,High_Low,High_Low,High_High,High_High,0.3346,0.1047,205,61,0.297561,205,61,0.297561,New,All Ages,3-18years,Nested,Nested,100,200,Wet,Wet
+Saenz,2017,South America,Ecuador,NA,2,NA,NA,NA,NA,NA,NA,648,4,0.006173,648,0,0,New,All Ages,Children&Adults,qPCR,qPCR,NA,400,NA,NA
+Sumari,2017,East Africa,Tanzania,Pwani,0,High_Low,High_Low,High_High,High_High,NA,NA,200,115,0.575,200,16,0.08,New,5-15years,6-14years,qPCR,qRT-PCR,100,200,Wet,Wet
+Parker,2015,Asia&Oceania,Thailand,NA,2,NA,NA,NA,NA,NA,NA,547,20,0.036563,547,2,0.003656,New,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA
+Baum,2015,Asia&Oceania,Thailand,NA,2,NA,NA,NA,NA,NA,NA,219,8,0.03653,219,0,0,New,All Ages,Children&Adults,qPCR,qPCR,200,200,Dry,Start Wet
+Tadesse,2015,East Africa,Ethiopia,"Southern Nations, Nationalities and Peoples",2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0039,257,15,0.058366,257,0,0,New,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Tadesse,2015,East Africa,Ethiopia,"Southern Nations, Nationalities and Peoples",2,Low_Low,Low_Low,Low_Low,Low_Low,0.047,0.0039,298,14,0.04698,298,0,0,New,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Daou,2015,West Africa,Mali,Koulikoro,2,High_High,High_High,High_High,High_High,0.4703,0.2656,98,77,0.785714,98,27,0.27551,New,All Ages,2-14years,Nested,Nested,NA,NA,Wet,Wet
+Daou,2015,West Africa,Mali,Koulikoro,2,High_High,High_High,High_High,High_High,0.4703,0.2656,94,41,0.43617,99,20,0.20202,New,All Ages,2-14years,Nested,Nested,NA,NA,Wet,Wet
+Amoah (15:388),2016,West Africa,Ghana,Central,0,High_High,High_High,High_High,High_High,NA,NA,170,85,0.5,170,49,0.288235,New,5-15years,5-12years,Nested,Nested,NA,200,Dry,Dry
+Amoah (15:388),2016,West Africa,Ghana,Central,0,High_High,High_High,High_High,High_High,NA,NA,170,50,0.294118,170,38,0.223529,New,5-15years,5-12years,Nested,Nested,NA,200,Dry,Dry
+Amoah (15:388),2016,West Africa,Ghana,Central,0,High_High,High_High,High_High,High_High,NA,NA,170,65,0.382353,170,44,0.258824,New,5-15years,5-12years,Nested,Nested,NA,200,Dry,Dry
+Amoah (15:388),2016,West Africa,Ghana,Central,0,High_High,High_High,High_High,High_High,NA,NA,170,66,0.388235,170,10,0.058824,New,5-15years,5-12years,Nested,Nested,NA,200,Dry,Dry
+Amoah (15:101),2016,West Africa,Ghana,Greater Accra,2,High_Low,High_Low,High_High,High_High,0.3588,0.1379,291,205,0.704467,291,120,0.412371,New,All Ages,12-17years,Nested,Nested,NA,200,Dry,Dry
+Amoah (15:101),2016,West Africa,Ghana,Greater Accra,2,High_High,High_High,High_High,High_High,0.5451,0.3525,267,110,0.411985,267,2,0.007491,New,All Ages,12-17years,Nested,Nested,NA,200,Dry,Dry
+Dinko,2013,West Africa,Ghana,Ashanti,2,High_High,High_High,High_High,High_High,0.4023,0.3873,270,207,0.766667,270,165,0.611111,New,All Ages,5-17years,Nested,Nested,100,200,NA,NA
+Fancony,2013,West Africa,Angola,Bengo,2,High_Low,High_Low,High_High,High_High,0.3728,0.1222,3307,525,0.158754,3307,525,0.158754,New,All Ages,Children&Adults,Nested,Nested,NA,350,Wet,Wet
+Li,2014,Asia&Oceania,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,638,4,0.00627,638,3,0.004702,New,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Li,2014,Asia&Oceania,Thailand,NA,2,NA,NA,NA,NA,NA,NA,1070,17,0.015888,1070,1,0.000935,New,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Congpuong,2012,Asia&Oceania,Thailand,NA,2,NA,NA,NA,NA,NA,NA,475,4,0.008421,475,0,0,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,NA,NA
+Lek,2016,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,7707,340,0.044116,7707,143,0.018555,New,All Ages,Children&Adults,Nested,Nested,200,200,Wet,Wet
+Cistero,2011,East Africa,Mozambique,Maputo,2,High_Low,High_Low,High_Low,High_High,0.6098,0.0787,95,63,0.663158,95,51,0.536842,New,All Ages,Children&Adults,qPCR,qPCR,NA,NA,NA,NA
+Tiedje,2017,West Africa,Ghana,Upper East,2,High_High,High_High,High_High,High_High,0.6532,0.6762,545,369,0.677064,901,356,0.395117,New,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+Tiedje,2017,West Africa,Ghana,Upper East,2,High_High,High_High,High_High,High_High,0.6532,0.6762,547,444,0.8117,999,452,0.452452,New,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+Tiedje,2017,West Africa,Ghana,Upper East,2,High_High,High_High,High_High,High_High,0.6532,0.5926,655,271,0.41374,910,255,0.28022,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Tiedje,2017,West Africa,Ghana,Upper East,2,High_High,High_High,High_High,High_High,0.6532,0.5926,700,304,0.434286,958,258,0.269311,New,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Tadesse,2017,East Africa,Ethiopia,Oromia,2,Low_Low,Low_Low,Low_Low,Low_Low,0.0318,0.0021,490,45,0.091837,490,16,0.032653,New,All Ages,Children&Adults,Nested,Nested,100,1000,Wet,Wet
+Goncalves,2017,West Africa,Burkina Faso,Plateau-Central,2,High_High,High_High,High_High,High_High,0.8041,0.4435,198,100,0.505051,197,51,0.258883,New,All Ages,Children&Adults,qPCR,qPCR,100,NA,Dry,Dry
+Goncalves,2017,West Africa,Burkina Faso,Plateau-Central,2,High_High,High_High,High_High,High_High,0.7472,0.4934,198,166,0.838384,199,104,0.522613,New,All Ages,Children&Adults,qPCR,qPCR,100,NA,Wet,Wet
+Goncalves,2017,East Africa,Kenya,Coast,2,High_Low,High_Low,High_High,High_High,0.3424,0.1372,139,52,0.374101,139,9,0.064748,New,All Ages,Children&Adults,qPCR,qPCR,100,NA,Dry,Dry 
+Goncalves,2017,East Africa,Kenya,Coast,2,High_Low,High_Low,High_High,High_High,0.3424,0.1372,274,105,0.383212,274,47,0.171533,New,All Ages,Children&Adults,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,161,7,0.043478,157,5,0.031847,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,177,6,0.033898,176,3,0.017045,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,184,11,0.059783,184,9,0.048913,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,152,2,0.013158,152,2,0.013158,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,170,8,0.047059,170,1,0.005882,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,192,10,0.052083,192,10,0.052083,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,185,23,0.124324,182,15,0.082418,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,250,22,0.088,250,8,0.032,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,328,42,0.128049,328,36,0.109756,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,325,24,0.073846,326,14,0.042945,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,382,41,0.10733,381,24,0.062992,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,413,27,0.065375,422,13,0.030806,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,362,27,0.074586,353,6,0.016997,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,419,15,0.0358,417,4,0.009592,New,15+,15+,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,433,33,0.076212,434,19,0.043779,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,445,36,0.080899,445,13,0.029213,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,436,17,0.038991,444,6,0.013514,New,15+,15+,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,183,37,0.202186,177,27,0.152542,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,192,26,0.135417,190,20,0.105263,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,219,47,0.214612,219,36,0.164384,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,229,22,0.09607,229,22,0.09607,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,221,69,0.312217,221,43,0.19457,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,220,35,0.159091,220,29,0.131818,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,298,114,0.38255,283,79,0.279152,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,372,117,0.314516,349,60,0.17192,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,400,178,0.445,401,141,0.351621,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,372,106,0.284946,372,76,0.204301,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,369,159,0.430894,368,133,0.361413,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,427,129,0.302108,427,85,0.199063,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,406,79,0.194581,395,35,0.088608,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,464,68,0.146552,461,22,0.047722,New,15+,15+,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,486,112,0.230453,486,63,0.12963,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,455,71,0.156044,480,33,0.06875,New,15+,15+,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,453,133,0.293598,451,70,0.155211,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,478,76,0.158996,479,25,0.052192,New,15+,15+,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,163,11,0.067485,163,11,0.067485,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,189,9,0.047619,189,9,0.047619,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,187,19,0.101604,189,16,0.084656,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,169,7,0.04142,169,2,0.011834,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,161,17,0.10559,161,11,0.068323,New,0-5,0-5,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,167,11,0.065868,167,6,0.035928,New,0-5,0-5,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,215,63,0.293023,207,44,0.21256,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,306,63,0.205882,302,28,0.092715,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,375,93,0.248,385,69,0.179221,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,369,54,0.146341,369,29,0.078591,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,355,68,0.191549,355,40,0.112676,New,5-15years,5-15years,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,420,64,0.152381,420,39,0.092857,New,5-15years,5-15years,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,398,44,0.110553,388,30,0.07732,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_High,High_High,High_High,NA,NA,472,27,0.057203,468,10,0.021368,New,15+,15+,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,465,43,0.092473,479,21,0.043841,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,455,15,0.032967,454,4,0.008811,New,15+,15+,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,444,64,0.144144,444,35,0.078829,New,15+,15+,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,0,High_Low,High_Low,High_High,High_High,NA,NA,443,29,0.065463,443,12,0.027088,New,15+,15+,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_High,High_High,High_High,0.4511,0.1844,708,57,0.080508,692,26,0.037572,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_High,High_High,High_High,0.4511,0.1844,846,43,0.050827,843,15,0.017794,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1174,945,86,0.091005,946,64,0.067653,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1174,477,26,0.054507,478,17,0.035565,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1084,997,85,0.085256,996,38,0.038153,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1084,1041,54,0.051873,1062,31,0.02919,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_High,High_High,High_High,0.4511,0.1844,887,230,0.259301,855,141,0.164912,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_High,High_High,High_High,0.4511,0.1844,1028,211,0.205253,1000,102,0.102,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1174,1105,337,0.304977,1106,240,0.216998,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1174,1056,199,0.188447,1081,132,0.122109,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1084,1043,361,0.346117,1040,246,0.236538,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1084,1125,240,0.213333,1126,139,0.123446,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_High,High_High,High_High,0.4511,0.1844,776,118,0.152062,754,88,0.116711,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_High,High_High,High_High,0.4511,0.1844,967,99,0.102378,958,47,0.049061,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1174,1027,155,0.150925,1053,106,0.100665,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1174,993,76,0.076536,992,35,0.035282,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1084,960,149,0.155208,960,86,0.089583,New,All Ages,All Ages,qPCR,qPCR,100,NA,Wet,Wet
+Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1084,1030,104,0.100971,1030,57,0.05534,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
+Mwesigwa,2015,West Africa,The Gambia,Central River Region,2,High_Low,High_Low,High_Low,High_Low,0.4083,0.0185,1676,53,0.03,1676,19,0.01,New,All Ages,All Ages,Nested,Nested,200,NA,Dry,Dry
+Mwesigwa,2015,West Africa,The Gambia,West Coast,2,Low_Low,High_Low,High_Low,High_Low,0.1522,0.0284,1227,53,0.04,1227,9,0.01,New,All Ages,All Ages,Nested,Nested,200,NA,Dry,Dry
+Li,2014,Asia,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,638,4,0.01,638,4,0.01,New,All Ages,All Ages,Nested,Nested,100,NA,NA,NA
+Li,2014,Asia,Thailand,NA,2,NA,NA,NA,NA,NA,NA,1070,17,0.02,1070,1,0,New,All Ages,All Ages,Nested,Nested,100,NA,NA,NA
+Noormahomed,2012,East Africa,Mozambique,Maputo,0,High_Low,High_Low,High_Low,High_High,0.6624,0.0712,224,4,0.02,239,1,0,New,15+,18+,Nested,Nested,NA,NA,NA,NA
+Noormahomed,2012,East Africa,Mozambique,Mocuba,0,High_High,High_High,High_High,High_High,0.6436,0.5205,183,20,0.11,316,16,0.05,New,15+,18+,Nested,Nested,NA,NA,NA,NA
+Vafa,2007,West Africa,Mali,Mopti,2,High_High,High_High,High_High,High_High,0.4987,0.4858,212,85,0.400943,212,34,0.160377,Old,All Ages,Children&Adults,Nested,Nested,NA,300,Wet,Wet
+Vafa,2007,West Africa,Mali,Mopti,2,High_High,High_High,High_High,High_High,0.4987,0.4858,214,66,0.308411,214,32,0.149533,Old,All Ages,Children&Adults,Nested,Nested,NA,300,Wet,Wet
+Roper,1996,East Africa,Sudan,Al Qadarif,2,Low_Low,Low_Low,Low_Low,Low_Low,0.0293,0.0293,79,10,0.126582,79,2,0.025316,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Dry,Dry
+Roper,1996,East Africa,Sudan,Al Qadarif,2,Low_Low,Low_Low,Low_Low,Low_Low,0.0293,0.0293,79,15,0.189873,79,4,0.050633,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Dry,Dry
+Roper,1996,East Africa,Sudan,Al Qadarif,2,Low_Low,Low_Low,Low_Low,Low_Low,0.0293,0.0293,79,19,0.240506,79,8,0.101266,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Dry,Dry
+Roper,1996,East Africa,Sudan,Al Qadarif,2,Low_Low,Low_Low,Low_Low,Low_Low,0.0293,0.0293,73,14,0.191781,73,0,0,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Dry,Dry
+John,2005,East Africa,Kenya,Nyanza,2,High_High,High_High,High_High,High_High,0.3346,0.4063,123,13,0.105691,123,10,0.081301,Old,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+John,2005,East Africa,Kenya,Nyanza,2,High_High,High_High,High_High,High_High,0.3346,0.4063,267,25,0.093633,267,17,0.06367,Old,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+John,2005,East Africa,Kenya,Nyanza,2,High_High,High_High,High_High,High_High,0.3346,0.4063,273,16,0.058608,273,8,0.029304,Old,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+John,2005,East Africa,Kenya,Nyanza,2,High_High,High_High,High_High,High_High,0.3346,0.4063,152,9,0.059211,152,2,0.013158,Old,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Dry
+John,2005,East Africa,Kenya,Nyanza,2,High_High,High_High,High_High,High_High,0.3346,0.4063,228,33,0.144737,228,18,0.078947,Old,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+John,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,48,4,0.083333,48,1,0.020833,Old,0-5,0-5years,Nested,Nested,NA,200,Dry,Dry
+John,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,54,9,0.166667,54,4,0.074074,Old,0-5,0-5years,Nested,Nested,NA,200,Wet,Wet
+John,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,71,3,0.042254,71,2,0.028169,Old,5-15years,5-15years,Nested,Nested,NA,200,Dry,Dry
+John,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,63,9,0.142857,63,9,0.142857,Old,5-15years,5-15years,Nested,Nested,NA,200,Wet,Wet
+John,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,154,9,0.058442,154,4,0.025974,Old,15+,15+,Nested,Nested,NA,200,Dry,Dry
+John,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,111,15,0.135135,111,5,0.045045,Old,15+,15+,Nested,Nested,NA,200,Wet,Wet
+Ofulla,2005,East Africa,Kenya,Nyanza,2,High_High,High_High,High_High,High_High,0.3346,0.314,301,251,0.833887,301,220,0.730897,Old,All Ages,Children&Adults,Nested,Nested,NA,200,NA,NA
+Ofulla,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,53,47,0.886792,53,46,0.867925,Old,0-5,0-5,Nested,Nested,NA,200,NA,NA
+Ofulla,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,90,86,0.955556,90,82,0.911111,Old,5-15years,5-15years,Nested,Nested,NA,200,NA,NA
+Ofulla,2005,East Africa,Kenya,Nyanza,0,High_High,High_High,High_High,High_High,NA,NA,158,118,0.746835,158,92,0.582278,Old,15+,15+,Nested,Nested,NA,200,NA,NA
+Stich,2006,West Africa,Burkina Faso,Boucle du Mouhoun,2,High_High,High_High,High_High,High_High,0.7872,0.7872,201,185,0.920398,201,162,0.80597,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,Wet,End Wet
+Alves,2002,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,164,16,0.097561,175,4,0.022857,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Dry,Dry
+Alves,2002,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,142,25,0.176056,142,2,0.014085,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Wet,Wet
+Alves,2002,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,125,2,0.016,125,0,0,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Dry,Dry
+Alves,2002,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,128,58,0.453125,172,10,0.05814,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Wet,Wet
+Alves,2002,South America,Brazil,NA,0,NA,NA,NA,NA,NA,NA,63,1,0.015873,63,0,0,Old,0-5,0-5,Nested,Nested,200,NA,NA,NA
+Alves,2002,South America,Brazil,NA,0,NA,NA,NA,NA,NA,NA,137,7,0.051095,137,0,0,Old,15+,15+,Nested,Nested,200,NA,NA,NA
+Muller,2001,West Africa,Sao Tome & Principe,NA,2,NA,NA,NA,NA,NA,NA,491,321,0.653768,491,194,0.395112,Old,All Ages,Children&Adults,Nested,Nested,NA,200,NA,NA
+Alves,2006,West Africa,Republic of Cabo Verde,NA,2,NA,NA,NA,NA,NA,NA,338,3,0.008876,338,0,0,Old,All Ages,Children&Adults,Nested,Nested,NA,500,NA,NA
+Alves,2006,West Africa,Republic of Cabo Verde,NA,2,NA,NA,NA,NA,NA,NA,261,10,0.038314,261,0,0,Old,All Ages,Children&Adults,Nested,Nested,NA,500,NA,NA
+Cortes,2004,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,628,330,0.525478,628,175,0.278662,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA
+Cortes,2004,Asia&Oceania,Papua New Guinea,NA,0,NA,NA,NA,NA,NA,NA,51,21,0.411765,51,15,0.294118,Old,0-5,0-5,Nested,Nested,NA,NA,NA,NA
+Cortes,2004,Asia&Oceania,Papua New Guinea,NA,0,NA,NA,NA,NA,NA,NA,258,119,0.46124,258,48,0.186047,Old,15+,15+,Nested,Nested,NA,NA,NA,NA
+Roshanravan,2003,South America,Peru,NA,2,NA,NA,NA,NA,NA,NA,819,28,0.034188,819,12,0.014652,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+Zwetyenga,1998,West Africa,Senegal,Fatick,2,High_High,High_High,High_High,High_High,0.2301,0.2301,143,110,0.769231,143,52,0.363636,Old,All Ages,Children&Adults,Nested,Nested,200,NA,NA,NA
+Zwetyenga,1998,West Africa,Senegal,Fatick,0,High_High,High_High,High_High,High_High,NA,NA,36,24,0.666667,36,12,0.333333,Old,0-5,0-5,Nested,Nested,200,NA,NA,NA
+Zwetyenga,1998,West Africa,Senegal,Fatick,0,High_High,High_High,High_High,High_High,NA,NA,41,27,0.658537,41,17,0.414634,Old,15+,15+,Nested,Nested,200,NA,NA,NA
+Toma,2001,Asia&Oceania,Lao PDR,NA,2,NA,NA,NA,NA,NA,NA,143,77,0.538462,143,46,0.321678,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Toma,2001,Asia&Oceania,Lao PDR,NA,2,NA,NA,NA,NA,NA,NA,193,20,0.103627,193,7,0.036269,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Mehlotra,2002,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,340,179,0.526471,1759,352,0.200114,Old,All Ages,Children&Adults,Nested,Nested,NA,200,NA,NA
+Mehlotra,2002,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,330,195,0.590909,972,217,0.223251,Old,All Ages,Children&Adults,Nested,Nested,NA,200,NA,NA
+Owusu-Agyei,2002,West Africa,Ghana,Upper East,2,High_High,High_High,High_High,High_High,0.6532,0.6532,308,252,0.818182,308,217,0.704545,Old,All Ages,Children&Adults,Nested,Nested,200,NA,Dry,WetStart
+Owusu-Agyei,2002,West Africa,Ghana,Upper East,0,High_High,High_High,High_High,High_High,NA,NA,99,80,0.808081,99,74,0.747475,Old,0-5,0-5,Nested,Nested,200,NA,Dry,WetStart
+Owusu-Agyei,2002,West Africa,Ghana,Upper East,0,High_High,High_High,High_High,High_High,NA,NA,119,86,0.722689,119,70,0.588235,Old,15+,15+,Nested,Nested,200,NA,Dry,WetStart
+Felger,1995,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,304,144,0.473684,304,75,0.246711,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Snounou,1993,West Africa,Guinea-Bissau,Biombo,2,High_High,High_High,High_High,High_High,0.4522,0.4522,110,90,0.818182,110,28,0.254545,Old,All Ages,Children&Adults,Nested,Nested,NA,200,Dry,Dry
+Snounou,1993,West Africa,Guinea-Bissau,Biombo,2,High_High,High_High,High_High,High_High,0.4522,0.4522,79,69,0.873418,79,38,0.481013,Old,All Ages,Children&Adults,Nested,Nested,NA,200,Wet,Wet
+Ntoumi,1995,West Africa,Senegal,Fatick,2,High_High,High_High,High_High,High_High,0.2301,0.2301,65,50,0.769231,65,50,0.769231,Old,All Ages,Children&Adults,Nested,Nested,300,NA,Wet,Wet
+Marques,2005,East Africa,Mozambique,Maputo,2,High_High,High_High,High_High,High_High,0.6098,0.5426,70,50,0.714286,70,43,0.614286,Old,All Ages,Children&Adults,Nested,Nested,NA,500,Dry,Dry
+Marques,2005,East Africa,Mozambique,Maputo,2,High_High,High_High,High_High,High_High,0.6098,0.5426,70,55,0.785714,70,43,0.614286,Old,All Ages,Children&Adults,Nested,Nested,NA,500,Wet,Wet
+Marques,2005,East Africa,Mozambique,Maputo,2,High_High,High_High,High_High,High_High,0.6098,0.5426,81,73,0.901235,81,53,0.654321,Old,All Ages,Children&Adults,Nested,Nested,NA,500,Dry,Dry
+Marques,2005,East Africa,Mozambique,Maputo,2,High_High,High_High,High_High,High_High,0.6098,0.5426,87,79,0.908046,87,66,0.758621,Old,All Ages,Children&Adults,Nested,Nested,NA,500,Wet,Wet
+Khaminsou,2008,Asia&Oceania,Lao PDR,NA,2,NA,NA,NA,NA,NA,NA,130,18,0.138462,130,12,0.092308,Old,All Ages,Children&Adults,Semi-Nested,Semi-Nested,100,NA,Dry,Dry
+Khaminsou,2008,Asia&Oceania,Lao PDR,NA,2,NA,NA,NA,NA,NA,NA,130,32,0.246154,130,22,0.169231,Old,All Ages,Children&Adults,Semi-Nested,Semi-Nested,100,NA,Dry,Dry
+Nsobya,2004,East Africa,Uganda,Kampala,0,Unsure,High_High,High_High,High_High,NA,NA,316,114,0.360759,316,55,0.174051,Old,0-5,0-5,Nested,Nested,100,NA,NA,NA
+Touré,2006,West Africa,Gabon,Ogooué-Lolo,0,High_Low,High_Low,High_Low,High_High,NA,NA,278,58,0.208633,278,20,0.071942,Old,15+,15+,Nested,Nested,NA,NA,NA,NA
+Guerra-Neira,2006,West Africa,Equatorial Guinea,Bioko Norte,2,NA,NA,NA,NA,NA,NA,36,24,0.666667,36,18,0.5,Old,All Ages,Children&Adults,Semi-Nested,Semi-Nested,NA,NA,Dry,Dry
+Guerra-Neira,2006,West Africa,Equatorial Guinea,Bioko Norte,2,NA,NA,NA,NA,NA,NA,35,22,0.628571,35,14,0.4,Old,All Ages,Children&Adults,Semi-Nested,Semi-Nested,NA,NA,Dry,Dry
+Guerra-Neira,2006,West Africa,Equatorial Guinea,Bioko Sur,2,NA,NA,NA,NA,NA,NA,81,50,0.617284,81,40,0.493827,Old,All Ages,Children&Adults,Semi-Nested,Semi-Nested,NA,NA,Dry,Dry
+Silue,2006,West Africa,Ivory Coast,Lagunes,0,High_High,High_High,High_High,High_High,NA,NA,424,356,0.839623,424,232,0.54717,Old,5-15years,5-15years,Nested,Nested,NA,200,NA,NA
+Kobbe,2006,West Africa,Ghana,Ashanti,0,High_High,High_High,High_High,High_High,NA,NA,962,175,0.181913,1069,158,0.147802,Old,0-5,0-5years,Nested,Nested,200,NA,NA,NA
+Paganotti,2006,West Africa,Burkina Faso,Est,2,High_High,High_High,High_High,High_High,0.5899,0.5824,92,89,0.967391,92,76,0.826087,Old,All Ages,1-10years,Nested,Nested,200,NA,Wet,End Wet
+Paganotti,2006,West Africa,Burkina Faso,Est,2,High_High,High_High,High_High,High_High,0.5899,0.5824,58,56,0.965517,58,51,0.87931,Old,All Ages,1-10years,Nested,Nested,200,NA,Wet,End Wet
+Mayor,2003,East Africa,Mozambique,Maputo,2,High_High,High_High,High_High,High_High,0.6098,0.6098,2538,845,0.332939,2609,357,0.136834,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA
+Mayor,2003,East Africa,Mozambique,Maputo,0,High_High,High_High,High_High,High_High,NA,NA,178,76,0.426966,249,34,0.136546,Old,15+,15+,Nested,Nested,NA,NA,NA,NA
+Mayor,2003,East Africa,Mozambique,Maputo,0,High_High,High_High,High_High,High_High,NA,NA,214,146,0.682243,214,75,0.350467,Old,5-15years,5-15years,Nested,Nested,NA,NA,NA,NA
+Mayor,2003,East Africa,Mozambique,Maputo,0,NA,NA,NA,NA,NA,NA,2146,623,0.290308,2146,248,0.115564,Old,0-5,0-5,Nested,Nested,NA,NA,NA,NA
+Vafa,2008,West Africa,Senegal,Fatick,2,High_High,High_High,High_High,High_High,0.2301,0.2099,372,164,0.44086,372,130,0.349462,Old,All Ages,2-10years,Nested,Nested,200,NA,Dry,Dry
+Vafa,2008,West Africa,Senegal,Fatick,2,High_High,High_High,High_High,High_High,0.2301,0.2099,372,190,0.510753,372,130,0.349462,Old,All Ages,2-10 years,Nested,Nested,200,NA,Wet,End Wet
+Wataya,1993,Asia&Oceania,Solomon Islands,NA,2,NA,NA,NA,NA,NA,NA,98,8,0.081633,98,8,0.081633,Old,All Ages,Children&Adults,Nested,Nested,1000,NA,NA,NA
+Dal-Bianco,2007,West Africa,Gabon,Moyen-Ogooue,0,High_Low,High_Low,High_Low,High_High,NA,NA,470,244,0.519149,493,57,0.115619,Old,15+,Adults Only,Nested,Nested,100,NA,Dry,Start Wet
+Peyerl-Hoffman,2001,West Africa,Uganda,Tororo,2,High_High,High_High,High_High,High_High,0.8192,0.8192,406,225,0.554187,406,140,0.344828,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+Cerutti,2007,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,1527,10,0.006549,1777,0,0,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Dent,2007,West Africa,Kenya,Nyanza,2,High_High,High_High,High_High,High_High,0.3346,0.3837,201,141,0.701493,201,117,0.58209,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,NA,NA,Wet,Wet
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,203,71,0.349754,203,45,0.221675,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,153,76,0.496732,153,45,0.294118,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,133,65,0.488722,133,41,0.308271,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,145,72,0.496552,145,31,0.213793,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,172,101,0.587209,172,58,0.337209,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,174,91,0.522989,174,57,0.327586,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,163,82,0.503067,163,38,0.233129,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,174,102,0.586207,174,49,0.281609,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,184,88,0.478261,184,61,0.331522,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,166,101,0.608434,166,48,0.289157,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,174,95,0.545977,174,57,0.327586,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,175,117,0.668571,175,75,0.428571,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,188,148,0.787234,188,85,0.452128,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,148,83,0.560811,148,23,0.155405,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,175,95,0.542857,175,43,0.245714,Old,All Ages,Children&Adults,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,0,NA,NA,NA,NA,NA,NA,426,135,0.316901,426,73,0.171362,Old,0-5,0-5,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,0,NA,NA,NA,NA,NA,NA,237,170,0.7173,237,107,0.451477,Old,5-15years,5-15years,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Mueller,2009,Asia&Oceania,Papua New Guinea,NA,0,NA,NA,NA,NA,NA,NA,937,559,0.596585,937,202,0.215582,Old,15+,15+,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Andrade,2009,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,233,8,0.034335,275,4,0.014545,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Andrade,2009,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,277,20,0.072202,286,2,0.006993,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Andrade,2009,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,47,5,0.106383,47,1,0.021277,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Andrade,2009,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,320,11,0.034375,321,4,0.012461,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Andrade,2009,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,165,1,0.006061,166,0,0,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Rosanas-Urgell,2010,Asia&Oceania,Papua New Guinea,NA,0,NA,NA,NA,NA,NA,NA,452,198,0.438053,452,115,0.254425,Old,0-5,Children Only,Nested,Nested,200,NA,NA,NA
+Satoguina,2009,West Africa,Gambia,Upper River,2,High_Low,High_Low,High_Low,High_Low,0.364,0.0398,841,219,0.260404,934,97,0.103854,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Satoguina,2009,West Africa,Gambia,North Bank,2,High_Low,High_Low,High_Low,High_Low,0.2876,0.0319,689,185,0.268505,729,82,0.112483,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Satoguina,2009,West Africa,Guinea-Bissau,Cacheu,2,High_Low,High_Low,High_Low,High_Low,0.3661,0.0271,818,194,0.237164,834,33,0.039568,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Satoguina,2009,West Africa,Gambia,North Bank,0,High_Low,High_Low,High_Low,High_Low,NA,NA,510,101,0.198039,510,44,0.086275,Old,0-5,0-5,Nested,Nested,100,NA,Dry,Dry
+Satoguina,2009,West Africa,Gambia,North Bank,0,High_Low,High_Low,High_Low,High_Low,NA,NA,881,265,0.300795,881,117,0.132804,Old,5-15years,5-15years,Nested,Nested,100,NA,Dry,Dry
+Satoguina,2009,West Africa,Gambia,North Bank,0,High_Low,High_Low,High_Low,High_Low,NA,NA,1188,294,0.247475,1188,74,0.06229,Old,15+,15+,Nested,Nested,100,NA,Dry,Dry
+Lin,2010,Asia&Oceania,Papua New Guinea,NA,0,NA,NA,NA,NA,NA,NA,264,131,0.496212,264,86,0.325758,Old,0-5,0-5,PCR-LDR,PCR-LDR,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,204,136,0.666667,204,75,0.367647,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,205,115,0.560976,205,68,0.331707,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,209,126,0.602871,209,48,0.229665,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,202,119,0.589109,202,53,0.262376,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,141,55,0.390071,141,20,0.141844,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,143,88,0.615385,143,49,0.342657,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,118,80,0.677966,118,31,0.262712,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,134,87,0.649254,134,38,0.283582,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,0,NA,NA,NA,NA,NA,NA,266,153,0.575188,266,107,0.402256,Old,0-5,0-5,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,0,NA,NA,NA,NA,NA,NA,134,98,0.731343,134,45,0.335821,Old,5-15years,5-15years,Nested,Nested,100,NA,NA,NA
+Steenkeste,2010,Asia&Oceania,Cambodia,NA,0,NA,NA,NA,NA,NA,NA,694,343,0.494236,694,102,0.146974,Old,15+,15+,Nested,Nested,100,NA,NA,NA
+Katsuragawa,2010,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,205,4,0.019512,205,1,0.004878,Old,All Ages,Children&Adults,Nested,Nested,100,NA,NA,NA
+da Silva,2010,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,386,35,0.090674,388,6,0.015464,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+da Silva,2010,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,379,33,0.087071,378,6,0.015873,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+da Silva,2010,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,328,22,0.067073,329,0,0,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Wet,Wet
+da Silva,2010,South America,Brazil,NA,2,NA,NA,NA,NA,NA,NA,334,8,0.023952,351,1,0.002849,Old,All Ages,Children&Adults,Nested,Nested,100,NA,Dry,Dry
+Marfurt,2010,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,263,102,0.387833,258,34,0.131783,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,Wet,Wet
+Marfurt,2010,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,347,71,0.204611,346,64,0.184971,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,Wet,Wet
+Marfurt,2010,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,359,131,0.364903,358,82,0.22905,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,Wet,Wet
+Marfurt,2010,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,317,129,0.40694,314,55,0.175159,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,Wet,Wet
+Marfurt,2010,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,366,147,0.401639,356,96,0.269663,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,Wet,Wet
+Marfurt,2010,Asia&Oceania,Papua New Guinea,NA,2,NA,NA,NA,NA,NA,NA,359,115,0.320334,358,82,0.22905,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA
+Pacific Malaria Initiative Survey Group,2010,Asia&Oceania,Vanuatu,NA,2,NA,NA,NA,NA,NA,NA,413,2,0.004843,413,0,0,Old,All Ages,Children Only,Nested,Nested,100,NA,NA,NA
+Liljander,2011,East Africa,Kenya,Coast,2,High_Low,High_High,High_High,High_High,0.3424,0.1592,337,263,0.780415,337,243,0.721068,Old,All Ages,Children Only,Nested,Nested,NA,NA,Dry,Dry
+Liljander,2011,East Africa,Kenya,Coast,2,High_Low,High_High,High_High,High_High,0.3424,0.1592,360,212,0.588889,360,174,0.483333,Old,All Ages,Children Only,Nested,Nested,NA,NA,Dry,Dry
+Gahutu,2001,East Africa,Rwanda,South/Amajyepfo,0,Low_Low,Low_Low,High_Low,High_Low,NA,NA,545,92,0.168807,545,61,0.111927,Old,0-5,0-5,Semi-Nested,Semi-Nested,NA,NA,Wet,Wet
+Steenkeste,2009,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,102,73,0.715686,102,59,0.578431,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA
+Steenkeste,2009,Asia&Oceania,Cambodia,NA,2,NA,NA,NA,NA,NA,NA,235,142,0.604255,235,77,0.32766,Old,All Ages,Children&Adults,Nested,Nested,NA,NA,NA,NA

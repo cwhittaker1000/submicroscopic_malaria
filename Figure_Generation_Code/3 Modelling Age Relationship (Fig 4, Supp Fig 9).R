@@ -29,7 +29,7 @@ seed <- 193
 
 # Load in the dataset and subset the data into children aged 0-5 years (young_children), old children, 
 # aged 5-15 years (old_children) and data from adults, aged 15+ years (adults)
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 young_children <- data_frame[data_frame$Age_Group == "0-5" , ]
 old_children <- data_frame[data_frame$Age_Group ==  "5-15years", ]
 adults <- data_frame[data_frame$Age_Group == "15+", ]
@@ -52,17 +52,17 @@ initial_values_function <- function(){
 model_file <- "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt"
 
 # Running the JAGS models for each dataset
-young_child_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, young_children)
-old_child_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, old_children)
-adult_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, adults)
+young_child_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, young_children)
+old_child_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, old_children)
+adult_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, adults)
 
 # Supplementary Figure 9 - MCMC Output and Parameter Tables
 young_children_param_table <- param_table(young_child_model, params)
 plot(young_child_model, col = c("yellow"), las = 1)
 old_children_param_table <- param_table(old_child_model, params)
 plot(old_child_model, col = c("orange"), las = 1)
-old_children_param_table <- param_table(adult_model, params)
-plot(old_child_model, col = c("red"), las = 1)
+adult_param_table <- param_table(adult_model, params)
+plot(adult_model, col = c("red"), las = 1)
 
 # Processing the Output from the JAGS Models
     # Equation: logit(Microscopy Prevalence) = delta' + (1 + beta) * logit(PCR_prevalence)

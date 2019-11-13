@@ -31,11 +31,10 @@ seed <- 193
 
 # Load in the dataset and subset the data into data from the previous review (old_data), data from 
 # this review (new_data) all data together (full_data). Note: non-age disaggregated data is assigned coding 2)
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 old_data <- data_frame[data_frame$Old_or_New == "Old" & data_frame$Full_Or_Age_Disagg_Data == 2, ] 
 new_data <- data_frame[data_frame$Old_or_New == "New" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
-
 
 ###################################################################################################
 ##                                                                                               ##
@@ -52,7 +51,7 @@ initial_values_function <- function(){
   list("beta" = 0.0001, "delt" = 0.001, "taud" = 0.001)
 }
 model_file <- "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt"
-full_data_output <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, full_data)
+full_data_output <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, full_data)
   
 # Supplementary Figure 8 Materials
 full_data_param_table <- param_table(full_data_output, params)
@@ -126,7 +125,6 @@ for (i in 1:length(Sens_by_group)){
 }
 
 
-
 ###################################################################################################
 ##                                                                                               ##
 ##           Supp Fig 1: Old & New Data - Running the Bayesian Log-Linear Regression             ##
@@ -137,7 +135,7 @@ for (i in 1:length(Sens_by_group)){
 ##    malaria survey data are then processed and used to generate model predictions.             ##
 ##                                                                                               ##
 ###################################################################################################
-old_data_output <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, old_data)
+old_data_output <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, old_data)
 old_chain_overall <- rbind(old_data_output[[1]], old_data_output[[2]], old_data_output[[3]], old_data_output[[4]])
 old_beta_mean <- mean(as.array(old_chain_overall[, "beta"])) 
 old_delt_mean <- mean(as.array(old_chain_overall[, "delt"])) 
@@ -148,7 +146,7 @@ old_data_credible_upper <- old_credibles$credible_upper
 old_data_sensitivity_credible_lower <- old_credibles$sensitivity_lower
 old_data_sensitivity_credible_upper <- old_credibles$sensitivity_upper
 
-new_data_output <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, new_data)
+new_data_output <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, new_data)
 new_chain_overall <- rbind(new_data_output[[1]], new_data_output[[2]], new_data_output[[3]], new_data_output[[4]])
 new_beta_mean <- mean(as.array(new_chain_overall[, "beta"])) 
 new_delt_mean <- mean(as.array(new_chain_overall[, "delt"])) 

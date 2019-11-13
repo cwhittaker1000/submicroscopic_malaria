@@ -28,7 +28,7 @@ source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
 
 # Load in the dataset and subset the data by global region the survey was carried out in:
-data_frame <- read.csv("Data/Submicroscopic_Review_Data_R_Import.csv")
+data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
 full_data$Sensitivity <- full_data$Micro_Prev/full_data$PCR_Prev
 Asia_Oceania <- data_frame[data_frame$Global_Region == "Asia&Oceania" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
@@ -54,10 +54,10 @@ initial_values_function <- function(){
 model_file <- "JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt"
 
 # Running the JAGS models for each dataset
-Asia_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, Asia_Oceania)
-East_Africa_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, East_Africa)
-South_America_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, South_America)
-West_Africa_model <- run_rJAGS_model(45000, 4, model_file, params, initial_values_function, West_Africa)
+Asia_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, Asia_Oceania)
+East_Africa_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, East_Africa)
+South_America_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, South_America)
+West_Africa_model <- run_rJAGS_model(10000, 4, model_file, params, initial_values_function, West_Africa)
 
 # Supplementary Figure 10 - MCMC Output and Parameter Tables
 Asia_param_table <- param_table(Asia_model, params)
@@ -116,7 +116,7 @@ West_Africa_prev_ratio_lower <- West_Africa_credibles$sensitivity_lower
 West_Africa_prev_ratio_upper <- West_Africa_credibles$sensitivity_upper
 
 
-# Figure 3A Plotting - Microscopy Prevalence Against PCR Prevalence for West Africa - Data & Modelled Relationship
+# Figure 5A Plotting - Microscopy Prevalence Against PCR Prevalence for West Africa - Data & Modelled Relationship
 par(mfrow = c(1, 1))
 plot(West_Africa$PCR_Prev * 100, West_Africa$Micro_Prev * 100, xlim = c(0, 100), ylim = c(0, 100), pch = 20, col = "red",
      xlab = "PCR Prevalence (%)", ylab = "Slide Prevalence (%)", las = 1, cex = 1.5)
@@ -126,7 +126,7 @@ polygon(x = c(PCR_prevalence_West_Africa * 100, rev(PCR_prevalence_West_Africa *
         y = c(West_Africa_credible_upper * 100, rev(West_Africa_credible_lower * 100)), 
         col = adjustcolor("red", alpha.f = 0.5), border = NA)
 
-# Figure 3B Plotting - Microscopy Prevalence Against PCR Prevalence for East Africa - Data & Modelled Relationship
+# Figure 5B Plotting - Microscopy Prevalence Against PCR Prevalence for East Africa - Data & Modelled Relationship
 plot(East_Africa$PCR_Prev * 100, East_Africa$Micro_Prev * 100, xlim = c(0, 100), ylim = c(0, 100), pch = 20, col = "green3",
      xlab = "PCR Prevalence (%)", ylab = "Slide Prevalence (%)", las = 1, cex = 1.5)
 lines(PCR_prevalence_East_Africa * 100, East_Africa_fitted_microscopy * 100, col = "green3", lwd = 3)
@@ -135,7 +135,7 @@ polygon(x = c(PCR_prevalence_East_Africa * 100, rev(PCR_prevalence_East_Africa *
         y = c(East_Africa_credible_upper * 100, rev(East_Africa_credible_lower * 100)), 
         col = adjustcolor("green3", alpha.f = 0.5), border = NA)
 
-# Figure 3D Plotting - Microscopy Prevalence Against PCR Prevalence for South America - Data & Modelled Relationship
+# Figure 5D Plotting - Microscopy Prevalence Against PCR Prevalence for South America - Data & Modelled Relationship
 plot(South_America$PCR_Prev * 100, South_America$Micro_Prev * 100, xlim = c(0, 100), ylim = c(0, 100), pch = 20, col = "blue",
      xlab = "PCR Prevalence (%)", ylab = "Slide Prevalence (%)", las = 1)
 lines(PCR_prevalence_South_America * 100, South_America_fitted_microscopy * 100, col = "blue", lwd = 3)
@@ -144,7 +144,7 @@ polygon(x = c(PCR_prevalence_South_America * 100, rev(PCR_prevalence_South_Ameri
         y = c(South_America_credible_upper * 100, rev(South_America_credible_lower * 100)), 
         col = adjustcolor("blue", alpha.f = 0.5), border = NA)
 
-# Figure 3D Plotting - Microscopy Prevalence Against PCR Prevalence for Asia & Oceania - Data & Modelled Relationship
+# Figure 5E Plotting - Microscopy Prevalence Against PCR Prevalence for Asia & Oceania - Data & Modelled Relationship
 plot(Asia_Oceania$PCR_Prev * 100, Asia_Oceania$Micro_Prev * 100, xlim = c(0, 100), ylim = c(0, 100), pch = 20, col = "black",
      xlab = "PCR Prevalence (%)", ylab = "Slide Prevalence (%)", las = 1)
 lines(PCR_prevalence_Asia * 100, Asia_fitted_microscopy * 100, col = "black", lwd = 3)

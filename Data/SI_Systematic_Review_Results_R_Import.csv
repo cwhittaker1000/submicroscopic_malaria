@@ -248,8 +248,8 @@ Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,H
 Walldorf,2015,East Africa,Malawi,Southern Region,2,High_Low,High_Low,High_High,High_High,0.4511,0.1084,1030,104,0.100971,1030,57,0.05534,New,All Ages,All Ages,qPCR,qPCR,100,NA,Dry,Dry
 Mwesigwa,2015,West Africa,The Gambia,Central River Region,2,High_Low,High_Low,High_Low,High_Low,0.4083,0.0185,1676,53,0.03,1676,19,0.01,New,All Ages,All Ages,Nested,Nested,200,NA,Dry,Dry
 Mwesigwa,2015,West Africa,The Gambia,West Coast,2,Low_Low,High_Low,High_Low,High_Low,0.1522,0.0284,1227,53,0.04,1227,9,0.01,New,All Ages,All Ages,Nested,Nested,200,NA,Dry,Dry
-Li,2014,Asia,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,638,4,0.01,638,4,0.01,New,All Ages,All Ages,Nested,Nested,100,NA,NA,NA
-Li,2014,Asia,Thailand,NA,2,NA,NA,NA,NA,NA,NA,1070,17,0.02,1070,1,0,New,All Ages,All Ages,Nested,Nested,100,NA,NA,NA
+Li,2014,Asia&Oceania,Myanmar,NA,2,NA,NA,NA,NA,NA,NA,638,4,0.01,638,4,0.01,New,All Ages,All Ages,Nested,Nested,100,NA,NA,NA
+Li,2014,Asia&Oceania,Thailand,NA,2,NA,NA,NA,NA,NA,NA,1070,17,0.02,1070,1,0,New,All Ages,All Ages,Nested,Nested,100,NA,NA,NA
 Noormahomed,2012,East Africa,Mozambique,Maputo,0,High_Low,High_Low,High_Low,High_High,0.6624,0.0712,224,4,0.02,239,1,0,New,15+,18+,Nested,Nested,NA,NA,NA,NA
 Noormahomed,2012,East Africa,Mozambique,Mocuba,0,High_High,High_High,High_High,High_High,0.6436,0.5205,183,20,0.11,316,16,0.05,New,15+,18+,Nested,Nested,NA,NA,NA,NA
 Vafa,2007,West Africa,Mali,Mopti,2,High_High,High_High,High_High,High_High,0.4987,0.4858,212,85,0.400943,212,34,0.160377,Old,All Ages,Children&Adults,Nested,Nested,NA,300,Wet,Wet

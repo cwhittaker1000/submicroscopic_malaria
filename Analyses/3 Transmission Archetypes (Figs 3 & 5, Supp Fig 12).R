@@ -21,17 +21,17 @@
 ##                                                                                               ##
 ###################################################################################################
 library(rjags); library(ssa); library(binom); library(MALDIquant); library(formattable); 
-library(tictoc); library(BayesianTools); library(R2jags); library(bayesmix)
+library(tictoc); library(BayesianTools); library(R2jags); library(bayesmix); library(dplyr)
 setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
-fresh_run <- FALSE
+fresh_run <- TRUE
 
 # Load in the dataset and subset the data by the survey region's transmission history (African surveys only):
 data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
 full_data <- full_data[order(full_data$Transmission_Setting_15), ]
-full_data <- full_data[1:169, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
+full_data <- full_data[1:229, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
 full_data <- full_data %>%
   mutate(PCR_Prev = 100 * (PCR_N_Positive/PCR_N_Tested)) %>%
   mutate(LM_Prev = 100 * (Microscopy_N_Positive/Microscopy_N_Tested)) %>%

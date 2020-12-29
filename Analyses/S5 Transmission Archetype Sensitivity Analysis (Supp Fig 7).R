@@ -29,7 +29,7 @@ seed <- 193
 data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 data_frame <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ] #Remove age disaggregated data
 data_frame <- data_frame[order(data_frame$Transmission_Setting_15), ] # orders by transmission history status (puts NAs at end)
-data_frame <- data_frame[1:169, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
+data_frame <- data_frame[1:229, ] # removes NAs which are surveys not conducted in Africa for which Trans_Hist data was not available 
 
 ##### 20% Threshold ####
 
@@ -578,7 +578,7 @@ polygon(x = c(PCR_prevalence_low_low * 100, rev(PCR_prevalence_low_low * 100)),
 data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 data_frame <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ] #Remove age disaggregated data
 data_frame <- data_frame[order(data_frame$Transmission_Setting_15), ] # orders by transmission history status (puts NAs at end)
-data_frame <- data_frame[1:169, ]
+data_frame <- data_frame[1:229, ]
 data_frame$Sensitivity <- data_frame$Micro_Prev/data_frame$PCR_Prev
 variance <- data_frame$PCR_N_Tested * data_frame$PCR_Prev * (1 - data_frame$PCR_Prev)
 

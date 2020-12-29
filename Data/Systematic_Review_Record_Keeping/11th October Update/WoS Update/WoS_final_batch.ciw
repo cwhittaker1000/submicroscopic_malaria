@@ -1,0 +1,1291 @@
+FN Clarivate Analytics Web of Science
+VR 1.0
+PT J
+AU Saito, M
+   Mansoor, R
+   Kennon, K
+   Anvikar, AR
+   Ashley, EA
+   Chandramohan, D
+   Cohee, LM
+   D'Alessandro, U
+   Genton, B
+   Gilder, ME
+   Juma, E
+   Kalilani-Phiri, L
+   Kuepfer, I
+   Laufer, MK
+   Lwin, KM
+   Meshnick, SR
+   Mosha, D
+   Mwapasa, V
+   Mwebaza, N
+   Nambozi, M
+   Ndiaye, JLA
+   Nosten, F
+   Nyunt, M
+   Ogutu, B
+   Parikh, S
+   Paw, MK
+   Phyo, AP
+   Pimanpanarak, M
+   Piola, P
+   Rijken, MJ
+   Sriprawat, K
+   Tagbor, HK
+   Tarning, J
+   Tinto, H
+   Valea, I
+   Valecha, N
+   White, NJ
+   Wiladphaingern, J
+   Stepniewska, K
+   McGready, R
+   Guerin, PJ
+AF Saito, Makoto
+   Mansoor, Rashid
+   Kennon, Kalynn
+   Anvikar, Anupkumar R.
+   Ashley, Elizabeth A.
+   Chandramohan, Daniel
+   Cohee, Lauren M.
+   D'Alessandro, Umberto
+   Genton, Blaise
+   Gilder, Mary Ellen
+   Juma, Elizabeth
+   Kalilani-Phiri, Linda
+   Kuepfer, Irene
+   Laufer, Miriam K.
+   Lwin, Khin Maung
+   Meshnick, Steven R.
+   Mosha, Dominic
+   Mwapasa, Victor
+   Mwebaza, Norah
+   Nambozi, Michael
+   Ndiaye, Jean-Louis A.
+   Nosten, Francois
+   Nyunt, Myaing
+   Ogutu, Bernhards
+   Parikh, Sunil
+   Paw, Moo Kho
+   Phyo, Aung Pyae
+   Pimanpanarak, Mupawjay
+   Piola, Patrice
+   Rijken, Marcus J.
+   Sriprawat, Kanlaya
+   Tagbor, Harry K.
+   Tarning, Joel
+   Tinto, Halidou
+   Valea, Innocent
+   Valecha, Neena
+   White, Nicholas J.
+   Wiladphaingern, Jacher
+   Stepniewska, Kasia
+   McGready, Rose
+   Guerin, Philippe J.
+TI Efficacy and tolerability of artemisinin-based and quinine-based
+   treatments for uncomplicated falciparum malaria in pregnancy: a
+   systematic review and individual patient data meta-analysis
+SO LANCET INFECTIOUS DISEASES
+AB Background Malaria in pregnancy affects both the mother and the fetus. However, evidence supporting treatment guidelines for uncomplicated (including asymptomatic) falciparum malaria in pregnant women is scarce and assessed in varied ways. We did a systematic literature review and individual patient data (IPD) meta-analysis to compare the efficacy and tolerability of different artemisinin-based or quinine-based treatments for malaria in pregnant women.
+   Methods We did a systematic review of interventional or observational cohort studies assessing the efficacy of artemisinin-based or quinine-based treatments in pregnancy. Seven databases (MEDLINE, Embase, Global Health, Cochrane Library, Scopus, Web of Science, and Literatura Latino Americana em Ciencias da Saude) and two clinical trial registries (International Clinical Trials Registry Platform and ClinicalTrials.gov) were searched. The final search was done on April 26, 2019. Studies that assessed PCR-corrected treatment efficacy in pregnancy with follow-up of 28 days or more were included. Investigators of identified studies were invited to share data from individual patients. The outcomes assessed included PCR-corrected efficacy, PCR-uncorrected efficacy, parasite clearance, fever clearance, gametocyte development, and acute adverse events. One-stage IPD meta-analysis using Cox and logistic regression with random-effects was done to estimate the risk factors associated with PCR-corrected treatment failure, using artemether-lumefantrine as the reference. This study is registered with PROSPERO, CRD42018104013.
+   Findings Of the 30 studies assessed, 19 were included, representing 92% of patients in the literature (4968 of 5360 episodes). Risk of PCR-corrected treatment failure was higher for the quinine monotherapy (n=244, adjusted hazard ratio [aHR] 6.11, 95% CI 2.57-14.54, p<0.0001) but lower for artesunate-amodiaquine (n=840, 0.27, 95% 0.14-0.52, p<0.0001), artesunate-mefloquine (n=1028, 0.56, 95% 0.34-0.94, p=0.03), and dihydroartemisininpiperaquine (n=872, 0.35, 95% CI 0.18-0.68, p=0.002) than artemether-lumefantrine (n=1278) after adjustment for baseline asexual parasitaemia and parity. The risk of gametocyte carriage on day 7 was higher after quinine-based therapy than artemisinin-based treatment (adjusted odds ratio [OR] 7.38, 95% CI 2.29-23.82).
+   Interpretation Efficacy and tolerability of artemisinin-based combination therapies (ACTs) in pregnant women are better than quinine. The lower efficacy of artemether-lumefantrine compared with other ACTs might require dose optimisation.
+RI ; Tagbor, Harry/B-9312-2018
+OI Rijken, Marcus/0000-0003-0914-5508; Valea, Innocent/0000-0002-3085-0490;
+   , Kalynn/0000-0003-3531-0298; Saito, Makoto/0000-0002-1667-9287;
+   Mwapasa, Victor/0000-0002-2748-8902; Pyae Phyo,
+   Aung/0000-0002-0383-9624; Tagbor, Harry/0000-0002-9300-665X
+SN 1473-3099
+EI 1474-4457
+PD AUG
+PY 2020
+VL 20
+IS 8
+BP 943
+EP 952
+DI 10.1016/S1473-3099(20)30064-5
+UT WOS:000559753300046
+PM 32530424
+ER
+
+PT J
+AU Stresman, G
+   Sepulveda, N
+   Fornace, K
+   Grignard, L
+   Mwesigwa, J
+   Achan, J
+   Miller, J
+   Bridges, DJ
+   Eisele, TP
+   Mosha, J
+   Lorenzo, PJ
+   Macalinao, ML
+   Espino, FE
+   Tadesse, F
+   Stevenson, JC
+   Quispe, AM
+   Siqueira, A
+   Lacerda, M
+   Yeung, SM
+   Sovannaroth, S
+   Pothin, E
+   Gallay, J
+   Hamre, KE
+   Young, A
+   Lemoine, JF
+   Chang, MA
+   Phommasone, K
+   Mayxay, M
+   Landier, J
+   Parker, DM
+   Von Seidlein, L
+   Nosten, F
+   Delmas, G
+   Dondorp, A
+   Cameron, E
+   Battle, K
+   Bousema, T
+   Gething, P
+   D'Alessandro, U
+   Drakeley, C
+AF Stresman, Gillian
+   Sepulveda, Nuno
+   Fornace, Kimberly
+   Grignard, Lynn
+   Mwesigwa, Julia
+   Achan, Jane
+   Miller, John
+   Bridges, Daniel J.
+   Eisele, Thomas P.
+   Mosha, Jacklin
+   Lorenzo, Pauline Joy
+   Macalinao, Maria Lourdes
+   Espino, Fe Esperanza
+   Tadesse, Fitsum
+   Stevenson, Jennifer C.
+   Quispe, Antonio M.
+   Siqueira, Andre
+   Lacerda, Marcus
+   Yeung, Shunmay
+   Sovannaroth, Siv
+   Pothin, Emilie
+   Gallay, Joanna
+   Hamre, Karen E.
+   Young, Alyssa
+   Lemoine, Jean Frantz
+   Chang, Michelle A.
+   Phommasone, Koukeo
+   Mayxay, Mayfong
+   Landier, Jordi
+   Parker, Daniel M.
+   Von Seidlein, Lorenz
+   Nosten, Francois
+   Delmas, Gilles
+   Dondorp, Arjen
+   Cameron, Ewan
+   Battle, Katherine
+   Bousema, Teun
+   Gething, Peter
+   D'Alessandro, Umberto
+   Drakeley, Chris
+TI Association between the proportion of Plasmodium falciparum and
+   Plasmodium vivax infections detected by passive surveillance and the
+   magnitude of the asymptomatic reservoir in the community: a pooled
+   analysis of paired health facility and community data
+SO LANCET INFECTIOUS DISEASES
+AB Background Passively collected malaria case data are the foundation for public health decision making. However, because of population-level immunity, infections might not always be sufficiently symptomatic to prompt individuals to seek care. Understanding the proportion of all Plasmodium spp infections expected to be detected by the health system becomes particularly paramount in elimination settings. The aim of this study was to determine the association between the proportion of infections detected and transmission intensity for Plasmodium falciparum and Plasmodium vivax in several global endemic settings.
+   Methods The proportion of infections detected in routine malaria data, P(Detect), was derived from paired household cross-sectional survey and routinely collected malaria data within health facilities. P(Detect) was estimated using a Bayesian model in 431 clusters spanning the Americas, Africa, and Asia. The association between P(Detect) and malaria prevalence was assessed using log-linear regression models. Changes in P(Detect) over time were evaluated using data from 13 timepoints over 2 years from The Gambia.
+   Findings The median estimated P(Detect) across all clusters was 12.5% (IQR 5.3-25.0) for P falciparum and 10.1% (5.0-18.3) for P vivax and decreased as the estimated log-PCR community prevalence increased (adjusted odds ratio [OR] for P falciparum 0.63, 95% CI 0.57-0.69; adjusted OR for P vivax 0.52, 0.47-0.57). Factors associated with increasing P(Detect) included smaller catchment population size, high transmission season, improved care-seeking behaviour by infected individuals, and recent increases (within the previous year) in transmission intensity.
+   Interpretation The proportion of all infections detected within health systems increases once transmission intensity is sufficiently low. The likely explanation for P falciparum is that reduced exposure to infection leads to lower levels of protective immunity in the population, increasing the likelihood that infected individuals will become symptomatic and seek care. These factors might also be true for P vivax but a better understanding of the transmission biology is needed to attribute likely reasons for the observed trend. In low transmission and pre-elimination settings, enhancing access to care and improvements in care-seeking behaviour of infected individuals will lead to an increased proportion of infections detected in the community and might contribute to accelerating the interruption of transmission.
+RI Quispe Gutierrez, Antonio Marty/K-6650-2015
+OI Quispe Gutierrez, Antonio Marty/0000-0003-2100-7423; Yeung,
+   Shunmay/0000-0002-0997-0850; Stresman, Gillian/0000-0002-6897-5459
+SN 1473-3099
+EI 1474-4457
+PD AUG
+PY 2020
+VL 20
+IS 8
+BP 953
+EP 963
+DI 10.1016/S1473-3099(20)30059-1
+UT WOS:000559753300047
+PM 32277908
+ER
+
+PT J
+AU Agius, PA
+   Cutts, JC
+   Oo, WH
+   Thi, A
+   O'Flaherty, K
+   Aung, KZ
+   Thu, HK
+   Aung, PP
+   Thein, MM
+   Zaw, NN
+   Htay, WYM
+   Soe, AP
+   Razook, Z
+   Barry, AE
+   Htike, W
+   Devine, A
+   Simpson, JA
+   Crabb, BS
+   Beeson, JG
+   Pasricha, N
+   Fowkes, FJI
+AF Agius, Paul A.
+   Cutts, Julia C.
+   Oo, Win Han
+   Thi, Aung
+   O'Flaherty, Katherine
+   Aung, Kyaw Zayar
+   Thu, Htin Kyaw
+   Aung, Poe Poe
+   Thein, Myat Mon
+   Zaw, Nyi Nyi
+   Htay, Wai Yan Min
+   Soe, Aung Paing
+   Razook, Zahra
+   Barry, Alyssa E.
+   Htike, Win
+   Devine, Angela
+   Simpson, Julie A.
+   Crabb, Brendan S.
+   Beeson, James G.
+   Pasricha, Naanki
+   Fowkes, Freya J., I
+TI Evaluation of the effectiveness of topical repellent distributed by
+   village health volunteer networks against Plasmodium spp. infection in
+   Myanmar: A stepped-wedge cluster randomised trial
+SO PLOS MEDICINE
+AB Background
+   The World Health Organization has yet to endorse deployment of topical repellents for malaria prevention as part of public health campaigns. We aimed to quantify the effectiveness of repellent distributed by the village health volunteer (VHV) network in the Greater Mekong Subregion (GMS) in reducing malaria in order to advance regional malaria elimination.
+   Methods and findings
+   Between April 2015 and June 2016, a 15-month stepped-wedge cluster randomised trial was conducted in 116 villages in Myanmar (stepped monthly in blocks) to test the effectiveness of 12% N,N-diethylbenzamide w/w cream distributed by VHVs, onPlasmodiumspp. infection. The median age of participants was 18 years, approximately half were female, and the majority were either village residents (46%) or forest dwellers (40%). No adverse events were reported during the study. Generalised linear mixed modelling estimated the effect of repellent on infection detected by rapid diagnostic test (RDT) (primary outcome) and polymerase chain reaction (PCR) (secondary outcome). OverallPlasmodiuminfection detected by RDT was low (0.16%; 50/32,194), but infection detected by PCR was higher (3%; 419/13,157). There was no significant protection against RDT-detectable infection (adjusted odds ratio [AOR] = 0.25, 95% CI 0.004-15.2,p =0.512). InPlasmodium-species-specific analyses, repellent protected against PCR-detectableP.falciparum(adjusted relative risk ratio [ARRR] = 0.67, 95% CI 0.47-0.95,p =0.026), but notP.vivaxinfection (ARRR = 1.41, 95% CI 0.80-2.47,p =0.233). Repellent effects were similar when delayed effects were modelled, across risk groups, and regardless of village-level and temporal heterogeneity in malaria prevalence. The incremental cost-effectiveness ratio was US$256 per PCR-detectable infection averted. Study limitations were a lower than expectedPlasmodiumspp. infection rate and potential geographic dilution of the intervention.
+   Conclusions
+   In this study, we observed apparent protection against new infections associated with the large-scale distribution of repellent by VHVs. Incorporation of repellent into national strategies, particularly in areas where bed nets are less effective, may contribute to the interruption of malaria transmission. Further studies are warranted across different transmission settings and populations, from the GMS and beyond, to inform WHO public health policy on the deployment of topical repellents for malaria prevention.
+OI Kyaw Thu, Htin/0000-0002-6450-3083; Htike, Win/0000-0003-2820-477X;
+   Aung, Poe Poe/0000-0001-9404-4423
+SN 1549-1277
+EI 1549-1676
+PD AUG
+PY 2020
+VL 17
+IS 8
+AR e1003177
+DI 10.1371/journal.pmed.1003177
+UT WOS:000564086400002
+PM 32817632
+ER
+
+PT J
+AU Gomez-Luque, A
+   Parejo, JC
+   Clavijo-Chamorro, MZ
+   Lopez-Espuela, F
+   Munyaruguru, F
+   Lorenzo, SB
+   Monroy, I
+   Gomez-Nieto, LC
+AF Gomez-Luque, Adela
+   Parejo, Juan Carlos
+   Clavijo-Chamorro, Maria Zoraida
+   Lopez-Espuela, Fidel
+   Munyaruguru, Faustin
+   Belinchon Lorenzo, Silvia
+   Monroy, Isabel
+   Gomez-Nieto, Luis Carlos
+TI Method for Malaria Diagnosis Based on Extractions of Samples Using
+   Non-Invasive Techniques: An Opportunity for the Nursing Clinical
+   Practice
+SO INTERNATIONAL JOURNAL OF ENVIRONMENTAL RESEARCH AND PUBLIC HEALTH
+AB Malaria has been for millennia one of the best known and most destructive diseases affecting humans. Its high impact has aroused great interest for the development of new effective and reliable diagnostic techniques. Recently it has been recently published that hairs from mammal hosts are able to capture, hold and finally remove foreign DNA sequences ofLeishmaniaparasites. The aim of this study was to check ifPlasmodium falciparum(P. falciparum) DNA remains stable in blood samples deposited in Whatman paper after suffering different transport and storage conditions, and to compare the sensitivity of these results with those offered by thick a smear and Rapid Diagnostic Test, and besides to examine whetherP. falciparumDNA would be detected and quantified by Real time quantitative PCR (qPCR) from hairs of people with different types of malaria.P. falciparumHistidine Repeat Protein II (pHRP-II) antigen detection andP. falciparumDNA were detected in 18 of 19 dry blood samples adhered to Whatman paper (94.74%), besides,PlasmodiumDNA was also detected in seven out of 19 hair samples analyzed (36.84%), remaining stable until analysis for several months under the exposure to different environmental conditions. Although the sensitivity of PCR for the diagnosis of malaria in hair samples is not as high as blood analysis, the study ofPlasmodiumDNA presence in blood and hair could constitute a complementary tool with numerous advantages in sample collection, transport and storage. We suggest that the method could be also applied to medical, forensic and paleo-parasitological diagnosis, not only for malaria but also for searching many other pathogens in hair samples.
+OI Gomez-Luque, Adela/0000-0003-0228-4767
+EI 1660-4601
+PD AUG
+PY 2020
+VL 17
+IS 15
+AR 5551
+DI 10.3390/ijerph17155551
+UT WOS:000567137900001
+PM 32752015
+ER
+
+PT J
+AU Wahab, A
+   Shaukat, A
+   Ali, Q
+   Hussain, M
+   Khan, TA
+   Khan, MAU
+   Rashid, I
+   Saleem, MA
+   Evans, M
+   Sargison, ND
+   Chaudhry, U
+AF Wahab, Abdul
+   Shaukat, Ayaz
+   Ali, Qasim
+   Hussain, Mubashir
+   Khan, Taj Ali
+   Khan, M. Azmat Ullah
+   Rashid, Imran
+   Saleem, Mushtaq A.
+   Evans, Mike
+   Sargison, Neil D.
+   Chaudhry, Umer
+TI A novel metabarcoded 18S ribosomal DNA sequencing tool for the detection
+   of Plasmodium species in malaria positive patients
+SO INFECTION GENETICS AND EVOLUTION
+AB Various PCR based methods have been described for the diagnosis of malaria, but most depend on the use of Plasmodium species-specific probes and primers; hence only the tested species are identified and there is limited available data on the true circulating species diversity. Sensitive diagnostic tools and platforms for their use are needed to detect Plasmodium species in both clinical cases and asymptomatic infections that contribute to disease transmission. We have recently developed for the first time a novel high throughput `haemoprotobiome' metabarcoded DNA sequencing method and applied it for the quantification of haemoprotozoan parasites (Theleria and Babesia) of livestock. Here, we describe a novel, high throughput method using an Illumina MiSeq platform to demonstrate the proportions of Plasmodium species in metabarcoded DNA samples derived from human malaria patients. Plasmodium falciparum and Plasmodium vivax positive control gDNA was used to prepare mock DNA pools of parasites to evaluate the detection threshold of the assay for each of the two species. The different mock pools demonstrate the accurate detection ability and to show the proportions of each of the species being present. We then applied the assay to malaria-positive human samples to show the species composition of Plasmodium communities in the Punjab province of Pakistan and in the Afghanistan-Pakistan tribal areas. The diagnostic performance of the deep amplicon sequencing method was compared to an immunochromatographic assay that is widely used in the region. The deep amplicon sequencing showed that P. vivax was present in 69.8%, P. falciparum in 29.5% and mixed infection in 0.7% patients examined. The immunochromatographic assay showed that P. vivax was present in 65.6%, P. falciparum in 27.4%, mixed infection 0.7% patients and 6.32% malaria-positive cases were negative in immunochromatographic assay, but positive in the deep amplicon sequencing. Overall, metabarcoded DNA sequencing demonstrates better diagnostic performance, greatly increasing the estimated prevalence of Plasmodium infection. The next-generation sequencing method using metabarcoded DNA has potential applications in the diagnosis, surveillance, treatment, and control of Plasmodium infections, as well as to study the parasite biology.
+OI Evans, Mike/0000-0002-2332-4425
+SN 1567-1348
+EI 1567-7257
+PD AUG
+PY 2020
+VL 82
+AR 104305
+DI 10.1016/j.meegid.2020.104305
+UT WOS:000571457700012
+PM 32247865
+ER
+
+PT J
+AU Quanquin, NM
+   Barres, LG
+   Aliyari, SR
+   Day, NT
+   Gerami, H
+   Fisher, SJ
+   Kakuru, A
+   Kamya, MR
+   Havlir, DV
+   Feeney, M
+   Dorsey, G
+   Cheng, GH
+   Gaw, SL
+AF Quanquin, Natalie M.
+   Barres, Lauren G.
+   Aliyari, Saba R.
+   Day, Nathan T.
+   Gerami, Hoda
+   Fisher, Susan J.
+   Kakuru, Abel
+   Kamya, Moses R.
+   Havlir, Diane, V
+   Feeney, Margaret
+   Dorsey, Grant
+   Cheng, Genhong
+   Gaw, Stephanie L.
+TI Gravidity-dependent associations between interferon response and birth
+   weight in placental malaria
+SO MALARIA JOURNAL
+AB Background: Maternal malarial infection leads to poor perinatal outcomes, including low birth weight from preterm delivery and/or fetal growth restriction, particularly in primigravidas. In placental malaria, Plasmodium falciparum-infected red blood cells cause an inflammatory response that can interfere with maternal-fetal exchange, leading to poor growth. The type I interferon (IFN-I) pathway plays an immunomodulatory role in viral and bacterial infections, usually by suppressing inflammatory responses. However, its role in placental malaria is unknown. This study examines the cytokine responses in placental tissue from subsets of malaria-infected and uninfected women, and attempts to correlate them with particular birth outcomes.
+   Methods: 40 whole placental biopsy samples were obtained from pregnant women at least 16 years of age recruited to a larger prospective chemoprevention trial against malaria. These were patients at Tororo District Hospital in Uganda, an area of high malaria endemicity where approximately 40% of women have evidence of malaria infection at delivery. They were regularly followed at a local clinic and monitored for fever, with blood smears performed then and at time of delivery to diagnose malaria infection. Placenta biopsies were taken for histological diagnosis of placental malaria, as well as quantitative PCR analysis of genes in the IFN-I pathway (IFN-beta, IL-10 and MX-1). Parameters such as infant birth weight and gestational age were also recorded.
+   Results: Histological analysis revealed placental malaria in 18 samples, while 22 were found to be uninfected. RTPCR analysis showed a four-fold increase in IFN-beta and IL-10 expression in multigravidas with placental malaria when compared to gravidity-matched, uninfected controls. This effect was not observed in primigravidas. Interestingly, linear regression analysis showed a positive association between IFN-beta levels and higher birth weights (beta = 101.2 g per log2-fold increase in IFN-beta expression, p = 0.042). This association was strongest in primigravidas with placental malaria (beta = 339.0, p = 0.006).
+   Conclusions: These results demonstrate differential regulation of the IFN-I pathway in placental malaria according to gravidity, with the greatest anti-inflammatory response seen in multigravidas. The association between IFN-beta levels and higher birth weight also suggests a protective role for IFN-I against fetal growth restriction in placental malaria.
+EI 1475-2875
+PD AUG 5
+PY 2020
+VL 19
+IS 1
+AR 280
+DI 10.1186/s12936-020-03351-0
+UT WOS:000561049300001
+PM 32758231
+ER
+
+PT J
+AU Ketprasit, N
+   Cheng, IS
+   Deutsch, F
+   Tran, N
+   Imwong, M
+   Combes, V
+   Palasuwan, D
+AF Ketprasit, Nutpakal
+   Cheng, Iris Simone
+   Deutsch, Fiona
+   Tran, Nham
+   Imwong, Mallika
+   Combes, Valery
+   Palasuwan, Duangdao
+TI The characterization of extracellular vesicles-derived microRNAs in Thai
+   malaria patients
+SO MALARIA JOURNAL
+AB Background Extracellular vesicles (EVs) have been broadly studied in malaria for nearly a decade. These vesicles carry various functional biomolecules including RNA families such as microRNAs (miRNA). These EVs-derived microRNAs have numerous roles in host-parasite interactions and are considered promising biomarkers for disease severity. However, this field lacks clinical studies of malaria-infected samples. In this study, EV specific miRNAs were isolated from the plasma of patients from Thailand infected withPlasmodium vivaxandPlasmodium falciparum. In addition, it is postulated that these miRNAs were differentially expressed in these groups of patients and had a role in disease onset through the regulation of specific target genes. Methods EVs were purified from the plasma of ThaiP. vivax-infected patients (n = 19),P. falciparum-infected patients (n = 18) and uninfected individuals (n = 20). EV-derived miRNAs were then prepared and abundance of hsa-miR-15b-5p, hsa-miR-16-5p, hsa-let-7a-5p and hsa-miR-150-5p was assessed in these samples. Quantitative polymerase chain reaction was performed, and relative expression of each miRNA was calculated using hsa-miR-451a as endogenous control. Then, the targets of up-regulated miRNAs and relevant pathways were predicted by using bioinformatics. Receiver Operating Characteristic with Area under the Curve (AUC) was then calculated to assess their diagnostic potential. Results The relative expression of hsa-miR-150-5p and hsa-miR-15b-5p was higher inP. vivax-infected patients compared to uninfected individuals, but hsa-let-7a-5p was up-regulated in bothP. vivax-infected patients andP. falciparum-infected patients. Bioinformatic analysis revealed that these miRNAs might regulate genes involved in the malaria pathway including the adherens junction and the transforming growth factor-beta pathways. All up-regulated miRNAs could potentially be used as disease biomarkers as determined by AUC; however, the sensitivity and specificity require further investigation. Conclusion An upregulation of hsa-miR-150-5p and hsa-miR-15b-5p was observed inP. vivax-infected patients while hsa-let-7a-5p was up-regulated in bothP. vivax-infected andP. falciparum-infected patients. These findings will require further validation in larger cohort groups of malaria patients to fully understand the contribution of these EVs miRNAs to malaria detection and biology.
+OI Cheng, Iris Simone/0000-0002-2029-5454; Combes,
+   Valery/0000-0003-2178-3596; Ketprasit, Nutpakal/0000-0001-8750-0187
+EI 1475-2875
+PD AUG 10
+PY 2020
+VL 19
+IS 1
+AR 285
+DI 10.1186/s12936-020-03360-z
+UT WOS:000561222000001
+PM 32778117
+ER
+
+PT J
+AU Escobar, DF
+   Lucchi, NW
+   Abdallah, R
+   Valenzuela, MT
+   Udhayakumar, V
+   Jercic, MI
+   Chenet, SM
+AF Escobar, Daniel F.
+   Lucchi, Naomi W.
+   Abdallah, Rispah
+   Valenzuela, Maria Teresa
+   Udhayakumar, Venkatachalam
+   Jercic, Maria Isabel
+   Chenet, Stella M.
+TI Molecular and epidemiological characterization of imported malaria cases
+   in Chile
+SO MALARIA JOURNAL
+AB Background Chile is one of the South American countries certified as malaria-free since 1945. However, the recent increase of imported malaria cases and the presence of the vectorAnopheles pseudopunctipennisin previously endemic areas in Chile require an active malaria surveillance programme. Methods Specimens from 268 suspected malaria cases-all imported-collected between 2015 and 2018 at the Public Health Institute of Chile (ISP), were diagnosed by microscopy and positive cases were included for epidemiological analysis. A photo-induced electron transfer fluorogenic primer real-time PCR (PET-PCR) was used to confirm the presence of malaria parasites in available blood samples. Sanger sequencing of drug resistance molecular markers (pfk13,pfcrt and pfmdr1) and microsatellite (MS) analysis were performed in confirmedPlasmodium falciparumsamples and results were related to origin of infection. Results Out of the 268 suspected cases, 65 werePlasmodiumspp. positive by microscopy. A total of 63% of the malaria patients were male and 37% were female; 43/65 of the patients acquired infections in South American endemic countries. Species confirmation of available blood samples by PET-PCR revealed that 15 samples were positive forP. falciparum, 27 forPlasmodium vivaxand 4 were mixed infections. TheP. falciparumsamples sequenced contained four mutantpfcrtgenotypes (CVMNT, CVMET, CVIET and SVMNT) and three mutantpfmdr1genotypes (Y184F/S1034C/N1042D/D1246Y, Y184F/N1042D/D1246Y and Y184F). MS analysis confirmed that allP. falciparumsamples presented different haplotypes according to the suspected country of origin. Four patients withP. vivaxinfection returned to the health facilities due to relapses. Conclusion The timely detection of polymorphisms associated with drug resistance will contribute to understanding if current drug policies in the country are appropriate for treatment of imported malaria cases and provide information about the most frequent resistant genotypes entering Chile.
+RI Chenet, Stella/H-6001-2018
+OI Chenet, Stella/0000-0002-5305-0664
+EI 1475-2875
+PD AUG 13
+PY 2020
+VL 19
+IS 1
+AR 289
+DI 10.1186/s12936-020-03353-y
+UT WOS:000563904700001
+PM 32792011
+ER
+
+PT J
+AU Chebore, W
+   Zhou, ZY
+   Westercamp, N
+   Otieno, K
+   Shi, YP
+   Sergent, SB
+   Rondini, KA
+   Svigel, SS
+   Guyah, B
+   Udhayakumar, V
+   Halsey, ES
+   Samuels, AM
+   Kariuki, S
+AF Chebore, Winnie
+   Zhou, Zhiyong
+   Westercamp, Nelli
+   Otieno, Kephas
+   Shi, Ya Ping
+   Sergent, Sheila B.
+   Rondini, Kelsey Anne
+   Svigel, Samaly Souza
+   Guyah, Benard
+   Udhayakumar, Venkatachalam
+   Halsey, Eric S.
+   Samuels, Aaron M.
+   Kariuki, Simon
+TI Assessment of molecular markers of anti-malarial drug resistance among
+   children participating in a therapeutic efficacy study in western Kenya
+SO MALARIA JOURNAL
+AB Background Anti-malarial drug resistance remains a major threat to global malaria control efforts. In Africa,Plasmodium falciparumremains susceptible to artemisinin-based combination therapy (ACT), but the emergence of resistant parasites in multiple countries in Southeast Asia and concerns over emergence and/or spread of resistant parasites in Africa warrants continuous monitoring. The World Health Organization recommends that surveillance for molecular markers of resistance be included within therapeutic efficacy studies (TES). The current study assessed molecular markers associated with resistance to Artemether-lumefantrine (AL) and Dihydroartemisinin-piperaquine (DP) from samples collected from children aged 6-59 months enrolled in a TES conducted in Siaya County, western Kenya from 2016 to 2017. Methods Three hundred and twenty-three samples collected pre-treatment (day-0) and 110 samples collected at the day of recurrent parasitaemia (up to day 42) were tested for the presence of drug resistance markers in thePfk13propeller domain, and thePfmdr1andPfcrtgenes by Sanger sequencing. Additionally, thePfpm2gene copy number was assessed by real-time polymerase chain reaction. Results No mutations previously associated with artemisinin resistance were detected in thePfk13propeller region. However, other non-synonymous mutations in thePfk13propeller region were detected. The most common mutation found on day-0 and at day of recurrence in thePfmdr1multidrug resistance marker was at codon 184F. Very few mutations were found in thePfcrtmarker (< 5%). Within the DP arm, all recrudescent cases (8 sample pairs) that were tested forPfpm2gene copy number had a single gene copy. None of the associations between observed mutations and treatment outcomes were statistically significant. Conclusion The results indicate absence ofPfk13mutations associated with parasite resistance to artemisinin in this area and a very high proportion of wild-type parasites forPfcrt. Although the frequency ofPfmdr1184Fmutations was high in these samples, the association with treatment failure did not reach statistical significance. As the spread of artemisinin-resistant parasites remains a possibility, continued monitoring for molecular markers of ACT resistance is needed to complement clinical data to inform treatment policy in Kenya and other malaria-endemic regions.
+EI 1475-2875
+PD AUG 14
+PY 2020
+VL 19
+IS 1
+AR 291
+DI 10.1186/s12936-020-03358-7
+UT WOS:000563436900002
+PM 32795367
+ER
+
+PT J
+AU Thompson, TA
+   Toure, MB
+   Sanogo, D
+   Shaffer, JG
+   Doumbia, SO
+   Krogstad, DJ
+AF Thompson, Trevor A.
+   Toure, Mahamoudou B.
+   Sanogo, Daouda
+   Shaffer, Jeffrey G.
+   Doumbia, Seydou O.
+   Krogstad, Donald J.
+TI Template copy number and the sensitivity of quantitative PCR
+   forPlasmodium falciparumin asymptomatic individuals
+SO MALARIA JOURNAL
+AB Background The identification of asymptomatic individuals withPlasmodium falciparuminfection is difficult because they do not seek medical treatment and often have too few asexual parasites detectable using microscopy or rapid diagnostic tests (<= 200 parasites per mu l). Quantitative PCR (qPCR) may provide greater sensitivity and permits estimation of the initial template DNA concentration. This study examined the hypothesis that qPCR assays using templates with higher copy numbers may be more sensitive forP. falciparumthan assays based on templates with lower copy numbers. Methods To test this hypothesis, ten qPCR assays for DNA sequences with template copy numbers from 1 to 160 were compared using parasite DNA standards (n = 2) and smear-positive filter paper blots from asymptomatic smear-positive subjects (n = 96). Results Based on the testing ofP. falciparumparasite DNA standards and filter paper blots, cycle threshold values decreased as the concentrations of template DNA and template copy numbers increased (p < 0.001). Likewise, the analytical and clinical sensitivities of qPCR assays forP. falciparumDNA (based on DNA standards and filter paper blots, respectively) increased with template copy number. Despite the gains in clinical sensitivity from increased template copy numbers, qPCR assays failed to detect more than half of the filter paper blots with low parasite densities (<= 200 asexual parasites per mu l). Conclusions These results confirm the hypothesis that the sensitivity of qPCR forP. falciparumin the blood of individuals with asymptomatic infection increases with template copy number. However, because even the most sensitive qPCR assays (with template copy numbers from 32 to 160) detected fewer than 50% of infections with <= 200 asexual parasites per mu l, the sensitivity of qPCR must be increased further to identify all smear-positive, asymptomatic individuals in order to interrupt transmission.
+EI 1475-2875
+PD AUG 18
+PY 2020
+VL 19
+IS 1
+AR 295
+DI 10.1186/s12936-020-03365-8
+UT WOS:000563558400002
+PM 32811534
+ER
+
+PT J
+AU Haanshuus, CG
+   Morch, K
+AF Haanshuus, Christel Gill
+   Morch, Kristine
+TI Detection of remainingPlasmodiumDNA and gametocytes during follow up
+   after curative malaria treatment among returned travellers in Norway
+SO MALARIA JOURNAL
+AB Background PCR can be positive weeks after effective malaria treatment, potentially leading to over diagnose of recrudescence and re-infections. The DNA detected by PCR post-treatment might stem from residuals of destroyed asexual parasites, or from live gametocytes. The objective of this clinical observational study was to describe the presence of positive PCR forPlasmodium falciparumandPlasmodium vivaxin follow-up samples post-treatment from returned travellers, and the proportion of positive PCR due to gametocytes. Methods Whole blood was collected during hospitalization and outpatient routine follow-up from 13 patients with imported malaria. DNA was extracted applying QIAamp DNA Blood Mini Kit, while mRNA was collected and extracted applying PAXgene Blood RNA Tubes and Kit. All DNA samples (N = 25) were analysed with a genus-specificcytbreal-time SYBR PCR, andP. falciparumDNA samples (N = 22) were also analysed with a falciparum-specificvarATS real-time TaqMan PCR. All the mRNA samples (N = 18) were analysed with both a genus-specific 18S rRNA RT-PCR and a gametocyte-specificPfs25 (P. falciparum)/Pvs25 (P. vivax) RT-PCR. Results Latest samples were collected at day 1 (n = 2) and from day 11-54 (n = 11) after treatment. Genus DNAcytbPCR was positive up to 49 days after effective treatment, and 18S rRNA transcripts from activeP. falciparumparasites were detectable for at least 11 days. Gametocyte-specific mRNA was detected at latest only two days after treatment. Among six patients with late positive PCR forP. falciparum, four had high parasitaemia at admittance (6-30%), while two had parasitaemia < 2%. Late detection ofP. vivaxwas not found by any of the PCR methods. Conclusions DNA-based PCR can be positive up to at least seven weeks after curative malaria treatment, potentially leading to over-diagnose of recrudescence and re-infections. Based on the observations in this study, it is unclear if the DNA origins from residuals of destroyed parasites or live gametocytes, warranting further investigations.
+EI 1475-2875
+PD AUG 19
+PY 2020
+VL 19
+IS 1
+AR 296
+DI 10.1186/s12936-020-03367-6
+UT WOS:000565246200001
+PM 32814587
+ER
+
+PT J
+AU Mosha, JF
+   Lukole, E
+   Charlwood, JD
+   Wright, A
+   Rowland, M
+   Bullock, O
+   Manjurano, A
+   Kisinza, W
+   Mosha, FW
+   Kleinschmidt, I
+   Protopopoff, N
+AF Mosha, Jacklin F.
+   Lukole, Eliud
+   Charlwood, J. Derek
+   Wright, Alexandra
+   Rowland, Mark
+   Bullock, Olivia
+   Manjurano, Alphaxard
+   Kisinza, William
+   Mosha, Franklin W.
+   Kleinschmidt, Immo
+   Protopopoff, Natacha
+TI Risk factors for malaria infection prevalence and household vector
+   density between mass distribution campaigns of long-lasting insecticidal
+   nets in North-western Tanzania
+SO MALARIA JOURNAL
+AB Background Long-lasting insecticidal nets (LLINs) are the most widely deployed vector control intervention in sub-Saharan Africa to prevent malaria. Recent reports indicate selection of pyrethroid insecticide resistance is widespread in mosquito vectors. This paper explores risk factors associated with malaria infection prevalence and vector density between mass distribution campaigns, changes in net coverage, and loss of protection in an area of high pyrethroid resistance in Northwest Tanzania. Methods A cross sectional malaria survey of 3456 children was undertaken in 2014 in Muleba district, Kagera region west of Lake Victoria. Vector density was assessed using indoor light traps and outdoor tent traps. Anophelines were identified to species using PCR and tested forPlasmodium falciparumcircumsporozoite protein. Logistic regression was used to identify household and environmental factors associated with malaria infection and regression binomial negative for vector density. Results LLIN use was 27.7%. Only 16.9% of households had sufficient nets to cover all sleeping places. Malaria infection was independently associated with access to LLINs (OR: 0.57; 95% CI 0.34-0.98). LLINs less than 2 years old were slightly more protective than older LLINs (53 vs 65% prevalence of infection); however, there was no evidence that LLINs in good condition (hole index < 65) were more protective than LLINs, which were more holed. Other risk factors for malaria infection were age, group, altitude and house construction quality. Independent risk factors for vector density were consistent with malaria outcomes and included altitude, wind, livestock, house quality, open eaves and LLIN usage. Indoor collections comprised 4.6%Anopheles funestusand 95.4%Anopheles gambiaeof which 4.5% wereAnopheles arabiensisand 93.5% wereAnopheles gambiaesensu stricto. Conclusion Three years after the mass distribution campaign and despite top-ups, LLIN usage had declined considerably. While children living in households with access to LLINs were at lower risk of malaria, infection prevalence remained high even among users of LLINs in good condition. While effort should be made to maintain high coverage between campaigns, distribution of standard pyrethroid-only LLINs appears insufficient to prevent malaria transmission in this area of intense pyrethroid resistance.
+EI 1475-2875
+PD AUG 20
+PY 2020
+VL 19
+IS 1
+AR 297
+DI 10.1186/s12936-020-03369-4
+UT WOS:000566996500001
+PM 32819368
+ER
+
+PT J
+AU Sondo, P
+   Derra, K
+   Rouamba, T
+   Diallo, SN
+   Taconet, P
+   Kazienga, A
+   Ilboudo, H
+   Tahita, MC
+   Valea, I
+   Sorgho, H
+   Lefevre, T
+   Tinto, H
+AF Sondo, Paul
+   Derra, Karim
+   Rouamba, Toussaint
+   Nakanabo Diallo, Seydou
+   Taconet, Paul
+   Kazienga, Adama
+   Ilboudo, Hamidou
+   Tahita, Marc Christian
+   Valea, Innocent
+   Sorgho, Hermann
+   Lefevre, Thierry
+   Tinto, Halidou
+TI Determinants of Plasmodium falciparum multiplicity of infection and
+   genetic diversity in Burkina Faso
+SO PARASITES & VECTORS
+AB Background: Investigating malaria transmission dynamics is essential to inform policy decision making. Whether multiplicity of infection (MOI) dynamic from individual infections could be a reliable malaria metric in high transmission settings with marked variation in seasons of malaria transmission has been poorly assessed. This study aimed at investigating factors driving Plasmodium falciparum MOI and genetic diversity in a hyperendemic area of Burkina Faso.
+   Methods: Blood samples collected from a pharmacovigilance trial were used for polymerase chain reaction genotyping of the merozoite surface proteins 1 and 2. MOI was defined as the number of distinct parasite genotypes co-existing within a particular infection. Monthly rainfall data were obtained from satellite data of the Global Precipitation Measurement Database while monthly malaria incidence aggregated data were extracted from District Health Information Software 2 medical data of the Center-West health regional direction.
+   Results: In the study area, infected people harboured an average of 2.732 (+/- 0.056) different parasite genotypes. A significant correlation between the monthly MOI and the monthly malaria incidence was observed, suggesting that MOI could be a good predictor of transmission intensity. A strong effect of season on MOI was observed, with infected patients harbouring higher number of parasite genotypes during the rainy season as compared to the dry season. There was a negative relationship between MOI and host age. In addition, MOI decreased with increasing parasite densities, suggesting that there was a within-host competition among co-infecting genetically distinctP. falciparumvariants. Each allelic family of themsp1andmsp2genes was present all year round with no significant monthly fluctuation.
+   Conclusions: In high malaria endemic settings with marked variation in seasons of malaria transmission, MOI represents an appropriate malaria metric which provides useful information about the longitudinal changes in malaria transmission in a given area. Besides transmission season, patient age and parasite density are important factors to consider for better understanding of variations in MOI. All allelic families ofmsp1andmsp2genes were found in both dry and rainy season. The approach offers the opportunity of translating genotyping data into relevant epidemiological information for malaria control.
+OI LEFEVRE, Thierry/0000-0002-9736-6142
+SN 1756-3305
+PD AUG 20
+PY 2020
+VL 13
+IS 1
+AR 427
+DI 10.1186/s13071-020-04302-z
+UT WOS:000567112200002
+PM 32819420
+ER
+
+PT J
+AU Yobi, DM
+   Kayiba, NK
+   Mvumbi, DM
+   Boreux, R
+   Bontems, S
+   Kabututu, PZ
+   De Mol, P
+   Speybroeck, N
+   Mvumbi, GL
+   Hayette, MP
+AF Yobi, Doudou Malekita
+   Kayiba, Nadine Kalenda
+   Mvumbi, Dieudonne Makaba
+   Boreux, Raphael
+   Bontems, Sebastien
+   Kabututu, Pius Zakayi
+   De Mol, Patrick
+   Speybroeck, Niko
+   Mvumbi, Georges Lelo
+   Hayette, Marie-Pierre
+TI The lack of K13-propeller mutations associated with artemisinin
+   resistance in Plasmodium falciparum in Democratic Republic of Congo
+   (DRC)
+SO PLOS ONE
+AB Artemisinin-based combination therapies (ACTs) have been recommended by the World Health Organization (WHO) as first-line treatment of uncomplicatedPlasmodium falciparum(P.falciparum) malaria since 2005 in Democratic Republic of Congo (DRC) and a regular surveillance of the ACT efficacy is required to ensure the treatment effectiveness. Mutations in the propeller domain of thepfk13gene were identified as molecular markers of artemisinin resistance (ART-R). This study investigated thepfk13-propeller gene polymorphism in clinical isolates ofP.falciparumcollected in the DRC. In 2017, ten geographical sites across DRC were selected for a cross-sectional study that was conducted first in Kinshasa from January to March, then in the nine other sites from September to December. Dried blood samples were collected from patients attending health centers for fever where diagnosis of Malaria was first made by rapid diagnostic test (RDT) available on site (SD Bioline malaria Ag Pf or CareStart Malaria Pf) or by thick blood smear and then confirmed by aP.falciparumreal-time PCR assay. Apfk13-propeller segment containing a fragment that codes for amino acids at positions 427-595 was amplified by conventional PCR before sequencing. In total, 1070 patients were enrolled in the study. Real-time PCR performed confirmed the initial diagnosis ofP.falciparuminfection in 806 samples (75.3%; 95% CI: 72.6%- 77.9%). Of the 717 successfully sequencedP.falciparumisolates, 710 (99.0%; 95% CI: 97.9% - 99.6) were wild-type genotypes and 7 (1.0%; 95% CI: 0.4% - 2.1%) carried non-synonymous (NS) mutations inpfk13-propeller including 2 mutations (A578S and V534A) previously detected and 2 other (M472I and A569T) not yet detected in the DRC. Mutations associated with ART-R in Southeast Asia were not observed in DRC. However, the presence of other mutations inpfk13-propeller gene calls for further investigations to assess their implication in drug resistance.
+OI Yobi, Malekita Doudou/0000-0002-8703-1269
+SN 1932-6203
+PD AUG 21
+PY 2020
+VL 15
+IS 8
+AR e0237791
+DI 10.1371/journal.pone.0237791
+UT WOS:000564080300028
+PM 32822392
+ER
+
+PT J
+AU Goupeyou-Youmsi, J
+   Rakotondranaivo, T
+   Puchot, N
+   Peterson, I
+   Girod, R
+   Vigan-Womas, I
+   Paul, R
+   Ndiath, MO
+   Bourgouin, C
+AF Goupeyou-Youmsi, Jessy
+   Rakotondranaivo, Tsiriniaina
+   Puchot, Nicolas
+   Peterson, Ingrid
+   Girod, Romain
+   Vigan-Womas, Ines
+   Paul, Richard
+   Ndiath, Mamadou Ousmane
+   Bourgouin, Catherine
+TI Differential contribution of Anopheles coustani and Anopheles arabiensis
+   to the transmission of Plasmodium falciparum and Plasmodium vivaxin two
+   neighbouring villages of Madagascar
+SO PARASITES & VECTORS
+AB Background: Malaria is still a heavy public health concern in Madagascar. Few studies combining parasitology and entomology have been conducted despite the need for accurate information to design effective vector control measures. In a Malagasy region of moderate to intense transmission of both Plasmodium falciparum and P. vivax, parasitology and entomology have been combined to survey malaria transmission in two nearby villages.
+   Methods: Community-based surveys were conducted in the villages of Ambohitromby and Miarinarivo at three time points ( T1, T2 and T3) during a single malaria transmission season. Human malaria prevalence was determined by rapid diagnostic tests (RDTs), microscopy and real-time PCR. Mosquitoes were collected by human landing catches and pyrethrum spray catches and the presence of Plasmodium sporozoites was assessed by TaqMan assay.
+   Results: Malaria prevalence was not significantly different between villages, with an average of 8.0% by RDT, 4.8% by microscopy and 11.9% by PCR. This was mainly due to P. falciparum and to a lesser extent to P. vivax. However, there was a significantly higher prevalence rate as determined by PCR at T2 (chi(2)(2) = 7.46, P = 0.025). Likewise, mosquitoes were significantly more abundant at T2 (chi(2)(2) = 64.8, P < 0.001), especially in Ambohitromby. At T1 and T3 mosquito abundance was higher in Miarinarivo than in Ambohitromby (chi(2)(2) = 14.92, P < 0.001). Of 1550 Anopheles mosquitoes tested, 28 (1.8%) were found carrying Plasmodium sporozoites. The entomological inoculation rate revealed that Anopheles coustani played a major contribution in malaria transmission in Miarinarivo, being responsible of 61.2 infective bites per human (ib/h) during the whole six months of the survey, whereas, it was An. arabiensis, with 36 ib/h, that played that role in Ambohitromby.
+   Conclusions: Despite a similar malaria prevalence in two nearby villages, the entomological survey showed a different contribution of An. coustani and An. arabiensis to malaria transmission in each village. Importantly, the suspected secondary malaria vector An. coustani, was found playing the major role in malaria transmission in one village. This highlights the importance of combining parasitology and entomology surveys for better targeting local malaria vectors. Such study should contribute to the malaria pre-elimination goal established under the 2018-2022 National Malaria Strategic Plan.
+OI Goupeyou-Youmsi, Jessy/0000-0003-3489-6645
+SN 1756-3305
+PD AUG 26
+PY 2020
+VL 13
+IS 1
+AR 430
+DI 10.1186/s13071-020-04282-0
+UT WOS:000565977500001
+PM 32843082
+ER
+
+PT J
+AU Bosco, AB
+   Anderson, K
+   Gresty, K
+   Prosser, C
+   Smith, D
+   Nankabirwa, JI
+   Nsobya, S
+   Yeka, A
+   Opigo, J
+   Gonahasa, S
+   Namubiru, R
+   Arinaitwe, E
+   Mbaka, P
+   Kissa, J
+   Won, S
+   Lee, B
+   Lim, CS
+   Karamagi, C
+   Cunningham, J
+   Nakayaga, JK
+   Kamya, MR
+   Cheng, Q
+AF Bosco, Agaba B.
+   Anderson, Karen
+   Gresty, Karryn
+   Prosser, Christiane
+   Smith, David
+   Nankabirwa, Joaniter, I
+   Nsobya, Sam
+   Yeka, Adoke
+   Opigo, Jimmy
+   Gonahasa, Samuel
+   Namubiru, Rhoda
+   Arinaitwe, Emmanuel
+   Mbaka, Paul
+   Kissa, John
+   Won, Sungho
+   Lee, Bora
+   Lim, Chae Seung
+   Karamagi, Charles
+   Cunningham, Jane
+   Nakayaga, Joan K.
+   Kamya, Moses R.
+   Cheng, Qin
+TI Molecular surveillance reveals the presence ofpfhrp2andpfhrp3gene
+   deletions inPlasmodium falciparumparasite populations in Uganda,
+   2017-2019
+SO MALARIA JOURNAL
+AB Background Histidine-rich protein-2 (HRP2)-based rapid diagnostic tests (RDTs) are the only RDTs recommended for malaria diagnosis in Uganda. However, the emergence ofPlasmodium falciparumhistidine rich protein 2 and 3 (pfhrp2andpfhrp3)gene deletions threatens their usefulness as malaria diagnostic and surveillance tools. Thepfhrp2andpfhrp3gene deletions surveillance was conducted inP. falciparumparasite populations in Uganda. Methods Three-hundred (n = 300)P. falciparumisolates collected from cross-sectional malaria surveys in symptomatic individuals in 48 districts of eastern and western Uganda were analysed for the presence ofpfhrp2andpfhrp3genes. Presence of parasite DNA was confirmed by PCR amplification of the18s rRNAgene, msp1andmsp2single copy genes. Presence or absence of deletions was confirmed by amplification of exon1 and exon2 ofpfhrp2andpfhrp3using gene specific PCR. Results Overall,pfhrp2andpfhrp3gene deletions were detected in 29/300 (9.7%, 95% CI 6.6-13.6%) parasite isolates. Thepfhrp2gene was deleted in 10/300 (3.3%, 95% CI 1.6-6.0%) isolates,pfhrp3in 9/300 (3.0%, 95% CI 1.4-5.6%) while bothpfhrp2andpfhrp3were deleted in 10/300 (3.3%, 95% CI 1.6-6.0%) parasite isolates. Proportion ofpfhrp2/3deletions was higher in the eastern 14.7% (95% CI 9.7-20.0%) compared to the western region 3.1% (95% CI 0.8-7.7%), p = 0.001. Geographical location was associated with gene deletions aOR 6.25 (2.02-23.55), p = 0.003. Conclusions This is the first large-scale survey reporting the presence ofpfhrp2/3gene deletions inP. falciparumisolates in Uganda. Roll out of RDTs for malaria diagnosis should take into consideration the existence ofpfhrp2/3gene deletions particularly in areas where they were detected. Periodicpfhrp2/3surveys are recommended to inform future decisions for deployment of alternative RDTs.
+EI 1475-2875
+PD AUG 26
+PY 2020
+VL 19
+IS 1
+AR 300
+DI 10.1186/s12936-020-03362-x
+UT WOS:000567518300001
+PM 32843041
+ER
+
+PT J
+AU Nuin, NA
+   Tan, AF
+   Lew, YL
+   Piera, KA
+   William, T
+   Rajahram, GS
+   Jelip, J
+   Dony, JF
+   Mohammad, R
+   Cooper, DJ
+   Barber, BE
+   Anstey, NM
+   Chua, TH
+   Grigg, MJ
+AF Nuin, Nor Afizah
+   Tan, Angelica F.
+   Lew, Yao Long
+   Piera, Kim A.
+   William, Timothy
+   Rajahram, Giri S.
+   Jelip, Jenarun
+   Dony, Jiloris F.
+   Mohammad, Rashidah
+   Cooper, Daniel J.
+   Barber, Bridget E.
+   Anstey, Nicholas M.
+   Chua, Tock H.
+   Grigg, Matthew J.
+TI Comparative evaluation of two commercial real-time PCR kits (QuantiFast
+   (TM) and abTES (TM)) for the detection ofPlasmodium knowlesiand
+   otherPlasmodiumspecies in Sabah, Malaysia
+SO MALARIA JOURNAL
+AB Background The monkey parasitePlasmodium knowlesiis an emerging public health issue in Southeast Asia. In Sabah, Malaysia,P. knowlesiis now the dominant cause of human malaria. Molecular detection methods forP. knowlesiare essential for accurate diagnosis and in monitoring progress towards malaria elimination of otherPlasmodiumspecies. However, recent commercially available PCR malaria kits have unpublishedP. knowlesigene targets or have not been evaluated against clinical samples. Methods Two real-time PCR methods currently used in Sabah for confirmatory malaria diagnosis and surveillance reporting were evaluated: the QuantiFast (TM) Multiplex PCR kit (Qiagen, Germany) targeting theP. knowlesi18S SSU rRNA; and the abTES (TM) Malaria 5 qPCR II kit (AITbiotech, Singapore), with an undisclosedP. knowlesigene target. Diagnostic accuracy was evaluated using 52P. knowlesi,25Plasmodium vivax, 21Plasmodium falciparum, and 10Plasmodium malariaeclinical isolates, and 26 malaria negative controls, and compared against a validated reference nested PCR assay. The limit of detection (LOD) for each PCR method andPlasmodiumspecies was also evaluated. Results The sensitivity of the QuantiFast (TM) and abTES (TM) assays for detectingP. knowlesiwas comparable at 98.1% (95% CI 89.7-100) and 100% (95% CI 93.2-100), respectively. Specificity of the QuantiFast (TM) and abTES (TM) forP. knowlesiwas high at 98.8% (95% CI 93.4-100) for both assays. The QuantiFast (TM) assay demonstrated falsely-positive mixedPlasmodiumspecies at low parasitaemias in both the primary and LOD analysis. Diagnostic accuracy of both PCR kits for detectingP. vivax,P. falciparum, andP. malariaewas comparable toP. knowlesi. The abTES (TM) assay demonstrated a lower LOD forP. knowlesiof <= 0.125 parasites/mu L compared to QuantiFast (TM) with a LOD of 20 parasites/mu L. Hospital microscopy demonstrated a sensitivity of 78.8% (95% CI 65.3-88.9) and specificity of 80.4% (95% CI 67.6-89.8) compared to reference PCR for detectingP. knowlesi. Conclusion The QuantiFast (TM) and abTES (TM) commercial PCR kits performed well for the accurate detection ofP. knowlesiinfections. Although the QuantiFast (TM) kit is cheaper, the abTES (TM) kit demonstrated a lower LOD, supporting its use as a second-line referral-laboratory diagnostic tool in Sabah, Malaysia.
+OI Grigg, Matthew Joseph/0000-0001-9914-8352
+EI 1475-2875
+PD AUG 27
+PY 2020
+VL 19
+IS 1
+AR 306
+DI 10.1186/s12936-020-03379-2
+UT WOS:000566964200003
+PM 32854695
+ER
+
+PT J
+AU Varo, R
+   Balanza, N
+   Mayor, A
+   Bassat, Q
+AF Varo, Rosauro
+   Balanza, Nuria
+   Mayor, Alfredo
+   Bassat, Quique
+TI Diagnosis of clinical malaria in endemic settings
+SO EXPERT REVIEW OF ANTI-INFECTIVE THERAPY
+AB Introduction Malaria continues to be a major global health problem, with over 228 million cases and 405,000 deaths estimated to occur annually. Rapid and accurate diagnosis of malaria is essential to decrease the burden and impact of this disease, particularly in children. We aimed to review the main available techniques for the diagnosis of clinical malaria in endemic settings and explore possible future options to improve its rapid recognition. Areas covered literature relevant to malaria diagnosis was identified through electronic searches in Pubmed, with no language or date restrictions and limited to humans. Expert opinion Light microscopy is still considered the gold standard method for malaria diagnosis and continues to be at the frontline of malaria diagnosis. However, technologies as rapid diagnostic tests, mainly those who detect histidine-rich protein-2, offer an accurate, rapid and affordable alternative for malaria diagnosis in endemic areas. They are now the technique most extended in endemic areas for parasitological confirmation. In these settings, PCR-based assays are usually restricted to research and they are not currently helpful in the management of clinical malaria. Other technologies, such as isothermal methods could be an interesting and alternative approach to PCR in the future.
+SN 1478-7210
+EI 1744-8336
+DI 10.1080/14787210.2020.1807940
+EA AUG 2020
+UT WOS:000564116200001
+PM 32772759
+ER
+
+PT J
+AU Shears, MJ
+   Seilie, AM
+   Sim, BKL
+   Hoffman, SL
+   Murphy, SC
+AF Shears, Melanie J.
+   Seilie, Annette M.
+   Kim Lee Sim, B.
+   Hoffman, Stephen L.
+   Murphy, Sean C.
+TI Quantification ofPlasmodium knowlesiversusPlasmodium falciparumin the
+   rhesus liver: implications for malaria vaccine studies in rhesus models
+SO MALARIA JOURNAL
+AB Background Rhesus macaques are valuable pre-clinical models for malaria vaccine development. ThePlasmodium knowlesi/rhesus andPlasmodium falciparum/rhesus models are two established platforms for malaria vaccine testing, and both have previously been used to assess live-attenuated sporozoite vaccines. However, there is evidence that the susceptibility of the rhesus liver toP. knowlesiversusP. falciparumsporozoites likely differs, potentially complicating comparisons between these two platforms. Methods To quantify the differing susceptibility of rhesus toP. knowlesiandP. falciparumsporozoites, animals were infected by direct venous inoculation of purified, cryopreserved wild-typeP. knowlesisporozoites (PkSPZ) orP. falciparumsporozoites (PfSPZ). The entire liver was collected 5 days post-infection, and parasite burden in each liver lobe was quantified using an ultrasensitivePlasmodium18S rRNA RT-PCR biomarker assay. The potential of using 18S rRNA copy number in the rhesus liver to directly measure the efficacy of vaccines targetingP. falciparumsporozoites and liver stages was also theoretically evaluated. Results Infection of rhesus with a high dose of PkSPZ led to consistently high burden liver stage infections (range 9.5-10.1 log(10)copies 18S rRNA/g of liver), with similar amounts of parasite 18S rRNA detected in every liver lobe. Inoculation of rhesus with high doses of PfSPZ led to more variable, lower liver burdens (range 4.9-6.6 log(10)copies 18S rRNA/g of liver in infected lobes), with parasite 18S rRNA below the limit of detection in some liver lobes. The low signal and heterogeneity of liver burden in the PfSPZ-infected animals indicates that even this extremely sensitive molecular assay cannot be used to assess reliably vaccine efficacy in theP. falciparum/rhesus platform. Conclusions Detection of 18S rRNA in the liver following high dose intravenous PfSPZ confirmed that rhesus are modestly susceptible to wild-typeP. falciparumsporozoites. However, comparison of 18S rRNA RT-PCR biomarker signal indicates that theP. falciparumliver burden was 3-5 logs lower than in PkSPZ-infected animals. Quantification of this difference in liver stage burden will help guide and interpret data from pre-clinical studies of live-attenuated sporozoite vaccines in rhesus models.
+EI 1475-2875
+PD AUG 31
+PY 2020
+VL 19
+IS 1
+AR 313
+DI 10.1186/s12936-020-03385-4
+UT WOS:000567941400001
+PM 32867784
+ER
+
+PT J
+AU Milan-Noris, EM
+   Monreal-Escalante, E
+   Rosales-Mendoza, S
+   Soria-Guerra, RE
+   Radwan, O
+   Juvik, JA
+   Korban, SS
+AF Milan-Noris, Evelia M.
+   Monreal-Escalante, Elizabeth
+   Rosales-Mendoza, Sergio
+   Soria-Guerra, Ruth E.
+   Radwan, Osman
+   Juvik, John A.
+   Korban, Schuyler S.
+TI An AMA1/MSP1(19)Adjuvanted Malaria Transplastomic Plant-Based Vaccine
+   Induces Immune Responses in Test Animals
+SO MOLECULAR BIOTECHNOLOGY
+AB Malaria is a tropical human disease, caused by protozoan parasites, wherein a significant number of the world's population is at risk. Annually, more than 219 million new cases are reported. Although there are prevention treatments, there are no highly and widely effective licensed anti-malarial vaccines available for use. Opportunities for utilization of plant-based vaccines as novel platforms for developing safe, reliable, and affordable treatments offer promise for developing such a vaccine against malaria. In this study, a Malchloroplast candidate vaccine was designed, composed of segments of AMA1 and MSP1 proteins, two epitopes ofPlasmodium falciparum,along with a GK1 peptide fromTaenia soliumas adjuvant, and this was expressed in tobacco chloroplasts. Transplastomic tobacco lines were generated using biolistic transformation, and these were confirmed to carry the synthetic gene construct. Expression of the synthetic GK1 peptide was confirmed using RT-PCR and Western blots. Furthermore, the GK1 peptide was detected by HPLC at levels of up to 6 mu g g(-1)dry weight of tobacco leaf tissue. The plant-derived Malchloroplast candidate vaccine was subsequently tested in BALB/c female mice following subcutaneous administration, and was found to elicit specific humoral responses. Furthermore, components of this candidate vaccine were recognized by antibodies inPlasmodium falciparummalaria patients and were immunogenic in test mice. Thus, this study provided a 'proof of concept' for a promising plant-based candidate subunit vaccine against malaria.
+SN 1073-6085
+EI 1559-0305
+PD OCT
+PY 2020
+VL 62
+IS 10
+BP 534
+EP 545
+DI 10.1007/s12033-020-00271-x
+EA SEP 2020
+UT WOS:000565599600001
+PM 32870446
+ER
+
+PT J
+AU Dhanasree, G
+   Pillai, UN
+   Deepa, C
+   Ambily, VR
+   Shynu, M
+   Sunanda, C
+AF Dhanasree, G.
+   Pillai, Usha Narayana
+   Deepa, Chirayath
+   Ambily, V. R.
+   Shynu, M.
+   Sunanda, C.
+TI Evaluation of oxidative stress in caprine anaplasmosis and effect of
+   vitamin E-selenium in monitoring oxidative stress
+SO TROPICAL ANIMAL HEALTH AND PRODUCTION
+AB Caprine anaplasmosis is an economically important tick-borne rickettsial disease that affects goats all over the world. Microscopic examination of stained blood smears from 162 animals revealed inclusion bodies ofAnaplasmaspp. in 24 cases. Genus specific PCR forAnaplasmaspp. yielded positive results in 22 cases. All the diseased animals showed a significant fall in the mean values of antioxidants such as reduced glutathione, superoxide dismutase and catalase and a significant increase in the level of lipid peroxidation. Out of the 22 animals positive for anaplasmosis both in blood smear and PCR, 16 female non pregnant goats selected for study were divided into two groups consisting of eight animals each. Animals belonging to groups I and II were treated with oxytetracycline dihydrate. In addition, animals of group II were supplemented with vitamin E-selenium combination. Oxidative stress parameters were rechecked on the 10th day of treatment. At the end of the study period, a significant reduction in malondialdehyde level and a significant increase in mean value of superoxide dismutase were detected in group II. While there was a significant reduction in lipid peroxidation and a significant increase in superoxide dismutase and catalase values within both the groups after treatment, reduced glutathione showed no significant difference within the group.
+SN 0049-4747
+EI 1573-7438
+PD SEP
+PY 2020
+VL 52
+IS 5
+BP 2695
+EP 2698
+DI 10.1007/s11250-019-02175-8
+UT WOS:000565380100059
+PM 31838717
+ER
+
+PT J
+AU Wahedi, JA
+   Ande, AT
+   Oduola, AO
+   Obembe, A
+   Tola, M
+   Oyeniyi, TA
+   Awolola, TS
+AF Wahedi, J. A.
+   Ande, A. T.
+   Oduola, A. O.
+   Obembe, A.
+   Tola, M.
+   Oyeniyi, T. A.
+   Awolola, T. S.
+TI Dynamics of malaria vector indices in two vegetation zones within North
+   Eastern Adamawa State, Nigeria
+SO TROPICAL BIOMEDICINE
+AB Studies profiling community and zonal malaria entomological risk indices are required to identify high risk areas where targeted control resources are most needed or likely to have the greatest impact on reducing risk of malaria infection. This study presents a first report on malaria vector risk indices in two vegetation zones within Adamawa state, Nigeria. Endophilic mosquitoes were collected for one year in selected communities in the Guinea and Sudan savanna zones within the State. Plasmodium. falciparum Sporozoite and human blood meal ELISA assays were carried out on the female Anopheles mosquitoes collected. Sibling species composition of the An. gambiae complex were determined using PCR assays. Mean numbers of mosquitoes in the Guinea savanna communities were significantly (t = 7.73, DF = 11, p < 0.001) higher than the Sudan. Man-biting rates (F = 2.76, p = 0.13) of Anopheles mosquitoes were higher in the Guinea but not significantly different from Sudan savanna. Sporozoite rates of mosquitoes within the Guinea savanna were 2.7 times higher than the Sudan. The predominant Anopheles coltaxii species encountered in the state had higher overall human blood indices (0.63) and sporozoite rates (6.9%) compared to An. gambiae (0.39, 1.9%) and An. arabiensis (0.58, 2.3%) respectively. Overall annual human blood indices (0.59) of mosquitoes in Adamawa were lower compared to reports from other States. Prevalence and higher transmission risks indices of endophilic An. coluazii mosquitoes reveal the need for LLIN and management of relatively permanent An. coluzzii breeding sites in the State. Widespread cattle rearing lifestyle and lower human blood indices of mosquitoes in the study area suggest the need to investigate cattle blood indices of the mosquitoes in the state. Higher entomological risk indices in the Guinea Savanna zone provide baseline information for prioritization of malaria vector control supplies within the State.
+SN 0127-5720
+PD SEP
+PY 2020
+VL 37
+IS 3
+BP 637
+EP 649
+UT WOS:000566716300009
+ER
+
+PT J
+AU Picot, S
+   Cucherat, M
+   Bienvenu, AL
+AF Picot, Stephane
+   Cucherat, Michel
+   Bienvenu, Anne-Lise
+TI Systematic review and meta-analysis of diagnostic accuracy of
+   loop-mediated isothermal amplification (LAMP) methods compared with
+   microscopy, polymerase chain reaction and rapid diagnostic tests for
+   malaria diagnosis
+SO INTERNATIONAL JOURNAL OF INFECTIOUS DISEASES
+AB Background: Diagnosis is a challenging issue for eliminating malaria. Loop-mediated isothermal amplification (LAMP) could be an alternative to conventional methods. This study aimed to evaluate the diagnostic accuracy of LAMP for malaria compared with microscopy, polymerase chain reaction (PCR) and rapid diagnostic tests (RDTs).
+   Methods and design: MEDLINE, Web of Science and Scopus were searched from inception to 1 July 2019. Prospective and retrospective, randomised and non-randomised, mono-center and multi-center studies, including symptomatic or asymptomatic patients, that reported one LAMP method and one comparator (microscopy, RDT or PCR) were included. PROSPERO registration number: CRD42017075186.
+   Results: Sixty-six studies published between 2006 and 2019 were included, leading to the analysis of 30,641 LAMP tests. The pooled sensitivity of LAMP remained between 96% and 98%, whichever the comparator. The pooled specificity of LAMP was around 95%, but was a little higher if the best PCR studies were considered. The AUC was found to be >0.98, whichever the subgroup of studies was considered. Diagnostic odds ratio (DOR) was found to be around 1000 for all subgroups, except for Plasmodium vivax.
+   Conclusion: This meta-analysis confirmed that the LAMP method is robust for diagnosing malaria, both in symptomatic and asymptomatic people. Thus, the impact of LAMP for controlling malaria is expected to be important. (C) 2020 The Author(s). Published by Elsevier Ltd on behalf of International Society for Infectious Diseases.
+SN 1201-9712
+EI 1878-3511
+PD SEP
+PY 2020
+VL 98
+BP 408
+EP 419
+DI 10.1016/j.ijid.2020.07.009
+UT WOS:000569065400031
+PM 32659450
+ER
+
+PT J
+AU Mei, X
+   Ye, ZH
+   Chang, YQ
+   Huang, SG
+   Song, JP
+   Lu, FL
+AF Mei, Xu
+   Ye, Zhanhong
+   Chang, Yuqing
+   Huang, Shiguang
+   Song, Jianping
+   Lu, Fangli
+TI Trichinella spiralis co-infection exacerbates Plasmodium berghei
+   malaria-induced hepatopathy
+SO PARASITES & VECTORS
+AB Background: AlthoughPlasmodiumparasites and intestinal helminths share common endemic areas, the mechanisms of these co-infections on the host immune response remain not fully understood. Liver involvement in severePlasmodium falciparuminfections is a significant cause of morbidity and mortality. However, the effect of pre-existingTrichinella spiralisinfection on the immune response and liver immune-pathogenesis inP. bergheiANKA (PbANKA)-infected mice needs to be elucidated.
+   Methods: Outbred Kunming mice were infected withT. spiralisand 9 days later were challenged withP. bergheiANKA (PbANKA), and the investigation occurred at 13 days after co-infection.
+   Results: Compared withPbANKA-mono-infected mice,T. spiralis+PbANKA-co-infected mice had similar survival rate but lowerPbANKA parasitaemia; however, there were more severe hepatosplenomegaly, increased liver and spleen indexes, and increased liver pathology observed by hematoxylin and eosin staining; higher expression levels of galectin (Gal)-1, Gal-3, CD68(+)macrophages, and elastase-positive neutrophils measured by immunohistochemical staining; upregulated mRNA expression levels of Gal-1, Gal-3, cytokines (interferon-gamma (IFN gamma) and interleukin (IL)-6), and M1 macrophage polarization marker (inducible nitric oxide synthase (iNOS)) in the liver, and increased expression levels of Gal-1, IFN gamma, IL-6, eosinophil cationic protein, eosinophil protein X, and M1 (IL-1 beta and iNOS) and M2 (Ym1) macrophage polarization markers in the spleen of co-infected mice detected by using quantitative real-time reverse transcription polymerase chain reaction (qRT-PCR).In vitrostudy showed that compared withPbANKA-mono-infected mice, there were significantly increased expression levels of Gal-1, Gal-3, IL-6, IL-1 beta, and iNOS in the peritoneal macrophage isolated from co-infected mice detected by using qRT-PCR. Correlation analysis revealed significant positive correlations between Gal-3 and IL-1 beta in the peritoneal macrophages isolated fromPbANKA-mono-infected mice, between Gal-3 and IFN gamma in the spleen of co-infected mice, and between Gal-1 and Ym1 in the peritoneal macrophages isolated from co-infected mice.
+   Conclusions: Our data indicate that pre-existing infection ofT. spiralismay suppressP. bergheiparasitaemia and aggravate malaria-induced liver pathology through stimulating Gal-1 and Gal-3 expression, activating macrophages, neutrophils, and eosinophils, and promoting mediator release and cytokine production.
+SN 1756-3305
+PD SEP 3
+PY 2020
+VL 13
+IS 1
+AR 440
+DI 10.1186/s13071-020-04309-6
+UT WOS:000568570300001
+PM 32883347
+ER
+
+PT J
+AU Mze, NP
+   Bogreau, H
+   Diedhiou, CK
+   Herdell, V
+   Rahamatou, S
+   Bei, AK
+   Volkman, SK
+   Basco, L
+   Mboup, S
+   Ahouidi, AD
+AF Mze, Nasserdine Papa
+   Bogreau, Herve
+   Diedhiou, Cyrille K.
+   Herdell, Vendela
+   Rahamatou, Silai
+   Bei, Amy K.
+   Volkman, Sarah K.
+   Basco, Leonardo
+   Mboup, Souleymane
+   Ahouidi, Ambroise D.
+TI Genetic diversity of Plasmodium falciparum in Grande Comore Island
+SO MALARIA JOURNAL
+AB BackgroundDespite several control interventions resulting in a considerable decrease in malaria prevalence in the Union of the Comoros, the disease remains a public health problem with high transmission in Grande Comore compared to neighbouring islands. In this country, only a few studies investigating the genetic diversity of Plasmodium falciparum have been performed so far. For this reason, this study aims to examine the genetic diversity of P. falciparum by studying samples collected in Grande Comore in 2012 and 2013, using merozoite surface protein 1 (msp1), merozoite surface protein 2 (msp2) and single nucleotide polymorphism (SNP) genetic markers.MethodsA total of 162 positive rapid diagnostic test (RDT) samples from Grande Comore were used to extract parasite DNA. Allelic families K1, Mad20 and RO33 of the msp1 gene as well as allelic families IC3D7 and FC37 of the msp2 gene were determined by using nested PCR. Additionally, 50 out of 151 samples were genotyped to study 24 SNPs by using high resolution melting (HRM).ResultsTwo allelic families were predominant, the K1 family of msp1 gene (55%) and the FC27 family of msp2 gene (47.4%). Among 50 samples genotyped for 24 SNPs, 42 (84%) yielded interpretable results. Out of these isolates, 36 (85%) were genetically unique and 6 (15%) grouped into two clusters. The genetic diversity of P. falciparum calculated from msp1 and msp2 genes and SNPs was 0.82 and 0.61, respectively.ConclusionIn summary, a large genetic diversity of P. falciparum was observed in Grande Comore. This may favour persistence of malaria and might be one of the reasons for the high malaria transmission compared to neighbouring islands. Further surveillance of P. falciparum isolates, mainly through environmental management and vector control, is warranted until complete elimination is attained.
+EI 1475-2875
+PD SEP 3
+PY 2020
+VL 19
+IS 1
+AR 320
+DI 10.1186/s12936-020-03384-5
+UT WOS:000569691200002
+PM 32883282
+ER
+
+PT J
+AU Xie, YT
+   Wu, K
+   Cheng, WJ
+   Jiang, TT
+   Yao, Y
+   Xu, MX
+   Yang, Y
+   Tan, HB
+   Li, J
+AF Xie, Yiting
+   Wu, Kai
+   Cheng, Weijia
+   Jiang, Tingting
+   Yao, Yi
+   Xu, Mingxing
+   Yang, Yan
+   Tan, Huabing
+   Li, Jian
+TI Molecular epidemiological surveillance of Africa and Asia imported
+   malaria in Wuhan, Central China: comparison of diagnostic tools during
+   2011-2018
+SO MALARIA JOURNAL
+AB BackgroundMalaria remains a serious public health problem globally. As the elimination of indigenous malaria continues in China, imported malaria has gradually become a major health hazard. Well-timed and accurate diagnoses could support the timely implementation of therapeutic schedules, reveal the prevalence of imported malaria and avoid transmission of the disease.MethodsBlood samples were collected in Wuhan, China, from August 2011 to December 2018. All patients accepted microscopy and rapid diagnosis test (RDT) examinations. Subsequently, each of the positive or suspected positive cases was tested for four human-infectious Plasmodium species by using 18S rRNA-based nested PCR and Taqman probe-based real-time PCR. The results of the microscopy and the two molecular diagnostic methods were analysed. Importation origins were traced by country, and the prevalence of Plasmodium species was analysed by year.ResultsA total of 296 blood samples, including 288 that were microscopy and RDT positive, 7 RDT and Plasmodium falciparum positive, and 1 suspected case, were collected and reanalysed. After application of the two molecular methods and sequencing, 291 cases including 245 P. falciparum, 15 Plasmodium vivax, 20 Plasmodium ovale, 6 Plasmodium malariae and 5 mixed infections (3 P. falciparum+P. ovale, 2 P. vivax+P. ovale) were confirmed. These patients had returned from Africa (95.53%) and Asia (4.47%). Although the prevalence displayed a small-scale fluctuation, the overall trend of the imported cases increased yearly.ConclusionsThese results emphasize the necessity of combined utilization of the four tools for malaria diagnosis in clinic and in field surveys of potential risk regions worldwide including Wuhan.
+EI 1475-2875
+PD SEP 3
+PY 2020
+VL 19
+IS 1
+AR 321
+DI 10.1186/s12936-020-03387-2
+UT WOS:000569691200003
+PM 32883296
+ER
+
+PT J
+AU Amoah, LE
+   Abuaku, B
+   Bukari, AH
+   Dickson, D
+   Amoako, EO
+   Asumah, G
+   Asamoah, A
+   Preprah, NY
+   Malm, KL
+AF Amoah, Linda Eva
+   Abuaku, Benjamin
+   Bukari, Abagna Hamza
+   Dickson, Donu
+   Amoako, Eunice Obeng
+   Asumah, George
+   Asamoah, Alexander
+   Preprah, Nana Yaw
+   Malm, Keziah Laurencia
+TI Contribution of P. falciparum parasites with Pfhrp 2 gene deletions to
+   false negative PfHRP 2 based malaria RDT results in Ghana: A nationwide
+   study of symptomatic malaria patients
+SO PLOS ONE
+AB Introduction
+   False-negative malaria rapid diagnostic test (RDT) results amongst symptomatic malaria patients are detrimental as they could lead to ineffective malaria case management. This study determined the nationwide contribution of parasites withPfhrp2 and Pfhrp 3 genedeletions to false negative malaria RDT results in Ghana.
+   Methods
+   This was a cross sectional study where whole blood (similar to 2 ml) was collected from patients presenting with malaria symptoms at 100 health facilities in all the regions in Ghana from May to August 2018. An aliquot of the blood was used to prepare thin and thick blood smears, filter paper blood spots (DBS) and spot a PfHRP 2 RDT kit. The remaining blood was separated into plasma and blood cells and stored at -20 degrees C. Plasmodium parasite density and species identity was estimated from the blood smears.Plasmodium falciparum specific18S rRNAPCR,merozoite surface protein(msp1) andglutamate rich protein(glurp) gene PCR were used to identify P.falciparum positive samples, which were subjected toPfhrp 2/3 exon1-2 and exon2 genotyping.
+   Results
+   Of the 2,860 microscopically P.falciparum positive patients analyzed, 134 (4.69%) had false negativeP.falciparumspecific RDT results. Samples for PCR analysis was available for 127 of the false negative patients, and the analysis identified 116 (91.3%) as positive forP.falciparum. Only 58.1% (79/116) of the false negative RDT samples tested positive bymsp1 andglurpPCR. Genotyping of exon 1-2 and exon 2 of thePfhrp2 gene identified 12.9% (10/79) and 39.5% (31/79) of samples respectively to have deletions. Genotyping exon 1-2 and exon 2 of thePfhrp3 gene identified 15.2% (12/79) and 40.5% (32/79) of samples respectively to have deletions. Only 5% (4/79) of the false negative samples had deletions in both exon 1-2 and exon 2 of thePfhrp 2 gene. Out of the 49 samples that tested positive for aldolase by luminex, 32.6% (16/49) and) had deletions in Pfhrp2 exon 2 and 2% (1/49) had deletions in both exon 2 and exon 1-2 of thePfhrp2 gene.
+   Conclusions
+   The low prevalence of false negative RDT test results provides assurance that PfHRP 2 based malaria RDT kits remain effective in diagnosing symptomatic malaria patients across all the Regions of Ghana. Although there was a low prevalence of parasites with deletions in exon 2 and exon 1-2 of thePfhrp2 gene the prevalence of parasites with deletions inPfhrp2 exon 2 was about a third of the false negative RDT results. The need to ensure rapid, accurate and reliable malaria diagnosis requires continuous surveillance of parasites withPfhrp2 gene deletions.
+SN 1932-6203
+PD SEP 4
+PY 2020
+VL 15
+IS 9
+AR e0238749
+DI 10.1371/journal.pone.0238749
+UT WOS:000571064300057
+PM 32886699
+ER
+
+PT J
+AU Algady, W
+   Weyell, E
+   Mateja, D
+   Garcia, A
+   Courtin, D
+   Hollox, EJ
+AF Algady, Walid
+   Weyell, Eleanor
+   Mateja, Daria
+   Garcia, Andre
+   Courtin, David
+   Hollox, Edward J.
+TI Genotyping complex structural variation at the malaria-associated human
+   glycophorin locus using a PCR-based strategy
+SO ANNALS OF HUMAN GENETICS
+AB Structural variation in the human genome can affect risk of disease. An example is a complex structural variant of the human glycophorin gene cluster, called DUP4, which is associated with a clinically significant level of protection against severe malaria. The human glycophorin gene cluster harbours at least 23 distinct structural variants, and accurate genotyping of this complex structural variation remains a challenge. Here, we use a polymerase chain reaction-based strategy to genotype structural variation at the human glycophorin gene cluster, including the alleles responsible for the U- blood group. We validate our approach, based on a triplex paralogue ratio test, on publically available samples from the 1000 Genomes project. We then genotype 574 individuals from a longitudinal birth cohort (Tori-Bossito cohort) using small amounts of DNA at low cost. Our approach readily identifies known deletions and duplications, and can potentially identify novel variants for further analysis. It will allow exploration of genetic variation at the glycophorin locus, and investigation of its relationship with malaria, in large sample sets at minimal cost, using standard molecular biology equipment.
+RI Courtin, David/A-1584-2017
+OI Courtin, David/0000-0002-5263-4430
+SN 0003-4800
+EI 1469-1809
+DI 10.1111/ahg.12405
+EA SEP 2020
+UT WOS:000566739100001
+PM 32895931
+ER
+
+PT J
+AU Huang, F
+   Shrestha, B
+   Liu, H
+   Tang, LH
+   Zhou, SS
+   Zhou, XN
+   Takala-Harrison, S
+   Ringwald, P
+   Nyunt, MM
+   Plowe, CV
+AF Huang, Fang
+   Shrestha, Biraj
+   Liu, Hui
+   Tang, Lin-Hua
+   Zhou, Shui-Sen
+   Zhou, Xiao-Nong
+   Takala-Harrison, Shannon
+   Ringwald, Pascal
+   Nyunt, Myaing M.
+   Plowe, Christopher V.
+TI No evidence of amplifiedPlasmodium falciparum plasmepsin IIgene copy
+   number in an area with artemisinin-resistant malaria along the
+   China-Myanmar border
+SO MALARIA JOURNAL
+AB Background The emergence and spread of artemisinin resistance inPlasmodium falciparumposes a threat to malaria eradication, including China's plan to eliminate malaria by 2020. Piperaquine (PPQ) resistance has emerged in Cambodia, compromising an important partner drug that is widely used in China in the form of dihydroartemisinin (DHA)-PPQ. Several mutations in aP. falciparum gene encoding a kelch protein on chromosome 13 (k13) are associated with artemisinin resistance and have arisen spread in the Great Mekong subregion, including the China-Myanmar border. Multiple copies of the plasmepsin II/III(pm2/3) genes, located on chromosome 14, have been shown to be associated with PPQ resistance. Methods The therapeutic efficacy of DHA-PPQ for the treatment of uncomplicatedP. falciparumwas evaluated along the China-Myanmar border from 2010 to 2014. The dry blood spots samples collected in the efficacy study prior DHA-PPQ treatment and from the local hospital by passive detection were used to amplifyk13andpm2. Polymorphisms withink13were genotyped by capillary sequencing andpm2copy number was quantified by relative-quantitative real-time polymerase chain reaction. Treatment outcome was evaluated with the World Health Organization protocol. A linear regression model was used to estimate the association between the day 3 positive rate andk13mutation and the relationship of thepm2copy number variants andk13mutations. Results DHA-PPQ was effective for uncomplicatedP. falciparuminfection in Yunnan Province with cure rates > 95%. Twelve non synonymous mutations in thek13domain were observed among the 268 samples with the prevalence of 44.0% and the predominant mutation was F446I with a prevalence of 32.8%. Only one sample was observed with multi-copies of pm2, including parasites with and without k13 mutations. The therapeutic efficacy of DHA-PPQ was > 95% along the China-Myanmar border, consistent with the lack of amplification ofpm2. Conclusion DHA-PPQ for uncomplicatedP. falciparuminfection still showed efficacy in an area with artemisinin-resistant malaria along the China-Myanmar border. There was no evidence to show PPQ resistance by clinical study and molecular markers survey. Continued monitoring of the parasite population using molecular markers will be important to track emergence and spread of resistance in this region.
+EI 1475-2875
+PD SEP 14
+PY 2020
+VL 19
+IS 1
+AR 334
+DI 10.1186/s12936-020-03410-6
+UT WOS:000571909400003
+PM 32928233
+ER
+
+PT J
+AU Ang, JXD
+   Kadir, KA
+   Mohamad, DSA
+   Matusop, A
+   Divis, PCS
+   Yaman, K
+   Singh, B
+AF Ang, Joshua X. D.
+   Kadir, Khamisah A.
+   Mohamad, Dayang S. A.
+   Matusop, Asmad
+   Divis, Paul C. S.
+   Yaman, Khatijah
+   Singh, Balbir
+TI New vectors in northern Sarawak, Malaysian Borneo, for the zoonotic
+   malaria parasite, Plasmodium knowlesi
+SO PARASITES & VECTORS
+AB BackgroundPlasmodium knowlesi is a significant cause of human malaria in Sarawak, Malaysian Borneo. Only one study has been previously undertaken in Sarawak to identify vectors of P. knowlesi, where Anopheles latens was incriminated as the vector in Kapit, central Sarawak. A study was therefore undertaken to identify malaria vectors in a different location in Sarawak.MethodsMosquitoes found landing on humans and resting on leaves over a 5-day period at two sites in the Lawas District of northern Sarawak were collected and identified. DNA samples extracted from salivary glands of Anopheles mosquitoes were subjected to nested PCR malaria-detection assays. The small subunit ribosomal RNA (SSU rRNA) gene of Plasmodium was sequenced, and the internal transcribed spacer 2 (ITS2) and mitochondrial cytochrome c oxidase subunit 1 (cox1) gene of the mosquitoes were sequenced from the Plasmodium-positive samples for phylogenetic analysis.ResultsTotals of 65 anophelines and 127 culicines were collected. By PCR, 6 An. balabacensis and 5 An. donaldi were found to have single P. knowlesi infections while 3 other An. balabacensis had either single, double or triple infections with P. inui, P. fieldi, P. cynomolgi and P. knowlesi. Phylogenetic analysis of the Plasmodium SSU rRNA gene confirmed 3 An. donaldi and 3 An. balabacensis with single P. knowlesi infections, while 3 other An. balabacensis had two or more Plasmodium species of P. inui, P. knowlesi, P. cynomolgi and some species of Plasmodium that could not be conclusively identified. Phylogenies inferred from the ITS2 and/or cox1 sequences of An. balabacensis and An. donaldi indicate that they are genetically indistinguishable from An. balabacensis and An. donaldi, respectively, found in Sabah, Malaysian Borneo.ConclusionsPreviously An. latens was identified as the vector for P. knowlesi in Kapit, central Sarawak, Malaysian Borneo, and now An. balabacensis and An. donaldi have been incriminated as vectors for zoonotic malaria in Lawas, northern Sarawak.
+SN 1756-3305
+PD SEP 15
+PY 2020
+VL 13
+IS 1
+AR 472
+DI 10.1186/s13071-020-04345-2
+UT WOS:000573044900002
+PM 32933567
+ER
+
+PT J
+AU Oyedeji, SI
+   Bassi, PU
+   Oyedeji, SA
+   Ojurongbe, O
+   Awobode, HO
+AF Oyedeji, Segun Isaac
+   Bassi, Peter Usman
+   Oyedeji, Samuel Adeola
+   Ojurongbe, Olusola
+   Awobode, Henrietta Oluwatoyin
+TI Genetic diversity and complexity ofPlasmodium falciparuminfections in
+   the microenvironment among siblings of the same household in
+   North-Central Nigeria
+SO MALARIA JOURNAL
+AB Background Plasmodium falciparumparasites are known to exhibit extensive genetic diversity in areas of high transmission intensity and infected individuals in such communities often harbour several complex mixtures of parasite clones with different genetic characteristics. However, in the micro-environment, the extent of genetic diversity ofP. falciparumparasites remain largely unknown. In this study therefore, the complexity ofP. falciparuminfections in households was investigated among symptomatic siblings, living under the same roof in north-central Nigeria. Methods Children were enrolled into the study if they were at least two from a household and presented with symptoms of uncomplicated malaria. Clinical malaria was confirmed by light microscopy of Giemsa-stained thick and thin blood films. Genomic DNA was isolated from blood spots on filter paper. Molecular characterization ofP. falciparumisolates was done by allele-specific nested PCR of the highly polymorphic merozoite surface protein-2 (msp-2) gene. Results Ninety-three children from 43 households were enrolled into this study. A total of 26 differentmsp-2alleles were identified from 215 fragments (range: 180-480 bp). Majority of the isolates [65.6% (n = 61)] were polyclonal infections consisting of 2-6 clones and were significantly more common with the FC27 allelic family (p = 0.036). The multiplicity of infection (MOI) per household ranged from 1.0 to 4.5 while the overall MOI in the study population was 2.31. The pattern of distribution ofmsp-2allele types among the households fell into two categories: households where bothmsp-2allele types (FC27 and 3D7) were present; households where only onemsp-2allele type (FC27 or 3D7) was present. Majority of the households [88.4% (n = 38)], had bothmsp-2allele types but they were disproportionately distributed among the children while in a few households [11.6% (n = 5)], all the children were infected with only one type ofmsp-2allele. Conclusion These findings showed thatP. falciparumisolates exhibit remarkable degree of genetic diversity in the micro-environment and are composed mainly of multiclonal infections, which is an indication of a high ongoing parasite transmission. This suggests that the micro-environment is an important area of focus for malaria control interventions and for evaluating intervention programmes.
+OI OYEDEJI, Segun/0000-0001-9859-9338
+EI 1475-2875
+PD SEP 16
+PY 2020
+VL 19
+IS 1
+AR 338
+DI 10.1186/s12936-020-03415-1
+UT WOS:000573080900003
+PM 32938438
+ER
+
+PT J
+AU van Eijk, AM
+   Choubey, S
+   Barla, P
+   Haque, MA
+   Nandini, P
+   Acharya, S
+   Sullivan, SA
+   Mohanty, S
+   Satpathi, S
+   Carlton, JM
+AF Eijk, Anna Maria van
+   Choubey, Sandhya
+   Barla, Punam
+   Haque, Mohammed A.
+   Nandini, P.
+   Acharya, Subrata
+   Sullivan, Steven A.
+   Mohanty, Sanjib
+   Satpathi, Sanghamitra
+   Carlton, Jane M.
+TI Malaria in Sundargarh district, Odisha, India: Epidemiological and
+   behavioral aspects from surveys
+SO ACTA TROPICA
+AB To characterize malaria and assist in prevention efforts, we conducted a series of epidemiological studies in Sundargarh district, India, as part of an NIH-funded International Center of Excellence for Malaria Research. In a published survey around Rourkela in 2013-2014 (N = 1307), malaria prevalence was found to be 8.3%. Using these data, villages were divided into low (<2%), medium (2-10%) and high (>10%) malaria prevalence, and risk factors assessed by type of village. In the six low malaria villages, four persons were positive by PCR; in the four medium malaria villages, prevalence was 7% (35 infections, 7 P. vivax); and in the three high malaria villages, prevalence was 21% (62 infections, 10 P. vivax and 5 mixed with P. vivax and P. falciparum). A total of 30.6% infections were submicroscopic and 40.6% were asymptomatic. Our analyses showed that the rainy season and male gender were risk factors for malaria; in high malaria villages, young age was an additional risk factor, and indoor and outdoor spraying was protective compared to no spraying. We undertook a subsequent behavioral survey in four of the medium and high malaria villages in 2017 to investigate the behavioral aspects of malaria risk. Among 500 participants in 237 households, adult men (15+ years) were more likely to be outside in the evening (34.5% vs. 7.9% among adult women 15+ years and 0.7% among children, p < 0.001), or to sleep outside (7.5% vs. 0.5% and 0%, respectively, p < 0.001). Although women were more likely to get up before 6 a.m. (86.6%, vs. 70.5% among men, 50.7% among children, p < 0.001), men were more likely to be outside in the early morning (77.6% among men, 11.2% among women, and 11.1% among children, p < 0.001). More children used insecticide treated nets the previous night (73.4%) than men (45.6%) or women (39.6%), and repellents were used by 29.5% of 234 households (insecticide creams were not used at all). Malaria control and elimination in India will need local approaches, and the promotion of repellent cream use by at-risk groups could be further explored in addition to mass-screen or treat programs in high-risk villages.
+SN 0001-706X
+EI 1873-6254
+PD NOV
+PY 2020
+VL 211
+AR 105647
+DI 10.1016/j.actatropica.2020.105647
+UT WOS:000570062700005
+PM 32735794
+ER
+
+EF

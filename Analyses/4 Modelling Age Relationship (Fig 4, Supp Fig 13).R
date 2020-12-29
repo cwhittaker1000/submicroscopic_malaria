@@ -73,17 +73,17 @@ if (fresh_run == TRUE) {
 }
 
 # Supplementary Figure 11 - MCMC Output and Parameter Tables
-pdf("Figures/Supplementary/Supp Figure 11 - Age Stratified MCMC Output/Supp Figure 11 - Young Children MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 13 - Age Stratified MCMC Output/Supp Figure 13 - Young Children MCMC Output.pdf", width = 7.33, height = 7.51)
 young_children_param_table <- param_table(young_child_model, params)
 plot(young_child_model, col = c("yellow"), las = 1)
 dev.off()
 
-pdf("Figures/Supplementary/Supp Figure 11 - Age Stratified MCMC Output/Supp Figure 11 - Old Children MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 13 - Age Stratified MCMC Output/Supp Figure 13 - Old Children MCMC Output.pdf", width = 7.33, height = 7.51)
 old_children_param_table <- param_table(old_child_model, params)
 plot(old_child_model, col = c("orange"), las = 1)
 dev.off()
 
-pdf("Figures/Supplementary/Supp Figure 11 - Age Stratified MCMC Output/Supp Figure 11 - Adult MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 13 - Age Stratified MCMC Output/Supp Figure 13 - Adult MCMC Output.pdf", width = 7.33, height = 7.51)
 adult_param_table <- param_table(adult_model, params)
 plot(adult_model, col = c("red"), las = 1)
 dev.off()
@@ -135,105 +135,23 @@ Adult_plotting <- data.frame(LM_Prev = 100 * adult_fitted_microscopy, PCR_Prev =
                              Prev_Ratio = (adult_fitted_microscopy/PCR_prevalence_adults),
                              lower_pr = adult_prev_ratio_lower, upper_pr = adult_prev_ratio_upper)
 
-a <- ggplot(young_children, aes(x = PCR_Prev, y = Prev_Ratio)) +
-  geom_point(size = 2, col = "#EAE600") +
-  geom_ribbon(data = Young_plotting, aes(x = PCR_Prev, ymin = lower_pr, ymax = upper_pr, border = NULL), alpha = 0.2, col = "white", fill = "#EAE600", linetype = 0) + 
-  geom_line(data = Young_plotting, aes(x = PCR_Prev, y = Prev_Ratio), col = "#EAE600", size = 2) +
-  labs(y = "Prevalence Ratio", x = "PCR Prevalence (%)") + 
-  coord_cartesian(ylim = c(0, 1), xlim = c(0, 100)) +
-  theme_bw() + 
-  theme(legend.position = c(0.15, 0.7), axis.text = element_text(size = 15, face = "bold"), axis.title = element_text(size = 12,face="bold"),
-        axis.title.x = element_text(size = 15, vjust = -3), axis.title.y = element_text(size = 15, vjust = +6),
-        plot.margin = unit(c(0.5, 0.15, 1, 0.7),"cm"), legend.title = element_blank(),
-        legend.text = element_text(size = 14), legend.key = element_rect(fill = NA, color = NA),
-        legend.spacing.x = unit(0.2, 'cm'), legend.key.size = unit(1, "cm"), legend.background = element_rect(fill = "white"),
-        panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-
-b <- ggplot(old_children, aes(x = PCR_Prev, y = Prev_Ratio)) +
-  geom_point(size = 2, col = "orange") +
-  geom_ribbon(data = Old_plotting, aes(x = PCR_Prev, ymin = lower_pr, ymax = upper_pr, border = NULL), alpha = 0.2, col = "white", fill = "orange", linetype = 0) + 
-  geom_line(data = Old_plotting, aes(x = PCR_Prev, y = Prev_Ratio), col = "orange", size = 2) +
-  labs(y = "", x = "PCR Prevalence (%)") + 
-  coord_cartesian(ylim = c(0, 1), xlim = c(0, 100)) +
-  theme_bw() + 
-  theme(legend.position = c(0.15, 0.7), axis.text = element_text(size = 15, face = "bold"), axis.title = element_text(size = 12,face="bold"),
-        axis.title.x = element_text(size = 15, vjust = -3), axis.title.y = element_text(size = 15, vjust = +6),
-        plot.margin = unit(c(0.5, 0.2, 1, 0),"cm"), legend.title = element_blank(),
-        legend.text = element_text(size = 14), legend.key = element_rect(fill = NA, color = NA),
-        legend.spacing.x = unit(0.2, 'cm'), legend.key.size = unit(1, "cm"), legend.background = element_rect(fill = "white"),
-        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        axis.text.y = element_blank(), axis.ticks.y = element_blank())
-
-c <- ggplot(adults, aes(x = PCR_Prev, y = Prev_Ratio)) +
-  geom_point(size = 2, col = "red") +
-  geom_ribbon(data = Adult_plotting, aes(x = PCR_Prev, ymin = lower_pr, ymax = upper_pr, border = NULL), alpha = 0.2, col = "white", fill = "red", linetype = 0) + 
-  geom_line(data = Adult_plotting, aes(x = PCR_Prev, y = Prev_Ratio), col = "red", size = 2) +
-  labs(y = "", x = "PCR Prevalence (%)") + 
-  coord_cartesian(ylim = c(0, 1), xlim = c(0, 100)) +
-  theme_bw() + 
-  theme(legend.position = c(0.15, 0.7), axis.text = element_text(size = 15, face = "bold"), axis.title = element_text(size = 12,face="bold"),
-        axis.title.x = element_text(size = 15, vjust = -3), axis.title.y = element_text(size = 15, vjust = +6),
-        plot.margin = unit(c(0.5, 1, 1, 0),"cm"), legend.title = element_blank(),
-        legend.text = element_text(size = 14), legend.key = element_rect(fill = NA, color = NA),
-        legend.spacing.x = unit(0.2, 'cm'), legend.key.size = unit(1, "cm"), legend.background = element_rect(fill = "white"),
-        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        axis.text.y = element_blank(), axis.ticks.y = element_blank())
-
-d <- ggplot(adults, aes(x = PCR_Prev, y = LM_Prev)) +
-  geom_point(size = 2, col = "red") +
-  geom_point(data = young_children, aes(x = PCR_Prev, y = LM_Prev), col = "orange", size = 2) +
-  geom_point(data = old_children, aes(x = PCR_Prev, y = LM_Prev), col = "#EAE600", size = 2) +
-  geom_ribbon(data = Adult_plotting, aes(x = PCR_Prev, ymin = lower, ymax = upper, border = NULL), alpha = 0.2, col = "white", fill = "red", linetype = 0) +
-  geom_ribbon(data = Old_plotting, aes(x = PCR_Prev, ymin = lower, ymax = upper, border = NULL), alpha = 0.2, col = "white", fill = "orange", linetype = 0) + 
-  geom_ribbon(data = Young_plotting, aes(x = PCR_Prev, ymin = lower, ymax = upper, border = NULL), alpha = 0.2, col = "white", fill = "yellow", linetype = 0) +
-  geom_segment(x = 0, y = 0, xend = 100, yend = 100, colour = "black", size = 0.5, linetype = 2) +
-  geom_line(data = Adult_plotting, aes(x = PCR_Prev, y = LM_Prev), col = "red", size = 2) +
-  geom_line(data = Old_plotting, aes(x = PCR_Prev, y = LM_Prev), col = "orange", size = 2) +
-  geom_line(data = Young_plotting, aes(x = PCR_Prev, y = LM_Prev), col = "#EAE600", size = 2) +
-  labs(y = "Microscopy\nPrevalence (%)", x = "PCR Prevalence (%)") + 
-  scale_y_continuous(limits = c(0, 100)) +
-  scale_x_continuous(limits = c(0, 100)) +
-  theme_bw() + 
-  theme(legend.position = c(0.15, 0.7), axis.text = element_text(size = 15, face = "bold"), axis.title = element_text(size = 12,face="bold"),
-        axis.title.x = element_text(size = 15, vjust = -3), axis.title.y = element_text(size = 15, vjust = +6),
-        plot.margin = unit(c(1, 1.5, 0.5, 1),"cm"), legend.title = element_blank(),
-        legend.text = element_text(size = 14), legend.key = element_rect(fill = NA, color = NA),
-        legend.spacing.x = unit(0.2, 'cm'), legend.key.size = unit(1, "cm"), legend.background = element_rect(fill = "white"),
-        panel.grid.major = element_blank(), panel.grid.minor = element_blank()) 
-
-combined <- plot_grid(a, b, c, label_size = 30, ncol = 3, rel_widths = c(1.30, 1.05, 1.12))
-combined_two <- plot_grid(d, combined, nrow = 2, rel_heights = c(1.2, 0.9))
-combined_two +
-  draw_plot_label(
-    c("A", "B"), 
-    c(0, 0),
-    c(1, 0.48),
-    size = 30) 
-ggsave("Figures/Figure 4 - Age/Figure_4.pdf", width = 9.03, height = 7,
-       plot = last_plot(), device = NULL, path = NULL, scale = 1, units = c("in", "cm", "mm"), dpi = 300)
-
-
+# Plotting the Outputs
 age_data <- data_frame[data_frame$Age_Group != "All Ages", ]
-
 age_counts <- age_data %>%
   group_by(Age_Group) %>%
   summarise(count = n(), total_sample_size = sum(PCR_N_Tested), mean_sample_size = mean(PCR_N_Tested), mean = mean(Prev_Ratio), sd = sd(Prev_Ratio), se = sd/sqrt(n()))
-
 age_data <- age_data %>%
   left_join(age_counts, by = "Age_Group") %>%
   mutate(weight = PCR_N_Tested/total_sample_size) %>%
   mutate(weight_for_plotting = PCR_N_Tested/mean_sample_size) %>%
   mutate(weight_for_plotting = ifelse(weight_for_plotting > 3, 3, weight_for_plotting)) %>%
   mutate(weight_for_plotting = ifelse(weight_for_plotting < 1, 1, weight_for_plotting))
-
 summarised <- age_data %>% 
   mutate(weighted_prev_ratio = weight * Prev_Ratio) %>%
   group_by(Age_Group) %>%
   summarise(mean_prev_ratio = sum(weighted_prev_ratio))
-
 age_data <- age_data %>% 
   left_join(summarised, by = "Age_Group")
-
 age_data$Age_Group <- factor(age_data$Age_Group, levels = c("0-5", "5-15years", "15+")) 
 
 a <- ggplot(young_children, aes(x = PCR_Prev, y = Prev_Ratio)) +
@@ -303,8 +221,9 @@ combined_two +
     c(0, 0.33, 0.57),
     c(1, 1, 0.22),
     size = c(30, 30, 16)) 
-ggsave("Figures/Figure 4 - Age/alternate_Figure_4.pdf", width = 12.58, height = 4.56,
-       plot = last_plot(), device = NULL, path = NULL, scale = 1, units = c("in", "cm", "mm"), dpi = 300)
+ggsave("Figures/Figure 4 - Age/Figure_4.pdf", width = 12.58, height = 4.56,
+       plot = last_plot(), device = NULL, path = NULL, scale = 1, units = c("in", "cm", "mm"), 
+       dpi = 300, useDingbats = FALSE)
 
 
 # Statistical Tests Carried Out On The Data

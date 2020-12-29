@@ -27,7 +27,7 @@ library(cowplot); library(dplyr)
 setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
-fresh_run <- FALSE
+fresh_run <- TRUE
 
 # Load in the dataset and subset the data by global region the survey was carried out in:
 data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
@@ -43,7 +43,7 @@ West_Africa <- full_data[full_data$Global_Region == "West Africa" & full_data$Fu
 
 ###################################################################################################
 ##                                                                                               ##
-##  Fig 5 & Supp Fig 10: Global Region Disaggregated Data - Running the Log-Linear Regression    ##
+##  Fig 2 & Supp Fig 11: Global Region Disaggregated Data - Running the Log-Linear Regression    ##
 ##                                                                                               ##
 ##    This section of the code runs the Bayesian Log-Linear Regression, with the model           ##
 ##    implemented in the statistical programming software JAGS, more info available here:        ##
@@ -75,18 +75,18 @@ if (fresh_run == TRUE) {
   West_Africa_model <- readRDS("Outputs/West_Africa_MCMC_Output.rds")
 }
 
-# Supplementary Figure 10 - MCMC Output and Parameter Tables
-pdf("Figures/Supplementary/Supp Figure 9 - Global Region MCMC Output/Supp Figure 9 - Asia MCMC Output.pdf", width = 7.33, height = 7.51)
+# Supplementary Figure 11 - MCMC Output and Parameter Tables
+pdf("Figures/Supplementary/Supp Figure 11 - Global Region MCMC Output/Supp Figure 9 - Asia MCMC Output.pdf", width = 7.33, height = 7.51)
 plot(Asia_model, col = c("black"), las = 1)
 dev.off()
 Asia_param_table <- param_table(Asia_model, params)
 
-pdf("Figures/Supplementary/Supp Figure 9 - Global Region MCMC Output/Supp Figure 9 - East Africa MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 11 - Global Region MCMC Output/Supp Figure 9 - East Africa MCMC Output.pdf", width = 7.33, height = 7.51)
 plot(East_Africa_model, col = c("green"), las = 1)
 dev.off()
 East_africa_param_table <- param_table(East_Africa_model, params)
 
-pdf("Figures/Supplementary/Supp Figure 9 - Global Region MCMC Output/Supp Figure 9 - South America MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 11 - Global Region MCMC Output/Supp Figure 9 - South America MCMC Output.pdf", width = 7.33, height = 7.51)
 plot(South_America_model, col = c("blue"), las = 1)
 dev.off()
 South_America_param_table <- param_table(South_America_model, params)
@@ -261,7 +261,7 @@ plot_grid(top_row, combined, label_size = 30, ncol = 1, rel_heights = c(1, 2))  
     size = 30)
 ggsave("Figures/Figure 2 - Global Regions/Figure_2.pdf", plot = last_plot(), device = NULL, path = NULL,
        scale = 1, width = 10, height = 9, units = c("in", "cm", "mm"),
-       dpi = 300)
+       dpi = 300, useDingbats = FALSE)
 
 # Statistical Tests Carried Out On The Data
 # ANOVA - Testing for Differences in Means
@@ -272,5 +272,12 @@ summary(weighted_global_region_model)
 ANOVA_object <- aov(weighted_global_region_model)
 summary(ANOVA_object)
 TukeyHSD(ANOVA_object)
+
+global_region_model <- lm(Prev_Ratio ~ Global_Region, data = full_data, na.action = na.omit) # similar results with 1/variance
+summary(global_region_model)
+ANOVA_object <- aov(global_region_model)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object)
+
 
 

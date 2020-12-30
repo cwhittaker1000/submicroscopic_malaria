@@ -52,6 +52,7 @@ for (i in 1:40) {
   Basic_DIC_vector[i] <- LM_basic_model$BUGSoutput$DIC
   print(i)
 }
+saveRDS(LM_basic_model, "Outputs/Basic_Model_MCMC_Results.rds")
 saveRDS(Basic_DIC_vector, "Outputs/Basic_DIC_Vector.rds")
 
 LM_basic_model <- as.mcmc(LM_basic_model)
@@ -82,6 +83,7 @@ for (i in 1:40) {
   Standard_DIC_vector[i] <- LM_standard_model_DIC
   print(i)
 }
+saveRDS(LM_standard_model, "Outputs/Standard_Model_MCMC_Results.rds")
 saveRDS(Standard_DIC_vector, "Outputs/Standard_DIC_Vector.rds")
 
 LM_standard_model <- as.mcmc(LM_standard_model)
@@ -114,6 +116,7 @@ for (i in 1:40) {
   Quadratic_DIC_vector[i] <- LM_quadratic_model_DIC
   print(i)
 }
+saveRDS(LM_quadratic_model, "Outputs/Quadratic_Model_MCMC_Results.rds")
 saveRDS(Quadratic_DIC_vector, "Outputs/Quadratic_DIC_Vector.rds")
 
 LM_quadratic_model <- as.mcmc(LM_quadratic_model)
@@ -147,6 +150,7 @@ for (i in 1:40) {
   Cubic_DIC_vector[i] <- LM_cubic_model_DIC
   print(i)
 }
+saveRDS(LM_cubic_model, "Outputs/Cubic_Model_MCMC_Results.rds")
 saveRDS(Cubic_DIC_vector, "Outputs/Cubic_DIC_Vector.rds")
 
 LM_cubic_model <- as.mcmc(LM_cubic_model)

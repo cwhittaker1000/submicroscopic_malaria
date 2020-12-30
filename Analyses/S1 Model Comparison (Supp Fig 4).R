@@ -47,13 +47,13 @@ basic_jags_inits <- function(){
 
 # Specifying and initialising the RJAGS model- creates a JAGS model object
 Basic_DIC_vector <- c()
-for (i in 1:50) {
-  LM_basic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = basic_jags_inits, parameters.to.save = basic_params, jags.seed = seed[i], model.file = "JAGS_Model/LM_Basic_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 20, DIC = TRUE)
+for (i in 1:40) {
+  LM_basic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = basic_jags_inits, parameters.to.save = basic_params, jags.seed = seed[i], model.file = "JAGS_Model/LM_Basic_Bayesian_Logit_Linear_Model.txt", n.chains = 4, n.iter = 7500, n.burnin = 2500, n.thin = 20, DIC = TRUE)
   Basic_DIC_vector[i] <- LM_basic_model$BUGSoutput$DIC
   print(i)
 }
+saveRDS(Basic_DIC_vector, "Outputs/Basic_DIC_Vector.rds")
 
-LM_basic_model_DIC <- LM_basic_model$BUGSoutput$DIC
 LM_basic_model <- as.mcmc(LM_basic_model)
 autocorr.plot(LM_basic_model)
 plot(LM_basic_model)
@@ -76,12 +76,14 @@ standard_jags_inits <- function(){
 }
 
 Standard_DIC_vector <- c()
-for (i in 1:50) {
-  LM_standard_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = standard_params, jags.seed = seed[i], model.file = 'JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt', n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 20, DIC = TRUE)
+for (i in 1:40) {
+  LM_standard_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = standard_jags_inits, parameters.to.save = standard_params, jags.seed = seed[i], model.file = 'JAGS_Model/LM_Standard_Bayesian_Logit_Linear_Model.txt', n.chains = 4, n.iter = 7500, n.burnin = 2500, n.thin = 20, DIC = TRUE)
   LM_standard_model_DIC <- LM_standard_model$BUGSoutput$DIC
   Standard_DIC_vector[i] <- LM_standard_model_DIC
   print(i)
 }
+saveRDS(Standard_DIC_vector, "Outputs/Standard_DIC_Vector.rds")
+
 LM_standard_model <- as.mcmc(LM_standard_model)
 autocorr.plot(LM_standard_model)
 plot(LM_standard_model)
@@ -106,12 +108,14 @@ quadratic_jags_inits <- function(){
 }
 
 Quadratic_DIC_vector <- c()
-for (i in 1:50) {
-  LM_quadratic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = quadratic_jags_inits, parameters.to.save = quadratic_params, jags.seed = seed[i], model.file = 'JAGS_Model/LM_Quadratic_Bayesian_Logit_Linear_Model.txt', n.chains = 4, n.iter = 10000, n.burnin = 5000, n.thin = 20, DIC = TRUE)
+for (i in 1:40) {
+  LM_quadratic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = quadratic_jags_inits, parameters.to.save = quadratic_params, jags.seed = seed[i], model.file = 'JAGS_Model/LM_Quadratic_Bayesian_Logit_Linear_Model.txt', n.chains = 4, n.iter = 7500, n.burnin = 2500, n.thin = 20, DIC = TRUE)
   LM_quadratic_model_DIC <- LM_quadratic_model$BUGSoutput$DIC
   Quadratic_DIC_vector[i] <- LM_quadratic_model_DIC
   print(i)
 }
+saveRDS(Quadratic_DIC_vector, "Outputs/Quadratic_DIC_Vector.rds")
+
 LM_quadratic_model <- as.mcmc(LM_quadratic_model)
 autocorr.plot(LM_quadratic_model)
 plot(LM_quadratic_model)
@@ -137,12 +141,14 @@ cubic_jags_inits <- function(){
 }
 
 Cubic_DIC_vector <- c()
-for (i in 1:50) {
-  LM_cubic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = cubic_jags_inits, parameters.to.save = cubic_params, model.file = 'JAGS_Model/LM_Cubic_Bayesian_Logit_Linear_Model.txt', n.chains = 4, jags.seed = seed[i], n.iter = 10000, n.burnin = 5000, n.thin = 20, DIC = TRUE)
+for (i in 1:40) {
+  LM_cubic_model <- jags.parallel(data = full_microscopy_PCR_comparison, inits = cubic_jags_inits, parameters.to.save = cubic_params, model.file = 'JAGS_Model/LM_Cubic_Bayesian_Logit_Linear_Model.txt', n.chains = 4, jags.seed = seed[i], n.iter = 7500, n.burnin = 2500, n.thin = 20, DIC = TRUE)
   LM_cubic_model_DIC <- LM_cubic_model$BUGSoutput$DIC
   Cubic_DIC_vector[i] <- LM_cubic_model_DIC
   print(i)
 }
+saveRDS(Cubic_DIC_vector, "Outputs/Cubic_DIC_Vector.rds")
+
 LM_cubic_model <- as.mcmc(LM_cubic_model)
 autocorr.plot(LM_cubic_model)
 plot(LM_cubic_model)
@@ -182,7 +188,6 @@ basic_se <- sd(Basic_DIC_vector)/sqrt(length(Basic_DIC_vector))
 standard_se <- sd(Standard_DIC_vector)/sqrt(length(Standard_DIC_vector))
 quadratic_se <- sd(Quadratic_DIC_vector)/sqrt(length(Quadratic_DIC_vector))
 cubic_se <- sd(Cubic_DIC_vector[-23])/sqrt(length(Cubic_DIC_vector))
-
 
 # Plotting Altogether
 plot(logit_PCR, logit_LM_basic, pch = 20, col = "red", lwd = 3, type = "l", ylim = c(-8, 4), xlab = "PCR Prevalence (Logit Scale)", ylab = "LM Prevalence (Logit Scale)", las = 1)

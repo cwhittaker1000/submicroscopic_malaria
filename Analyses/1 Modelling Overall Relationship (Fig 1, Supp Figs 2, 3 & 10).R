@@ -29,7 +29,7 @@ setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
 theme_set(theme_grey())
-fresh_run <- FALSE
+fresh_run <- TRUE
 
 # Load in the dataset and subset the data into data from the previous review (old_data), data from 
 # this review (new_data) all data together (full_data). Note: non-age disaggregated data is assigned coding 2)
@@ -65,7 +65,7 @@ if (fresh_run) {
 }
 
 # Supplementary Figure 8 Materials
-pdf("Figures/Supplementary/Supp Figure 8 - Full Model MCMC Output/Supp Figure 8 - Full Model MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 10 - Full Model MCMC Output/Supp Figure 10 - Full Model MCMC Output.pdf", width = 7.33, height = 7.51)
 full_data_param_table <- param_table(full_data_output, params)
 plot(full_data_output)
 dev.off()
@@ -171,7 +171,7 @@ plot_grid(a, bottom_row, labels = c('', ''), label_size = 30, ncol = 1) +
                   size = 30)
 ggsave("Figures/Figure 1 - Overall/Figure_1.pdf", plot = last_plot(), device = NULL, path = NULL,
        scale = 1, width = 9.35, height = 9, units = c("in", "cm", "mm"),
-       dpi = 300)
+       dpi = 300, useDingbats = FALSE)
 
 ###################################################################################################
 ##                                                                                               ##
@@ -214,7 +214,7 @@ new_data_sensitivity_credible_lower <- new_credibles$sensitivity_lower
 new_data_sensitivity_credible_upper <- new_credibles$sensitivity_upper
 
 # Supplementary Figure 1A Plotting - Microscopy Prevalence Against PCR Prevalence for Old and New Data Separately - Data & Modelled Relationship
-pdf("Figures/Supplementary/Supp Figure 1 - Old vs New/Supp Figure 1 - Old vs New.pdf", width = 10.32, height = 6.38)
+pdf("Figures/Supplementary/Supp Figure 2 - Old vs New/Supp Figure 2 - Old vs New.pdf", width = 10.32, height = 6.38, useDingbats = FALSE)
 par(mfrow = c(1, 2)) 
 xlim <- c(0, 100)
 ylim <- c(0, 100)
@@ -249,7 +249,7 @@ legend("topleft", legend = c("Old Data", "New Data"), col = c("#6BC24E", "#C6D3F
 dev.off()
 
 # Supplementary Figure 2 Plotting - Predicted vs Observed Microscopy Prevalence
-pdf("Figures/Supplementary/Supp Figure 2 - Empirical vs Modelled/Supp Figure 2 - Empirical vs Modelled.pdf", width = 7.51, height = 7.33)
+pdf("Figures/Supplementary/Supp Figure 3 - Empirical vs Modelled/Supp Figure 3 - Empirical vs Modelled.pdf", width = 7.51, height = 7.33, useDingbats = FALSE)
 observed_PCR_prevalences_full <- full_data$PCR_Prev
 matched_PCR_indices_full <-  match.closest(observed_PCR_prevalences_full, PCR_prevalence_full*100)
 logit_matched_PCR <- logit(PCR_prevalence_full[matched_PCR_indices_full])

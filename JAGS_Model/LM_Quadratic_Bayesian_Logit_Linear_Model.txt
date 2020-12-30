@@ -16,6 +16,5 @@ model{
   delt ~ dnorm(0,0.001);
   taud ~ dgamma(0.1, 0.001);
   sigma ~ dnorm(0, 0.001);
-  mux <- mean(mu[])-(delt/beta);
   sigmad <- 1/sqrt(taud);
 }

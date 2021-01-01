@@ -21,11 +21,13 @@
 ##                                                                                               ##
 ###################################################################################################
 library(rjags); library(ssa); library(binom); library(MALDIquant); library(formattable); 
-library(tictoc); library(BayesianTools); library(R2jags); library(bayesmix); library(dplyr)
+library(tictoc); library(BayesianTools); library(R2jags); library(bayesmix); library(dplyr);
+library(ggplot2); library(cowplot)
+
 setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
-fresh_run <- TRUE
+fresh_run <- FALSE
 
 # Load in the dataset and subset the data by the survey region's transmission history (African surveys only):
 data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
@@ -75,17 +77,17 @@ if (fresh_run == TRUE) {
 
 
 # Supplementary Figure 11 - MCMC Output and Parameter Tables
-pdf("Figures/Supplementary/Supp Figure 10 - Transmission Archetype MCMC Output/Supp Figure 10 - High High MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 12 - Transmission Archetype MCMC Output/Supp Figure 12 - High High MCMC Output.pdf", width = 7.33, height = 7.51)
 high_high_param_table <- param_table(High_high_model, params)
 plot(High_high_model, col = c("#00A600FF"), las = 1)
 dev.off()
 
-pdf("Figures/Supplementary/Supp Figure 10 - Transmission Archetype MCMC Output/Supp Figure 10 - High Low MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 12 - Transmission Archetype MCMC Output/Supp Figure 12 - High Low MCMC Output.pdf", width = 7.33, height = 7.51)
 high_low_param_table <- param_table(High_low_model, params)
 plot(High_low_model, col = c("#ECB176FF"), las = 1)
 dev.off()
 
-pdf("Figures/Supplementary/Supp Figure 10 - Transmission Archetype MCMC Output/Supp Figure 10 - Low Low MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 12 - Transmission Archetype MCMC Output/Supp Figure 12 - Low Low MCMC Output.pdf", width = 7.33, height = 7.51)
 low_low_param_table <- param_table(Low_low_model, params)
 plot(Low_low_model, col = c("dark grey"), las = 1)
 dev.off()
@@ -242,7 +244,7 @@ combined_two +
   draw_plot(e, x = 0.175, y = 0.30, width = 0.25, height = 0.25)
 ggsave("Figures/Figure 3 - Transmission Archetype/Figure_3.pdf", plot = last_plot(), device = NULL, path = NULL,
        scale = 1, width = 10.21, height = 8.20, units = c("in", "cm", "mm"),
-       dpi = 300)
+       dpi = 300, useDingbats = FALSE)
   
 
 # Figure 5A Plotting - Contribution to Transmission in High High Transmission Settings
@@ -256,7 +258,7 @@ HH_Subpatent_Contribution2 <- 100 * (HH_Subpatent_Percentage) / ((2 * HH_Patent_
 HH <- data.frame(Zeroes = HH_zeroes, Least = HH_Subpatent_Contribution20, Mid = HH_Subpatent_Contribution5, 
                  Most = HH_Subpatent_Contribution2, PCR_Prev = HH_PCR_Prevalence)
 
-# Figure 7B Plotting - Contribution to Transmission in High Low Transmission Settings
+# Figure 5B Plotting - Contribution to Transmission in High Low Transmission Settings
 HL_PCR_Prevalence <- seq(0.004,0.85,0.001)
 HL_zeroes <- rep(0, length(HL_PCR_Prevalence))
 HL_Patent_Percentage <- (High_low_fitted_microscopy/PCR_prevalence_high_low) * 100 
@@ -267,7 +269,7 @@ HL_Subpatent_Contribution2 <- 100 * (HL_Subpatent_Percentage) / ((2 * HL_Patent_
 HL <- data.frame(Zeroes = HL_zeroes, Least = HL_Subpatent_Contribution20, Mid = HL_Subpatent_Contribution5, 
                  Most = HL_Subpatent_Contribution2, PCR_Prev = HL_PCR_Prevalence)
 
-# Figure 7C Plotting - Contribution to Transmission in Low Low Transmission Settings
+# Figure 5C Plotting - Contribution to Transmission in Low Low Transmission Settings
 LL_PCR_Prevalence <- seq(0.01,0.55,0.001)
 LL_zeroes <- rep(0, length(LL_PCR_Prevalence))
 LL_Patent_Percentage <- (Low_low_fitted_microscopy/PCR_prevalence_low_low) * 100 

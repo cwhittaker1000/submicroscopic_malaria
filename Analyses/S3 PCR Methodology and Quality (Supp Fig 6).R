@@ -38,14 +38,20 @@ weights <- mean(stdev)/stdev
 
 weighted_LM_fields_model <- lm(Prev_Ratio ~ Microscopy_Fields, data = full_data, na.action = na.omit, weights = 1/variance)
 summary(weighted_LM_fields_model)
-Anova(weighted_LM_fields_model)
+aov(weighted_LM_fields_model)
 
 weighted_PCR_method_model <- lm(Prev_Ratio ~ PCR_Method, data = full_data, na.action = na.omit, weights = 1/variance)
 summary(weighted_PCR_method_model)
-Anova(weighted_PCR_method_model)
+aov(weighted_PCR_method_model)
 TukeyHSD(aov(weighted_PCR_method_model))
 
+unweighted_PCR_method_model <- lm(Prev_Ratio ~ PCR_Method, data = full_data, na.action = na.omit)
+summary(unweighted_PCR_method_model)
+aov(unweighted_PCR_method_model)
+TukeyHSD(aov(unweighted_PCR_method_model))
+
 # Supplementary Figure 4A - PCR Methodology Prevalence Ratio Boxplots
+pdf("Figures/Supplementary/Supp Figure 6 - Diagnostic Quality & Methodology/Supp Figure 6 PCR Diagnostic Quality.pdf", width = 14, height = 7.51)
 par(mfrow = c(1, 2))
 nested <- full_data$Prev_Ratio[full_data$PCR_Method == "Nested"]
 LDR <- full_data$Prev_Ratio[full_data$PCR_Method == "PCR-LDR"]
@@ -117,4 +123,4 @@ upper_ci <- means + 1.96 * c(nested_std_err, LDR_std_err, qPCR_std_err, RT_PCR_s
 palette(c("#F15025", "#F2328C", "#7ACC70", "#00A7E1", "#EDB21C"))
 diagnostic_sensitivity <- barplot(means, names.arg = c("Nested", "LDR", "qPCR", "RT-PCR", "Semi-Nested"), las = 1, ylim = c(0, 1), col = palette(), xlab = "PCR Method", ylab = "Prevalence Ratio")
 arrows(x0 = diagnostic_sensitivity, y0 = lower_ci, x1 = diagnostic_sensitivity, y1 = upper_ci, col = "black", angle = 90, code = 3, length = 0.05)
-
+dev.off()

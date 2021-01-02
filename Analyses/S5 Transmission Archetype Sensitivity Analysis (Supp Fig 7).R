@@ -582,7 +582,6 @@ data_frame <- data_frame[1:229, ]
 data_frame$Sensitivity <- data_frame$Micro_Prev/data_frame$PCR_Prev
 variance <- data_frame$PCR_N_Tested * data_frame$PCR_Prev * (1 - data_frame$PCR_Prev)
 
-
 weighted_20_model <- lm(Sensitivity ~ Transmission_Setting_20, data = data_frame, na.action = na.omit, weights = 1/variance)
 summary(weighted_20_model)
 summary(aov(weighted_20_model))
@@ -606,17 +605,17 @@ TukeyHSD(aov(weighted_5_model))
 # Including PCR Prevalence 
 weighted_20_model <- lm(Sensitivity ~ PCR_Prev + Transmission_Setting_20, data = data_frame, na.action = na.omit, weights = 1/variance)
 summary(weighted_20_model)
-Anova(weighted_20_model)
+summary(aov(weighted_20_model))
 
 weighted_15_model <- lm(Sensitivity ~ PCR_Prev + Transmission_Setting_15, data = data_frame, na.action = na.omit, weights = 1/variance)
 summary(weighted_15_model)
-Anova(weighted_15_model)
+summary(aov(weighted_15_model))
 
 weighted_10_model <- lm(Sensitivity ~ PCR_Prev + Transmission_Setting_10, data = data_frame, na.action = na.omit, weights = 1/variance)
 summary(weighted_10_model)
-Anova(weighted_10_model)
+summary(aov(weighted_10_model))
 
 weighted_5_model <- lm(Sensitivity ~ PCR_Prev + Transmission_Setting_5, data = data_frame, na.action = na.omit, weights = 1/variance)
 summary(weighted_5_model)
-Anova(weighted_5_model)
+summary(aov(weighted_10_model))
 

@@ -37,6 +37,7 @@ data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
 old_data <- data_frame[data_frame$Old_or_New == "Old" & data_frame$Full_Or_Age_Disagg_Data == 2, ] 
 new_data <- data_frame[data_frame$Old_or_New == "New" & data_frame$Full_Or_Age_Disagg_Data == 2, ]
 full_data <- data_frame[data_frame$Full_Or_Age_Disagg_Data == 2, ]
+
 full_data <- full_data %>%
   mutate(PCR_Prev = 100 * (PCR_N_Positive/PCR_N_Tested)) %>%
   mutate(LM_Prev = 100 * (Microscopy_N_Positive/Microscopy_N_Tested)) %>%
@@ -290,4 +291,3 @@ mean_prev_ratio <- mean(prev_ratio)
 std_err <- sd(prev_ratio)/sqrt(length(prev_ratio))
 mean_prev_ratio - 1.96 * std_err
 mean_prev_ratio + 1.96 * std_err
-

@@ -267,7 +267,7 @@ ggsave("Figures/Figure 2 - Global Regions/Figure_2.pdf", plot = last_plot(), dev
 # ANOVA - Testing for Differences in Means
 variance <- full_data$PCR_N_Tested * (full_data$PCR_Prev/100) * (1 - full_data$PCR_Prev/100)
 stdev <- sqrt(variance)
-weighted_global_region_model <- lm(Prev_Ratio ~ Global_Region + PCR_Prev, data = full_data, na.action = na.omit, weights = 1/stdev) # similar results with 1/variance
+weighted_global_region_model <- lm(Prev_Ratio ~ Global_Region + PCR_Prev, data = full_data, na.action = na.omit, weights = 1/variance) # similar results with 1/variance
 summary(weighted_global_region_model)
 ANOVA_object <- aov(weighted_global_region_model)
 summary(ANOVA_object)

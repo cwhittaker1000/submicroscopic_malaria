@@ -250,7 +250,15 @@ ggsave("Figures/Figure 3 - Transmission Archetype/Figure_3.pdf", plot = last_plo
 # ANOVA - Testing for Differences in Means
 variance <- full_data$PCR_N_Tested * (full_data$PCR_Prev/100) * (1 - full_data$PCR_Prev/100)
 stdev <- sqrt(variance)
-weighted_arch_region_model <- lm(Prev_Ratio ~ Transmission_Setting_15 + PCR_Prev, data = full_data, na.action = na.omit, weights = 1/stdev) # similar results with 1/variance
+weighted_arch_region_model <- lm(Prev_Ratio ~ Transmission_Setting_15 + PCR_Prev, data = full_data, na.action = na.omit, weights = 1/variance) # similar results with 1/variance
+summary(weighted_arch_region_model)
+ANOVA_object <- aov(weighted_arch_region_model)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object, which = "Transmission_Setting_15")
+
+variance <- full_data$PCR_N_Tested * (full_data$PCR_Prev/100) * (1 - full_data$PCR_Prev/100)
+stdev <- sqrt(variance)
+weighted_arch_region_model <- lm(Prev_Ratio ~ Hist_Trans + Curr_Trans + PCR_Prev, data = full_data, na.action = na.omit, weights = 1/variance) # similar results with 1/variance
 summary(weighted_arch_region_model)
 ANOVA_object <- aov(weighted_arch_region_model)
 summary(ANOVA_object)

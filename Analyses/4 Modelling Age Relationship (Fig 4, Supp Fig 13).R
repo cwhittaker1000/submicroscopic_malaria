@@ -234,7 +234,7 @@ df <- data_frame %>%
   filter(Age_Group != "All Ages")
 variance <- df$PCR_N_Tested * (df$PCR_Prev/100) * (1 - df$PCR_Prev/100)
 stdev <- sqrt(variance)
-weighted_age_model <- lm(Prev_Ratio ~ Age_Group + PCR_Prev, data = df, na.action = na.omit, weights = 1/stdev) # similar results with 1/variance
+weighted_age_model <- lm(Prev_Ratio ~ Age_Group + PCR_Prev, data = df, na.action = na.omit, weights = 1/variance) # similar results with 1/variance
 summary(weighted_age_model)
 ANOVA_object <- aov(weighted_age_model)
 summary(ANOVA_object)

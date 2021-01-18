@@ -56,13 +56,14 @@ for (i in 1:100) {
 }
 saveRDS(LM_basic_model, "Outputs/Basic_Model_MCMC_Results.rds")
 saveRDS(Basic_DIC_vector, "Outputs/Basic_DIC_Vector.rds")
+LM_basic_model <- readRDS("Outputs/Basic_Model_MCMC_Results.rds")
 
 LM_basic_model <- as.mcmc(LM_basic_model)
 autocorr.plot(LM_basic_model)
 plot(LM_basic_model)
 summary(LM_basic_model)
 
-basic_LM_overall_chain <- rbind(LM_basic_model[[1]], LM_basic_model[[2]], LM_basic_model[[3]], LM_basic_model[[4]])
+basic_LM_overall_chain <- rbind(LM_basic_model[[1]])#, LM_basic_model[[2]], LM_basic_model[[3]], LM_basic_model[[4]])
 basic_delt <- mean(as.array(basic_LM_overall_chain[, 1])) # note if using multiple chains, have to calculate this including results from all chains (change subsetting etc)
 logit_LM_basic <- logit_PCR + basic_delt 
 LM_basic <- expit(logit_LM_basic)
@@ -89,13 +90,14 @@ for (i in 1:100) {
 }
 saveRDS(LM_standard_model, "Outputs/Standard_Model_MCMC_Results.rds")
 saveRDS(Standard_DIC_vector, "Outputs/Standard_DIC_Vector.rds")
+LM_standard_model <- readRDS("Outputs/Standard_Model_MCMC_Results.rds")
 
 LM_standard_model <- as.mcmc(LM_standard_model)
 autocorr.plot(LM_standard_model)
 plot(LM_standard_model)
 summary(LM_standard_model)
 
-standard_LM_overall_chain <- rbind(LM_standard_model[[1]], LM_standard_model[[2]], LM_standard_model[[3]], LM_standard_model[[4]])
+standard_LM_overall_chain <- rbind(LM_standard_model[[1]])
 standard_beta <- mean(as.array(standard_LM_overall_chain[, 1])) 
 standard_delt <- mean(as.array(standard_LM_overall_chain[, 2])) 
 
@@ -124,13 +126,14 @@ for (i in 1:100) {
 }
 saveRDS(LM_quadratic_model, "Outputs/Quadratic_Model_MCMC_Results.rds")
 saveRDS(Quadratic_DIC_vector, "Outputs/Quadratic_DIC_Vector.rds")
+LM_quadratic_model <- readRDS("Outputs/Quadratic_Model_MCMC_Results.rds")
 
 LM_quadratic_model <- as.mcmc(LM_quadratic_model)
 autocorr.plot(LM_quadratic_model)
 plot(LM_quadratic_model)
 summary(LM_quadratic_model)
 
-quadratic_LM_overall_chain <- rbind(LM_quadratic_model[[1]], LM_quadratic_model[[2]], LM_quadratic_model[[3]], LM_quadratic_model[[4]])
+quadratic_LM_overall_chain <- rbind(LM_quadratic_model[[1]])
 quadratic_sigma <- mean(as.array(quadratic_LM_overall_chain[, 4])) 
 quadratic_beta <- mean(as.array(quadratic_LM_overall_chain[, 1])) 
 quadratic_delt <- mean(as.array(quadratic_LM_overall_chain[, 2])) 
@@ -160,13 +163,14 @@ for (i in 1:2) {
 }
 saveRDS(LM_cubic_model, "Outputs/Cubic_Model_MCMC_Results.rds")
 saveRDS(Cubic_DIC_vector, "Outputs/Cubic_DIC_Vector.rds")
+LM_cubic_model <- readRDS("Outputs/Cubic_Model_MCMC_Results.rds")
 
 LM_cubic_model <- as.mcmc(LM_cubic_model)
 autocorr.plot(LM_cubic_model)
 plot(LM_cubic_model)
 summary(LM_cubic_model)
 
-cubic_LM_overall_chain <- rbind(LM_cubic_model[[1]], LM_cubic_model[[2]], LM_cubic_model[[3]], LM_cubic_model[[4]])
+cubic_LM_overall_chain <- rbind(LM_cubic_model[[1]]) #, LM_cubic_model[[2]], LM_cubic_model[[3]], LM_cubic_model[[4]])
 cubic_sigma <- mean(as.array(cubic_LM_overall_chain[, 5])) 
 cubic_beta <- mean(as.array(cubic_LM_overall_chain[, 1])) 
 cubic_delt <- mean(as.array(cubic_LM_overall_chain[, 2])) 
@@ -202,6 +206,9 @@ quadratic_se <- sd(Quadratic_DIC_vector)/sqrt(length(Quadratic_DIC_vector))
 cubic_se <- sd(Cubic_DIC_vector[-23])/sqrt(length(Cubic_DIC_vector))
 
 # Plotting Altogether
+pdf("Figures/Supplementary/Supp Figure 4 - Different Model Structures/Supp_Figure_4 - Testing Diff Model Structres.pdf",
+    width = 10, height = 5)
+par(mfrow = c(1, 2))
 plot(logit_PCR, logit_LM_basic, pch = 20, col = "red", lwd = 3, type = "l", ylim = c(-8, 4), xlab = "PCR Prevalence (Logit Scale)", ylab = "LM Prevalence (Logit Scale)", las = 1)
 lines(logit_PCR, logit_LM_standard, pch = 20, col = "green", lwd = 3, type = "l", ylim = c(-10, 4))
 lines(logit_PCR, logit_LM_quadratic, pch = 20, col = "blue", lwd = 3, type = "l", ylim = c(-10, 4))
@@ -216,6 +223,7 @@ lines(PCR_values, LM_cubic, type = "l", col = "purple", lwd = 3)
 points(full_data$PCR_Prev, full_data$Micro_Prev, pch = 20)
 legend(x = 0, y = 1, legend = c("Basic", "Standard", "Quadratic", "Cubic"), col = c("red", "green", "blue", "purple"), lty = rep(1, 4))
 lines(seq(0,1,0.01), seq(0,1,0.01), lwd = 2, lty = 2)
+dev.off()
 
 LM_basic_model_DIC
 LM_standard_model_DIC

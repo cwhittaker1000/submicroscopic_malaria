@@ -29,7 +29,7 @@ setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
 theme_set(theme_grey())
-fresh_run <- TRUE
+fresh_run <- FALSE
 
 # Load in the dataset and subset the data into data from the previous review (old_data), data from 
 # this review (new_data) all data together (full_data). Note: non-age disaggregated data is assigned coding 2)

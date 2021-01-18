@@ -51,7 +51,8 @@ Anova(unweighted_PCR_method_model)
 TukeyHSD(aov(unweighted_PCR_method_model))
 
 # Supplementary Figure 4A - PCR Methodology Prevalence Ratio Boxplots
-pdf("Figures/Supplementary/Supp Figure 6 - Diagnostic Quality & Methodology/Supp Figure 6 PCR Diagnostic Quality.pdf", width = 14, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 6 - Diagnostic Quality & Methodology/Supp Figure 6 PCR Diagnostic Quality.pdf", 
+    width = 14, height = 7.51, useDingbats = FALSE)
 par(mfrow = c(1, 2))
 nested <- full_data$Prev_Ratio[full_data$PCR_Method == "Nested"]
 LDR <- full_data$Prev_Ratio[full_data$PCR_Method == "PCR-LDR"]

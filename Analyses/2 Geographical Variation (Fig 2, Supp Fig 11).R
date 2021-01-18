@@ -91,7 +91,7 @@ plot(South_America_model, col = c("blue"), las = 1)
 dev.off()
 South_America_param_table <- param_table(South_America_model, params)
 
-pdf("Figures/Supplementary/Supp Figure 9 - Global Region MCMC Output/Supp Figure 9 - West Africa MCMC Output.pdf", width = 7.33, height = 7.51)
+pdf("Figures/Supplementary/Supp Figure 11 - Global Region MCMC Output/Supp Figure 9 - West Africa MCMC Output.pdf", width = 7.33, height = 7.51)
 plot(West_Africa_model, col = c("red"), las = 1)
 dev.off()
 West_Africa_param_table <- param_table(West_Africa_model, params)

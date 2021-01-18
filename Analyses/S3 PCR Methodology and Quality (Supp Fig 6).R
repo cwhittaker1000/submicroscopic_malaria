@@ -36,18 +36,18 @@ variance <- full_data$PCR_N_Tested * full_data$PCR_Prev * (1 - full_data$PCR_Pre
 stdev <- sqrt(variance)
 weights <- mean(stdev)/stdev
 
-weighted_LM_fields_model <- lm(Prev_Ratio ~ Microscopy_Fields, data = full_data, na.action = na.omit, weights = 1/variance)
+weighted_LM_fields_model <- lm(Prev_Ratio ~ PCR_Prev + Microscopy_Fields, data = full_data, na.action = na.omit, weights = 1/variance)
 summary(weighted_LM_fields_model)
-aov(weighted_LM_fields_model)
+Anova(weighted_LM_fields_model)
 
-weighted_PCR_method_model <- lm(Prev_Ratio ~ PCR_Method, data = full_data, na.action = na.omit, weights = 1/variance)
+weighted_PCR_method_model <- lm(Prev_Ratio ~ PCR_Prev + PCR_Method, data = full_data, na.action = na.omit, weights = 1/variance)
 summary(weighted_PCR_method_model)
-aov(weighted_PCR_method_model)
+Anova(weighted_PCR_method_model)
 TukeyHSD(aov(weighted_PCR_method_model))
 
 unweighted_PCR_method_model <- lm(Prev_Ratio ~ PCR_Method, data = full_data, na.action = na.omit)
 summary(unweighted_PCR_method_model)
-aov(unweighted_PCR_method_model)
+Anova(unweighted_PCR_method_model)
 TukeyHSD(aov(unweighted_PCR_method_model))
 
 # Supplementary Figure 4A - PCR Methodology Prevalence Ratio Boxplots

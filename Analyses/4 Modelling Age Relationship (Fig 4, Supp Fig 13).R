@@ -228,10 +228,20 @@ ggsave("Figures/Figure 4 - Age/Figure_4.pdf", width = 12.58, height = 4.56,
 
 # Statistical Tests Carried Out On The Data
 # ANOVA - Testing for Differences in Means
-data_frame_ANOVA <- data_frame[(data_frame$Age_Group == "0-5") | (data_frame$Age_Group ==  "5-15years") | (data_frame$Age_Group ==  "15+"), ] # all age-disaggregated data
-data_frame_ANOVA$prev_ratio <- (data_frame_ANOVA$Microscopy_N_Positive/data_frame_ANOVA$Microscopy_N_Tested)/
-                                (data_frame_ANOVA$PCR_N_Positive/data_frame_ANOVA$PCR_N_Tested)
-ANOVA_object <- aov(prev_ratio ~ Age_Group, data = data_frame_ANOVA)
+# Statistical Tests Carried Out On The Data
+# ANOVA - Testing for Differences in Means
+df <- data_frame %>%
+  filter(Age_Group != "All Ages")
+variance <- df$PCR_N_Tested * (df$PCR_Prev/100) * (1 - df$PCR_Prev/100)
+stdev <- sqrt(variance)
+weighted_age_model <- lm(Prev_Ratio ~ Age_Group + PCR_Prev, data = df, na.action = na.omit, weights = 1/variance) # similar results with 1/variance
+summary(weighted_age_model)
+ANOVA_object <- aov(weighted_age_model)
 summary(ANOVA_object)
-TukeyHSD(ANOVA_object)
+TukeyHSD(ANOVA_object, which = "Age_Group")
 
+age_model <- lm(Prev_Ratio ~ Age_Group + PCR_Prev, data = df, na.action = na.omit) # similar results with 1/variance
+summary(age_model)
+ANOVA_object <- aov(age_model)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object, which = "Age_Group")

@@ -246,6 +246,29 @@ ggsave("Figures/Figure 3 - Transmission Archetype/Figure_3.pdf", plot = last_plo
        scale = 1, width = 10.21, height = 8.20, units = c("in", "cm", "mm"),
        dpi = 300, useDingbats = FALSE)
   
+# Statistical Tests Carried Out On The Data
+# ANOVA - Testing for Differences in Means
+variance <- full_data$PCR_N_Tested * (full_data$PCR_Prev/100) * (1 - full_data$PCR_Prev/100)
+stdev <- sqrt(variance)
+weighted_arch_region_model <- lm(Prev_Ratio ~ Transmission_Setting_15 + PCR_Prev, data = full_data, na.action = na.omit, weights = 1/variance) # similar results with 1/variance
+summary(weighted_arch_region_model)
+ANOVA_object <- aov(weighted_arch_region_model)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object, which = "Transmission_Setting_15")
+
+variance <- full_data$PCR_N_Tested * (full_data$PCR_Prev/100) * (1 - full_data$PCR_Prev/100)
+stdev <- sqrt(variance)
+weighted_arch_region_model <- lm(Prev_Ratio ~ Hist_Trans + Curr_Trans + PCR_Prev, data = full_data, na.action = na.omit, weights = 1/variance) # similar results with 1/variance
+summary(weighted_arch_region_model)
+ANOVA_object <- aov(weighted_arch_region_model)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object, which = "Transmission_Setting_15")
+
+arch_region_model <- lm(Prev_Ratio ~ Transmission_Setting_15 + PCR_Prev, data = full_data, na.action = na.omit) # similar results with 1/variance
+summary(arch_region_model)
+ANOVA_object <- aov(arch_region_model)
+summary(ANOVA_object)
+TukeyHSD(ANOVA_object, which = "Transmission_Setting_15")
 
 # Figure 5A Plotting - Contribution to Transmission in High High Transmission Settings
 HH_PCR_Prevalence <- seq(0.03,0.95,0.001) 

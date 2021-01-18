@@ -27,7 +27,7 @@ library(cowplot); library(dplyr)
 setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
-fresh_run <- TRUE
+fresh_run <- FALSE
 
 # Load in the dataset and subset the data by global region the survey was carried out in:
 data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")
@@ -267,17 +267,17 @@ ggsave("Figures/Figure 2 - Global Regions/Figure_2.pdf", plot = last_plot(), dev
 # ANOVA - Testing for Differences in Means
 variance <- full_data$PCR_N_Tested * (full_data$PCR_Prev/100) * (1 - full_data$PCR_Prev/100)
 stdev <- sqrt(variance)
-weighted_global_region_model <- lm(Prev_Ratio ~ Global_Region, data = full_data, na.action = na.omit, weights = 1/stdev) # similar results with 1/variance
+weighted_global_region_model <- lm(Prev_Ratio ~ Global_Region + PCR_Prev, data = full_data, na.action = na.omit, weights = 1/variance) # similar results with 1/variance
 summary(weighted_global_region_model)
 ANOVA_object <- aov(weighted_global_region_model)
 summary(ANOVA_object)
-TukeyHSD(ANOVA_object)
+TukeyHSD(ANOVA_object, which = "Global_Region")
 
-global_region_model <- lm(Prev_Ratio ~ Global_Region, data = full_data, na.action = na.omit) # similar results with 1/variance
+global_region_model <- lm(Prev_Ratio ~ Global_Region + PCR_Prev, data = full_data, na.action = na.omit) # similar results with 1/variance
 summary(global_region_model)
 ANOVA_object <- aov(global_region_model)
 summary(ANOVA_object)
-TukeyHSD(ANOVA_object)
+TukeyHSD(ANOVA_object, which = "Global_Region")
 
 
 

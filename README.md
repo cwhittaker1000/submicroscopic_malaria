@@ -10,16 +10,18 @@
 - [Installation Guide and Instructions for Use](#Installation-Guide-and-Instructions-for-Use)
 
 # Overview
-This repository contains code used to generate the figures for the (submitted) publication:
+This repository contains code used in the analyses and generation of the figures for the publication:
 
-**Global & Temporal Patterns of Submicroscopic Plasmodium falciparum Malaria Infection**   
-*Charles Whittaker<sup>1</sup>, Hannah Slater<sup>1,2</sup>, Teun Bousema<sup>3</sup>, Chris Drakeley<sup>4</sup>, Azra Ghani<sup>1</sup> and Lucy Okell<sup>1</sup>*  
+**Global patterns of submicroscopic Plasmodium falciparum malaria infection: insights from a systematic review and meta-analysis of population surveys**   
+*Charles Whittaker<sup>1</sup>, Hannah Slater<sup>1,2</sup>, Rebecca Nash<sup>1</sup>, Teun Bousema<sup>3</sup>, Chris Drakeley<sup>4</sup>, Azra Ghani<sup>1</sup> and Lucy Okell<sup>1</sup>*  
 *<sup>1</sup>MRC Centre for Global Infectious Disease Analysis, Department of Infectious Disease Epidemiology, Imperial College London, London, United Kingdom*
 *<sup>2</sup>PATH, 2201 Westlake Avenue, Seattle, USA*
 *<sup>3</sup>Department of Medical Microbiology, Radboud University Medical Center, Nijmegen, The Netherlands*
-*<sup>4</sup>Department of Immunology and Infection, Faculty of Infectious and Tropical Diseases, London School of Hygiene and Tropical Medicine, London, United Kingdom*  
+*<sup>4</sup>Department of Infection Biology, Faculty of Infectious and Tropical Diseases, London School of Hygiene and Tropical Medicine, London, United Kingdom*  
 
-Specifically, it uses a database of collated malaria cross-sectional survey data (where populations have had infection status determined by both Light Microscopy and PCR) to:
+Published in The Lancet Microbe and freely available at the following link: https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(21)00055-0/fulltext 
+
+This work collates and analyses a database of  malaria cross-sectional survey data (where populations have had infection status determined by both Light Microscopy and PCR) to:
 
 - Explore how the proportion of submicroscopically infected individuals varies across the transmission gradient **(Figure 1)**
 - Assess the extent of geographical variation in the proportion of submicroscopically infected individuals **(Figure 2)** 
@@ -27,12 +29,12 @@ Specifically, it uses a database of collated malaria cross-sectional survey data
 - Examine age-related patterns of infection and see how the size of the submicroscopic reservoir varies acrosss different age groups **(Figure 4)**
 - Integrate these results with previous estimates of the comparative infectivity (to mosquitoes) of microscopically detectable and submicroscopic infections to generate estimates for the contribution to onwards transmission of these two infected subgroups **(Figure 5)** 
 
-- It also contains code required to implement and run all analyses contained within the Supplementary Information of the publication. 
+- It also contains code required to implement and run all analyses and figures contained within the Supplementary Information of the publication. 
 
 # Description
 A systematic literature review was carried out to compile malaria prevalence data from references where both microscopy and PCR based methods had been used to determine infection status. This represents an update to the systematic review carried out by Okell et al., in 2012 (Nature Communications, 3, p1237). Searches were carried out using PubMed and WebofScience and the search terms (“PCR” OR “Polymerase Chain Reaction”) AND “falciparum”. 
 
-Following the screening process, a total of 60 new references were included. Together with the results of the previous systematic review, this gave a total of 387 prevalence survey pairs. For each prevalence survey pair, a variety of different relevant data were extracted, including (amongst others):
+Following the screening process, a total of 121 new references were included. Together with the results of the previous systematic review, this gave a total of 551 prevalence survey pairs. For each prevalence survey pair, a variety of different relevant data were extracted, including (amongst others):
 
 - Number sampled and number positive (for both Light Microscopy and PCR) **(from the papers themselves)**
 - Location and Year of Sampling **(from the papers themselves)**
@@ -86,7 +88,7 @@ To replicate and reproduce the analyses presented in this paper, do the followin
 3. From an `R` session, import `SI_Systematic_Review_Results_R_Import.csv`.
 4. Run the `R` code. The output from running this code will be a number of MCMC objects, as well as a series of plots representing the output from MCMC based fitting of the logit-linear model to the collated data. These plots form the basis of the figures presented in the publication. 
 
-Note: The exact runtime depends on the size of the dataset being analysed. It is therefore longer for the full dataset (267 datapoint pairs, on the order of 30 minutes) compared to the age-disaggregated datasets (approx. 30-40 datapoints, on the order of 1 minute). 
+Note: The exact runtime depends on the size of the dataset being analysed. It is therefore longer for the full dataset (on the order of 30 minutes) compared to the age-disaggregated datasets (on the order of 1 minute). 
 
 
 

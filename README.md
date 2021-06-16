@@ -1,6 +1,7 @@
 # Submicroscopic Malaria Infection Systematic Review
 
 <img src=https://github.com/cwhittaker1000/submicroscopic_malaria/blob/master/lancet_microbe_pub.JPG>
+
 # Contents
 
 - [Overview](#Overview)

@@ -25,6 +25,7 @@
 ###################################################################################################  
 library(rjags); library(ssa); library(binom); library(MALDIquant); library(formattable); library(dplyr)
 library(tictoc); library(BayesianTools); library(R2jags); library(bayesmix); library(cowplot); library(extrafont)
+library(ggplot2)
 setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
@@ -123,7 +124,7 @@ a <- ggplot(full_data, aes(x = PCR_Prev, y = LM_Prev, col = Global_Region)) +
         geom_segment(x = 0, y = 0, xend = 100, yend = 100, colour = "black", size = 0.5, linetype = 2) +
         scale_colour_manual(breaks = c("Asia&Oceania", "West Africa", "East Africa", "South America"),
                             labels = c("Asia & Oceania", "West Africa", "East Africa", "South America"),
-                            values = c("#DBC453", "#DD954D", "#5299D3", "#63AD4A")) +
+                            values = c("#63AD4A", "#5299D3", "#DD954D", "#DBC453")) +
         theme_bw() +
         theme(legend.position = c(0.13, 0.7), axis.text = element_text(size = 15, face = "bold"), axis.title = element_text(size = 12,face="bold"),
               axis.title.x = element_text(size = 15, vjust = -3), axis.title.y = element_text(size = 15, vjust = +6),
@@ -132,6 +133,7 @@ a <- ggplot(full_data, aes(x = PCR_Prev, y = LM_Prev, col = Global_Region)) +
               legend.spacing.x = unit(0.2, 'cm'), legend.key.size = unit(1, "cm"), legend.background = element_rect(fill = "white"),
               panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
         guides(alpha = FALSE, colour = guide_legend(override.aes = list(size = 6)))
+a
 
 b <- ggplot(full_data, aes(x = PCR_Prev, y = Prev_Ratio)) +
         geom_point(size = 2, aes(col = full_data$Global_Region)) +

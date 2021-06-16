@@ -42,7 +42,7 @@ Anova(weighted_LM_fields_model)
 
 weighted_PCR_method_model <- lm(Prev_Ratio ~ PCR_Prev + PCR_Method, data = full_data, na.action = na.omit, weights = 1/variance)
 summary(weighted_PCR_method_model)
-Anova(weighted_PCR_method_model)
+summary(aov(weighted_PCR_method_model))
 TukeyHSD(aov(weighted_PCR_method_model))
 
 unweighted_PCR_method_model <- lm(Prev_Ratio ~ PCR_Method, data = full_data, na.action = na.omit)

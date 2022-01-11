@@ -21,7 +21,6 @@
 ###################################################################################################
 library(rjags); library(ssa); library(binom); library(MALDIquant); library(formattable); 
 library(tictoc); library(BayesianTools); library(R2jags); library(bayesmix)
-setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
 

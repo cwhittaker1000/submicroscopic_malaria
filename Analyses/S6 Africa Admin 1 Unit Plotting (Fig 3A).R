@@ -1,7 +1,6 @@
 # Access and load various required packages for the analyses
 library(rjags); library(ssa); library(binom); library(raster); library(sf); library(maptools); library(countrycode);
 library(dplyr)
-setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
 
 # Loading In the Dataset
 data_frame <- read.csv("Data/SI_Systematic_Review_Results_R_Import.csv")

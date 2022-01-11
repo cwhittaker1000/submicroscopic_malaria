@@ -21,7 +21,6 @@
 ###################################################################################################
 library(rjags); library(ssa); library(binom); library(MALDIquant); library(formattable); 
 library(tictoc); library(BayesianTools); library(R2jags); library(bayesmix); library(car)
-setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
 seed <- 193
 
 # Loading In and Processing the Dataset

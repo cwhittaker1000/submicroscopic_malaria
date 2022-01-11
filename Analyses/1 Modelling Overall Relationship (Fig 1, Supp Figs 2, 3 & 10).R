@@ -23,10 +23,9 @@
 ##        charles.whittaker16@imperial.ac.uk :)                                                  ##
 ##                                                                                               ##
 ###################################################################################################  
-library(rjags); library(ssa); library(binom); library(MALDIquant); library(formattable); library(dplyr)
+library(rjags); library(binom); library(MALDIquant); library(formattable); library(dplyr)
 library(tictoc); library(BayesianTools); library(R2jags); library(bayesmix); library(cowplot); library(extrafont)
-library(ggplot2)
-setwd("C:/Users/cw1716/Documents/Q_Drive_Copy/Sub-Patent Malarial Infections/Sub_Patent_Malaria_Analysis/")
+library(ggplot2); library(tidyverse)
 source("Functions/Submicroscopic_Analysis_Functions.R")
 seed <- 193
 theme_set(theme_grey())
